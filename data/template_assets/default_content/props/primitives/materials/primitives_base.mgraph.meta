@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>622ab0e881be5f27f7d2525aa9b6fdf19070de9c</guid>
+	<type>material_graph</type>
+	<hash>e728f1fe47b3b37dc7daa9f18e699982238c5fbb5329e7f7e02745d8a2e8e59f</hash>
+	<runtimes>
+		<runtime id="622ab0e881be5f27f7d2525aa9b6fdf19070de9c" name="primitives_base.mgraph" link="0"/>
+		<runtime id="ec1ffd42b4691bb9fbe211c4d621f2534cd05396" name="primitives_base" link="1" type="5"/>
+	</runtimes>
+</asset>

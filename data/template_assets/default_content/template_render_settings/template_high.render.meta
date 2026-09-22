@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>92a0ee7917704584f2b913132a497d56e78094bd</guid>
+	<type>render_settings</type>
+	<hash>d50a8b4f0bb01f92d9bb8a027ab3784a926e02fc5bb0e5d8968e38c83dd75937</hash>
+	<runtimes>
+		<runtime id="92a0ee7917704584f2b913132a497d56e78094bd" name="template_high.render" link="0"/>
+	</runtimes>
+</asset>

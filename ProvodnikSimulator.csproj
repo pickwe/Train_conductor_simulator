@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+		<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+		<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+		<RootNamespace>UnigineApp</RootNamespace>
+		<StartupObject>UnigineApp.UnigineApp</StartupObject>
+		<WarningLevel>4</WarningLevel>
+		<OutputPath>bin</OutputPath>
+		<UseAppHost>true</UseAppHost>
+		<AppHostSourcePath Condition="&apos;$(OS)&apos; == &apos;Windows_NT&apos;">$(OutputPath)\dotnet_host_x64.exe</AppHostSourcePath>
+		<EnableDefaultItems>false</EnableDefaultItems>
+		<Platforms>x64</Platforms>
+		<PlatformTarget>x64</PlatformTarget>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="&apos;$(Configuration)&apos;==&apos;Debug&apos;">
+		<AssemblyName>ProvodnikSimulator_x64d</AssemblyName>
+		<DebugSymbols>true</DebugSymbols>
+		<Optimize>false</Optimize>
+		<DefineConstants>TRACE;DEBUG;UNIGINE_DOUBLE;</DefineConstants>
+	</PropertyGroup>
+	<ItemGroup Condition="&apos;$(Configuration)&apos;==&apos;Debug&apos;">
+		<Reference Include="UnigineSharp_double_x64d">
+			<SpecificVersion>false</SpecificVersion>
+			<HintPath>bin\UnigineSharp_double_x64d.dll</HintPath>
+		</Reference>
+		<Analyzer Include="bin\UnigineCSPropertyBinder_double_x64d.dll" />
+		<UnigineSharpLibPath Include="bin\UnigineSharp_double_x64d.dll" />
+	</ItemGroup>
+	<PropertyGroup Condition="&apos;$(Configuration)&apos;==&apos;Release&apos;">
+		<AssemblyName>ProvodnikSimulator_x64</AssemblyName>
+		<Optimize>true</Optimize>
+		<DefineConstants>TRACE;NDEBUG;UNIGINE_DOUBLE;</DefineConstants>
+	</PropertyGroup>
+	<ItemGroup Condition="&apos;$(Configuration)&apos;==&apos;Release&apos;">
+		<Reference Include="UnigineSharp_double_x64">
+			<SpecificVersion>false</SpecificVersion>
+			<HintPath>bin\UnigineSharp_double_x64.dll</HintPath>
+		</Reference>
+		<Analyzer Include="bin\UnigineCSPropertyBinder_double_x64.dll" />
+		<UnigineSharpLibPath Include="bin\UnigineSharp_double_x64.dll" />
+	</ItemGroup>
+	<ItemGroup />
+	<ItemGroup>
+		<Compile Include="source/AppSystemLogic.cs" />
+		<Compile Include="source/AppWorldLogic.cs" />
+		<Compile Include="source/main.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="data/first_person_controller/components/FirstPersonController.cs" />
+		<AdditionalFiles Include="data/first_person_controller/components/FirstPersonController.cs.meta" Visible="false" />
+	</ItemGroup>
+	<Target Name="UnigineVersionDefines" BeforeTargets="CoreCompile" Condition="&apos;@(UnigineSharpLibPath)&apos; != &apos;&apos; AND Exists(&apos;@(UnigineSharpLibPath)&apos;)">
+		<GetAssemblyIdentity AssemblyFiles="@(UnigineSharpLibPath)">
+			<Output TaskParameter="Assemblies" ItemName="LibAssemblyInfo" />
+		</GetAssemblyIdentity>
+		<PropertyGroup>
+			<UnigineLibVersion>%(LibAssemblyInfo.Version)</UnigineLibVersion>
+		</PropertyGroup>
+		<PropertyGroup Condition="&apos;$(UnigineLibVersion)&apos; != &apos;&apos;">
+			<VersionMajor>$([System.Version]::Parse(&apos;$(UnigineLibVersion)&apos;).Major)</VersionMajor>
+			<VersionMinor>$([System.Version]::Parse(&apos;$(UnigineLibVersion)&apos;).Minor)</VersionMinor>
+			<VersionPatch>$([System.Version]::Parse(&apos;$(UnigineLibVersion)&apos;).Build)</VersionPatch>
+			<VersionRevision>$([System.Version]::Parse(&apos;$(UnigineLibVersion)&apos;).Revision)</VersionRevision>
+		</PropertyGroup>
+		<PropertyGroup Condition="&apos;$(UnigineLibVersion)&apos; != &apos;&apos;">
+			<DefineConstants>$(DefineConstants);UNIGINE;UNIGINE_VERSION_MAJOR_$(VersionMajor);UNIGINE_VERSION_MINOR_$(VersionMinor);UNIGINE_VERSION_PATCH_$(VersionPatch);UNIGINE_VERSION_REVISION_$(VersionRevision);UNIGINE_VERSION_$(VersionMajor)_$(VersionMinor)_$(VersionPatch)_$(VersionRevision)</DefineConstants>
+		</PropertyGroup>
+	</Target>
+</Project>

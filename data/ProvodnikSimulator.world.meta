@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>60586bbbe11bedde064e7ba5e6cbf8c084a7151f</guid>
+	<type>world</type>
+	<hash>5cdaa257590ee8921abbee059324365b031164da14e14342e3615db1703e63a9</hash>
+	<runtimes>
+		<runtime id="60586bbbe11bedde064e7ba5e6cbf8c084a7151f" name="ProvodnikSimulator.world" link="0"/>
+	</runtimes>
+	<parameters>
+		<parameter type="string" name="navigation_settings_path"/>
+		<parameter type="string" name="physics_settings_path"/>
+		<parameter type="string" name="render_settings_path">guid://92a0ee7917704584f2b913132a497d56e78094bd</parameter>
+		<parameter type="string" name="script_name"/>
+		<parameter type="string" name="sound_settings_path"/>
+		<parameter type="string" name="viewports_settings">&lt;scene_cameras&gt;
+&lt;1&gt;
+&lt;transform&gt;-0.99619436264038108 0.087158232927322415 3.9041042327881706e-05 0 -0.0099864117801189475 -0.11458683013916018 0.99336302280426025 0 0.086584240198135418 0.98958241939544678 0.11502116918563848 0 7.5054408724003121 17.58355159653247 3.7189635340418454 1&lt;/transform&gt;
+&lt;fov_mode&gt;0&lt;/fov_mode&gt;
+&lt;fov&gt;60&lt;/fov&gt;
+&lt;focal_length&gt;30&lt;/focal_length&gt;
+&lt;film_gate&gt;35&lt;/film_gate&gt;
+&lt;znear&gt;0.100000001&lt;/znear&gt;
+&lt;zfar&gt;100000&lt;/zfar&gt;
+&lt;viewport_mask&gt;-1&lt;/viewport_mask&gt;
+&lt;reflection_mask&gt;-1&lt;/reflection_mask&gt;
+&lt;source_mask&gt;-1&lt;/source_mask&gt;
+&lt;reverb_mask&gt;-1&lt;/reverb_mask&gt;
+&lt;projection_mode&gt;0&lt;/projection_mode&gt;
+&lt;ortho_height&gt;16&lt;/ortho_height&gt;
+&lt;projection&gt;1.7320509 0 0 0 0 1.7320509 0 0 0 0 -1.00000203 -1 0 0 -0.200000197 0&lt;/projection&gt;
+&lt;/1&gt;
+&lt;/scene_cameras&gt;
+</parameter>
+	</parameters>
+</asset>
