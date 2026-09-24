@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>1653c50a6a82f37250979ba9fb0b1fe8a8440345</guid>
+	<type>component</type>
+	<hash>42f0f9c48c3ce945ee601734e5d02622aa80d287bd046a3bff5ec8b96ee874ff</hash>
+	<runtimes>
+		<runtime id="1653c50a6a82f37250979ba9fb0b1fe8a8440345" name="FP_Controller.cs" link="0"/>
+		<runtime id="1da3b504476eb27919b32211de89478332ed9be0" name="FP_Controller.prop" link="1" type="4"/>
+	</runtimes>
+</asset>
