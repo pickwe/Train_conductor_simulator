@@ -49,18 +49,21 @@
 		<UnigineSharpLibPath Include="bin\UnigineSharp_double_x64.dll"/>
 	</ItemGroup>
 	<ItemGroup>
-		<Compile Include="data/New Folder/FP_Controller.cs"/>
-		<AdditionalFiles Include="data/New Folder/FP_Controller.cs.meta" Visible="false"/>
+		<Compile Include="data/first_person_controller/components/FirstPersonController.cs"/>
+		<AdditionalFiles Include="data/first_person_controller/components/FirstPersonController.cs.meta" Visible="false"/>
+		<Compile Include="data/components/FP_Controller.cs"/>
+		<AdditionalFiles Include="data/components/FP_Controller.cs.meta" Visible="false"/>
+		<Compile Include="data/components/MenuManager.cs"/>
+		<AdditionalFiles Include="data/components/MenuManager.cs.meta" Visible="false"/>
+		<Compile Include="data/components/ShiftScenarioController.cs"/>
+		<AdditionalFiles Include="data/components/ShiftScenarioController.cs.meta" Visible="false"/>
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="source/AppSystemLogic.cs"/>
 		<Compile Include="source/AppWorldLogic.cs"/>
 		<Compile Include="source/main.cs"/>
 	</ItemGroup>
-	<ItemGroup>
-		<Compile Include="data/first_person_controller/components/FirstPersonController.cs"/>
-		<AdditionalFiles Include="data/first_person_controller/components/FirstPersonController.cs.meta" Visible="false"/>
-	</ItemGroup>
+	<ItemGroup/>
 	<Target Name="UnigineVersionDefines" BeforeTargets="CoreCompile" Condition="&apos;@(UnigineSharpLibPath)&apos; != &apos;&apos; AND Exists(&apos;@(UnigineSharpLibPath)&apos;)">
 		<GetAssemblyIdentity AssemblyFiles="@(UnigineSharpLibPath)">
 			<Output TaskParameter="Assemblies" ItemName="LibAssemblyInfo"/>

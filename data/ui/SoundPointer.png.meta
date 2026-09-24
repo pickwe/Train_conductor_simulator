@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>9321b95d115cae6b8558f1b9fb925de4e27577eb</guid>
+	<type>texture</type>
+	<hash>f315ca431dd6ae7e521cfeb7309ca2a4e8ff1a10621758030a12a853676900ef</hash>
+	<runtimes>
+		<runtime id="9321b95d115cae6b8558f1b9fb925de4e27577eb" name="SoundPointer.png" link="0" type="6"/>
+		<runtime id="5250feef037083a4979a792b2dcd09b767555fad" name="SoundPointer.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

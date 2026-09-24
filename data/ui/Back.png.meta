@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>0461cbd019d928592366a964b2dd437d225cd7aa</guid>
+	<type>texture</type>
+	<hash>61c16ae0e86b3ec5e78f96a180d131d54e893032b5ac6c2d187ed6f1f47d3937</hash>
+	<runtimes>
+		<runtime id="0461cbd019d928592366a964b2dd437d225cd7aa" name="Back.png" link="0" type="6"/>
+		<runtime id="5576b94aea6e087b0b70b17e2ac696afaa201b74" name="Back.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

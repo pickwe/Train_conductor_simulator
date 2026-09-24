@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>4e4b94bb49331a25cf4de437d8e9b78d816d3f19</guid>
+	<type>component</type>
+	<hash>92ed654bb46b3766f6488d74089a881c2e76209e7a9fbf196ce19fbffb6c9f77</hash>
+	<runtimes>
+		<runtime id="4e4b94bb49331a25cf4de437d8e9b78d816d3f19" name="ShiftScenarioController.cs" link="0"/>
+		<runtime id="3452e7fae1db6b054e50732eb92558c97f901da4" name="ShiftScenarioController.prop" link="1" type="4"/>
+	</runtimes>
+</asset>
