@@ -82,7 +82,7 @@ public partial class FP_Controller : Component
 	private float headBobHorizontal = 0.011f;
 
 	[ShowInEditor, Parameter(Group = "Camera Bob", Tooltip = "Vertical camera movement in meters")]
-	private float headBobVertical = 0.032f;
+	private float headBobVertical = 0.030f;
 
 	[ShowInEditor, Parameter(Group = "Camera Bob", Tooltip = "How smoothly the bob starts and stops")]
 	private float headBobSmoothing = 12.0f;
