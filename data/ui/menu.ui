@@ -34,13 +34,19 @@
 		<sprite name="login_back_button" export="1" width="392" height="48" texcoord_w="0.5" texture="ui/Back.png"/>
 	</vbox>
 
-	<vbox name="settings_screen" export="1" width="648" height="480" space_y="14" padding="64">
+	<vbox name="settings_screen" export="1" width="648" height="720" space_y="8" padding="44">
 		<label width="520"><text size="34" align="center">Настройки</text></label>
-		<label name="volume_label" export="1" width="520"><text size="19" align="center">Громкость: 70</text></label>
+		<label name="volume_label" export="1" width="520"><text size="19" align="center">Мелодия меню: 70</text></label>
 		<vbox width="520" height="174">
 			<sprite name="slider_track" export="1" align="overlap" width="520" height="174"/>
 			<sprite name="sound_pointer" export="1" align="overlap" width="9" height="66"/>
 			<hslider name="volume_slider" export="1" align="overlap" pos_x="20" pos_y="113" min="0" max="100" value="70" width="481" height="61" button_width="9"/>
+		</vbox>
+		<label name="sfx_volume_label" export="1" width="520"><text size="19" align="center">Звук окружения: 70</text></label>
+		<vbox width="520" height="174">
+			<sprite name="sfx_track" export="1" align="overlap" width="520" height="174"/>
+			<sprite name="sfx_pointer" export="1" align="overlap" width="9" height="66"/>
+			<hslider name="sfx_volume_slider" export="1" align="overlap" pos_x="20" pos_y="113" min="0" max="100" value="70" width="481" height="61" button_width="9"/>
 		</vbox>
 		<sprite name="settings_back_button" export="1" width="392" height="48" texcoord_w="0.5" texture="ui/Back.png"/>
 	</vbox>
