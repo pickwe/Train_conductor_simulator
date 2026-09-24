@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
@@ -32,8 +32,8 @@
 			<SpecificVersion>false</SpecificVersion>
 			<HintPath>bin\UnigineSharp_double_x64d.dll</HintPath>
 		</Reference>
-		<Analyzer Include="bin\UnigineCSPropertyBinder_double_x64d.dll" />
-		<UnigineSharpLibPath Include="bin\UnigineSharp_double_x64d.dll" />
+		<Analyzer Include="bin\UnigineCSPropertyBinder_double_x64d.dll"/>
+		<UnigineSharpLibPath Include="bin\UnigineSharp_double_x64d.dll"/>
 	</ItemGroup>
 	<PropertyGroup Condition="&apos;$(Configuration)&apos;==&apos;Release&apos;">
 		<AssemblyName>ProvodnikSimulator_x64</AssemblyName>
@@ -45,22 +45,25 @@
 			<SpecificVersion>false</SpecificVersion>
 			<HintPath>bin\UnigineSharp_double_x64.dll</HintPath>
 		</Reference>
-		<Analyzer Include="bin\UnigineCSPropertyBinder_double_x64.dll" />
-		<UnigineSharpLibPath Include="bin\UnigineSharp_double_x64.dll" />
-	</ItemGroup>
-	<ItemGroup />
-	<ItemGroup>
-		<Compile Include="source/AppSystemLogic.cs" />
-		<Compile Include="source/AppWorldLogic.cs" />
-		<Compile Include="source/main.cs" />
+		<Analyzer Include="bin\UnigineCSPropertyBinder_double_x64.dll"/>
+		<UnigineSharpLibPath Include="bin\UnigineSharp_double_x64.dll"/>
 	</ItemGroup>
 	<ItemGroup>
-		<Compile Include="data/first_person_controller/components/FirstPersonController.cs" />
-		<AdditionalFiles Include="data/first_person_controller/components/FirstPersonController.cs.meta" Visible="false" />
+		<Compile Include="data/New Folder/FP_Controller.cs"/>
+		<AdditionalFiles Include="data/New Folder/FP_Controller.cs.meta" Visible="false"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="source/AppSystemLogic.cs"/>
+		<Compile Include="source/AppWorldLogic.cs"/>
+		<Compile Include="source/main.cs"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="data/first_person_controller/components/FirstPersonController.cs"/>
+		<AdditionalFiles Include="data/first_person_controller/components/FirstPersonController.cs.meta" Visible="false"/>
 	</ItemGroup>
 	<Target Name="UnigineVersionDefines" BeforeTargets="CoreCompile" Condition="&apos;@(UnigineSharpLibPath)&apos; != &apos;&apos; AND Exists(&apos;@(UnigineSharpLibPath)&apos;)">
 		<GetAssemblyIdentity AssemblyFiles="@(UnigineSharpLibPath)">
-			<Output TaskParameter="Assemblies" ItemName="LibAssemblyInfo" />
+			<Output TaskParameter="Assemblies" ItemName="LibAssemblyInfo"/>
 		</GetAssemblyIdentity>
 		<PropertyGroup>
 			<UnigineLibVersion>%(LibAssemblyInfo.Version)</UnigineLibVersion>

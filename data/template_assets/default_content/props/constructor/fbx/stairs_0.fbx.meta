@@ -2,17 +2,17 @@
 <asset version="2.22.0.0">
 	<guid>6f545c057cde9da0ab2ab47f91ebb7d28426f509</guid>
 	<type>fbx</type>
-	<hash>bcbb13336e1031a4ec4fbb89c2aec7c814e15b29587d8fe9aa191e087c21d0d7</hash>
+	<hash>e011a563d1290d174560c5bd39ca3829423e22e434e974b2b7cfc423c50f9d1e</hash>
 	<runtimes>
 		<runtime id="6f545c057cde9da0ab2ab47f91ebb7d28426f509" name="stairs_0.fbx" link="0"/>
 		<runtime id="65ebfad4ee0f2823489cef26ce663c4d572bb148" name="stairs_0.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">824a7811</parameter>
+				<parameter type="string" name="id">041dbe4b</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="6251a407c69e11ba08aff5d1cab8b4fccc888c2b" name="stairs_0.mesh" link="2" type="1">
 			<parameters>
-				<parameter type="string" name="id">824a7811</parameter>
+				<parameter type="string" name="id">97be4774</parameter>
 			</parameters>
 		</runtime>
 	</runtimes>

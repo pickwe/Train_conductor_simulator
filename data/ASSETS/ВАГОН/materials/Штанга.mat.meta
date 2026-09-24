@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>bc438085ba8a1fae59675231a1a83d1555f698d6</guid>
+	<type>material</type>
+	<hash>0e702c433c911e727d1c3d457c59d028e4c482588c1c4ab0809b9d959c6bc264</hash>
+	<runtimes>
+		<runtime id="bc438085ba8a1fae59675231a1a83d1555f698d6" name="Штанга" link="0" type="5"/>
+	</runtimes>
+</asset>
