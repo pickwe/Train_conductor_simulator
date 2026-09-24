@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>03975a558b6967b07049574fafa8dc62f5633059</guid>
 	<type>material</type>
-	<hash>97fb0dd9befd0b869ca5ff822a85f73577c0006576c308c5260aae87f9985360</hash>
+	<hash>04b3a44a440e3165f37fa846eb131f11f85968e6031c337ab747fda9c117712a</hash>
 	<runtimes>
 		<runtime id="03975a558b6967b07049574fafa8dc62f5633059" name="floor_red_mat" link="0" type="5"/>
 	</runtimes>

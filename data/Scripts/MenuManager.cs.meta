@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>aff40bc8054a5dccc02f0bb5456487a3f9e9978a</guid>
+	<type>component</type>
+	<hash>5a6706d272b8f9de1565f2939160f172557b83db63a06ca1dd95e31b03eb6484</hash>
+	<runtimes>
+		<runtime id="aff40bc8054a5dccc02f0bb5456487a3f9e9978a" name="MenuManager.cs" link="0"/>
+		<runtime id="a2d463203f0b552b328dcb7746681276cc26a161" name="MenuManager.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

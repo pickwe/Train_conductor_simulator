@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui version="1.0">
+	<!-- Add texture="ui/background.png" to this sprite. -->
+	<sprite name="menu_background" export="1" align="overlap,background" texture="data/ui/Window_InGame.png"/>
+
+	<!-- Main buttons are positioned directly by MenuManager. -->
+	<sprite name="start_button" export="1" align="overlap" texcoord_w="0.5" texture="data/ui/Start.png"/>
+	<sprite name="settings_button" export="1" align="overlap" texcoord_w="0.5" texture="data/ui/Settings.png"/>
+	<sprite name="profile_button" export="1" align="overlap" texcoord_w="0.5" texture="data/ui/Profile.png"/>
+	<sprite name="exit_button" export="1" align="overlap" texcoord_w="0.5" texture="data/ui/Exit.png"/>
+	<sprite name="login_input_background" export="1" align="overlap"/>
+	<sprite name="password_input_background" export="1" align="overlap"/>
+	<vbox name="main_screen" export="1">
+		<label name="main_status" export="1"><text size="15" align="center" color="#ff6655"></text></label>
+	</vbox>
+
+	<vbox name="pause_screen" export="1" width="520" height="420" space_y="14" padding="64">
+		<label width="392"><text size="34" align="center">Пауза</text></label>
+		<sprite name="resume_button" export="1" width="392" height="48" texcoord_w="0.5" texture="ui/Continue.png"/>
+		<sprite name="pause_settings_button" export="1" width="392" height="48" texcoord_w="0.5" texture="ui/Settings.png"/>
+		<sprite name="pause_profile_button" export="1" width="392" height="48" texcoord_w="0.5" texture="ui/Profile.png"/>
+		<sprite name="menu_button" export="1" width="392" height="48" texcoord_w="0.5" texture="ui/Exit.png"/>
+	</vbox>
+
+	<vbox name="login_screen" export="1" width="520" height="640" space_y="12" padding="64">
+		<label width="392"><text size="34" align="center">Авторизация</text></label>
+		<label width="283"><text size="18" color="#ff2868">Табельный номер</text></label>
+		<editline name="login_edit" export="1" background="0"/>
+		<label width="283"><text size="18" color="#ff2868">PIN-код</text></label>
+		<editline name="password_edit" export="1" background="0" password="1"/>
+		<label width="392" height="42"><text size="15" align="center" color="#ffffff">Данные для демонстрационного входа: DEMO / 2026</text></label>
+		<label name="login_status" export="1" width="392"><text size="15" align="center" color="#ff6655"></text></label>
+		<sprite name="login_button" export="1" width="392" height="48" texcoord_w="0.5" texture="ui/Enter.png"/>
+		<sprite name="login_back_button" export="1" width="392" height="48" texcoord_w="0.5" texture="ui/Back.png"/>
+	</vbox>
+
+	<vbox name="settings_screen" export="1" width="648" height="480" space_y="14" padding="64">
+		<label width="520"><text size="34" align="center">Настройки</text></label>
+		<label name="volume_label" export="1" width="520"><text size="19" align="center">Громкость: 70</text></label>
+		<vbox width="520" height="174">
+			<sprite name="slider_track" export="1" align="overlap" width="520" height="174"/>
+			<sprite name="sound_pointer" export="1" align="overlap" width="9" height="66"/>
+			<hslider name="volume_slider" export="1" align="overlap" pos_x="20" pos_y="113" min="0" max="100" value="70" width="481" height="61" button_width="9"/>
+		</vbox>
+		<sprite name="settings_back_button" export="1" width="392" height="48" texcoord_w="0.5" texture="ui/Back.png"/>
+	</vbox>
+
+	<vbox name="profile_screen" export="1" width="1400" height="800" space_y="14" padding="30">
+		<label width="1340"><text size="34" align="center">Профиль сотрудника</text></label>
+		<vbox name="profile_summary_panel" export="1" width="1340" height="225" padding_l="22" padding_r="22" padding_t="16" padding_b="16">
+			<hbox width="1296" height="193" space_x="34">
+				<vbox width="631" space_y="10">
+					<label><text size="17" color="#ff2868">Данные сотрудника</text></label>
+					<label name="profile_name" export="1" width="631"><text size="25" color="#25313a">Иванов Иван Иванович</text></label>
+					<label name="profile_experience" export="1" width="631"><text size="18" color="#25313a">Стаж: 6 лет 4 месяца</text></label>
+					<hbox width="631" space_x="10"><label name="profile_xp" export="1" width="145"><text size="18" color="#25313a">Опыт: 12 480</text></label><vbox width="309" height="20"><sprite name="profile_xp_fill" export="1" align="overlap,left" width="309" height="20"/><sprite name="profile_xp_background" export="1" align="overlap,left" width="309" height="20"/></vbox></hbox>
+					<label name="profile_route" export="1" width="631"><text size="18" color="#25313a">Маршрут: № 17</text></label>
+				</vbox>
+				<vbox width="631" space_y="5">
+					<label><text size="17" color="#ff2868">Показатели</text></label>
+					<vbox width="379" height="42" space_y="2"><label width="379"><text size="14" color="#25313a">Лояльность пассажиров</text></label><hbox width="379" height="20" space_x="10"><vbox width="309" height="20"><sprite name="loyalty_fill" export="1" align="overlap,left" width="309" height="20"/><sprite name="loyalty_background" export="1" align="overlap,left" width="309" height="20"/></vbox><label name="loyalty_label" export="1" width="60" height="20"><text size="14" align="left" color="#25313a">86%</text></label></hbox></vbox>
+					<vbox width="379" height="42" space_y="2"><label width="379"><text size="14" color="#25313a">Безопасность</text></label><hbox width="379" height="20" space_x="10"><vbox width="309" height="20"><sprite name="safety_fill" export="1" align="overlap,left" width="309" height="20"/><sprite name="safety_background" export="1" align="overlap,left" width="309" height="20"/></vbox><label name="safety_label" export="1" width="60" height="20"><text size="14" align="left" color="#25313a">94%</text></label></hbox></vbox>
+					<vbox width="379" height="42" space_y="2"><label width="379"><text size="14" color="#25313a">Соблюдение регламента</text></label><hbox width="379" height="20" space_x="10"><vbox width="309" height="20"><sprite name="compliance_fill" export="1" align="overlap,left" width="309" height="20"/><sprite name="compliance_background" export="1" align="overlap,left" width="309" height="20"/></vbox><label name="compliance_label" export="1" width="60" height="20"><text size="14" align="left" color="#25313a">91%</text></label></hbox></vbox>
+				</vbox>
+			</hbox>
+		</vbox>
+		<vbox name="achievements_panel" export="1" width="1340" height="180" space_y="5" padding_l="8" padding_r="8" padding_t="8" padding_b="8">
+			<label width="1324"><text size="21" color="#ff2868">Полученные достижения</text></label>
+			<scrollbox name="achievements_scroll" export="1" width="1324" height="112" border="0" background="0" henabled="1" venabled="0" hhidden="3" vhidden="3">
+			<align align="left">
+			<hbox name="achievements_row" export="1" width="1960" height="112" space_x="8">
+				<hbox name="achievement_item_1" export="1" width="320" height="112" space_x="12">
+					<sprite width="76" height="76" texcoord_z="0.333333" texture="ui/Achievements.png"/>
+					<vbox width="224" space_y="5"><label width="224"><text size="17" color="#25313a">Первый маршрут</text></label><label width="224"><text size="13" color="#52606a">Первая смена завершена</text></label><label width="224"><text size="13" color="#52606a">успешно</text></label></vbox>
+				</hbox>
+				<hbox name="achievement_item_2" export="1" width="320" height="112" space_x="12">
+					<sprite width="76" height="76" texcoord_x="0.333333" texcoord_z="0.666667" texture="ui/Achievements.png"/>
+					<vbox width="224" space_y="5"><label width="224"><text size="17" color="#25313a">Безопасный рейс</text></label><label width="224"><text size="13" color="#52606a">10 смен без нарушений</text></label><label width="224"><text size="13" color="#52606a">безопасности</text></label></vbox>
+				</hbox>
+				<hbox name="achievement_item_3" export="1" width="320" height="112" space_x="12">
+					<sprite width="76" height="76" texcoord_x="0.666667" texture="ui/Achievements.png"/>
+					<vbox width="224" space_y="5"><label width="224"><text size="17" color="#25313a">По регламенту</text></label><label width="224"><text size="13" color="#52606a">Месяц работы</text></label><label width="224"><text size="13" color="#52606a">без замечаний</text></label></vbox>
+				</hbox>
+				<hbox name="achievement_item_4" export="1" width="320" height="112" space_x="12">
+					<sprite width="76" height="76" texcoord_z="0.333333" texture="ui/Achievements.png"/>
+					<vbox width="224" space_y="5"><label width="224"><text size="17" color="#25313a">Опытный водитель</text></label><label width="224"><text size="13" color="#52606a">Накоплено 10 000</text></label><label width="224"><text size="13" color="#52606a">очков опыта</text></label></vbox>
+				</hbox>
+				<hbox name="achievement_item_5" export="1" width="320" height="112" space_x="12">
+					<sprite width="76" height="76" texcoord_x="0.333333" texcoord_z="0.666667" texture="ui/Achievements.png"/>
+					<vbox width="224" space_y="5"><label width="224"><text size="17" color="#25313a">Любимый маршрут</text></label><label width="224"><text size="13" color="#52606a">Маршрут пройден</text></label><label width="224"><text size="13" color="#52606a">50 раз</text></label></vbox>
+				</hbox>
+				<hbox name="achievement_item_6" export="1" width="320" height="112" space_x="12">
+					<sprite width="76" height="76" texcoord_x="0.666667" texture="ui/Achievements.png"/>
+					<vbox width="224" space_y="5"><label width="224"><text size="17" color="#25313a">Выбор пассажиров</text></label><label width="224"><text size="13" color="#52606a">Лояльность выше 95%</text></label><label width="224"><text size="13" color="#52606a">за месяц</text></label></vbox>
+				</hbox>
+			</hbox>
+			</align>
+			</scrollbox>
+			<label name="achievements_empty" export="1" width="1324"><text size="16" align="center" color="#52606a">Достижения пока не получены</text></label>
+		</vbox>
+		<vbox name="ranking_panel" export="1" width="1340" height="165" space_y="8" padding_l="22" padding_r="22" padding_t="14" padding_b="14">
+			<label width="1296"><text size="21" color="#ff2868">Лучшие сотрудники</text></label>
+			<gridbox columns="4" width="1296" height="105" space_x="18" space_y="6" ratio="1,5,3,2">
+				<label><text size="16" color="#ff2868">Место</text></label><label><text size="16" color="#ff2868">Сотрудник</text></label><label><text size="16" color="#ff2868">Маршрут</text></label><label><text size="16" color="#ff2868">Опыт</text></label>
+				<label><text size="17" color="#25313a">1</text></label><label><text size="17" color="#25313a">Смирнова Анна</text></label><label><text size="17" color="#25313a">№ 24</text></label><hbox width="190" space_x="8"><label width="62"><text size="16" color="#25313a">18 920</text></label><vbox width="120" height="8"><sprite name="rank_xp_1_fill" export="1" align="overlap,left" width="120" height="8"/><sprite name="rank_xp_1_background" export="1" align="overlap,left" width="120" height="8"/></vbox></hbox>
+				<label><text size="17" color="#25313a">2</text></label><label><text size="17" color="#25313a">Петров Алексей</text></label><label><text size="17" color="#25313a">№ 11</text></label><hbox width="190" space_x="8"><label width="62"><text size="16" color="#25313a">15 670</text></label><vbox width="120" height="8"><sprite name="rank_xp_2_fill" export="1" align="overlap,left" width="120" height="8"/><sprite name="rank_xp_2_background" export="1" align="overlap,left" width="120" height="8"/></vbox></hbox>
+				<label><text size="17" color="#25313a">3</text></label><label><text size="17" color="#25313a">Иванов Иван</text></label><label><text size="17" color="#25313a">№ 17</text></label><hbox width="190" space_x="8"><label width="62"><text size="16" color="#25313a">12 480</text></label><vbox width="120" height="8"><sprite name="rank_xp_3_fill" export="1" align="overlap,left" width="120" height="8"/><sprite name="rank_xp_3_background" export="1" align="overlap,left" width="120" height="8"/></vbox></hbox>
+			</gridbox>
+		</vbox>
+		<sprite name="profile_back_button" export="1" texcoord_w="0.5" texture="ui/Back.png"/>
+	</vbox>
+</ui>

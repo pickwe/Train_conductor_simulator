@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>f9284f6fb4f8360298c07d79f10488849cf27a13</guid>
 	<type>material_graph</type>
-	<hash>fcbf40eebbe3c90fb8ce1824073512220e8973b8327b6ec30cf4d7c9508b7b3a</hash>
+	<hash>7542380fa00cce854c1dfb48d0211f65dbc6442da17b81c3b52f01b84516c0a2</hash>
 	<runtimes>
 		<runtime id="f9284f6fb4f8360298c07d79f10488849cf27a13" name="wall_0_mat.mgraph" link="0"/>
 		<runtime id="b50d447466b5a543f70c09c68846566d9f15c4e8" name="wall_0_mat" link="1" type="5"/>

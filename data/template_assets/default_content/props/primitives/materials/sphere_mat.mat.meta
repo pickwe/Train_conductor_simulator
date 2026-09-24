@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>ebdbd7378e47a573cc3484a02a6bdc11a2c5f17c</guid>
 	<type>material</type>
-	<hash>91bbcaa757a72db9aee09baf313626f7004631183a48c2359d5db837ef17ada0</hash>
+	<hash>9235c236d2beed0af1846a1e598d2c40a83ae3cbd7e0174fc24167f67b3dce42</hash>
 	<runtimes>
 		<runtime id="ebdbd7378e47a573cc3484a02a6bdc11a2c5f17c" name="sphere_mat" link="0" type="5"/>
 	</runtimes>

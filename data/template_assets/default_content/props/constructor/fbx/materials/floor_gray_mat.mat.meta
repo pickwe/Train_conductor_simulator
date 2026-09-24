@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>9ce875824cc0b6f9c970740499c26f93691e2fd6</guid>
 	<type>material</type>
-	<hash>17b774da4e65031e74d58cf06362053cb734a35c4b76dcd7c6e5af72c6aa5541</hash>
+	<hash>ef6844bf29bf0c93512b18ddd0b96b1e6aa55000eb17b355a773181c9ed115fd</hash>
 	<runtimes>
 		<runtime id="9ce875824cc0b6f9c970740499c26f93691e2fd6" name="floor_gray_mat" link="0" type="5"/>
 	</runtimes>

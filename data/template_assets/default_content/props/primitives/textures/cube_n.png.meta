@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>9342ec43bd6f06db17b9cc05a00e2c40b9ada3ba</guid>
 	<type>texture</type>
-	<hash>702638da7495bdc171d1a2f9fc772981d559aebbc9a8c784b1cf413605939a88</hash>
+	<hash>f6b50cf8d5db353a3611532a4872418f990c8ece7440a14c5424d1f26deb6006</hash>
 	<runtimes>
 		<runtime id="9342ec43bd6f06db17b9cc05a00e2c40b9ada3ba" name="cube_n.png" link="0" type="6"/>
 		<runtime id="b6674b045b8932059769ee326a8eb293037aeb19" name="cube_n.texture" link="1" type="6"/>

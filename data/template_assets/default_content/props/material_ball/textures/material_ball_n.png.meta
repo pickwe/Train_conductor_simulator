@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>2af385897c625154ab088ca30fd209a6ab2794cd</guid>
 	<type>texture</type>
-	<hash>aa0aea89425d3beef6122d9e33e88b7e0520c853fc6037df26080b4c930c32e5</hash>
+	<hash>99aff9ad626d74dc81aaa81bf1846406edcc377744631973f661675c1b1c8f67</hash>
 	<runtimes>
 		<runtime id="2af385897c625154ab088ca30fd209a6ab2794cd" name="material_ball_n.png" link="0" type="6"/>
 		<runtime id="3ac02fc875c310878d1b943add8e9651fa79db7c" name="material_ball_n.texture" link="1" type="6"/>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>7543ba743693606c8660b19e5d0fb4b90d1d2c14</guid>
+	<type>texture</type>
+	<hash>a7354c56cad19ce67c2a17e80c594edfeb34978c7060e11c8eddb66a628cf4bb</hash>
+	<runtimes>
+		<runtime id="7543ba743693606c8660b19e5d0fb4b90d1d2c14" name="RatingPanel.png" link="0" type="6"/>
+		<runtime id="d77a2415c798656d2352d3b32405eee6d46e2863" name="RatingPanel.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

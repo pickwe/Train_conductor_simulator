@@ -2,17 +2,17 @@
 <asset version="2.22.0.0">
 	<guid>fe7bc3548bbf56a307964ba6e46aeecdc307c1c8</guid>
 	<type>fbx</type>
-	<hash>c8f4e27a4515efa78b21a1ca499067d237e2462d5ef456132de0368b7c5c3af4</hash>
+	<hash>7833482a5e4c23379a5ac0efa6bb97f9e240b6d24c656a4608ec9022fae31c8a</hash>
 	<runtimes>
 		<runtime id="fe7bc3548bbf56a307964ba6e46aeecdc307c1c8" name="plane.fbx" link="0"/>
 		<runtime id="27917a872cd2f63a9cea9051c1c18d7c02be8aab" name="plane.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">bca97487</parameter>
+				<parameter type="string" name="id">e9d4edd3</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="6e10090b18eccaeeaa8e15759a9fa850236a5f6f" name="plane.mesh" link="2" type="1">
 			<parameters>
-				<parameter type="string" name="id">bca97487</parameter>
+				<parameter type="string" name="id">fd3d083c</parameter>
 			</parameters>
 		</runtime>
 	</runtimes>

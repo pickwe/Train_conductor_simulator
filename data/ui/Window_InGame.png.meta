@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>e0c67c20f8eaf03f6ef741aac0ab6aad1a8bbe40</guid>
+	<type>texture</type>
+	<hash>c418a771d1ec17ecfda2b008ec3c061e1d072447b4aeba13e033a9f9b32e0c8e</hash>
+	<runtimes>
+		<runtime id="e0c67c20f8eaf03f6ef741aac0ab6aad1a8bbe40" name="Window_InGame.png" link="0" type="6"/>
+		<runtime id="d2636a31f0cd3631b07f32ef25bc793bd7951c9f" name="Window_InGame.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>
