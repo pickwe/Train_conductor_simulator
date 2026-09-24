@@ -6,23 +6,18 @@ public partial class MenuManager : Component
 {
 	[ParameterFile(Filter = ".world")] public string mainWorldPath = "";
 	[ParameterAsset(Filter = ".ui")] public AssetLink menuUiFile = new AssetLink("ui/menu.ui");
-	[ParameterFile(Filter = ".oga|.wav|.mp3")] public string menuMusicPath = "";
-	[ParameterFile(Filter = ".oga|.wav|.mp3")] public string gameplayMusicPath = "";
-	[ParameterFile(Filter = ".png|.texture")] public string menuBackgroundTexture = "";
-	[ParameterFile(Filter = ".png|.texture")] public string buttonTexture = "";
+	[ParameterFile(Filter = ".ogg|.wav|.mp3")] public string menuMusicPath = "";
+	[ParameterFile(Filter = ".ogg|.wav|.mp3")] public string gameplayMusicPath = "";
 	public float musicGain = 0.7f;
+	public float environmentGain = 0.7f;
 	public string playerName = "Иванов Иван Иванович";
 	public string workExperience = "6 лет 4 месяца";
 	public string currentRoute = "17";
-	public string departureTime = "08:15";
-	public string arrivalTime = "16:40";
 	public int employeeExperience = 12480;
 	[ParameterSlider(Min = 0, Max = 6)] public int unlockedAchievements = 5;
 	[ParameterSlider(Min = 0, Max = 100)] public int passengerLoyalty = 86;
 	[ParameterSlider(Min = 0, Max = 100)] public int safetyRating = 94;
 	[ParameterSlider(Min = 0, Max = 100)] public int regulationCompliance = 91;
-	[ParameterSlider(Min = 0.1f, Max = 0.35f)] public float mainButtonWidthRatio = 0.18f;
-	[ParameterSlider(Min = 0.2f, Max = 0.5f)] public float mainButtonsHeightRatio = 0.30f;
 	public Input.KEY pauseKey = Input.KEY.ESC;
 	public Input.KEY profileKey = Input.KEY.P;
 
@@ -30,17 +25,17 @@ public partial class MenuManager : Component
 	private enum LoginTarget { Start, Profile }
 	private Gui gui;
 	private UserInterface ui;
-	private WidgetSprite background, loginInputBackground, passwordInputBackground, volumeTrack, soundPointer;
+	private WidgetSprite background, loginInputBackground, passwordInputBackground, volumeTrack, soundPointer, sfxTrack, sfxPointer;
 	private WidgetSprite[] progressBackgrounds, progressFills;
 	private WidgetVBox mainScreen, pauseScreen, loginScreen, settingsScreen, profileScreen;
 	private WidgetVBox profileSummaryPanel, achievementsPanel, rankingPanel;
 	private WidgetHBox achievementsRow, achievementItem1, achievementItem2, achievementItem3;
 	private WidgetHBox achievementItem4, achievementItem5, achievementItem6;
 	private WidgetScrollBox achievementsScroll;
-	private WidgetLabel mainStatus, loginStatus, volumeLabel, profileName, profileExperience, profileXp, profileRoute, achievementsEmpty;
+	private WidgetLabel mainStatus, loginStatus, volumeLabel, sfxVolumeLabel, profileName, profileExperience, profileXp, profileRoute, achievementsEmpty;
 	private WidgetLabel loyaltyLabel, safetyLabel, complianceLabel;
 	private WidgetEditLine loginEdit, passwordEdit;
-	private WidgetSlider volumeSlider;
+	private WidgetSlider volumeSlider, sfxVolumeSlider;
 	private readonly List<WidgetSprite> mainButtonSprites = new List<WidgetSprite>();
 	private readonly List<WidgetSprite> allButtonSprites = new List<WidgetSprite>();
 	private readonly List<Image> loadedImages = new List<Image>();
@@ -60,6 +55,10 @@ public partial class MenuManager : Component
 	private const float ReferenceHeight = 900.0f;
 	private const float VolumeScaleSourceWidth = 3457.0f;
 	private const float VolumeScaleActiveWidth = 3195.0f;
+	private const int EnvironmentSoundChannel = 0;
+	private const int EnvironmentSoundMask = 1 << EnvironmentSoundChannel;
+	private const int MenuMusicChannel = 1;
+	private const int MenuMusicMask = 1 << MenuMusicChannel;
 
 	private class WidgetLayout
 	{
@@ -87,12 +86,17 @@ public partial class MenuManager : Component
 		RefreshMainTextureLayout();
 		ResizeInterface();
 		PositionInputSprites();
-		UpdateSoundPointer();
+		UpdateSoundPointers();
 		UpdateProfileProgressBars();
 		UpdateVolumeScroll();
 		UpdateAchievementsScroll();
 		ResizeBackground();
-		if (loadRequested && !World.IsLoadWorldRequested) loadRequested = false;
+		if (loadRequested && !World.IsLoadWorldRequested)
+		{
+			loadRequested = false;
+			UpdatePlayerSoundMask();
+			ApplyVolumeSettings();
+		}
 		UpdateKeys();
 		if (state == Screen.Game && (Game.Scale == 0.0f || Physics.Scale == 0.0f)) ResumeScales();
 		if (state == Screen.Game) GrabMouse(); else ReleaseMouse();
@@ -128,6 +132,7 @@ public partial class MenuManager : Component
 		loginInputBackground = W<WidgetSprite>("login_input_background");
 		passwordInputBackground = W<WidgetSprite>("password_input_background");
 		volumeTrack = W<WidgetSprite>("slider_track"); soundPointer = W<WidgetSprite>("sound_pointer");
+		sfxTrack = W<WidgetSprite>("sfx_track"); sfxPointer = W<WidgetSprite>("sfx_pointer");
 		progressBackgrounds = new WidgetSprite[] {
 			W<WidgetSprite>("profile_xp_background"), W<WidgetSprite>("loyalty_background"),
 			W<WidgetSprite>("safety_background"), W<WidgetSprite>("compliance_background"),
@@ -149,13 +154,14 @@ public partial class MenuManager : Component
 		achievementItem4 = W<WidgetHBox>("achievement_item_4"); achievementItem5 = W<WidgetHBox>("achievement_item_5");
 		achievementItem6 = W<WidgetHBox>("achievement_item_6");
 		mainStatus = W<WidgetLabel>("main_status"); loginStatus = W<WidgetLabel>("login_status");
-		volumeLabel = W<WidgetLabel>("volume_label"); profileName = W<WidgetLabel>("profile_name");
+		volumeLabel = W<WidgetLabel>("volume_label"); sfxVolumeLabel = W<WidgetLabel>("sfx_volume_label");
+		profileName = W<WidgetLabel>("profile_name");
 		profileExperience = W<WidgetLabel>("profile_experience"); profileXp = W<WidgetLabel>("profile_xp");
 		profileRoute = W<WidgetLabel>("profile_route"); achievementsEmpty = W<WidgetLabel>("achievements_empty");
 		loyaltyLabel = W<WidgetLabel>("loyalty_label");
 		safetyLabel = W<WidgetLabel>("safety_label"); complianceLabel = W<WidgetLabel>("compliance_label");
 		loginEdit = W<WidgetEditLine>("login_edit"); passwordEdit = W<WidgetEditLine>("password_edit");
-		volumeSlider = W<WidgetSlider>("volume_slider");
+		volumeSlider = W<WidgetSlider>("volume_slider"); sfxVolumeSlider = W<WidgetSlider>("sfx_volume_slider");
 
 		WidgetSprite start = W<WidgetSprite>("start_button"), settings = W<WidgetSprite>("settings_button");
 		WidgetSprite profile = W<WidgetSprite>("profile_button"), exit = W<WidgetSprite>("exit_button");
@@ -173,21 +179,23 @@ public partial class MenuManager : Component
 			!LoadSpriteImage(profileBack, "ui/Back.png") ||
 			!LoadSpriteImage(loginInputBackground, "ui/Login.png") || !LoadSpriteImage(passwordInputBackground, "ui/Password.png") ||
 			!LoadSpriteImage(volumeTrack, "ui/MusicScale.png") || !LoadSpriteImage(soundPointer, "ui/SoundPointer.png") ||
+			!LoadSpriteImage(sfxTrack, "ui/SFXScale.png") || !LoadSpriteImage(sfxPointer, "ui/SoundPointer.png") ||
 			!LoadProgressImages())
 		{
 			Log.Error("MenuManager: failed to load one or more menu PNG files.\n");
 			return false;
 		}
 
-		if (background == null || loginInputBackground == null || passwordInputBackground == null || volumeTrack == null || soundPointer == null ||
+		if (background == null || loginInputBackground == null || passwordInputBackground == null ||
+			volumeTrack == null || soundPointer == null || sfxTrack == null || sfxPointer == null ||
 			mainScreen == null || pauseScreen == null || loginScreen == null || settingsScreen == null ||
 			profileScreen == null || profileSummaryPanel == null || achievementsPanel == null || rankingPanel == null ||
 			achievementsScroll == null || achievementsRow == null || achievementItem1 == null || achievementItem2 == null || achievementItem3 == null ||
 			achievementItem4 == null || achievementItem5 == null || achievementItem6 == null ||
-			mainStatus == null || loginStatus == null || volumeLabel == null || profileName == null ||
+			mainStatus == null || loginStatus == null || volumeLabel == null || sfxVolumeLabel == null || profileName == null ||
 			profileExperience == null || profileXp == null || profileRoute == null || achievementsEmpty == null || loyaltyLabel == null ||
 			safetyLabel == null || complianceLabel == null || loginEdit == null || passwordEdit == null ||
-			volumeSlider == null ||
+			volumeSlider == null || sfxVolumeSlider == null ||
 			start == null || settings == null || profile == null || exit == null || resume == null || pauseSettings == null || pauseProfile == null ||
 			menu == null || login == null || loginBack == null || settingsBack == null || profileBack == null)
 		{
@@ -199,7 +207,8 @@ public partial class MenuManager : Component
 		resume.EventClicked.Connect(ShowGame); pauseSettings.EventClicked.Connect(ShowSettings); pauseProfile.EventClicked.Connect(RequestProfile);
 		menu.EventClicked.Connect(() => Engine.Quit()); login.EventClicked.Connect(Login);
 		loginBack.EventClicked.Connect(BackFromLogin); settingsBack.EventClicked.Connect(BackFromSettings);
-		profileBack.EventClicked.Connect(BackFromProfile); volumeSlider.EventChanged.Connect(ChangeVolume);
+		profileBack.EventClicked.Connect(BackFromProfile); volumeSlider.EventChanged.Connect(ChangeMenuVolume);
+		sfxVolumeSlider.EventChanged.Connect(ChangeEnvironmentVolume);
 		WidgetSprite[] buttons = { start, settings, profile, exit, resume, pauseSettings, pauseProfile, menu, login, loginBack, settingsBack, profileBack };
 		foreach (WidgetSprite button in buttons) BindButtonSprite(button);
 		allButtonSprites.AddRange(buttons);
@@ -221,8 +230,12 @@ public partial class MenuManager : Component
 		passwordEdit.Background = 0;
 		volumeSlider.BackgroundColor = new vec4(1.0f, 1.0f, 1.0f, 0.0f);
 		volumeSlider.ButtonColor = new vec4(1.0f, 1.0f, 1.0f, 0.0f);
+		sfxVolumeSlider.BackgroundColor = new vec4(1.0f, 1.0f, 1.0f, 0.0f);
+		sfxVolumeSlider.ButtonColor = new vec4(1.0f, 1.0f, 1.0f, 0.0f);
 		volumeTrack.IntersectionEnabled = false;
 		soundPointer.IntersectionEnabled = false;
+		sfxTrack.IntersectionEnabled = false;
+		sfxPointer.IntersectionEnabled = false;
 		foreach (WidgetSprite sprite in progressBackgrounds) sprite.IntersectionEnabled = false;
 		foreach (WidgetSprite sprite in progressFills) sprite.IntersectionEnabled = false;
 		loginEdit.BorderColor = new vec4(0.0f, 0.0f, 0.0f, 0.0f);
@@ -233,7 +246,8 @@ public partial class MenuManager : Component
 		mainScreen.Background = 0;
 		mainScreen.IntersectionEnabled = false;
 		mainScreen.Hidden = true;
-		volumeSlider.Value = SnapVolume((int)(Sound.Volume * 100.0f)); ChangeVolume();
+		volumeSlider.Value = SnapVolume((int)(musicGain * 100.0f)); ChangeMenuVolume();
+		sfxVolumeSlider.Value = SnapVolume((int)(environmentGain * 100.0f)); ChangeEnvironmentVolume();
 		gui.AddChild(background, Gui.ALIGN_OVERLAP | Gui.ALIGN_BACKGROUND);
 		gui.AddChild(loginInputBackground, Gui.ALIGN_OVERLAP);
 		gui.AddChild(passwordInputBackground, Gui.ALIGN_OVERLAP);
@@ -407,17 +421,22 @@ public partial class MenuManager : Component
 		loginInputBackground.SetPosition(loginEdit.ScreenPositionX, loginEdit.ScreenPositionY);
 		passwordInputBackground.SetPosition(passwordEdit.ScreenPositionX, passwordEdit.ScreenPositionY);
 	}
-	private void UpdateSoundPointer()
+	private void UpdateSoundPointers()
 	{
-		if (volumeSlider == null || volumeTrack == null || soundPointer == null) return;
+		UpdateSoundPointer(volumeTrack, soundPointer, volumeSlider);
+		UpdateSoundPointer(sfxTrack, sfxPointer, sfxVolumeSlider);
+	}
+	private void UpdateSoundPointer(WidgetSprite track, WidgetSprite pointer, WidgetSlider slider)
+	{
+		if (slider == null || track == null || pointer == null) return;
 		float sidePaddingRatio = (VolumeScaleSourceWidth - VolumeScaleActiveWidth) * 0.5f / VolumeScaleSourceWidth;
 		float activeWidthRatio = VolumeScaleActiveWidth / VolumeScaleSourceWidth;
-		int activeLeft = (int)Math.Round(volumeTrack.Width * sidePaddingRatio);
-		int activeWidth = (int)Math.Round(volumeTrack.Width * activeWidthRatio);
-		int x = volumeTrack.PositionX + activeLeft +
-			(int)Math.Round(activeWidth * (volumeSlider.Value / 100.0f)) - soundPointer.Width / 2;
-		int lineY = volumeTrack.PositionY + (int)(volumeTrack.Height * 0.80f);
-		soundPointer.SetPosition(x, lineY - soundPointer.Height / 2);
+		int activeLeft = (int)Math.Round(track.Width * sidePaddingRatio);
+		int activeWidth = (int)Math.Round(track.Width * activeWidthRatio);
+		int x = track.PositionX + activeLeft +
+			(int)Math.Round(activeWidth * (slider.Value / 100.0f)) - pointer.Width / 2;
+		int lineY = track.PositionY + (int)(track.Height * 0.80f);
+		pointer.SetPosition(x, lineY - pointer.Height / 2);
 	}
 	private void UpdateProfileProgressBars()
 	{
@@ -441,15 +460,21 @@ public partial class MenuManager : Component
 	}
 	private void UpdateVolumeScroll()
 	{
-		if (state != Screen.Settings || volumeTrack == null || volumeSlider == null) return;
+		if (state != Screen.Settings) return;
+		UpdateVolumeScroll(volumeTrack, volumeSlider, ChangeMenuVolume);
+		UpdateVolumeScroll(sfxTrack, sfxVolumeSlider, ChangeEnvironmentVolume);
+	}
+	private void UpdateVolumeScroll(WidgetSprite track, WidgetSlider slider, Action change)
+	{
+		if (track == null || slider == null) return;
 		int mouseX = gui.MouseX;
 		int mouseY = gui.MouseY;
-		bool hovered = mouseX >= volumeTrack.ScreenPositionX && mouseX < volumeTrack.ScreenPositionX + volumeTrack.Width &&
-			mouseY >= volumeTrack.ScreenPositionY && mouseY < volumeTrack.ScreenPositionY + volumeTrack.Height;
+		bool hovered = mouseX >= track.ScreenPositionX && mouseX < track.ScreenPositionX + track.Width &&
+			mouseY >= track.ScreenPositionY && mouseY < track.ScreenPositionY + track.Height;
 		int wheel = Input.MouseWheel;
 		if (!hovered || wheel == 0) return;
-		volumeSlider.Value = Math.Max(0, Math.Min(100, volumeSlider.Value + wheel * 10));
-		ChangeVolume();
+		slider.Value = Math.Max(0, Math.Min(100, slider.Value + wheel * 10));
+		change();
 	}
 	private void UpdateAchievementsScroll()
 	{
@@ -551,19 +576,34 @@ public partial class MenuManager : Component
 	private void BackFromSettings() { if (returnState == Screen.Pause) ShowPause(); else ShowMain(); }
 	private void BackFromProfile() { if (returnState == Screen.Game) ShowGame(); else if (returnState == Screen.Pause) ShowPause(); else ShowMain(); }
 
-	private void ChangeVolume()
+	private void ChangeMenuVolume()
 	{
 		if (volumeSlider == null || changingVolume) return;
 		changingVolume = true; int value = SnapVolume(volumeSlider.Value); volumeSlider.Value = value;
-		Sound.Volume = value / 100.0f; volumeLabel.Text = "Громкость: " + value; UpdateSoundPointer(); changingVolume = false;
+		musicGain = value / 100.0f;
+		Sound.SetSourceVolume(MenuMusicChannel, musicGain);
+		if (menuMusic != null) menuMusic.Gain = 1.0f;
+		volumeLabel.Text = "Мелодия меню: " + value;
+		UpdateSoundPointers(); changingVolume = false;
+	}
+	private void ChangeEnvironmentVolume()
+	{
+		if (sfxVolumeSlider == null || changingVolume) return;
+		changingVolume = true; int value = SnapVolume(sfxVolumeSlider.Value); sfxVolumeSlider.Value = value;
+		environmentGain = value / 100.0f;
+		Sound.SetSourceVolume(EnvironmentSoundChannel, environmentGain);
+		if (gameplayMusic != null) gameplayMusic.Gain = 1.0f;
+		sfxVolumeLabel.Text = "Звук окружения: " + value;
+		UpdateSoundPointers(); changingVolume = false;
 	}
 	private int SnapVolume(int value) { return Math.Max(0, Math.Min(100, ((value + 5) / 10) * 10)); }
 
-	private void ShowMain() { gameplayStarted = false; loadRequested = false; SetState(Screen.Main); PauseScales(); PlayMusic(ref menuMusic, menuMusicPath); StopMusic(ref gameplayMusic); }
-	private void ShowGame() { SetState(Screen.Game); ResumeScales(); StopMusic(ref menuMusic); PlayMusic(ref gameplayMusic, gameplayMusicPath); }
+	private void ShowMain() { gameplayStarted = false; loadRequested = false; SetState(Screen.Main); PauseScales(); }
+	private void ShowGame() { SetState(Screen.Game); ResumeScales(); }
 	private void ShowPause() { SetState(Screen.Pause); PauseScales(); }
 	private void SetState(Screen next)
 	{
+		Screen previous = state;
 		state = next; bool game = state == Screen.Game || loadRequested; background.Hidden = game;
 		foreach (WidgetSprite button in mainButtonSprites) button.Hidden = state != Screen.Main;
 		mainScreen.Hidden = state != Screen.Main || string.IsNullOrWhiteSpace(mainStatus.Text); pauseScreen.Hidden = state != Screen.Pause;
@@ -571,6 +611,35 @@ public partial class MenuManager : Component
 		profileScreen.Hidden = state != Screen.Profile;
 		loginInputBackground.Hidden = state != Screen.Login;
 		passwordInputBackground.Hidden = state != Screen.Login;
+		UpdateMusic(previous);
+	}
+
+	private void UpdateMusic(Screen previous)
+	{
+		ApplyVolumeSettings();
+		if (state == Screen.Game)
+		{
+			StopMusic(ref menuMusic);
+			PlayMusic(ref gameplayMusic, gameplayMusicPath, EnvironmentSoundMask);
+		}
+		else
+		{
+			StopMusic(ref gameplayMusic);
+			if (previous == Screen.Game || menuMusic == null || !menuMusic.IsPlaying)
+				RestartMusic(ref menuMusic, menuMusicPath, MenuMusicMask);
+		}
+	}
+
+	private void UpdatePlayerSoundMask()
+	{
+		if (Game.Player != null)
+			Game.Player.SourceMask |= EnvironmentSoundMask | MenuMusicMask;
+	}
+
+	private void ApplyVolumeSettings()
+	{
+		Sound.SetSourceVolume(MenuMusicChannel, musicGain);
+		Sound.SetSourceVolume(EnvironmentSoundChannel, environmentGain);
 	}
 
 	private void GrabMouse() { Input.MouseHandle = Input.MOUSE_HANDLE.GRAB; Input.MouseGrab = true; Input.MouseCursorHide = true; Input.MouseCursorNeedUpdate = true; }
@@ -606,11 +675,30 @@ public partial class MenuManager : Component
 		background.Width = width; background.Height = height; background.SetPosition((gui.Width - width) / 2, (gui.Height - height) / 2);
 	}
 
-	private void PlayMusic(ref AmbientSource source, string path)
+	private void PlayMusic(ref AmbientSource source, string path, int sourceMask)
 	{
 		if (string.IsNullOrWhiteSpace(path)) return;
 		if (source == null) { source = new AmbientSource(path, 1); source.Loop = 1; }
-		source.Gain = musicGain; if (!source.IsPlaying) source.Play();
+		UpdatePlayerSoundMask();
+		ApplyVolumeSettings();
+		source.SourceMask = sourceMask;
+		source.Gain = 1.0f; if (!source.IsPlaying) source.Play();
+	}
+	private void RestartMusic(ref AmbientSource source, string path, int sourceMask)
+	{
+		if (string.IsNullOrWhiteSpace(path)) return;
+		if (source == null) { source = new AmbientSource(path, 1); source.Loop = 1; }
+		UpdatePlayerSoundMask();
+		ApplyVolumeSettings();
+		source.SourceMask = sourceMask;
+		if (source.IsPlaying)
+		{
+			source.Stop();
+			Sound.RenderWorld(1);
+		}
+		source.Time = 0.0f;
+		source.Gain = 1.0f;
+		source.Play();
 	}
 	private void StopMusic(ref AmbientSource source) { if (source != null && source.IsPlaying) source.Stop(); }
 }
