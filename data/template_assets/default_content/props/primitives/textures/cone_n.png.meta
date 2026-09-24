@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>aa480c17309a5a3ef84a1e147ac713a71e4727c1</guid>
 	<type>texture</type>
-	<hash>d11fe6930536d1ebe641de608c4cd19024abb0994cff89afe2baa19ae5e1a3cd</hash>
+	<hash>5e74439b8f52406040755a1c2a025dde50b3a5ab907b2aefe8aaf591505df981</hash>
 	<runtimes>
 		<runtime id="aa480c17309a5a3ef84a1e147ac713a71e4727c1" name="cone_n.png" link="0" type="6"/>
 		<runtime id="f225c61ccb2a78ee75153c32ff600758eeffa623" name="cone_n.texture" link="1" type="6"/>

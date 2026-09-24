@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>882b6085dc14d820d2baacff35be56523b800189</guid>
 	<type>texture</type>
-	<hash>015f51e4467e068c1de072a7b5523d2ab39b969abf90e75dfd506858246e283a</hash>
+	<hash>c1e5fadb5de14614766d18854da9af850a3f18436c9fd6114f1e54749036c7e0</hash>
 	<runtimes>
 		<runtime id="882b6085dc14d820d2baacff35be56523b800189" name="wall_alb.png" link="0" type="6"/>
 		<runtime id="68ec9d54345668a38a6e35a66a9dd0cdeba93bc8" name="wall_alb.texture" link="1" type="6"/>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>2affa1fbc0fa80b1e6868b693897de77997c85d9</guid>
+	<type>texture</type>
+	<hash>b233e04e9c979ac3fecf9d0d799a57aceaefda94ec276d9992fb06bcf192e2c6</hash>
+	<runtimes>
+		<runtime id="2affa1fbc0fa80b1e6868b693897de77997c85d9" name="MusicScale.png" link="0" type="6"/>
+		<runtime id="8c5419c4690dc51622c9876e8185fed7b7473564" name="MusicScale.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

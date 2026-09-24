@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>2cc5116978739450ccfeb467ab96f17fdfbd7a17</guid>
+	<type>texture</type>
+	<hash>51d97e472d90efb149771ba37131ddd03ac54ed189f46feae7990097683a3cef</hash>
+	<runtimes>
+		<runtime id="2cc5116978739450ccfeb467ab96f17fdfbd7a17" name="Enter.png" link="0" type="6"/>
+		<runtime id="9b483fac536a5d4cc15a4a96f4f041c3fb68ec4c" name="Enter.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

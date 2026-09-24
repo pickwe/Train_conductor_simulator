@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>1cc1c6c9511b219471a49fe336aa83e6d51b4a0d</guid>
 	<type>texture</type>
-	<hash>4fd43e270dcd4fa134a1f4ccfc9314521068df67a2d3d5e5c68f9b9221e216a7</hash>
+	<hash>dd713ec2a305d70e6c4119b413bff63e700871d3eec37f8d08c53fb76b71947c</hash>
 	<runtimes>
 		<runtime id="1cc1c6c9511b219471a49fe336aa83e6d51b4a0d" name="floor_0_n.png" link="0" type="6"/>
 		<runtime id="2997e40822c8b7c7ec48927a7464ff91588cb3bc" name="floor_0_n.texture" link="1" type="6"/>

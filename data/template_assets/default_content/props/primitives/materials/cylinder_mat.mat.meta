@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>7028881e5062b70f344d72d5bb1636962184330e</guid>
 	<type>material</type>
-	<hash>bbcbd1a211c8fb9e40c27493f3184362c3b641405cf93d685cb32606158dd5bc</hash>
+	<hash>05216d8e2f9470982cae0ab1737436a9615b24097ba1b53ae3ac6bb3964eeaff</hash>
 	<runtimes>
 		<runtime id="7028881e5062b70f344d72d5bb1636962184330e" name="cylinder_mat" link="0" type="5"/>
 	</runtimes>

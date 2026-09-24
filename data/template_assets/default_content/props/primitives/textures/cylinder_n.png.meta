@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>55932ca14d321a97d0da0a76fc6988ac2446bc7e</guid>
 	<type>texture</type>
-	<hash>ba886a83a3a9b56c98b6743a2c64d86f3a9a01d91ff57106921c786c4c96d669</hash>
+	<hash>36063d7c5d7e4b1a8dbe5de9cf54feaaec458b9bd5df95b16553680240bf6ccd</hash>
 	<runtimes>
 		<runtime id="55932ca14d321a97d0da0a76fc6988ac2446bc7e" name="cylinder_n.png" link="0" type="6"/>
 		<runtime id="5c4cccedf7d047b63b9f6ff8e17f4d46bc703f86" name="cylinder_n.texture" link="1" type="6"/>

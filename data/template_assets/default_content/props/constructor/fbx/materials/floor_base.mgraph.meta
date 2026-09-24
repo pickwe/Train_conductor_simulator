@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>f554202259d421198cd597a44cb6feb3eab03476</guid>
 	<type>material_graph</type>
-	<hash>5890220bcf0abedfe3de0868504db7a4a8f33c720748e2aa8d72539b8d2f3290</hash>
+	<hash>5aa64ee52402f1fd5ad958b16542e76a0e9cb1967e5166a82f19c47e714a7036</hash>
 	<runtimes>
 		<runtime id="f554202259d421198cd597a44cb6feb3eab03476" name="floor_base.mgraph" link="0"/>
 		<runtime id="da25ebcc733b34bbd3b622def6412ca511a4f5c0" name="floor_base" link="1" type="5"/>
