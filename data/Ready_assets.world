@@ -813,7 +813,9 @@
 		<composite_material_guid>guid://</composite_material_guid>
 		<composite_deferred_material_guid>guid://</composite_deferred_material_guid>
 		<debug_materials/>
-		<scriptable_materials/>
+		<scriptable_materials>
+			<material guid="08a76858c76409d4d980482cb0df78fc0acc827a" enabled="1"/>
+		</scriptable_materials>
 	</render>
 	<physics>
 		<frozen_linear_velocity>0.0199999996</frozen_linear_velocity>
@@ -939,709 +941,13 @@
 			<controlled>1</controlled>
 			<transform>1 -3.5762787e-07 0 0.0 0 0 1 0.0 -3.5762787e-07 -1 0 0.0 0 0 1.5 1.0</transform>
 		</node>
-		<node type="NodeDummy" id="1730658981" name="Вагон_макет (2)">
-			<transform>0.999999880791 1.67037320822e-22 -3.82136965978e-15 0.0 1.67037396552e-22 0.999999880791 8.74227623626e-08 0.0 3.82136965978e-15 -8.74227623626e-08 0.999999940395 0.0 0.619720757008 7.30632925034 0.825756175824 1.0</transform>
-			<node type="ObjectMeshStatic" id="295367711" immovable="1" name="Cylinder">
-				<mesh_name>guid://c1334da6ce0a137d3c12308ac0d3589f4839ee3f</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="899199730" immovable="1" name="Бедро левое">
-				<mesh_name>guid://c5007f915dc67b8ada8f897d7490376940742692</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>0.105403527617 1.84293380899e-08 1.39137631553e-15 0.0 1.84293380899e-08 -0.105403527617 -1.59154898803e-08 0.0 -1.39137631587e-15 1.59154898803e-08 -0.105403527617 0.0 0.901880786023 2.21355731261 -0.219222299655 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1176401321" immovable="1" name="Бедро правое">
-				<mesh_name>guid://b998b7487b2f3dbc232bdccc71017a458df514c9</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>0.105403527617 1.84293380899e-08 1.39137631553e-15 0.0 1.84293380899e-08 -0.105403527617 -1.59154898803e-08 0.0 -1.39137631587e-15 1.59154898803e-08 -0.105403527617 0.0 0.901880786023 2.21355731261 -0.219222299655 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1818051316" immovable="1" name="Вагон">
-				<mesh_name>guid://fb62852b57530408671478f70b3689921fca1794</mesh_name>
-				<surface name="Material" intersection="1" material="eb3f693d03d56df2f2a3f9696181f73b5785cb6e"/>
-				<surface name="Material.010" intersection="1" material="81a26eb78a73a1929224d2c3d249954285cefcd0"/>
-				<transform>1.0221208334 8.93566554921e-08 -8.74227765735e-08 0.0 8.93566554921e-08 -1.62920671741e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="175847481" immovable="1" name="Гардероб">
-				<mesh_name>guid://affb23980450e57c28b2221c57467fca7ab61f59</mesh_name>
-				<surface name="Пластик.001" intersection="1" material="5493c5db65a39199eb85b2a75c1882d009a63504"/>
-				<surface name="Штанга" intersection="1" material="bc438085ba8a1fae59675231a1a83d1555f698d6"/>
-				<surface name="Металл.001" intersection="1" material="d59bdcc1fd3ec1fc949277ad531277dafd4fce82"/>
-				<transform>1 8.7422789437e-08 -7.58514890587e-08 0.0 8.7422789437e-08 -1.47142118108e-07 0.867639899254 0.0 8.74227765735e-08 -1 -1.57135035795e-07 0.0 4.12957993582e-16 -4.72368883452e-09 -0.108065403998 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1520993348" immovable="1" name="Голень левая">
-				<mesh_name>guid://a7ef643b243c7cf254ad33075c122b0c17dd00e4</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>0.105403527617 9.21467054622e-09 -9.21466904496e-09 0.0 9.21467054622e-09 -1.71724135411e-08 0.105403527617 0.0 9.21466904496e-09 -0.105403527617 -1.71724143467e-08 0.0 0.901880823368 1.78637843423 -0.646400768164 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1716830931" immovable="1" name="Голень правая">
-				<mesh_name>guid://8d3cfa8a802ee2bb198c64aee7027dec9746d6f3</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>0.105403527617 9.21467054622e-09 -9.21466904496e-09 0.0 9.21467054622e-09 -1.71724135411e-08 0.105403527617 0.0 9.21466904496e-09 -0.105403527617 -1.71724143467e-08 0.0 0.901880823368 1.78637843423 -0.646400768164 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="989325846" immovable="1" name="Голова">
-				<mesh_name>guid://5c4d85e5469fd5dcd5bc09912a03a2882267afb6</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>0.105403527617 9.21467054622e-09 -9.21466904496e-09 0.0 9.21467054622e-09 -1.71724135411e-08 0.105403527617 0.0 9.21466904496e-09 -0.105403527617 -1.71724143467e-08 0.0 0.901880854238 1.43326512514 -0.999514463609 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1584437885" immovable="1" name="Кресло1">
-				<mesh_name>guid://6f9926cc25706b3a90bda590e092ef25747b639d</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 1.53812278576 8.03760732535 -0.0482786942674 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="2078906808" immovable="1" name="Кресло10">
-				<mesh_name>guid://9ab00b9fe0060dbfb44e8f2b2b915f850ab89058</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -1.41968446769 4.74957644238 -0.048278550543 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="495129015" immovable="1" name="Кресло11">
-				<mesh_name>guid://ba4408deca2f651b75a86d42a9add6c769e957d7</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -0.776350937867 3.66561072027 -0.0482785031614 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="805618602" immovable="1" name="Кресло12">
-				<mesh_name>guid://63a073e9d6c6c7fe86f93a55e89a25e72a47134a</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -1.41968437293 3.66561066403 -0.0482785031614 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="775724801" immovable="1" name="Кресло13">
-				<mesh_name>guid://849ff5402c0d3258b6b978449538e96495f46a21</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -1.40637037607 -3.01673544038 -0.0482782110668 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1140223084" immovable="1" name="Кресло14">
-				<mesh_name>guid://483f61439b6bd6746070658f505568e2995a7d0c</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -0.76303706022 -3.01673538414 -0.0482782110668 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1974566107" immovable="1" name="Кресло15">
-				<mesh_name>guid://3dc654722f423eb69bcad7162689b0514a0614fb</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -1.40637059202 -1.91018665422 -0.0482782594356 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="529828990" immovable="1" name="Кресло16">
-				<mesh_name>guid://b2913a2d5810a1e83582ef59a49b9f98779d061e</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -0.763037216563 -1.91018659798 -0.0482782594356 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1061308869" immovable="1" name="Кресло17">
-				<mesh_name>guid://0ef5c2f4d05556959efc0e38cfee8bb178c636e5</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -1.40637080599 -0.826220697054 -0.0482783068172 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="275656800" immovable="1" name="Кресло18">
-				<mesh_name>guid://db5bc927f169645b6c55da331a6485cdb4bbfb00</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -0.763037430535 -0.826220640812 -0.0482783068172 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="850241599" immovable="1" name="Кресло19">
-				<mesh_name>guid://bd6d3146e1fecaefb707362a931e2575d2fcb25f</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -1.40637102115 0.27129470717 -0.0482783547911 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1852872850" immovable="1" name="Кресло2">
-				<mesh_name>guid://b5fcdcb143efafa5e4c8ec9d829082f80d9cdc32</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 0.894789350698 8.03760726911 -0.0482786942674 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="456318665" immovable="1" name="Кресло20">
-				<mesh_name>guid://2f7c03e863b36568655b1b6c06910db6ee040de9</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -0.763037645692 0.271294763412 -0.0482783547911 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="610883988" immovable="1" name="Кресло21">
-				<mesh_name>guid://00e1e74bc6e52cfefc2c51171487a25c4bef7e34</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -1.40637123512 1.35526048552 -0.0482784021728 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1324185571" immovable="1" name="Кресло22">
-				<mesh_name>guid://4dcf335a33c0a1ba13825e7ec29e1eead6f51403</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -0.76303780006 1.35526054176 -0.0482784021728 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="292387814" immovable="1" name="Кресло23">
-				<mesh_name>guid://79889f751d07cd660aaf3621857e5162c1252986</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -1.41996102057 -6.30410731543 -0.0482780673712 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1473372685" immovable="1" name="Кресло24">
-				<mesh_name>guid://11436c1c05ab00c1a69f93e047084439e7f3732d</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -0.776627704722 -6.30410725918 -0.0482780673712 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1701682184" immovable="1" name="Кресло25">
-				<mesh_name>guid://fd309fafaa35ec71af2f6e3bc8b486214314baa8</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -1.40637030463 -5.19755852807 -0.04827811574 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1274220487" immovable="1" name="Кресло26">
-				<mesh_name>guid://f6c42eae22facce67d066412bd6d429b21435de7</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -0.763036929171 -5.19755847183 -0.04827811574 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="2055146106" immovable="1" name="Кресло27">
-				<mesh_name>guid://b3a606796d15bd717e520fe5697a5f04efd3c21a</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -1.4063705186 -4.11359274972 -0.0482781631216 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="418977681" immovable="1" name="Кресло28">
-				<mesh_name>guid://1dffef901fd1bb909939ab9484f9816dbe102ab1</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -0.763037143144 -4.11359269348 -0.0482781631216 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="228715452" immovable="1" name="Кресло29">
-				<mesh_name>guid://4fcd165329de214b640d159f2c9c1ffb7f8ca45c</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -0.776350006223 -6.99115521753 -0.0482780373394 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1995494379" immovable="1" name="Кресло3">
-				<mesh_name>guid://d4f937422a91a82d5ed69ae677b30fe8cd0bf40b</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -0.776351320079 8.03760712301 -0.0482786942674 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1829525582" immovable="1" name="Кресло30">
-				<mesh_name>guid://89d6d5bd7bece9b6cb09fde97251b8233e59b9ee</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -1.41968344128 -6.99115527378 -0.0482780373394 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1356628821" immovable="1" name="Кресло31">
-				<mesh_name>guid://91bcc2442755d58a4934d688340ed6ae4f503875</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -0.776349910275 -8.08867080057 -0.0482779893654 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="121797808" immovable="1" name="Кресло32">
-				<mesh_name>guid://4946af3724194fcc7b896b435cd1f584bd6d6f50</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -1.41968334533 -8.08867085681 -0.0482779893654 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1168992335" immovable="1" name="Кресло33">
-				<mesh_name>guid://2cc4a116701a268c38c396faab8ab59554277a6f</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -0.776349815511 -9.17263610209 -0.0482779419838 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="226736482" immovable="1" name="Кресло34">
-				<mesh_name>guid://1131114123925a7eabafc42d9cade35a320f6502</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -1.41968325057 -9.17263615833 -0.0482779419838 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="42887513" immovable="1" name="Кресло35">
-				<mesh_name>guid://e1d058385e3c48eeab6bc8bc9fc17d4ac6a7e079</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -1.4068767503 -11.5052510559 -0.048277840022 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1700053732" immovable="1" name="Кресло36">
-				<mesh_name>guid://375b0e5b3e4bcb09fd62d327584d59ae22368f84</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 -0.763543374844 -11.5052509996 -0.048277840022 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="799518963" immovable="1" name="Кресло37">
-				<mesh_name>guid://023a002a102689e53d7f2c4ee15940d5ba46d513</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 1.53812288217 6.93475116614 -0.0482786460601 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1076806070" immovable="1" name="Кресло38">
-				<mesh_name>guid://cf22fd05dc81585eb22066b16fcc47ebb9c85756</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 0.894789447112 6.9347511099 -0.0482786460601 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="180571549" immovable="1" name="Кресло39">
-				<mesh_name>guid://ab10656c6d4079a07bfc76301f2a3d4705cda6bd</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 1.53812297654 5.85530246619 -0.0482785988759 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="765162072" immovable="1" name="Кресло4">
-				<mesh_name>guid://0b5a17bfb7795b094375f14ba9b7241dc0c4b8f8</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -1.41968475514 8.03760706677 -0.0482786942674 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="662360535" immovable="1" name="Кресло40">
-				<mesh_name>guid://0a7e287edda2e6722e306ee23d0d8bc7785727f7</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 0.894789541481 5.85530240995 -0.0482785988759 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="726025546" immovable="1" name="Кресло41">
-				<mesh_name>guid://be771d09121806415f0129750a1bb638f9e764ea</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 1.53812307295 4.75244726065 -0.0482785506685 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="852882465" immovable="1" name="Кресло42">
-				<mesh_name>guid://1b45dde0880b4bf61bfc12e4a09e1912fa3e4f41</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 0.894789637895 4.75244720441 -0.0482785506685 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1741324044" immovable="1" name="Кресло43">
-				<mesh_name>guid://9ec9ef633d8da0f60f21a9af73a96b128285dfac</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 1.53812316775 3.66807903174 -0.0482785032693 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="411184891" immovable="1" name="Кресло44">
-				<mesh_name>guid://0a5b2e12b7f10fc8c747b2b6376fee9f0c25d71b</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 0.894789732694 3.6680789755 -0.0482785032693 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1883658270" immovable="1" name="Кресло45">
-				<mesh_name>guid://9c98354d25c1d9382dc390790e5d3895efb2a1be</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 0.903791452948 -3.01700274407 -0.0482782110551 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="302735589" immovable="1" name="Кресло46">
-				<mesh_name>guid://09e0f594cf413a48e26b12d80d37d7146080de05</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 1.54712488801 -3.01700268782 -0.0482782110551 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="637213952" immovable="1" name="Кресло47">
-				<mesh_name>guid://fa4af9478e09685f2ceb2053e5b39aca29ed37a0</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 0.903791296929 -1.91414753853 -0.0482782592624 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="213740639" immovable="1" name="Кресло48">
-				<mesh_name>guid://f61464e66bcb1a3a52928bcab0dbdea85044867f</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 1.54712467238 -1.91414748229 -0.0482782592624 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1887587890" immovable="1" name="Кресло49">
-				<mesh_name>guid://831549d1aa85cb5958e95fbd3aa2f411bfe761d2</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 0.903791083351 -0.834698302138 -0.0482783064466 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="18274281" immovable="1" name="Кресло5">
-				<mesh_name>guid://33ed2088bf505e0194692a0ce3a96d4db9aa9709</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -0.776351223341 6.93105833685 -0.0482786458986 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="2053095476" immovable="1" name="Кресло50">
-				<mesh_name>guid://42bbd96b8c999c8f0a61b937d29ef0ec622734d4</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 1.54712457801 -0.834698245896 -0.0482783064466 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1593077251" immovable="1" name="Кресло51">
-				<mesh_name>guid://667a60fab80f568b328fce1efffce279002d1a23</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 0.903790867727 0.268156843793 -0.048278354654 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="821607302" immovable="1" name="Кресло52">
-				<mesh_name>guid://11659e95ce9a5d0c5a889b41114187adc48e3926</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 1.54712436239 0.268156900035 -0.048278354654 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="601742637" immovable="1" name="Кресло53">
-				<mesh_name>guid://4f4512bca12e32c8f8a94c8005a902a97722fe4d</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 0.903790713324 1.35252554954 -0.0482784020532 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="238558376" immovable="1" name="Кресло54">
-				<mesh_name>guid://309d73cf34f9b57be243185baaf047b7100d8b48</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 1.54712414838 1.35252560578 -0.0482784020532 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="488331239" immovable="1" name="Кресло55">
-				<mesh_name>guid://373ef64e5cd650387b038db2e2a230ad0ca5b607</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 0.903791548278 -4.10744945465 -0.0482781633901 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="828863514" immovable="1" name="Кресло56">
-				<mesh_name>guid://aaecb7993e2b51706d0f87058e1e5523ae0efbba</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 1.54712498334 -4.10744939841 -0.0482781633901 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1299985585" immovable="1" name="Кресло57">
-				<mesh_name>guid://e906c0309496fbb3ba25ae34b25e8d45a0a7d7d1</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 1.53812409884 -6.98228489038 -0.0482780377271 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1308960348" immovable="1" name="Кресло58">
-				<mesh_name>guid://35b6ec73e4af9ee362df21bfb4e08505585b2efc</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 0.894790663778 -6.98228494662 -0.0482780377271 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="2130087435" immovable="1" name="Кресло59">
-				<mesh_name>guid://628938e2a7c9add4eacb1e8677cfdef5a464be2b</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 1.53812419525 -8.08514009591 -0.0482779895198 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1251970030" immovable="1" name="Кресло6">
-				<mesh_name>guid://8d3e58dda133b70a9048a709a36c45114b84bd8e</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -1.4196846584 6.93105828061 -0.0482786458986 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1116201589" immovable="1" name="Кресло60">
-				<mesh_name>guid://43475ce47a33327e0e13c3281392def078912795</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 0.894790760193 -8.08514015216 -0.0482779895198 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1593643344" immovable="1" name="Кресло61">
-				<mesh_name>guid://b4f9a75736794025f2bbf9636ec15b210f2053f0</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 1.53812429005 -9.16950880166 -0.0482779421205 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="352236655" immovable="1" name="Кресло62">
-				<mesh_name>guid://6dc97cb65a1aff9adaf1149af3bd402e14f4d68f</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 0.894790854992 -9.16950885791 -0.0482779421205 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1746491138" immovable="1" name="Кресло63">
-				<mesh_name>guid://c2a28661cc2369d9d69ebf4d47ea8144ce51d2a2</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 0.903792195157 -11.506881637 -0.0482778399507 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="496315001" immovable="1" name="Кресло64">
-				<mesh_name>guid://a6075cd8c0c1caaad1183f5cc49fb9dee2553199</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 1.54712563022 -11.5068815807 -0.0482778399507 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1371492740" immovable="1" name="Кресло65">
-				<mesh_name>guid://f0a5487bbfd46a7cf77a03478a5f278c84766e24</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 0.903792290487 -12.5973281091 -0.0482777922858 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="327462675" immovable="1" name="Кресло66">
-				<mesh_name>guid://fbcd55cab4ec4063f70143ee4c674a2de7d8e333</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>-0.789758861065 -3.76586368594e-07 -7.36163379114e-08 0.0 -6.9042901822e-08 7.75486345661e-09 0.84207290411 0.0 -3.76586367916e-07 0.789758861065 -1.17044967456e-08 0.0 1.54712572555 -12.5973280529 -0.0482777922858 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="818440534" immovable="1" name="Кресло7">
-				<mesh_name>guid://34d9842580553fdafea0d3d1ca37e7599cf3cef6</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -0.776351128578 5.84709208166 -0.048278598517 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1509593277" immovable="1" name="Кресло8">
-				<mesh_name>guid://d766740ca1e18dbc0fbb16d00344c9688f4c79dd</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -1.41968456364 5.84709202542 -0.048278598517 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1179163384" immovable="1" name="Кресло9">
-				<mesh_name>guid://92abb3dfb2b577d1c2f7e36b5642139de2743198</mesh_name>
-				<surface name="Material.008" intersection="1" material="cb4f473f8ae192b37ca7c8cb26b72b9a4ed7f678"/>
-				<surface name="Material.009" intersection="1" material="2e38d8895a8e5288fc7fccf5425caa86a2b4fe6a"/>
-				<surface name="пластик" intersection="1" material="7e5316e358f97c8bd061f92fda1fd66ee96a352c"/>
-				<transform>0.789758861065 6.90429242515e-08 -7.36163513546e-08 0.0 6.90429242515e-08 -1.34904364286e-07 0.84207290411 0.0 6.90429124578e-08 -0.789758861065 -1.30954769776e-07 0.0 -0.77635103263 4.74957649862 -0.048278550543 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1578476023" immovable="1" name="Ладонь левая">
-				<mesh_name>guid://5813981e8b42996dd29cc0827a1004a1dff00817</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>-0.025859997399 -0.100282101101 0.0196130624989 0.0 -0.0972526508253 0.0179468754586 -0.036465642132 0.0 0.0313543242852 -0.0270429499234 -0.0969303541424 0.0 1.83053808653 0.767722964443 0.433279838382 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1932498666" immovable="1" name="Ладонь правая">
-				<mesh_name>guid://641fd6293e0470a99cc62895f38e7c1f0917868a</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>-0.0258599941827 0.10028210118 -0.019613066337 0.0 0.097252675078 0.0179469006863 -0.0364655219629 0.0 -0.0313542068509 -0.0270429292938 -0.0969303897828 0.0 -0.0204939321099 0.767497556684 0.433655347654 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1221908801" immovable="1" name="Окно1">
-				<mesh_name>guid://af179680af3e95462e1b7d84d7b2c54235b5c461</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>1 8.74227890489e-08 -7.25957946375e-08 0.0 8.74227890489e-08 -1.42702668347e-07 0.830399096012 0.0 8.74227765735e-08 -1 -1.55507188585e-07 0.0 0.036351301703 2.46091295542 0.21408728929 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1965482412" immovable="1" name="Окно10">
-				<mesh_name>guid://f3550d8388bddc770ab67dcfab4a87919061924c</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>-1 -4.76837155858e-07 -7.21165921218e-08 0.0 -8.74227708718e-08 1.74900859794e-08 0.824917852879 0.0 -4.76837154329e-07 1 -4.27179330965e-09 0.0 0.0988993024535 2.41389634053 0.220326511845 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="924774683" immovable="1" name="Окно11">
-				<mesh_name>guid://0f6057b2e6767722b04dde566119dad6bb19a93b</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>-1 -4.76837155858e-07 -7.21165921218e-08 0.0 -8.74227708718e-08 1.74900859794e-08 0.824917852879 0.0 -4.76837154329e-07 1 -4.27179330965e-09 0.0 0.0988995166074 -0.0357384498933 0.220326618922 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1756689342" immovable="1" name="Окно12">
-				<mesh_name>guid://8672406d333d3d2459724199442d51627ced0d5e</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>-1 -4.76837155858e-07 -7.21165921218e-08 0.0 -8.74227708718e-08 1.74900859794e-08 0.824917852879 0.0 -4.76837154329e-07 1 -4.27179330965e-09 0.0 0.0988997331497 -2.51269386371 0.220326727193 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1951074309" immovable="1" name="Окно13">
-				<mesh_name>guid://f914f834132d4ae622e3e7784744bc6655fa1525</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>-1 -4.76837155858e-07 -7.21165921218e-08 0.0 -8.74227708718e-08 1.74900859794e-08 0.824917852879 0.0 -4.76837154329e-07 1 -4.27179330965e-09 0.0 0.0988999917191 -5.47038267215 0.220326856478 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1374509472" immovable="1" name="Окно14">
-				<mesh_name>guid://8223b96786054c370d7cf673413aff924f2bc440</mesh_name>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<transform>1 8.74227889918e-08 -7.21166091437e-08 0.0 8.74227889918e-08 -1.42049253238e-07 0.824917852879 0.0 8.74227765735e-08 -1 -1.55267595838e-07 0.0 0.0330978520215 1.25242884437e-08 0.22032661736 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="936525951" immovable="1" name="Окно15">
-				<mesh_name>guid://e990e886e6711dd80d9c316a194987c1dc196a9f</mesh_name>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<transform>1 8.74227889918e-08 -7.21166091437e-08 0.0 8.74227889918e-08 -1.42049253238e-07 0.824917852879 0.0 8.74227765735e-08 -1 -1.55267595838e-07 0.0 0.0330978520215 1.25242884437e-08 0.22032661736 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="607507410" immovable="1" name="Окно2">
-				<mesh_name>guid://1311c6f1a9ca20650738e2dd44cc444cf3bbb772</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>1 8.74227889918e-08 -7.21166091437e-08 0.0 8.74227889918e-08 -1.42049253238e-07 0.824917852879 0.0 8.74227765735e-08 -1 -1.55267595838e-07 0.0 0.0330978520215 1.25242884437e-08 0.22032661736 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="890396937" immovable="1" name="Окно3">
-				<mesh_name>guid://1b940d280f5c30a0797e08ac251b5e7e5230b029</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>1 8.74227889918e-08 -7.21166091437e-08 0.0 8.74227889918e-08 -1.42049253238e-07 0.824917852879 0.0 8.74227765735e-08 -1 -1.55267595838e-07 0.0 0.0330978520215 1.25242884437e-08 0.22032661736 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="988313300" immovable="1" name="Окно4">
-				<mesh_name>guid://f4f85b8b133b6d29cb3cb15735f2464d03193b74</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>1 8.74227889918e-08 -7.21166091437e-08 0.0 8.74227889918e-08 -1.42049253238e-07 0.824917852879 0.0 8.74227765735e-08 -1 -1.55267595838e-07 0.0 0.0330978520215 1.25242884437e-08 0.22032661736 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1950970915" immovable="1" name="Окно5">
-				<mesh_name>guid://d8afde9a59533622c8608dbe74a85f8f40bb3043</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>1 8.74227889918e-08 -7.21166091437e-08 0.0 8.74227889918e-08 -1.42049253238e-07 0.824917852879 0.0 8.74227765735e-08 -1 -1.55267595838e-07 0.0 0.0330978520215 1.25242884437e-08 0.22032661736 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1071303462" immovable="1" name="Окно6">
-				<mesh_name>guid://fe47adb5d462e8d995621061fdece682d1b618c6</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>-1 -4.76837155858e-07 -7.21165921218e-08 0.0 -8.74227708718e-08 1.74900859794e-08 0.824917852879 0.0 -4.76837154329e-07 1 -4.27179330965e-09 0.0 0.0988988488951 4.87480928341 0.220326404275 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="2117232717" immovable="1" name="Окно7">
-				<mesh_name>guid://3439895c69e98c6c0f86d520ebb9e311dbe3196d</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>-1 -4.76837155858e-07 -7.21165921218e-08 0.0 -8.74227708718e-08 1.74900859794e-08 0.824917852879 0.0 -4.76837154329e-07 1 -4.27179330965e-09 0.0 0.0988988488951 4.87480928341 0.220326404275 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1779559752" immovable="1" name="Окно8">
-				<mesh_name>guid://2175d7efa1d7e392f335527b825d87bc5ebdabe8</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>-1 -4.76837155858e-07 -7.21165921218e-08 0.0 -8.74227708718e-08 1.74900859794e-08 0.824917852879 0.0 -4.76837154329e-07 1 -4.27179330965e-09 0.0 0.0988988488951 4.87480928341 0.220326404275 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1877651463" immovable="1" name="Окно9">
-				<mesh_name>guid://b1490dee6fe29261f15907522500317c68371e27</mesh_name>
-				<surface name="Material.005" intersection="1" material="ff07e1f93d645c53aa86d365e6d6674ca26cfb9a"/>
-				<surface name="Material.006" intersection="1" material="509ea8cdc817b48c6f856bf9a6aa20d51f29133e"/>
-				<surface name="Material.007" intersection="1" material="34b798c7c8044545243167d3a44dcddb63e82520"/>
-				<transform>-1 -4.76837155858e-07 -7.21165921218e-08 0.0 -8.74227708718e-08 1.74900859794e-08 0.824917852879 0.0 -4.76837154329e-07 1 -4.27179330965e-09 0.0 0.0988988488951 4.87480928341 0.220326404275 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="506179002" immovable="1" name="Плечо левое">
-				<mesh_name>guid://296978b95b8c829822ae0e255a6237fc6f0e055a</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>0.00367850206496 1.42936683591e-08 0.105339341979 0.0 -0.105339341979 -1.826293471e-08 0.00367850206496 0.0 1.87506455034e-08 -0.105403527617 1.36475959734e-08 0.0 2.04347836365 1.43295033501 0.396167990514 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="587784657" immovable="1" name="Плечо правое">
-				<mesh_name>guid://a08d60d04ee463e7c18280d4a880e388fc1114f1</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>0.0036785087617 -1.08934617711e-08 -0.105339341746 0.0 0.105339341746 -1.2409902626e-08 0.0036785087617 0.0 -1.27825162325e-08 -0.105403527617 1.04537268074e-08 0.0 -0.233434087168 1.43326532533 0.396471914584 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="457486588" immovable="1" name="Предплечье левое">
-				<mesh_name>guid://a4a55293b56867006c58bddf42260353e32e099c</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>-0.0258599598536 -0.0770403272115 0.0671264623445 0.0 -0.0972526535105 -0.00269036213053 -0.0405535462351 0.0 0.0313542873875 -0.0718850569942 -0.0704227145937 0.0 1.83053805158 1.16758246791 0.786793955788 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1175214123" immovable="1" name="Предплечье правое">
-				<mesh_name>guid://bffd8a829e3428009ffcf226130070dd0dd5984b</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>-0.0258600029279 0.0770402908306 -0.0671264641063 0.0 0.0972526380389 -0.0026903323247 -0.0405535659505 0.0 -0.0313542710796 -0.0718850752575 -0.0704226809089 0.0 -0.0204939670858 1.16757527275 0.787231751904 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1382256526" immovable="1" name="Стенка">
-				<mesh_name>guid://cb1cebfd03dd439cb45960292d2f8749ea48912e</mesh_name>
-				<surface name="Material.002" intersection="1" material="b03bf551e856bec356b1f33d3e5c8b26a7e82b52"/>
-				<transform>1.0221208334 8.93566554921e-08 -8.74227765735e-08 0.0 8.93566554921e-08 -1.62920671741e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="462279061" immovable="1" name="Столик2">
-				<mesh_name>guid://25aec7849f44af927ad07fc85513942f3974a6b5</mesh_name>
-				<surface name="Пластик" intersection="1" material="23400215d2d09023c15366c1a691565da052daa6"/>
-				<surface name="Металл" intersection="1" material="c95370eb938ecefa761d78b7885b852567163a54"/>
-				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="464582128" immovable="1" name="Столик3">
-				<mesh_name>guid://bcda2f7795cb8d369bef17836e18eceae9748890</mesh_name>
-				<surface name="Пластик" intersection="1" material="23400215d2d09023c15366c1a691565da052daa6"/>
-				<surface name="Металл" intersection="1" material="c95370eb938ecefa761d78b7885b852567163a54"/>
-				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="718868623" immovable="1" name="Столик4">
-				<mesh_name>guid://9057a85618aa9f225b90e23ae906eacedbd342af</mesh_name>
-				<surface name="Пластик" intersection="1" material="23400215d2d09023c15366c1a691565da052daa6"/>
-				<surface name="Металл" intersection="1" material="c95370eb938ecefa761d78b7885b852567163a54"/>
-				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="67421346" immovable="1" name="Ступня левая">
-				<mesh_name>guid://d3dc0b811a747be05560ca6dadfe922a15d21042</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>0.105403527617 9.21467054622e-09 -9.21466904496e-09 0.0 9.21467054622e-09 -1.71724135411e-08 0.105403527617 0.0 9.21466904496e-09 -0.105403527617 -1.71724143467e-08 0.0 0.901880823368 1.78637843423 -0.646400768164 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="181894041" immovable="1" name="Ступня правая">
-				<mesh_name>guid://2b4831785db573c25cdf85fc512a6748a10612b9</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>0.105403527617 9.21467054622e-09 -9.21466904496e-09 0.0 9.21467054622e-09 -1.71724135411e-08 0.105403527617 0.0 9.21466904496e-09 -0.105403527617 -1.71724143467e-08 0.0 0.901880823368 1.78637843423 -0.646400768164 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="915419172" immovable="1" name="Таз">
-				<mesh_name>guid://f9d6129b5e21b075ce7ac367e60439c5a9449cc4</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>0.105403527617 9.21467054622e-09 -9.21466904496e-09 0.0 9.21467054622e-09 -1.71724135411e-08 0.105403527617 0.0 9.21466904496e-09 -0.105403527617 -1.71724143467e-08 0.0 0.901880854238 1.43326512514 -0.999514463609 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="678673715" immovable="1" name="Торс">
-				<mesh_name>guid://78defb6a7c444924ed7aab8e30b9ff8a7a850153</mesh_name>
-				<surface name="Main color" intersection="1" material="29b35dd3c8400eb8fcb0851f396d0cc78b5d99dc"/>
-				<transform>0.105403527617 9.21467054622e-09 -9.21466904496e-09 0.0 9.21467054622e-09 -1.71724135411e-08 0.105403527617 0.0 9.21466904496e-09 -0.105403527617 -1.71724143467e-08 0.0 0.901880854238 1.43326512514 -0.999514463609 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="1638719734" immovable="1" name="Хранилище багажа">
-				<mesh_name>guid://92b91b45a6db7604a20550f1f3c994cc94d21696</mesh_name>
-				<surface name="Material.003" intersection="1" material="1a1f834f2f9096eca8dbcfdb9dd998cfa2e628c8"/>
-				<surface name="Material.004" intersection="1" material="3f46531964d58fb862900a85266cdc026ba8f53a"/>
-				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="ObjectMeshStatic" id="199123933" immovable="1" name="столик1">
-				<mesh_name>guid://bdc352ac48d05734f1a18770e5ba680cb4bfdcfd</mesh_name>
-				<surface name="Пластик" intersection="1" material="23400215d2d09023c15366c1a691565da052daa6"/>
-				<surface name="Металл" intersection="1" material="c95370eb938ecefa761d78b7885b852567163a54"/>
-				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
-			</node>
-		</node>
 		<node type="NodeDummy" id="967392844" name="first_person_controller">
 			<properties>
-				<property parent="d2b75c846516b2f492a7a4c8a3413105092cdfb5" guid="1da680ffb24c4df7ef9cb68b4f395a91041c7f38"/>
+				<property parent="d2b75c846516b2f492a7a4c8a3413105092cdfb5" guid="1da680ffb24c4df7ef9cb68b4f395a91041c7f38">
+					<parameter name="interactionDistance">5.69999981</parameter>
+				</property>
 			</properties>
-			<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 -3.13372125014 21.1006668096 6.4473932109 1.0</transform>
+			<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 4.3105126126 -22.0308794247 1.04656705096 1.0</transform>
 		</node>
 		<node type="NodeDummy" id="1294946840" name="menu">
 			<properties>
@@ -1650,6 +956,1506 @@
 				</property>
 			</properties>
 			<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 0.786522545618 19.167503487 2.05415855779 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="825677503" name="scripts_scenario">
+			<properties>
+				<property parent="3452e7fae1db6b054e50732eb92558c97f901da4" guid="721d4bd87def56916e235b15ba7a88df4f1b8295">
+					<parameter name="freeRoamSeconds">5</parameter>
+				</property>
+				<property parent="1a3d530cbf81749b966d3c19c30bc0cd41cfbc99" guid="6b1c5950d1bd56defae37457ef8f81395a182340"/>
+				<property parent="31946d66bf4638e36b03b61cbd1c2b1de46bd7a1" guid="f78029e5ede9ba9937bddbb7fd4d9dc386e6c19e"/>
+				<property parent="a2abf8a8a35a7614f88973cfbbc09b809f1a1153" guid="b3071e868fb99e8b57a18ffb85ec9be1c5e6482a"/>
+			</properties>
+			<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 8.45668570818 6.07732850207 4.15997624613 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="1822274103" name="first_story">
+			<properties>
+				<property parent="80ea7431cabe8c4c7450c363d067b6986074871a" guid="adcee15812d1e75bcb3cfa7e1abb0708c196258b"/>
+				<property parent="d81b556650a9bd148e135e1c31a65c02d6631fa1" guid="24ba0b75ae2d99df6ec7cdc7aba5127d8e973d6e"/>
+				<property parent="68ca09c0826a41cb0b839fa68f0dfdd03c17ca53" guid="686f6e4a8f52f8bd1ee38fe0becb5e31bc54e5f5"/>
+				<property parent="3452e7fae1db6b054e50732eb92558c97f901da4" guid="cc992cdce35944e2a462ec73ef78cebe699a0837"/>
+			</properties>
+			<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 7.68062385083 -21.3850506963 4.43343754798 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1203949413" immovable="1" name="манекен">
+			<mesh_name>guid://60a19164a8743c598420cf5b482b13ec6d5e57d4</mesh_name>
+			<surface name="Main color" intersection="1" material="9750694a0068caad21129d09b6be3f483b1a39ba"/>
+			<properties>
+				<property parent="b3187d3eae04a5728e02526d12ddf6cc3253692e" guid="b78f51e0a1aa36631acdbba7b98bd310ec8179d0">
+					<parameter name="isAvailable">1</parameter>
+				</property>
+				<property parent="464950a007b53ae57a678b67bc26c5739e3d2090" guid="89dc5eaa427fc84e7c9705aff88fca2fbadb02ef">
+					<parameter name="soundMinDistance">0.5</parameter>
+					<parameter name="soundMaxDistance">15</parameter>
+					<parameter name="callSoundGain">0.200000003</parameter>
+				</property>
+			</properties>
+			<transform>0.999999880791 8.74227880376e-08 -8.74227675413e-08 0.0 8.74227842163e-08 -2.50343414851e-07 0.999999940395 0.0 8.74227661519e-08 -0.999999880791 -2.50343432205e-07 0.0 4.46920394897 -4.59360265732 0.948476717043 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1087551872" immovable="1" name="табло_вагон">
+			<mesh_name>guid://2c01214e538f85256a22abe35eb781ecf4ebe123</mesh_name>
+			<surface name="Material.014" intersection="1" material="ee869c96940e30c4062ba5e58ab1f3fd596a8786"/>
+			<surface name="Material.013" intersection="1" material="c36021c4c7a2d1159050943b8f46f7d022f6ac34"/>
+			<properties>
+				<property parent="2ac40ab04fbe36cd9b3beb4d62325c30bce8c2cd" guid="ec58bb016239fe90a31414b3eeee30806e44152a"/>
+				<property parent="b3187d3eae04a5728e02526d12ddf6cc3253692e" guid="7f6e70aa27036ea650377f4007e1316b813dfed5"/>
+			</properties>
+			<transform>0.999999880791 8.74227880377e-08 -8.74227675413e-08 0.0 8.74227842163e-08 -2.50343414851e-07 0.999999940395 0.0 8.74227661519e-08 -0.999999880791 -2.50343432205e-07 0.0 4.46920394897 -4.59360265732 0.948476717043 1.0</transform>
+			<node type="ObjectMeshStatic" id="975714977" immovable="1" name="Экран монитор1">
+				<mesh_name>guid://7edd8cb09a6ce3aaec1900371aa60a30708eaaa0</mesh_name>
+				<surface name="Material.012" intersection="1" material="053c1458f533f4aabd51a7bfb728315b9a779948"/>
+				<transform>1 3.51895072601e-24 0 0.0 0 1 0 0.0 0 -5.29395592034e-23 1 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
+		<node type="ObjectMeshStatic" id="317841369" immovable="1" name="табло_проводник">
+			<mesh_name>guid://73d09d088f5bd7cbc66110af61b20bb46483cbf8</mesh_name>
+			<surface name="Material.016" intersection="1" material="24fd147a46e49fed54dc0679b0dd9fbed30b22ea"/>
+			<properties>
+				<property parent="2ac40ab04fbe36cd9b3beb4d62325c30bce8c2cd" guid="c862f9c68a22532eab5adf7cef2bda8e076cc281"/>
+				<property parent="b3187d3eae04a5728e02526d12ddf6cc3253692e" guid="862c0a60cc03eb03a6709b46bd1e6f350034f073"/>
+			</properties>
+			<transform>0.999999880791 8.74227880377e-08 -8.74227675413e-08 0.0 8.74227842163e-08 -2.50343414851e-07 0.999999940395 0.0 8.74227661519e-08 -0.999999880791 -2.50343432205e-07 0.0 4.46920394897 -4.59360265732 0.948476717043 1.0</transform>
+			<node type="ObjectMeshStatic" id="1660350705" immovable="1" name="Монитор табло1.001">
+				<mesh_name>guid://7a28e1c0c660708a97793a07531ba0dd497b0db0</mesh_name>
+				<surface name="Material.015" intersection="1" material="23a05ac2d0a9adc748516c212f1688b033295a32"/>
+				<transform>1 3.51895072601e-24 0 0.0 0 1 0 0.0 0 -5.29395592034e-23 1 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="1329779671" name="Вагон_макет ">
+			<transform>0.999999880791 1.670373082e-22 -3.82136965978e-15 0.0 1.67037409174e-22 0.999999880791 8.74227623626e-08 0.0 3.82136965978e-15 -8.74227623626e-08 0.999999940395 0.0 4.46920394897 -4.59360265732 0.948476717043 1.0</transform>
+			<node type="ObjectMeshStatic" id="322592586" immovable="1" name="Вагон">
+				<mesh_name>guid://0e7e510886022ecaeb02010569ce018f94e52085</mesh_name>
+				<surface name="Material" intersection="1" material="d27c7670c77abbe0540a3ef78e9de169b1625c60"/>
+				<surface name="Material.010" intersection="1" material="cc9be922f9c25ecbbd8d1701966385a48f71a492"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1184319009" immovable="1" name="Гардероб">
+				<mesh_name>guid://592c2a30c57279bab776bfb7427e200f44039820</mesh_name>
+				<surface name="Пластик.001" intersection="1" material="01a650f6e6b71dd7efb43ec51843afe060d947e6"/>
+				<surface name="Штанга" intersection="1" material="993a5b181e9440c3ff371f7fc6271304b0e74808"/>
+				<surface name="Металл.001" intersection="1" material="772b9724e6588d58e9387a1be2a43f47ee6a4594"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1900521740" immovable="1" name="Дверь1">
+				<mesh_name>guid://09e6057aa73772595b08bbbf5da08128fa5a6cff</mesh_name>
+				<surface name="Пластик тёмно-серый" intersection="1" material="64ce8e0a3a83c5c8d1195ac9b4968002a7a1967a"/>
+				<surface name="Металл.001" intersection="1" material="772b9724e6588d58e9387a1be2a43f47ee6a4594"/>
+				<surface name="Цветная вставка" intersection="1" material="3c4c764ce0b74dd8226853231915ce4be3c057bc"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="211374331" immovable="1" name="Дверь1.001">
+				<mesh_name>guid://473f42e2b3bcd525399005c19b836be29f5b1652</mesh_name>
+				<surface name="Пластик тёмно-серый" intersection="1" material="64ce8e0a3a83c5c8d1195ac9b4968002a7a1967a"/>
+				<surface name="Металл.001" intersection="1" material="772b9724e6588d58e9387a1be2a43f47ee6a4594"/>
+				<surface name="Цветная вставка" intersection="1" material="3c4c764ce0b74dd8226853231915ce4be3c057bc"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1593774622" immovable="1" name="Дверь1.002">
+				<mesh_name>guid://2de84b3c1c454627e53e6109252ddacbccf5c189</mesh_name>
+				<surface name="Пластик тёмно-серый" intersection="1" material="64ce8e0a3a83c5c8d1195ac9b4968002a7a1967a"/>
+				<surface name="Металл.001" intersection="1" material="772b9724e6588d58e9387a1be2a43f47ee6a4594"/>
+				<surface name="Цветная вставка" intersection="1" material="3c4c764ce0b74dd8226853231915ce4be3c057bc"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1971901157" immovable="1" name="Дверь2">
+				<mesh_name>guid://5bbf06e4c9a7acc2e07b86dbc5f5b81d76675d54</mesh_name>
+				<surface name="Пластик тёмно-серый" intersection="1" material="64ce8e0a3a83c5c8d1195ac9b4968002a7a1967a"/>
+				<surface name="Металл.001" intersection="1" material="772b9724e6588d58e9387a1be2a43f47ee6a4594"/>
+				<surface name="Цветная вставка" intersection="1" material="3c4c764ce0b74dd8226853231915ce4be3c057bc"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1355147008" immovable="1" name="Дверь2.001">
+				<mesh_name>guid://367be2cef220cf6a8f1ad363b6d8e77b8c1228a3</mesh_name>
+				<surface name="Пластик тёмно-серый" intersection="1" material="64ce8e0a3a83c5c8d1195ac9b4968002a7a1967a"/>
+				<surface name="Металл.001" intersection="1" material="772b9724e6588d58e9387a1be2a43f47ee6a4594"/>
+				<surface name="Цветная вставка" intersection="1" material="3c4c764ce0b74dd8226853231915ce4be3c057bc"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1065725535" immovable="1" name="Дверь2.002">
+				<mesh_name>guid://da9bc6b6dfe73dfa2a98998564cfb5b88d76f5a6</mesh_name>
+				<surface name="Пластик тёмно-серый" intersection="1" material="64ce8e0a3a83c5c8d1195ac9b4968002a7a1967a"/>
+				<surface name="Металл.001" intersection="1" material="772b9724e6588d58e9387a1be2a43f47ee6a4594"/>
+				<surface name="Цветная вставка" intersection="1" material="3c4c764ce0b74dd8226853231915ce4be3c057bc"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1090103346" immovable="1" name="Колёсики">
+				<mesh_name>guid://fecc80b080c002a55c4bb94d09afb4b1ce8f90cd</mesh_name>
+				<surface name="Material.024" intersection="1" material="72b7745e2953dfe495632f0dac664018d5f1a44e"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1862429161" immovable="1" name="Кресло1">
+				<mesh_name>guid://777546d8447765145ba1783fb3a30e1f116ffbc8</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="763505204" immovable="1" name="Кресло10">
+				<mesh_name>guid://de1bed62c712591780e21d47b203139d53f86c87</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="133156867" immovable="1" name="Кресло11">
+				<mesh_name>guid://e9ffdfcae95806e51f1de18990730eb51479403a</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="13153670" immovable="1" name="Кресло12">
+				<mesh_name>guid://3348256446c3801341f90dd14b64c7dedbd85251</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2030669613" immovable="1" name="Кресло13">
+				<mesh_name>guid://34ae9e0cd4e9d81738d6b7e3b9490bdba120677c</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="744236712" immovable="1" name="Кресло14">
+				<mesh_name>guid://e57e7936b80c3491677d3d6bff9ab35f6f6b9cab</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2062277095" immovable="1" name="Кресло15">
+				<mesh_name>guid://cd2a621e40dc898aa132a1cd30245ef412050a0e</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="986320410" immovable="1" name="Кресло16">
+				<mesh_name>guid://73e3ad58b9bd97e111fda295f72d5abf24100a15</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="450496177" immovable="1" name="Кресло17">
+				<mesh_name>guid://d15e0080234096164da3a9c79467c9f07150d470</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="527749212" immovable="1" name="Кресло18">
+				<mesh_name>guid://b3391a4a48e9dbc4b1ad17cf00c509bbf11e5d0f</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="962473995" immovable="1" name="Кресло19">
+				<mesh_name>guid://611f61b2401796d5118dde51e55b7ce8aa84a722</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1584317934" immovable="1" name="Кресло2">
+				<mesh_name>guid://dfc6cc8cdbd08eae4ffcfb9943f986be1214fc19</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2133447797" immovable="1" name="Кресло20">
+				<mesh_name>guid://63bda2341fed4b768a4ef1ebcbe2592a2262b6a4</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="463625040" immovable="1" name="Кресло21">
+				<mesh_name>guid://0312a49e9bad148a6b78d073f412e774263b91b3</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1054832239" immovable="1" name="Кресло22">
+				<mesh_name>guid://41fc32862a2297b1794edb15ef0bc9a623fdab76</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="131019010" immovable="1" name="Кресло23">
+				<mesh_name>guid://282c7700bf5b6e71ddcadcdd94fff5bae127ac5d</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2024619129" immovable="1" name="Кресло24">
+				<mesh_name>guid://c042f728f09f28dc5941744f08e8e8664f34c218</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1260665732" immovable="1" name="Кресло25">
+				<mesh_name>guid://46972c32dcae9b27b611cb5739d4880f3bca5e97</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1289785619" immovable="1" name="Кресло26">
+				<mesh_name>guid://fa0b689abe8a1c98f0011c191d0501302424eb0a</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1216275286" immovable="1" name="Кресло27">
+				<mesh_name>guid://7b16e0b49b1d216b2def4a61022f7d32bbeedee1</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="752534205" immovable="1" name="Кресло28">
+				<mesh_name>guid://d6d2b35ccff7af822caa54f38ff78bfeb856eacc</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="831988984" immovable="1" name="Кресло29">
+				<mesh_name>guid://e6ec0506bafaaa47f5f7ac7b77a80b1e285227bb</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="370058231" immovable="1" name="Кресло3">
+				<mesh_name>guid://fa18d7ee4bf809f059e0655df223887ce5b279de</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="866169066" immovable="1" name="Кресло30">
+				<mesh_name>guid://b1437da85584ecdc966a882595898453e9bb97a5</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="686762817" immovable="1" name="Кресло31">
+				<mesh_name>guid://7b34cad0315794bc9e62f7d76bc16638a87e64c0</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1428753324" immovable="1" name="Кресло32">
+				<mesh_name>guid://fbe3c31ac159f7de9b5c57df5ee16a3ffdbe911f</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="234296091" immovable="1" name="Кресло33">
+				<mesh_name>guid://6f059482170a8bc8825cbae13096599538f5abf2</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1094364606" immovable="1" name="Кресло34">
+				<mesh_name>guid://735f01dc7f397b5347b91a29bb7fc5fece0d1aa9</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1697741317" immovable="1" name="Кресло35">
+				<mesh_name>guid://ccc871848e70ce7bc61300fb8d364dcb8639a3f4</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="17638304" immovable="1" name="Кресло36">
+				<mesh_name>guid://4c523a6e2142f4eda8c7f1835954a86a07837ec3</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="15434367" immovable="1" name="Кресло37">
+				<mesh_name>guid://489bf256276ce813d6de60a53a05947c63a91546</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1556753874" immovable="1" name="Кресло38">
+				<mesh_name>guid://4a7961508b873909ac17c46d79acf7bbbe54ebed</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2054615817" immovable="1" name="Кресло39">
+				<mesh_name>guid://b1781b78b387c52aa994545fb5013a8cc6e45c68</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="355459284" immovable="1" name="Кресло4">
+				<mesh_name>guid://aba07f02df0c0b4d5bfcdd67097f7932590114a7</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1478874659" immovable="1" name="Кресло40">
+				<mesh_name>guid://05a3856a1e3c77fe45c9daa9e7ce25a3340689da</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="857195814" immovable="1" name="Кресло41">
+				<mesh_name>guid://cfb9d004670b87cc33078af12424e75cf1facf71</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="233249357" immovable="1" name="Кресло42">
+				<mesh_name>guid://17ed7cacbc1af505eb9716038e7cc707b6db821c</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="388691784" immovable="1" name="Кресло43">
+				<mesh_name>guid://08a0e4d69fbb79a39d1bbf8bc5605cbbb027b6cb</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="774648327" immovable="1" name="Кресло44">
+				<mesh_name>guid://193521beb339b0dd05c3eced2fe01982db1b1dae</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="323700666" immovable="1" name="Кресло45">
+				<mesh_name>guid://6f52c1f84bb4e71ecd11b1b5d7b0ba3410a0c935</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="922727377" immovable="1" name="Кресло46">
+				<mesh_name>guid://f505892013d4c5611c85a9e7bf226a4bcaf14910</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2021219068" immovable="1" name="Кресло47">
+				<mesh_name>guid://c1a2ffea7b831f9018077befd0e4a1d3d05c092f</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="393542187" immovable="1" name="Кресло48">
+				<mesh_name>guid://fd4edb52cd8c70ae49359b71fc1453db625b24c2</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2000669070" immovable="1" name="Кресло49">
+				<mesh_name>guid://72b5eb2c5ce4ef729bcbbcb9af81a75722a71d39</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1675150229" immovable="1" name="Кресло5">
+				<mesh_name>guid://308474d4894c065051a8b40b67c4c5d46f212544</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1173045232" immovable="1" name="Кресло50">
+				<mesh_name>guid://11c7a43e004fb4c724093693064e88b4b99aefd3</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1128977039" immovable="1" name="Кресло51">
+				<mesh_name>guid://46a806261b564a7122102a35ac1cf90ad0763316</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="118988450" immovable="1" name="Кресло52">
+				<mesh_name>guid://46083fa09f83384e9a1b6ffd397211c2e7f04f7d</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2141752729" immovable="1" name="Кресло53">
+				<mesh_name>guid://f509b3c88482cfd7e68b186f85167aaf8683cab8</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="878320164" immovable="1" name="Кресло54">
+				<mesh_name>guid://ab94e5d23b854162ddb453774de7e1315fdd8eb7</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1492164403" immovable="1" name="Кресло55">
+				<mesh_name>guid://4dc5363ad73e78e619d11d39f8eaeca4516b1caa</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="739269366" immovable="1" name="Кресло56">
+				<mesh_name>guid://2cd5f35482896f6e40bacf8160d09ca3d8e52401</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1602721245" immovable="1" name="Кресло57">
+				<mesh_name>guid://1743f9fca71091508c9dfb136e018c8210832d6c</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1050451352" immovable="1" name="Кресло58">
+				<mesh_name>guid://d4ca18a6fad14ee7170a769b9e7e9c31c6bd49db</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="889553943" immovable="1" name="Кресло59">
+				<mesh_name>guid://414c3f8e101a641a41c6387da29b22cff5dbf57e</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="110547594" immovable="1" name="Кресло6">
+				<mesh_name>guid://da067a48bcf3fe8b6afc1f4521e542b655b89ec5</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="963944545" immovable="1" name="Кресло60">
+				<mesh_name>guid://88653b707a4e15ca0d1cbff7f0c8ebd8a74e8160</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1220197964" immovable="1" name="Кресло61">
+				<mesh_name>guid://9773d0bad527d3fe01df83ffe4d06d04a557c53f</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1797842235" immovable="1" name="Кресло62">
+				<mesh_name>guid://b59836222069543bbf918001417ced53dda21192</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1536891230" immovable="1" name="Кресло63">
+				<mesh_name>guid://9f10887cc03b44fdffcde3499818b6b7c7ec03c9</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="697872677" immovable="1" name="Кресло64">
+				<mesh_name>guid://07d6ac2441f76be261310b1b3dbb78cdcb8e3a94</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2086776896" immovable="1" name="Кресло65">
+				<mesh_name>guid://dc3fe20ed50bcb46b87d9fa3241d717ef672e4e3</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="803104415" immovable="1" name="Кресло66">
+				<mesh_name>guid://058d6df66ad6647519ed37c5a9affad8e1a204e6</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1294238578" immovable="1" name="Кресло7">
+				<mesh_name>guid://266e11f0600f3d7922fedf8d8ece3606ba12d70d</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="164301865" immovable="1" name="Кресло8">
+				<mesh_name>guid://882cc0180684be6e0456c07f1a80b64f31580d08</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1385686900" immovable="1" name="Кресло9">
+				<mesh_name>guid://821160a22946446008892d875922f9c618e0ccc7</mesh_name>
+				<surface name="Material.008" intersection="1" material="45d8dcc03ecd55ee84087907dde3f9da4df1a8b0"/>
+				<surface name="Material.009" intersection="1" material="b38917f2d5eab7a2b81cbf9191684d744af7c562"/>
+				<surface name="пластик" intersection="1" material="e3ddc274d71fae4ac352352bea9b58edcb40aee4"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="246541379" immovable="1" name="Микроволновка">
+				<mesh_name>guid://18ad7b0a5318ffa1c9afe3c9527f022310dfa37a</mesh_name>
+				<surface name="Material.011" intersection="1" material="d8c4ccc61c364041627950558447ea7271bd8db6"/>
+				<surface name="Material.023" intersection="1" material="105926da3b687229a5586559ef99094f833bd14a"/>
+				<surface name="Material.022" intersection="1" material="f6d49b680b0fe98300e26b8fe1d92a3cd6301e58"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1915069638" immovable="1" name="Молоток аварийный">
+				<mesh_name>guid://ed504aa4b6bd360bf2c21811c0405c4f29d6dc91</mesh_name>
+				<surface name="Material.001" intersection="1" material="32e61b9cf1a11665605c4033ad86ae08d733eb0c"/>
+				<surface name="Метал матовый" intersection="1" material="60f5fa2e3e6920ef4b89c29d4855d9827faea41e"/>
+				<surface name="Пластик красный" intersection="1" material="ec5e371037576cf35c4d17173fdcd269ed254900"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="525677933" immovable="1" name="Молоток аварийный.001">
+				<mesh_name>guid://fb5b2b4c642ab814a50004234aa2aaea8262ecbc</mesh_name>
+				<surface name="Material.001" intersection="1" material="32e61b9cf1a11665605c4033ad86ae08d733eb0c"/>
+				<surface name="Метал матовый" intersection="1" material="60f5fa2e3e6920ef4b89c29d4855d9827faea41e"/>
+				<surface name="Пластик красный" intersection="1" material="ec5e371037576cf35c4d17173fdcd269ed254900"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2125535208" immovable="1" name="Молоток аварийный.002">
+				<mesh_name>guid://c6d4a07662fb6edc2424d1ab2706a9286423e0eb</mesh_name>
+				<surface name="Material.001" intersection="1" material="32e61b9cf1a11665605c4033ad86ae08d733eb0c"/>
+				<surface name="Метал матовый" intersection="1" material="60f5fa2e3e6920ef4b89c29d4855d9827faea41e"/>
+				<surface name="Пластик красный" intersection="1" material="ec5e371037576cf35c4d17173fdcd269ed254900"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="278632999" immovable="1" name="Молоток аварийный.003">
+				<mesh_name>guid://626b315e2e9ef037d310480d376564f394d2014e</mesh_name>
+				<surface name="Material.001" intersection="1" material="32e61b9cf1a11665605c4033ad86ae08d733eb0c"/>
+				<surface name="Метал матовый" intersection="1" material="60f5fa2e3e6920ef4b89c29d4855d9827faea41e"/>
+				<surface name="Пластик красный" intersection="1" material="ec5e371037576cf35c4d17173fdcd269ed254900"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="563106138" immovable="1" name="Монитор табло1">
+				<mesh_name>guid://f093a69823264c161572d0d5c7388fa0983c1855</mesh_name>
+				<surface name="Material.015" intersection="1" material="23a05ac2d0a9adc748516c212f1688b033295a32"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="780285340" immovable="1" name="Монитор2">
+				<mesh_name>guid://9593358abc75167b1d55700f45c5e2015552c54f</mesh_name>
+				<surface name="Material.014" intersection="1" material="ee869c96940e30c4062ba5e58ab1f3fd596a8786"/>
+				<surface name="Material.013" intersection="1" material="c36021c4c7a2d1159050943b8f46f7d022f6ac34"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="916706379" immovable="1" name="Монитор3">
+				<mesh_name>guid://2ebea4f295da31e06b29689109a9d221d0f77262</mesh_name>
+				<surface name="Material.014" intersection="1" material="ee869c96940e30c4062ba5e58ab1f3fd596a8786"/>
+				<surface name="Material.013" intersection="1" material="c36021c4c7a2d1159050943b8f46f7d022f6ac34"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="78224686" immovable="1" name="Монитор4">
+				<mesh_name>guid://40f3d9cc79349f0a9b988dd98cc5eb8f9c24ce59</mesh_name>
+				<surface name="Material.014" intersection="1" material="ee869c96940e30c4062ba5e58ab1f3fd596a8786"/>
+				<surface name="Material.013" intersection="1" material="c36021c4c7a2d1159050943b8f46f7d022f6ac34"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1730822837" immovable="1" name="Окно1">
+				<mesh_name>guid://fae41774fa1fbef9af0d062bf76bd1d7fb35e3e4</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1406497936" immovable="1" name="Окно10">
+				<mesh_name>guid://8dc7f3de225a90184fa62cb3f5797e03b83c5df3</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1824997039" immovable="1" name="Окно11">
+				<mesh_name>guid://8ff929c6e2ea6f0bedbe89552ba2b5d2d1a98ab6</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1151196226" immovable="1" name="Окно12">
+				<mesh_name>guid://727fd840f9748e00fa2b131d670d912dfb15829d</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="547843769" immovable="1" name="Окно13">
+				<mesh_name>guid://0b5640681e6c348761684c8fed0ba61c4fe62358</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1797146820" immovable="1" name="Окно14">
+				<mesh_name>guid://d7f2ef7289768c401c0c6b9719855c7670cbced7</mesh_name>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1494924627" immovable="1" name="Окно15">
+				<mesh_name>guid://81d953da51e92ce2a73f2e5962493c6b5e311e4a</mesh_name>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1733599894" immovable="1" name="Окно2">
+				<mesh_name>guid://1b4dd5f4ae9ef571211664a1f4c25b6f8c38f921</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="355006717" immovable="1" name="Окно3">
+				<mesh_name>guid://41f8109c12d6bba7583e31339d79488262cfc00c</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1936549432" immovable="1" name="Окно4">
+				<mesh_name>guid://1b6d7c46b45658d49b0bd0bbb497175bc8ac7bfb</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="724530231" immovable="1" name="Окно5">
+				<mesh_name>guid://15def72e68b4b53b370b1b9dd5b4ba2f421a411e</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="797230122" immovable="1" name="Окно6">
+				<mesh_name>guid://d56f46e8a4ecd63cf1fec66588eaddf869a435e5</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="879732097" immovable="1" name="Окно7">
+				<mesh_name>guid://5a657c109fffa03fd52c181712418b8b4a9bee00</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="195346668" immovable="1" name="Окно8">
+				<mesh_name>guid://297e2e5a8e6f1390291a401f774fe130652e095f</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1337378651" immovable="1" name="Окно9">
+				<mesh_name>guid://bcdf27c23b8c7e1d8df655218f505a51a1c84732</mesh_name>
+				<surface name="Material.005" intersection="1" material="a2da4fb85eaa5139dd749b9ff9fb521d46a7c8a8"/>
+				<surface name="Material.006" intersection="1" material="851453aaf789534619d0f3e9dba5a9e934f0001a"/>
+				<surface name="Material.007" intersection="1" material="c6ba74ec62d5ad710cdd51430d18cc6fd579925c"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="336090366" immovable="1" name="Полка">
+				<mesh_name>guid://7824df1cec725d949b44bc69a32a7a3533da7ce9</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1602648133" immovable="1" name="Полка.001">
+				<mesh_name>guid://3111b6c4644b88588bdda53b649fbdb01f0d2134</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1760267488" immovable="1" name="Полка.002">
+				<mesh_name>guid://31acd9ae39994538f143ddc36e29f55c49685b03</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="744905407" immovable="1" name="Полка.003">
+				<mesh_name>guid://01d83996f3d62223cd0d1ee55eac3cb46e49c486</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="577808658" immovable="1" name="Полка.004">
+				<mesh_name>guid://7c52929035bb28f09b490aada0e034e06b91522d</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1648801097" immovable="1" name="Полка.005">
+				<mesh_name>guid://123b34b8cd3f091bd670bc9f03e13e339ff30da8</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="442646036" immovable="1" name="Полка.006">
+				<mesh_name>guid://9356924292367d6dda0f0da754a957c0889f94e7</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1209799267" immovable="1" name="Полка.007">
+				<mesh_name>guid://4a05c0aab3cd89be8897fce9b6d856224c6c8d1a</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1624921190" immovable="1" name="Полка.008">
+				<mesh_name>guid://c0339544e8ed49b46ff0b53134a5c91825b479b1</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1662771341" immovable="1" name="Полка.009">
+				<mesh_name>guid://101fa9ec26e51ed468198243d869b6c8f15ea75c</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1310099592" immovable="1" name="Полка.010">
+				<mesh_name>guid://a081ac164bab538978a073cb61ffb2218ce81b0b</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="54661703" immovable="1" name="Полка.011">
+				<mesh_name>guid://6e3490fe526e14ab335fb32daa1bf39e8311b4ee</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="50408186" immovable="1" name="Полка.012">
+				<mesh_name>guid://1e4e5b3800f5dc783668fff5c3ec7d979da9f775</mesh_name>
+				<surface name="Пластик серо-синий" intersection="1" material="a14653fe840c87df1d7a1a2d05a410d22d4ad7ee"/>
+				<surface name="Метал" intersection="1" material="bd618560b2710bf054a91927295b39a7b1623d50"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="218611217" immovable="1" name="Стенка.001">
+				<mesh_name>guid://54700a60acfeec3ce2065a274ff5830c21162250</mesh_name>
+				<surface name="Material.002" intersection="1" material="aa3eb192c1bd0de7b8641cb117e0467448b36302"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="188178492" immovable="1" name="Стенка.002">
+				<mesh_name>guid://e5f1bb2abd2cbe14ee1ef42f462aab27160a916f</mesh_name>
+				<surface name="Material.002" intersection="1" material="aa3eb192c1bd0de7b8641cb117e0467448b36302"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1148370539" immovable="1" name="Стенка.003">
+				<mesh_name>guid://4156be92d469e16ab63145b1d5c92ac2c4c19002</mesh_name>
+				<surface name="Material.002" intersection="1" material="aa3eb192c1bd0de7b8641cb117e0467448b36302"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="110379214" immovable="1" name="Стол">
+				<mesh_name>guid://8ba8986c061a9776bf2b6ef955c8415069d60f79</mesh_name>
+				<surface name="Material.021" intersection="1" material="9857b51407db8a126314974b9366579893c13d84"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2011582933" immovable="1" name="Столик2">
+				<mesh_name>guid://a1048a1432910485ee83e84b47615bda6948f284</mesh_name>
+				<surface name="Пластик" intersection="1" material="c0407808fbbe0846d3deafaf0ea6f908715346f8"/>
+				<surface name="Металл" intersection="1" material="ac18c0669d94114c16943f752c3719eb94dd3556"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="361298224" immovable="1" name="Столик3">
+				<mesh_name>guid://cc7b937e4e42ea19d357b2d36810f80354a7dc13</mesh_name>
+				<surface name="Пластик" intersection="1" material="c0407808fbbe0846d3deafaf0ea6f908715346f8"/>
+				<surface name="Металл" intersection="1" material="ac18c0669d94114c16943f752c3719eb94dd3556"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1029487311" immovable="1" name="Столик4">
+				<mesh_name>guid://58579d6620a1903c77a1f875a4cf8735e87fb256</mesh_name>
+				<surface name="Пластик" intersection="1" material="c0407808fbbe0846d3deafaf0ea6f908715346f8"/>
+				<surface name="Металл" intersection="1" material="ac18c0669d94114c16943f752c3719eb94dd3556"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="181004770" immovable="1" name="Табло1">
+				<mesh_name>guid://b13b40e0cd840db7da41c63dbb051694565f45bd</mesh_name>
+				<surface name="Material.016" intersection="1" material="24fd147a46e49fed54dc0679b0dd9fbed30b22ea"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1847117668" immovable="1" name="Тележка">
+				<mesh_name>guid://a7994912df929ac596a213b777e3ea28c59d1ef7</mesh_name>
+				<surface name="Material.024" intersection="1" material="72b7745e2953dfe495632f0dac664018d5f1a44e"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="736553843" immovable="1" name="Тумба">
+				<mesh_name>guid://a72fc17aa8c674b658134f79baa82c55e5deefea</mesh_name>
+				<surface name="Material.019" intersection="1" material="200e823c3863ca8e33ec865368f6e9ca43664dac"/>
+				<surface name="Material.020" intersection="1" material="7b7581ce2b0855aba51d35bd6dc65701fb633fbe"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1999878710" immovable="1" name="Тумба2">
+				<mesh_name>guid://34a6889413d3482bdfca09c16a2763382a325e41</mesh_name>
+				<surface name="Material.020" intersection="1" material="7b7581ce2b0855aba51d35bd6dc65701fb633fbe"/>
+				<surface name="Material.019" intersection="1" material="200e823c3863ca8e33ec865368f6e9ca43664dac"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="361163805" immovable="1" name="Хранилище багажа">
+				<mesh_name>guid://8216f73c3f9609ed4492f75346052193a6e4a2ac</mesh_name>
+				<surface name="Material.003" intersection="1" material="9b77c7b02da9aa14f72d7f37e61491eaea4d85a0"/>
+				<surface name="Material.004" intersection="1" material="32011c62822fd4f32ecdd14182f3b3526b82dfd2"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="624000728" immovable="1" name="Шкаф">
+				<mesh_name>guid://853e2fe61a7af1d4f003badb95d83c17b1a7be1b</mesh_name>
+				<surface name="Material.017" intersection="1" material="04a97c6477712df404bf3e5b095b680f1d1562d4"/>
+				<surface name="Material.018" intersection="1" material="2be8383649a503c1efbc1d05ed68723ed4529726"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="999584855" immovable="1" name="Шкаф большой">
+				<mesh_name>guid://c738feceec134de965f70ebd793672aca8555cbe</mesh_name>
+				<surface name="Material.020" intersection="1" material="7b7581ce2b0855aba51d35bd6dc65701fb633fbe"/>
+				<surface name="Material.019" intersection="1" material="200e823c3863ca8e33ec865368f6e9ca43664dac"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1171424714" immovable="1" name="Шкаф.001">
+				<mesh_name>guid://2425e388585ef6a7b8ba7d85ae562973da465d05</mesh_name>
+				<surface name="Material.017" intersection="1" material="04a97c6477712df404bf3e5b095b680f1d1562d4"/>
+				<surface name="Material.018" intersection="1" material="2be8383649a503c1efbc1d05ed68723ed4529726"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1905202060" immovable="1" name="Экран монитор2">
+				<mesh_name>guid://52eadbfae2d537614f948c3fd8ba2d0e75495d7f</mesh_name>
+				<surface name="Material.012" intersection="1" material="053c1458f533f4aabd51a7bfb728315b9a779948"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1797831035" immovable="1" name="Экран монитор3">
+				<mesh_name>guid://fac269629cc59ea84e533a41cf49ce8f8dd04cd2</mesh_name>
+				<surface name="Material.012" intersection="1" material="053c1458f533f4aabd51a7bfb728315b9a779948"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="74080414" immovable="1" name="Экран монитор4">
+				<mesh_name>guid://39c405bcc2d9bf94ebe5a58997e3cc43ef208609</mesh_name>
+				<surface name="Material.012" intersection="1" material="053c1458f533f4aabd51a7bfb728315b9a779948"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="445341407" immovable="1" name="столик1">
+				<mesh_name>guid://41e45536b0973ed1cd861605a69fd8fda4885426</mesh_name>
+				<surface name="Пластик" intersection="1" material="c0407808fbbe0846d3deafaf0ea6f908715346f8"/>
+				<surface name="Металл" intersection="1" material="ac18c0669d94114c16943f752c3719eb94dd3556"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="131060305" name="Displeased (3)_1">
+			<transform>0.999999880791 1.67037320822e-22 -3.82136965978e-15 0.0 1.67037396552e-22 0.999999880791 8.74227623626e-08 0.0 3.82136965978e-15 -8.74227623626e-08 0.999999940395 0.0 -1.37111926079 -13.4087581635 2.14735491842 1.0</transform>
+			<node type="NodeDummy" id="2041702268" name="metarig">
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1741626539" name="rig.001">
+				<transform>0.436133384705 3.81279976591e-08 -3.81279914473e-08 0.0 3.81279976591e-08 -7.10551440784e-08 0.436133384705 0.0 3.81279914473e-08 -0.436133384705 -7.10551474117e-08 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1410501134" name="Бедро левое">
+				<mesh_name>guid://5ff6b1a7495bf3394e084609ef562b0392afa8a8</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://19fb4dc1d604ae3170d76d735df0bcadd0f602ea</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1606388245" name="Бедро правое">
+				<mesh_name>guid://38d74fe4c2a6d1da321994aacd4230de24f573e7</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://8480d386a4f68beec17beb3c04e6cf4a26f05541</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1715098736" name="Голень правая">
+				<mesh_name>guid://7598f93111143850f596b063d5795d0a3aa2e01a</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://2dce9edb765af2210ffa31ddb3980c5d4bf42dac</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1777982735" name="Голеь левая">
+				<mesh_name>guid://f204a7b6d8bbb09a1c6f9decf028a99bfe88b0b1</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://86bff028ea392dedfeff12ce4f0f29f7d7d3cd1b</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1118447394" name="Голова">
+				<mesh_name>guid://50ba57cbb4d7a133765a4e4dace9f629e10f725c</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://6e780185407dadd886909857386784039d8c1fbe</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1023179801" name="Голова.001">
+				<mesh_name>guid://00f07fd83c678bb7f6dda4fe41647fc4fcc46a0b</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://d908799accdac26c49a9c0b032bf5e052ac04405</anim_name>
+				<speed>30</speed>
+				<surface name="Досада" intersection="1" material="b86b7cf1c2951a27a67fc2234d573776b3f6c2da"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="220477092" name="Живот">
+				<mesh_name>guid://c10d83f56f963c38f9d22a47cbcc7ee7afbbb7ee</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://8745b03f706e85e9d0da4f61b8d50646a7c965a0</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="722407859" name="Кисть левая">
+				<mesh_name>guid://d3a530ca15d0256f24d73e60e9514f5aea7e1e75</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://fa9d9c5c2a86de1b99c1bd629021529cecc6dc7f</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="666577782" name="Кисть правая">
+				<mesh_name>guid://070f182fbdbef54a7c3752d1ad8e3f295e661d50</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://6d736989d03965838739a97b68729bf106c9bfd2</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="315042909" name="Плечо левое">
+				<mesh_name>guid://7edbc70cd62c05cfb96912925807f63c941c506f</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://803558ee63d7f0688ec90564fbae9f7bb29d5d09</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1632518680" name="Плечо правое">
+				<mesh_name>guid://d61032f9a6546b7bb5c47a6b6b3852e5e4c24302</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://9d9e0fe33b40db3a626c3d250792e4a1175f42d4</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1343610519" name="Предплечье левое">
+				<mesh_name>guid://67f3231e09c8036e3876fe144f067fcacc312679</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://894ca3d0c96d8a38b930e93615d6e99be799d023</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1090153226" name="Предплечье правое">
+				<mesh_name>guid://be0216d3366f2e413406979539b4ae8ff2131d84</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://8d2049cd414491ef373484df90eee9399b977726</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1137073889" name="Стопа левая">
+				<mesh_name>guid://d77c198091f47b6153e7316663118f65070e0b13</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://4358858241d7dd079b022d5806ad105a1f4f244d</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="2068343500" name="Стопа правая">
+				<mesh_name>guid://70eaca3d8b205416405e84cf19bed3c5456a1556</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://cf8021c771c1048404dc7f29acc82a11e76f7948</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1200990139" name="Таз">
+				<mesh_name>guid://ec6292b2a93c1acd1c825108c45582e01cb84cbd</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://641c3a849f5b6a11be822a4a94c6955d3f72cc07</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1629485534" name="Торс">
+				<mesh_name>guid://2a2ab7b7538dd158a51ba0997a62040c9ed326f8</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://9c55a651e1bfbbced0394e83b90de0181f3d19ba</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1330321317" name="Шея">
+				<mesh_name>guid://96fbab3414f93327d390957a4d26f57b3ce6bdf7</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://95ac5356603f6cb8c91cec8c1bc3d9d5adf35dd1</anim_name>
+				<speed>30</speed>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="604450938" name="Confused (2)_1">
+			<transform>0.999999880791 1.67037320822e-22 -3.82136965978e-15 0.0 1.67037396552e-22 0.999999880791 8.74227623626e-08 0.0 3.82136965978e-15 -8.74227623626e-08 0.999999940395 0.0 0.853541612625 -23.6444778442 -0.807922178432 1.0</transform>
+			<node type="NodeDummy" id="705103249" name="metarig">
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="908788156" name="rig.001">
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1252717035" name="Бедро левое">
+				<mesh_name>guid://2459a61fc058e5340b442c419e67ac421af27300</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://3f16c4f92415805127781c6b21e7c5b709529d02</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1131667022" name="Бедро правое">
+				<mesh_name>guid://d22c8fbc84376dcfb89e15c2ed6528a36f90ca5f</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://cbe49d1ea739154ceb0ca8149a00c692f561b879</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="159535445" name="Голень правая">
+				<mesh_name>guid://19e69269f2f8f66f7cf7115bf0e944d25ab21432</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://53a6f8d329b671b592ff0995be4873ffa5b68784</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="365032112" name="Голеь левая">
+				<mesh_name>guid://9e68bb4ee98b3e504aae54c472b141ffc467e5e9</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://23b6238005ce01b2f800eb660b2588029c966d13</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1361733199" name="Голова">
+				<mesh_name>guid://1a2da3c3dc21aa81f122280525fa5d660f117634</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://4eb67c3db73f1466438846cf45b6a073c6630f56</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1041276770" name="Голова.001">
+				<mesh_name>guid://132c0d303299a1bb6a2a0796fd3eeea2807eac03</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://1bf7acb2d9ccbfdcc09e9b08dfefca5846f8febd</anim_name>
+				<speed>30</speed>
+				<surface name="Сметение" intersection="1" material="fa5781bb378781aa44cda3bd4ed863e1eef64c0c"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="324671321" name="Живот">
+				<mesh_name>guid://6cdc40ad9b9892cb1da0aabfe15665c207b1e186</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://1dd9b9b75a9227661c373299c11098a6ed0830f8</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1694537956" name="Кисть левая">
+				<mesh_name>guid://f6854de26be30bf75ee5b2b8f27b36108668cb2d</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://2e4255349310a09ca551ef7a2fbd254751943ff7</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="145067763" name="Кисть правая">
+				<mesh_name>guid://3e8933a79023528bdb035809f88d20b0a81a32a8</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://469e1fc122cc805508994f733494b9d1b1919cea</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="428279734" name="Плечо левое">
+				<mesh_name>guid://08e779e4f058dbc6aa586eaad4fa738a285a75e7</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://eab38d869ba050699a48d53c2c5bece798332741</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="371383197" name="Плечо правое">
+				<mesh_name>guid://a8cb4b31dc747795ff4412633d955f96d78ffa1a</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://23e9c0dbc1561cfd732ae3dd70450a7f2e04d7ac</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="839493720" name="Предплечье левое">
+				<mesh_name>guid://b31ce1b6102ef107ccf607ecb5f143ccf8ef02b1</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://b89d3a283162635d81a20cce37bc179c90686f1b</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="278368215" name="Предплечье правое">
+				<mesh_name>guid://b8f0f9cb2b95aa352e62804dc44c03645eed9c5c</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://c123f3857f3e6da5242c9a57adb14b3d07a459be</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="57666378" name="Стопа левая">
+				<mesh_name>guid://852f49d81a1c55f2acd61efe029da0c8ffc88c0b</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://1c72d39a1c4fc323f8f14ab06db5a50bdf173605</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="2065130017" name="Стопа правая">
+				<mesh_name>guid://0440f5f57a2600fdf111ac47d65fb07cce7d71ee</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://264ef23ff6fdd6a6cf322161f3533360169fafa0</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1659966732" name="Таз">
+				<mesh_name>guid://754d0aca2c755fd6d4704860cc15aff9d4709075</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://7b3b865cde4fb65090205762f6e800a529249e7f</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1597754619" name="Торс">
+				<mesh_name>guid://a2ebda2f90b48e830ddea4d17695aad0fb21e750</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://4c7a7b899940fc17ac11cb7b3b8a885b64d899d2</anim_name>
+				<speed>30</speed>
+				<surface name="Белый мужик" intersection="1" material="0ea00c97886befbd43ef9479fa7b628df415ef58"/>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1789353502" name="Шея">
+				<mesh_name>guid://d4f3310cfca371138d752c92bdbad4c41621926f</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://fd1152eeb672bd3bbef52f6443648593ae3a6f09</anim_name>
+				<speed>30</speed>
+				<surface name="Черный мужик" intersection="1" material="9c40eda129bd4f0755aec4533f698b2c8f0eca4a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="999928408" name="Маникен_ребенок_1">
+			<transform>0.999999880791 1.670373082e-22 -3.82136965978e-15 0.0 1.67037358687e-22 0.999999880791 8.74227552572e-08 0.0 3.82136965978e-15 -8.74227552572e-08 0.999999940395 0.0 -3.38001298904 -22.3035011292 0.396570555435 1.0</transform>
+			<node type="NodeDummy" id="1793331671" name="rig">
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+				<node type="NodeDummy" id="1193182538" name="metarig">
+					<transform>1 -1.56240781146e-23 -1.32348898008e-23 0.0 -2.64697796017e-23 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="105985057" name="Бедро левое">
+				<mesh_name>guid://f71b5a1e4ad2770a83a57d148e3cbc42c8500179</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://7ec40489a427727ee4f3dc7bfdc335cc5f8e06d2</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="9223948" name="Бедро правое">
+				<mesh_name>guid://f12f69d3da855f7654614295820299d56de63c84</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://083d4fee612e9afbcdd944645623b62257def809</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="2145349371" name="Голень левая">
+				<mesh_name>guid://09412880e6b66f4c1e0bc866219d6f2876209e13</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://6dba22e38f0a6912025ba825fdeb86d6c27621d4</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="394434590" name="Голень правая">
+				<mesh_name>guid://0342553dad755abc7d7327cf06dcfdc6aaed8c56</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://b37772d041a821ed4a8d4036c812b5c47b9d2323</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1369088229" name="Голова">
+				<mesh_name>guid://c4e039b21a376eb92adac00826436acc44cf57bd</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://8c8494cd35fae4c0586be7df8f47175b8dd4ae26</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="868310272" name="Ладонь левая">
+				<mesh_name>guid://29c73ab78f6bce613c0afb9989fe6e9ee960b5f8</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://3331ec82a60d1522e7d85c58f462e86d2f54ef4d</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="2102307935" name="Ладонь правая">
+				<mesh_name>guid://d433aa3421b10ff3a6109c7a74322adb641100f7</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://ed7764c7746724a4fb2c9a294e3da2e6d99cc848</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1197641266" name="Плечо левое">
+				<mesh_name>guid://b0f588c103e85b0e66304073c6bbf33e2fcd69ea</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://2495f984526cb083ac35f14ad4d3c9ae5039cf07</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="66721769" name="Плечо правое">
+				<mesh_name>guid://84caea8638af4f77c5bd4a3c23b1a84cd9ea9041</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://67a8a15143f7c7ab3660e183d8d56f248f8a40ba</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1802108980" name="Предплечье левое">
+				<mesh_name>guid://a66d51db8624acd841693cddc0d8978ad92b2cac</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://bb8e2a56ca514513c8380b8ce1319153ee6858d1</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1912188419" name="Предплечье правое">
+				<mesh_name>guid://b4b9df28b198bc4a1cb189ce673fc991d438c01b</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://3f77fceb1a303b35a273a46d714b91509787bbfc</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="2143091590" name="Ступня левая">
+				<mesh_name>guid://72dfec85f1f0e0b1b4109b571d70bc9f627e76be</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://f3be83784317146a9ebe8b9e34374f925ed5e72b</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="357899565" name="Ступня правая">
+				<mesh_name>guid://1906009ae85433d964830fb0bd17b09a38b8af05</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://911f6e158b3e4e2577f52d6739956a19da99d28e</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="348544168" name="Таз">
+				<mesh_name>guid://08a9933fbe2d096069640a618eafe7b0cb08d4a0</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://aff99d6a2c51e6a45fc346009dc804c230013895</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1607768039" name="Торс">
+				<mesh_name>guid://f5987b5c25046b0504eda46236241629d4397f7f</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://6a74cf4f9e25c29bd211caf1b7635444af9730f0</anim_name>
+				<speed>30</speed>
+				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
 		</node>
 	</editor>
 	<console>

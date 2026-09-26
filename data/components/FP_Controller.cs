@@ -139,6 +139,7 @@ public partial class FP_Controller : Component
 	private float headBobPhase;
 	private Vec3 headBobOffset = Vec3.ZERO;
 	private bool initialized;
+	private bool wasMouseGrabbed;
 
 	private void Init()
 	{
@@ -201,7 +202,11 @@ public partial class FP_Controller : Component
 
 		float frameTime = Game.IFps * Physics.Scale;
 		if (frameTime <= 0.0f)
+		{
+			CurrentInteractable = null;
+			InteractableHoverOutline.Draw(null);
 			return;
+		}
 
 		UpdateLook();
 		UpdateJumpInput(frameTime);
@@ -225,10 +230,23 @@ public partial class FP_Controller : Component
 	private void UpdateLook()
 	{
 		if (!Input.MouseGrab)
+		{
+			wasMouseGrabbed = false;
 			return;
+		}
 
-		yaw -= Input.MouseDeltaPosition.x * mouseSensitivity;
-		verticalAngle -= Input.MouseDeltaPosition.y * mouseSensitivity;
+		// Ignore the first delta after a menu releases the cursor. It can include
+		// the cursor's movement across the UI and would otherwise rotate the view.
+		if (!wasMouseGrabbed)
+		{
+			wasMouseGrabbed = true;
+			return;
+		}
+
+		// Raw deltas continue past screen edges, so the player can turn freely
+		// even when the cursor is hidden after leaving a menu.
+		yaw -= Input.MouseDeltaRaw.x * mouseSensitivity;
+		verticalAngle -= Input.MouseDeltaRaw.y * mouseSensitivity;
 		verticalAngle = MathLib.Clamp(verticalAngle, 0.1f, 179.9f);
 
 		Vec3 position = playerTransform.Translate;
@@ -361,12 +379,30 @@ public partial class FP_Controller : Component
 
 	private void UpdateInteraction()
 	{
-		Vec3 rayStart = camera.WorldPosition;
-		Vec3 rayEnd = rayStart + new Vec3(camera.GetWorldDirection()) * interactionDistance;
-		CurrentInteractable = World.GetIntersection(rayStart, rayEnd, interactionMask, interactionExclude);
+		EInteractable interactable = null;
+		if (Input.MouseGrab)
+		{
+			Vec3 rayStart = camera.WorldPosition;
+			Vec3 rayEnd = rayStart + new Vec3(camera.GetWorldDirection()) * interactionDistance;
+			Unigine.Object hit = World.GetIntersection(rayStart, rayEnd, interactionMask, interactionExclude);
+			if (hit != null)
+				interactable = ComponentSystem.GetComponentInParent<EInteractable>(hit);
+			if (interactable != null && interactable.IsAvailable)
+				CurrentInteractable = hit;
+			else
+				CurrentInteractable = null;
+		}
+		else
+		{
+			CurrentInteractable = null;
+		}
 
-		if (Input.MouseGrab && Input.IsKeyDown(Input.KEY.E) && CurrentInteractable)
+		InteractableHoverOutline.Draw(CurrentInteractable);
+		if (Input.MouseGrab && Input.IsKeyDown(Input.KEY.E) && CurrentInteractable && interactable != null)
+		{
+			interactable.Interact();
 			eventInteract.Run(CurrentInteractable);
+		}
 	}
 
 	private void CreateCrosshair()
@@ -395,6 +431,7 @@ public partial class FP_Controller : Component
 	private void Shutdown()
 	{
 		Input.MouseHandle = previousMouseHandle;
+		InteractableHoverOutline.Shutdown();
 		crosshair?.DeleteLater();
 		crosshair = null;
 

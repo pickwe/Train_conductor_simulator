@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>b3bd8ee46536396722d5dbaabbbb776670b2f6e7</guid>
+	<type>component</type>
+	<hash>95471e13b709b47322fa6c94c411e258b05974f0145396210d64c0e699a120d3</hash>
+	<runtimes>
+		<runtime id="b3bd8ee46536396722d5dbaabbbb776670b2f6e7" name="ShiftPetCarrierScenarioController.cs" link="0"/>
+		<runtime id="80ea7431cabe8c4c7450c363d067b6986074871a" name="ShiftPetCarrierScenarioController.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

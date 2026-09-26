@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>7e8840eab401fe0dc20a2029ad616f6f9732f55a</guid>
+	<type>texture</type>
+	<hash>dc37be1d1f32446098ccf1a2678cbb68d9615f2b1b19303acf4d6315247fc17c</hash>
+	<runtimes>
+		<runtime id="7e8840eab401fe0dc20a2029ad616f6f9732f55a" name="SFXScale.png" link="0" type="6"/>
+		<runtime id="6b01a9ec1762ca28c5cf2679998705dd53ad46f9" name="SFXScale.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>3db45056b2b50ccccbf1b90bae9c83e4386dd04b</guid>
+	<type>component</type>
+	<hash>2d9446d6f750036352db22b138d6c1fe957588e673bd84fdc4fff067f5eb5ed4</hash>
+	<runtimes>
+		<runtime id="3db45056b2b50ccccbf1b90bae9c83e4386dd04b" name="ShiftPassengerCallInteraction.cs" link="0"/>
+		<runtime id="464950a007b53ae57a678b67bc26c5739e3d2090" name="ShiftPassengerCallInteraction.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

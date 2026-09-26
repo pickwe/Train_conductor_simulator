@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>5d154f8818004dcae4d29985c418fd96a4b87905</guid>
+	<type>component</type>
+	<hash>4dfe827a409024eeca32f81b06c27521c31f2571b1282115de5a615099dfbe3f</hash>
+	<runtimes>
+		<runtime id="5d154f8818004dcae4d29985c418fd96a4b87905" name="ShiftStateController.cs" link="0"/>
+		<runtime id="80fe78b095665f1190c2fc3761aa080aeb8216a0" name="ShiftStateController.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

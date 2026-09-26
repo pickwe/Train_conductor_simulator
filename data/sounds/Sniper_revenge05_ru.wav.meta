@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>0ca05212ad8fba00170c8331b73f5cd146105382</guid>
+	<type>sound</type>
+	<hash>e85ca33f48e0577b08c267c880276b0e531dd7ea8a0337d50720b50f32f23769</hash>
+	<runtimes>
+		<runtime id="0ca05212ad8fba00170c8331b73f5cd146105382" name="Sniper_revenge05_ru.wav" link="0" type="7"/>
+	</runtimes>
+</asset>

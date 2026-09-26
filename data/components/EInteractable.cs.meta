@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>3ef52f848570f604a792487162cfb21c5a928cf1</guid>
+	<type>component</type>
+	<hash>831ea2c063712e1c6320ae90fd9be36c8bb9b79dcb74fe42c9f1408bbc861aa6</hash>
+	<runtimes>
+		<runtime id="3ef52f848570f604a792487162cfb21c5a928cf1" name="EInteractable.cs" link="0"/>
+		<runtime id="b3187d3eae04a5728e02526d12ddf6cc3253692e" name="EInteractable.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

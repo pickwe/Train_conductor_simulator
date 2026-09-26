@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>47cb58216519a6a85ff822d3caf3cb4b9ddcbeca</guid>
+	<type>component</type>
+	<hash>1c0828bf5a074bece7e5b5f996bfbffcdf447a182a435a76bb94ec83ddf27f91</hash>
+	<runtimes>
+		<runtime id="47cb58216519a6a85ff822d3caf3cb4b9ddcbeca" name="ConductorTerminal.cs" link="0"/>
+		<runtime id="d81b556650a9bd148e135e1c31a65c02d6631fa1" name="ConductorTerminal.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>b3c54c80d1dda7482f6fac5d7dd0fac50d79ecc4</guid>
+	<type>component</type>
+	<hash>dd4f314f797a6728d55ae6cc3703acc7841254c9597162b34c4445abf01b106e</hash>
+	<runtimes>
+		<runtime id="b3c54c80d1dda7482f6fac5d7dd0fac50d79ecc4" name="ScenarioResults.cs" link="0"/>
+		<runtime id="a2abf8a8a35a7614f88973cfbbc09b809f1a1153" name="ScenarioResults.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

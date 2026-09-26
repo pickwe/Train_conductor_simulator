@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>128f2613e548c98fd04c70d5c94c6814f45149c4</guid>
+	<type>component</type>
+	<hash>7d736bc8982b99ba37c87c879486eec0e26b897fb8018568d14057988627aae4</hash>
+	<runtimes>
+		<runtime id="128f2613e548c98fd04c70d5c94c6814f45149c4" name="ShiftDialogueWindow.cs" link="0"/>
+		<runtime id="68ca09c0826a41cb0b839fa68f0dfdd03c17ca53" name="ShiftDialogueWindow.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>8c7410218f060b04c6c49ad3a4405cb269d256ca</guid>
+	<type>component</type>
+	<hash>7d2edb3f9bc9c76cfe8061062c590cd248d62ee2483b39b5fd8caf7d49b773c9</hash>
+	<runtimes>
+		<runtime id="8c7410218f060b04c6c49ad3a4405cb269d256ca" name="ShiftGameFlowController.cs" link="0"/>
+		<runtime id="31946d66bf4638e36b03b61cbd1c2b1de46bd7a1" name="ShiftGameFlowController.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

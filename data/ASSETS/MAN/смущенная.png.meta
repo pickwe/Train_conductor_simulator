@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>bce476f4caefeaa41f95033af61438ece144eab7</guid>
+	<type>texture</type>
+	<hash>1bbee0fb387ef18a1b0f39533fb663c6419de63f92e979a8600f94d4fbeb472d</hash>
+	<runtimes>
+		<runtime id="bce476f4caefeaa41f95033af61438ece144eab7" name="смущенная.png" link="0" type="6"/>
+		<runtime id="0dedf7e8157a107eb43edc8e5dc52ea8d24c65db" name="смущенная.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

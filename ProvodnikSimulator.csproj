@@ -55,8 +55,28 @@
 		<AdditionalFiles Include="data/components/FP_Controller.cs.meta" Visible="false"/>
 		<Compile Include="data/components/MenuManager.cs"/>
 		<AdditionalFiles Include="data/components/MenuManager.cs.meta" Visible="false"/>
-		<Compile Include="data/components/ShiftScenarioController.cs"/>
-		<AdditionalFiles Include="data/components/ShiftScenarioController.cs.meta" Visible="false"/>
+		<Compile Include="data/components/PassengerScenarioController.cs"/>
+		<Compile Include="data/components/StoryStateController.cs"/>
+		<AdditionalFiles Include="data/components/PassengerScenarioController.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/StoryStateController.cs.meta" Visible="false"/>
+		<Compile Include="data/components/BriefingWindow.cs"/>
+		<AdditionalFiles Include="data/components/BriefingWindow.cs.meta" Visible="false"/>
+		<Compile Include="data/components/PassengerCallInteraction.cs"/>
+		<AdditionalFiles Include="data/components/PassengerCallInteraction.cs.meta" Visible="false"/>
+		<Compile Include="data/components/EInteractable.cs"/>
+		<AdditionalFiles Include="data/components/EInteractable.cs.meta" Visible="false"/>
+		<Compile Include="data/components/InteractableHoverOutline.cs"/>
+		<AdditionalFiles Include="data/components/InteractableHoverOutline.cs.meta" Visible="false"/>
+		<Compile Include="data/components/GameFlowController.cs"/>
+		<AdditionalFiles Include="data/components/GameFlowController.cs.meta" Visible="false"/>
+		<Compile Include="data/components/PetCarrierScenarioController.cs"/>
+		<AdditionalFiles Include="data/components/PetCarrierScenarioController.cs.meta" Visible="false"/>
+		<Compile Include="data/components/DialogueWindow.cs"/>
+		<AdditionalFiles Include="data/components/DialogueWindow.cs.meta" Visible="false"/>
+		<Compile Include="data/components/ConductorTerminal.cs"/>
+		<AdditionalFiles Include="data/components/ConductorTerminal.cs.meta" Visible="false"/>
+		<Compile Include="data/components/ScenarioResults.cs"/>
+		<AdditionalFiles Include="data/components/ScenarioResults.cs.meta" Visible="false"/>
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="source/AppSystemLogic.cs"/>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>5d154f8818004dcae4d29985c418fd96a4b87905</guid>
+	<type>component</type>
+	<hash>7a82d5e80702234d509541b1eaca51375e15314177952ac81c4c94512a2e7b0c</hash>
+	<runtimes>
+		<runtime id="5d154f8818004dcae4d29985c418fd96a4b87905" name="StoryStateController.cs" link="0"/>
+		<runtime id="80fe78b095665f1190c2fc3761aa080aeb8216a0" name="StoryStateController.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>354ddc927602471a01c7d537705ca5e5c1fbc077</guid>
+	<type>component</type>
+	<hash>e30b94a0124b04b904ffbc6935d9d99abab423aa3868b43db766f0158b09a6d0</hash>
+	<runtimes>
+		<runtime id="354ddc927602471a01c7d537705ca5e5c1fbc077" name="InteractableHoverOutline.cs" link="0"/>
+		<runtime id="d75144fa7b2c83e8af7dbcf9aae36ce23086236a" name="InteractableHoverOutline.prop" link="1"/>
+	</runtimes>
+</asset>

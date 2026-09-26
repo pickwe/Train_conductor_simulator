@@ -13,6 +13,8 @@ public partial class MenuManager : Component
 	public string playerName = "Иванов Иван Иванович";
 	public string workExperience = "6 лет 4 месяца";
 	public string currentRoute = "17";
+	[Parameter(Group = "Testing")]
+	public bool skipLoginForTesting = true;
 	public int employeeExperience = 12480;
 	[ParameterSlider(Min = 0, Max = 6)] public int unlockedAchievements = 5;
 	[ParameterSlider(Min = 0, Max = 100)] public int passengerLoyalty = 86;
@@ -50,6 +52,7 @@ public partial class MenuManager : Component
 	private Input.MOUSE_HANDLE savedMouseHandle;
 	private bool savedMouseGrab, savedCursorHide;
 	private static bool gameplayStarted;
+	public static bool BriefingRequestedForCurrentRun { get; private set; }
 	private static MenuManager instance;
 	private const float ReferenceWidth = 1600.0f;
 	private const float ReferenceHeight = 900.0f;
@@ -71,6 +74,7 @@ public partial class MenuManager : Component
 	{
 		if (instance != null && instance != this) { duplicate = true; return; }
 		instance = this;
+		authenticated = skipLoginForTesting;
 		node.Lifetime = Node.LIFETIME.ENGINE;
 		gui = Gui.GetCurrent();
 		savedMouseHandle = Input.MouseHandle;
@@ -98,8 +102,9 @@ public partial class MenuManager : Component
 			ApplyVolumeSettings();
 		}
 		UpdateKeys();
-		if (state == Screen.Game && (Game.Scale == 0.0f || Physics.Scale == 0.0f)) ResumeScales();
-		if (state == Screen.Game) GrabMouse(); else ReleaseMouse();
+		if (state == Screen.Game && !BriefingWindow.IsIntroductionVisible && !ConductorTerminal.IsVisible &&
+			(Game.Scale == 0.0f || Physics.Scale == 0.0f)) ResumeScales();
+		if (state == Screen.Game && !BriefingWindow.IsVisible && !DialogueWindow.IsVisible && !ConductorTerminal.IsVisible) GrabMouse(); else ReleaseMouse();
 	}
 
 	private void Shutdown()
@@ -549,13 +554,18 @@ public partial class MenuManager : Component
 			mainScreen.Hidden = false;
 			return;
 		}
-		gameplayStarted = true; loadRequested = true; ResumeScales(); ShowGame();
+		gameplayStarted = true; loadRequested = true; BriefingRequestedForCurrentRun = true; ResumeScales(); ShowGame();
 		if (!World.LoadWorld(mainWorldPath))
 		{
-			loadRequested = false; gameplayStarted = false;
+			loadRequested = false; gameplayStarted = false; BriefingRequestedForCurrentRun = false;
 			mainStatus.Text = "Не удалось загрузить мир"; ShowMain();
 			mainScreen.Hidden = false;
 		}
+	}
+
+	public static void CompleteRunBriefingRequest()
+	{
+		BriefingRequestedForCurrentRun = false;
 	}
 
 	private void ShowLogin(LoginTarget target)
@@ -642,7 +652,7 @@ public partial class MenuManager : Component
 		Sound.SetSourceVolume(EnvironmentSoundChannel, environmentGain);
 	}
 
-	private void GrabMouse() { Input.MouseHandle = Input.MOUSE_HANDLE.GRAB; Input.MouseGrab = true; Input.MouseCursorHide = true; Input.MouseCursorNeedUpdate = true; }
+	private void GrabMouse() { Input.MouseHandle = Input.MOUSE_HANDLE.USER; Input.MouseGrab = true; Input.MouseCursorHide = true; Input.MouseCursorNeedUpdate = true; }
 	private void ReleaseMouse() { Input.MouseHandle = Input.MOUSE_HANDLE.USER; Input.MouseGrab = false; Input.MouseCursorHide = false; Input.MouseCursorNeedUpdate = true; }
 	private void PauseScales()
 	{
@@ -653,6 +663,24 @@ public partial class MenuManager : Component
 
 	private void UpdateKeys()
 	{
+		if (ConductorTerminal.IsVisible)
+		{
+			pauseWasDown = Input.IsKeyDown(pauseKey);
+			profileWasDown = Input.IsKeyDown(profileKey);
+			return;
+		}
+		if (BriefingWindow.IsVisible)
+		{
+			pauseWasDown = Input.IsKeyDown(pauseKey);
+			profileWasDown = Input.IsKeyDown(profileKey);
+			return;
+		}
+		if (BriefingWindow.SuppressPauseUntilEscRelease)
+		{
+			pauseWasDown = Input.IsKeyDown(pauseKey);
+			profileWasDown = Input.IsKeyDown(profileKey);
+			return;
+		}
 		bool pause = Input.IsKeyDown(pauseKey);
 		if (pause && !pauseWasDown)
 		{

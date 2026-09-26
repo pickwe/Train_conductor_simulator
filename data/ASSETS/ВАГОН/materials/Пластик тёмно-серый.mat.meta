@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>64ce8e0a3a83c5c8d1195ac9b4968002a7a1967a</guid>
+	<type>material</type>
+	<hash>6ad1bb4ac529e28b54aaf852d0ee7faf24bee3b6eda89a69ffb7dc9d01bdeff1</hash>
+	<runtimes>
+		<runtime id="64ce8e0a3a83c5c8d1195ac9b4968002a7a1967a" name="Пластик тёмно-серый" link="0" type="5"/>
+	</runtimes>
+</asset>

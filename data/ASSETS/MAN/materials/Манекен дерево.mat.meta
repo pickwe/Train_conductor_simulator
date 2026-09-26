@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>75c9544106a005f9744047f33caa43004f31036a</guid>
+	<type>material</type>
+	<hash>bc66f9cf0d1ad3559b149e9df9b4791103964d0b4b337b0c0104f12a9b118ae8</hash>
+	<runtimes>
+		<runtime id="75c9544106a005f9744047f33caa43004f31036a" name="Манекен дерево" link="0" type="5"/>
+	</runtimes>
+</asset>

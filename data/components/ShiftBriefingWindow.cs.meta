@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>208cf432ce024f1047f68ed1271640380766c9a2</guid>
+	<type>component</type>
+	<hash>dc14abec671f4eea74df14dfa930c03664323e73ad806fc9506934677317838e</hash>
+	<runtimes>
+		<runtime id="208cf432ce024f1047f68ed1271640380766c9a2" name="ShiftBriefingWindow.cs" link="0"/>
+		<runtime id="1a3d530cbf81749b966d3c19c30bc0cd41cfbc99" name="ShiftBriefingWindow.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

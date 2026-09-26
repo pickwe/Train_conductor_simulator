@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>ec5e371037576cf35c4d17173fdcd269ed254900</guid>
+	<type>material</type>
+	<hash>4e8f64d194c5ec2442d90bbdb7e7680eeb1a745f79b4aa2974ca6346399e3899</hash>
+	<runtimes>
+		<runtime id="ec5e371037576cf35c4d17173fdcd269ed254900" name="Пластик красный" link="0" type="5"/>
+	</runtimes>
+</asset>
