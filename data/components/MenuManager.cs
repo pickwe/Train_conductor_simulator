@@ -15,6 +15,8 @@ public partial class MenuManager : Component
 	public string currentRoute = "17";
 	[Parameter(Group = "Testing")]
 	public bool skipLoginForTesting = true;
+	[Parameter(Group = "Testing")]
+	public bool scenarioOneCompletedForTesting = false;
 	public int employeeExperience = 12480;
 	[ParameterSlider(Min = 0, Max = 6)] public int unlockedAchievements = 5;
 	[ParameterSlider(Min = 0, Max = 100)] public int passengerLoyalty = 86;
@@ -53,6 +55,7 @@ public partial class MenuManager : Component
 	private bool savedMouseGrab, savedCursorHide;
 	private static bool gameplayStarted;
 	public static bool BriefingRequestedForCurrentRun { get; private set; }
+	public static bool ScenarioOneCompletedForTesting => instance != null && instance.scenarioOneCompletedForTesting;
 	private static MenuManager instance;
 	private const float ReferenceWidth = 1600.0f;
 	private const float ReferenceHeight = 900.0f;
@@ -102,9 +105,17 @@ public partial class MenuManager : Component
 			ApplyVolumeSettings();
 		}
 		UpdateKeys();
-		if (state == Screen.Game && !BriefingWindow.IsIntroductionVisible && !ConductorTerminal.IsVisible &&
+		if (state == Screen.Game && !BriefingWindow.IsIntroductionVisible && !ConductorTerminal.IsVisible
+			&& !PassengerScenarioController.IsSeatMonitorViewVisible &&
 			(Game.Scale == 0.0f || Physics.Scale == 0.0f)) ResumeScales();
-		if (state == Screen.Game && !BriefingWindow.IsVisible && !DialogueWindow.IsVisible && !ConductorTerminal.IsVisible && !ScenarioResults.IsVisible) GrabMouse(); else ReleaseMouse();
+		if (!PassengerScenarioController.IsSeatMonitorViewVisible)
+		{
+			if (state == Screen.Game && !BriefingWindow.IsVisible && !DialogueWindow.IsVisible
+				&& !ConductorTerminal.IsVisible && !ScenarioResults.IsVisible)
+				GrabMouse();
+			else
+				ReleaseMouse();
+		}
 	}
 
 	private void Shutdown()
@@ -619,6 +630,25 @@ public partial class MenuManager : Component
 		mainScreen.Hidden = state != Screen.Main || string.IsNullOrWhiteSpace(mainStatus.Text); pauseScreen.Hidden = state != Screen.Pause;
 		loginScreen.Hidden = state != Screen.Login; settingsScreen.Hidden = state != Screen.Settings;
 		profileScreen.Hidden = state != Screen.Profile;
+		if (state != Screen.Profile)
+		{
+			achievementsPanel.Hidden = true;
+			achievementsScroll.Hidden = true;
+			achievementsRow.Hidden = true;
+			achievementItem1.Hidden = true;
+			achievementItem2.Hidden = true;
+			achievementItem3.Hidden = true;
+			achievementItem4.Hidden = true;
+			achievementItem5.Hidden = true;
+			achievementItem6.Hidden = true;
+			achievementsEmpty.Hidden = true;
+		}
+		else
+		{
+			achievementsPanel.Hidden = false;
+			achievementsScroll.Hidden = false;
+			UpdateProfileData();
+		}
 		loginInputBackground.Hidden = state != Screen.Login;
 		passwordInputBackground.Hidden = state != Screen.Login;
 		UpdateMusic(previous);
@@ -663,6 +693,12 @@ public partial class MenuManager : Component
 
 	private void UpdateKeys()
 	{
+		if (PassengerScenarioController.IsSeatMonitorViewVisible)
+		{
+			pauseWasDown = Input.IsKeyDown(pauseKey);
+			profileWasDown = Input.IsKeyDown(profileKey);
+			return;
+		}
 		if (ConductorTerminal.IsVisible)
 		{
 			pauseWasDown = Input.IsKeyDown(pauseKey);

@@ -25,7 +25,7 @@ public partial class CarrierDeliveryInteraction : Component
 	private EInteractable subscribedPassenger;
 	private Gui gui;
 	private WidgetSprite inventoryPanel, inventoryIcon, fallbackBagBody, fallbackBagHandle;
-	private bool pickupAnimating, carrierCollected;
+	private bool pickupAnimating, carrierCollected, availabilityApplied;
 	private Vec3 pickupStartPosition;
 	private float pickupElapsed;
 
@@ -72,6 +72,17 @@ public partial class CarrierDeliveryInteraction : Component
 
 		BindInteractions();
 		if (scenario == null) return;
+		if (!availabilityApplied && scenario.IsStarted)
+		{
+			availabilityApplied = true;
+			if (!scenario.CarrierAvailable)
+			{
+				if (carrierInteractable != null) carrierInteractable.IsAvailable = false;
+				node.Enabled = false;
+				return;
+			}
+			node.Enabled = true;
+		}
 		if (pickupAnimating)
 		{
 			UpdatePickupAnimation();

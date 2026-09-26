@@ -44,7 +44,7 @@ public partial class PassengerCallInteraction : Component
 
 		if (scenario == null)
 		{
-			scenario = ComponentSystem.FindComponentInWorld<PassengerScenarioController>();
+			scenario = PassengerScenarioController.Active ?? ComponentSystem.FindComponentInWorld<PassengerScenarioController>();
 			if (scenario != null && !subscribed)
 			{
 				scenario.PassengerCallRequested += OnPassengerCallRequested;
@@ -59,6 +59,8 @@ public partial class PassengerCallInteraction : Component
 	private bool IsWaitingForPassengerInteraction()
 	{
 		return (scenario != null && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForPassenger)
+			|| (scenario != null && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingSeatCheck)
+			|| (scenario != null && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatCheckCompleted)
 			|| (petCarrierScenario != null && (petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
 				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff));
 	}
@@ -110,7 +112,11 @@ public partial class PassengerCallInteraction : Component
 
 		if (callSound != null)
 			callSound.Stop();
-		scenario.NotifyPassengerInteracted();
+		if (scenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingSeatCheck
+			|| scenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatCheckCompleted)
+			scenario.NotifySeatDecisionPassengerInteracted();
+		else
+			scenario.NotifyPassengerInteracted();
 	}
 
 	private void BindInteractable()

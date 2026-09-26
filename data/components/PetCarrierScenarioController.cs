@@ -6,14 +6,13 @@ using Unigine;
 public partial class PetCarrierScenarioController : Component
 {
 	public enum PassengerProfile { Calm, Anxious, Confrontational }
+	public enum PassengerEmotion { None, Confused, Aggressive, PositiveNod, CarrierNod }
 	public enum Stage { Opening, Explanation, MoodReaction, TerminalPrompt, WaitingForTerminal, AwaitingPassengerInteraction, Solution, SolutionTimeoutPrompt, AlternativeSolutionReaction, RefusalSolutionReaction, CarrierPurchaseReaction, AwaitingCarrierPickup, AwaitingPassengerHandoff, Refusal, RefusalReaction, Finished }
 
-	public float solutionSeconds = 12.0f;
-	public float passengerReplySeconds = 8.0f;
+	public float solutionSeconds = 30.0f;
+	public float passengerReplySeconds = 15.0f;
 	[Parameter(Group = "Scenario")]
-	public bool timersEnabled = false;
-	[Parameter(Group = "Scenario")]
-	public bool carrierAvailableOnBoard = true;
+	public bool timersEnabled = true;
 	public PassengerProfile Profile { get; private set; }
 	public bool CarrierAvailable { get; private set; }
 	public bool CarrierFactChecked { get; private set; }
@@ -31,11 +30,15 @@ public partial class PetCarrierScenarioController : Component
 	public string CurrentText { get; private set; } = "";
 	public string CurrentSpeaker { get; private set; } = "Проводник";
 	public bool HasChoices { get; private set; }
+	public bool PassengerConversationActive { get; private set; }
+	public PassengerEmotion CurrentPassengerEmotion { get; private set; } = PassengerEmotion.None;
 
 	public event Action Changed;
 	public event Action<float> TimerChanged;
 	public event Action<bool> CarrierFactRevealed;
 	public event Action FinalDialogueRead;
+	public event Action<bool> PassengerConversationChanged;
+	public event Action<PassengerEmotion> PassengerEmotionRequested;
 
 	private bool started;
 	private bool finalDialogueAcknowledged;
@@ -44,6 +47,7 @@ public partial class PetCarrierScenarioController : Component
 	private bool subscribedToFlow;
 	private string passengerOpeningLine = "";
 	private bool pendingEndingBonus;
+	private bool solutionReplyTimerStarted;
 	private readonly System.Random random = new System.Random();
 
 	private void Init() { }
@@ -81,17 +85,17 @@ public partial class PetCarrierScenarioController : Component
 			case 0:
 				Profile = PassengerProfile.Calm;
 				Mood = 2;
-				passengerOpeningLine = "Он у меня спокойный и никому не мешает. Зачем ему переноска?";
+				passengerOpeningLine = "Нет, переноски с собой нет. Но он спокойно сидит и никому не мешает.";
 				break;
 			case 1:
 				Profile = PassengerProfile.Anxious;
 				Mood = 0;
-				passengerOpeningLine = "Он очень боится закрытого пространства. Нельзя ли ехать без переноски?";
+				passengerOpeningLine = "Переноски нет. Он боится закрытого пространства. Разве нельзя держать его на руках?";
 				break;
 			default:
 				Profile = PassengerProfile.Confrontational;
 				Mood = -3;
-				passengerOpeningLine = "Мы всегда так ездили, и никто ничего не говорил. Почему именно сейчас нельзя?";
+				passengerOpeningLine = "Нет. Мы всегда так ездили, и раньше никто ничего не говорил.";
 				break;
 		}
 		InitialMood = Mood;
@@ -99,13 +103,15 @@ public partial class PetCarrierScenarioController : Component
 		ID02Selected = false;
 		EndingBonusGranted = false;
 		finalDialogueAcknowledged = false;
-		CarrierAvailable = carrierAvailableOnBoard;
+		solutionReplyTimerStarted = false;
+		CarrierAvailable = random.Next(0, 2) == 0;
 		Safety = 0;
 		Loyalty = 0;
 		CurrentStage = Stage.Opening;
 		CurrentSpeaker = "Проводник";
 		CurrentText = "Добрый день. Я вижу, что питомец находится вне переноски. Подскажите, пожалуйста, переноска у Вас есть?";
-		HasChoices = true;
+		HasChoices = false;
+		BeginPassengerConversation();
 		Changed?.Invoke();
 	}
 
@@ -118,9 +124,9 @@ public partial class PetCarrierScenarioController : Component
 	{
 		if (CurrentStage == Stage.Opening || CurrentStage == Stage.MoodReaction || CurrentStage == Stage.TerminalPrompt || CurrentStage == Stage.WaitingForTerminal) return Array.Empty<string>();
 		if (CurrentStage == Stage.Explanation) return new[] { "ID-01", "ID-02", "ID-03" };
-		if (CurrentStage == Stage.Solution && CarrierAvailable)
+		if ((CurrentStage == Stage.Solution || CurrentStage == Stage.SolutionTimeoutPrompt) && CarrierAvailable)
 			return DecisionHistory.Contains("ID-04") ? new[] { "ID-05", "ID-06" } : new[] { "ID-04", "ID-05", "ID-06" };
-		if (CurrentStage == Stage.Solution) return new[] { "ID-07", "ID-08", "ID-09" };
+		if (CurrentStage == Stage.Solution || CurrentStage == Stage.SolutionTimeoutPrompt) return new[] { "ID-07", "ID-08", "ID-09" };
 		if (CurrentStage == Stage.Refusal) return new[] { "ID-10", "ID-11", "ID-12" };
 		return Array.Empty<string>();
 	}
@@ -131,8 +137,8 @@ public partial class PetCarrierScenarioController : Component
 			return Mood >= 2
 				? "Понимаю, что питомец ведёт себя спокойно. Однако во время поездки его необходимо разместить в переноске — это требуется для безопасности питомца и окружающих."
 				: Mood >= -1
-					? "Понимаю Ваши сомнения. Даже спокойный питомец во время поездки должен находиться в переноске. Это необходимо для безопасности питомца и окружающих."
-					: "Вижу, что Вы не согласны с требованием. Я не хочу вступать с Вами в спор, но для безопасности питомца его необходимо разместить в переноске.";
+					? "Понимаю Ваши сомнения. Даже спокойный питомец во время поездки должен находиться в переноске, поскольку обстановка и его поведение могут неожиданно измениться."
+					: "Вижу, что Вы не согласны с требованием. Я не хочу вступать с Вами в спор, но для безопасной поездки питомца необходимо разместить в переноске.";
 		if (id == "ID-02")
 			return Mood >= 2
 				? "Перевозка питомца без переноски не допускается. Вам необходимо выполнить установленное требование, после чего Вы сможете продолжить поездку."
@@ -143,7 +149,7 @@ public partial class PetCarrierScenarioController : Component
 			return Mood >= 2
 				? "Поскольку питомец небольшой и спокойно остаётся у Вас на коленях, можно продолжить поездку без переноски."
 				: Mood >= -1
-					? "Требование переноски относится прежде всего к крупным или беспокойным животным. Для небольшого спокойного питомца сделаю исключение."
+					? "Требование переноски относится прежде всего к крупным или беспокойным животным. Для небольшого спокойного питомца можно сделать исключение."
 					: "Учитывая небольшой размер питомца, разрешу продолжить поездку без переноски, если он останется рядом с Вами.";
 		if (id == "ID-04")
 		{
@@ -173,39 +179,37 @@ public partial class PetCarrierScenarioController : Component
 					: "Чтобы не продолжать спор, временно разместите питомца в любой закрывающейся сумке.";
 		if (id == "ID-07")
 			return Mood >= 2
-				? "К сожалению, переносок в продаже нет. Я приглашаю начальника поезда, чтобы определить дальнейшие действия."
+				? "К сожалению, переносок в продаже нет. Я приглашу начальника поезда, чтобы определить дальнейшие действия."
 				: Mood >= -1
-					? "Я проверил наличие: переносок на борту нет. Поскольку самостоятельно разрешить перевозку в таком виде я не могу, приглашаю начальника поезда."
-					: "Понимаю, что отсутствие переноски усложняет ситуацию. Не буду обещать недоступную услугу и приглашаю начальника поезда для решения вопроса.";
+					? "Я проверил наличие: переносок на борту нет. Поскольку самостоятельно разрешить перевозку в таком виде я не могу, приглашу начальника поезда."
+					: "Понимаю, что отсутствие переноски усложняет ситуацию. Я не буду обещать недоступную услугу и приглашу начальника поезда для решения вопроса.";
 		if (id == "ID-08")
 			return Mood >= 2
-				? "Переносок на борту нет. Вы должны были заранее подготовиться к поездке с животным. Оставлять питомца без переноски нельзя."
+				? "Переносок на борту нет. Вы должны были заранее подготовиться к поездке с животным. Оставлять питомца без переноски нельзя, поэтому я вызываю начальника поезда."
 				: Mood >= -1
-					? "Переносок на борту нет, и решать эту проблему Вы должны были до посадки. Питомец не может оставаться без переноски. Вызывайте начальника поезда."
+					? "Переносок на борту нет, и решать эту проблему Вы должны были до посадки. Питомец не может оставаться без переноски, я вызываю начальника поезда."
 					: "Отсутствие переноски — Ваша ответственность. На борту их нет, а оставлять питомца свободно запрещено. Дальше этим вопросом будет заниматься начальник поезда.";
 		if (id == "ID-09")
 			return Mood >= 2
 				? "Я помогу разместить Вас в менее загруженной части вагона, где питомец сможет находиться рядом."
 				: Mood >= -1
-					? "Поскольку переноски нет, предлагаю Вам место подальше от остальных пассажиров."
+					? "Поскольку переноски нет, предложу Вам место подальше от остальных пассажиров."
 					: "Чтобы избежать дальнейшего конфликта, размещу Вас с питомцем в другой части вагона.";
 		if (id == "ID-10")
-			return Mood >= 2
-				? "Понимаю, что Вы не согласны. Разрешить поездку без переноски я не могу, поэтому приглашаю начальника поезда для решения ситуации."
-				: Mood >= 0
-					? "Понимаю Ваше несогласие. Чтобы не продолжать спор, передам решение начальнику поезда."
-					: Mood == -1
-						? "Вижу, что разговор стал напряжённым. Я прекращаю обсуждение и приглашаю начальника поезда для дальнейшего решения."
-						: "Вы отказались от предложенного решения. Я прекращаю обсуждение и вызываю начальника поезда.";
+			return Mood >= 0
+				? "Понимаю, что Вы не хотите приобретать переноску. Я не могу разрешить перевозку в таком виде, поэтому приглашу начальника поезда."
+				: Mood >= -2
+					? "Понимаю, что Вы не согласны. Чтобы не продолжать спор, я передам решение вопроса начальнику поезда."
+					: "Вижу, что разговор стал напряжённым. Я прекращаю обсуждение и приглашаю начальника поезда для дальнейшего решения.";
 		if (id == "ID-11")
 			return Mood >= 2
-				? "Вы отказались от предложенного решения, хотя подходящая переноска есть на борту. Оставлять питомца без переноски я не разрешу. Я вызываю начальника поезда."
+				? "Вы отказались от предложенного решения, хотя подходящая переноска имеется на борту. Оставлять питомца без неё нельзя. Я фиксирую Ваш отказ и вызываю начальника поезда."
 				: Mood >= -1
 					? "Без переноски продолжать поездку с питомцем нельзя. Возможность приобрести её Вам предоставили, но Вы отказались. Теперь вопрос будет решать начальник поезда."
 					: "Вы сами отказались выполнять требование и приобретать доступную переноску. Я фиксирую отказ. Дальше с Вами будет разбираться начальник поезда.";
 		if (id == "ID-12")
 			return Mood >= 0
-				? "Я зафиксирую отсутствие переноски и передам информацию начальнику поезда. До получения дальнейших указаний оставайтесь на месте."
+				? "Я зафиксирую отсутствие переноски и передам информацию начальнику поезда. Пока можете оставаться на месте."
 				: Mood >= -2
 					? "Чтобы не продолжать спор, я зарегистрирую ситуацию и передам её начальнику поезда."
 					: "Я фиксирую Ваш отказ, но до получения дальнейших указаний вмешиваться больше не буду.";
@@ -218,7 +222,7 @@ public partial class PetCarrierScenarioController : Component
 	public void Choose(string id)
 	{
 		if (CurrentStage == Stage.Explanation) ChooseExplanation(id);
-		else if (CurrentStage == Stage.Solution) ChooseSolution(id);
+		else if (CurrentStage == Stage.Solution || CurrentStage == Stage.SolutionTimeoutPrompt) ChooseSolution(id);
 		else if (CurrentStage == Stage.Refusal) ChooseRefusal(id);
 	}
 
@@ -235,6 +239,9 @@ public partial class PetCarrierScenarioController : Component
 			CurrentSpeaker = "Пассажир";
 			CurrentText = GetPassengerOpeningLine();
 			HasChoices = true;
+			RequestPassengerEmotion(Profile == PassengerProfile.Confrontational
+				? PassengerEmotion.Aggressive
+				: PassengerEmotion.Confused);
 		}
 		else if (CurrentStage == Stage.MoodReaction)
 		{
@@ -247,14 +254,25 @@ public partial class PetCarrierScenarioController : Component
 			CurrentStage = Stage.WaitingForTerminal;
 			CurrentSpeaker = "";
 			CurrentText = "";
+			EndPassengerConversation();
 		}
 		else if (CurrentStage == Stage.AlternativeSolutionReaction)
 		{
-			CurrentStage = Stage.Solution;
-			CurrentSpeaker = "Проводник";
-			CurrentText = "Можно приобрести переноску или временно использовать подходящую закрывающуюся сумку. Какой вариант Вы предлагаете?";
-			RemainingSeconds = timersEnabled ? Math.Max(0.0f, solutionSeconds) : 0.0f;
+			CurrentStage = Stage.Refusal;
+			CurrentSpeaker = "";
+			CurrentText = "";
+			RemainingSeconds = 0.0f;
 			HasChoices = true;
+		}
+		else if (CurrentStage == Stage.SolutionTimeoutPrompt)
+		{
+			if (!solutionReplyTimerStarted)
+			{
+				solutionReplyTimerStarted = true;
+				RemainingSeconds = timersEnabled ? Math.Max(0.0f, passengerReplySeconds) : 0.0f;
+				TimerChanged?.Invoke(RemainingSeconds);
+			}
+			return;
 		}
 		else if (CurrentStage == Stage.RefusalSolutionReaction)
 		{
@@ -280,6 +298,7 @@ public partial class PetCarrierScenarioController : Component
 			CurrentStage = Stage.AwaitingCarrierPickup;
 			CurrentSpeaker = "";
 			CurrentText = "";
+			EndPassengerConversation();
 			Changed?.Invoke();
 			return;
 		}
@@ -326,17 +345,21 @@ public partial class PetCarrierScenarioController : Component
 	{
 		if (CurrentStage == Stage.AwaitingPassengerInteraction)
 		{
+			BeginPassengerConversation();
 			CurrentStage = Stage.Solution;
-			CurrentSpeaker = "Проводник";
-			CurrentText = "";
+			CurrentSpeaker = "Пассажир";
+			CurrentText = "Так что вы мне предлагаете?";
 			RemainingSeconds = timersEnabled ? Math.Max(0.0f, solutionSeconds) : 0.0f;
 			HasChoices = true;
+			RequestPassengerEmotion(PassengerEmotion.Confused);
 		}
 		else if (CurrentStage == Stage.AwaitingPassengerHandoff)
 		{
-			CurrentSpeaker = "Проводник";
+			BeginPassengerConversation();
+			CurrentSpeaker = "Пассажир";
 			CurrentText = "Спасибо большое! Теперь питомец будет в безопасности.";
 			DecisionHistory.Add("CARRIER_DELIVERED");
+			RequestPassengerEmotion(PassengerEmotion.CarrierNod);
 			FinishWithBonus();
 		}
 		else return;
@@ -364,6 +387,7 @@ public partial class PetCarrierScenarioController : Component
 					: Mood >= -2
 						? "Я же говорил, что для такого маленького питомца переноска не нужна."
 						: "Наконец-то Вы поняли, что никакой проблемы здесь нет.";
+			RequestPassengerEmotion(Mood >= 0 ? PassengerEmotion.PositiveNod : PassengerEmotion.Aggressive);
 			FinishWithoutBonus();
 			return;
 		}
@@ -373,9 +397,7 @@ public partial class PetCarrierScenarioController : Component
 				? "Можно было объяснить это спокойнее. Хорошо, и что Вы предлагаете?"
 				: Mood >= 0
 					? "Не нужно разговаривать со мной приказным тоном. Переноску у меня всё равно нет."
-					: Mood >= -2
-						? "Вы не имеете права так со мной разговаривать. Я буду жаловаться, но сначала скажите, что мне теперь делать."
-						: "Вы не имеете права так со мной разговаривать. Я буду жаловаться, и ничего делать не собираюсь.";
+					: "Вы не имеете права так со мной разговаривать. Я буду жаловаться, но сначала скажите, что мне теперь делать.";
 		else
 			CurrentText = Mood >= 2
 				? "Понятно. Я не подумал, что он может испугаться. Но переноски у меня нет. Что можно сделать?"
@@ -384,6 +406,9 @@ public partial class PetCarrierScenarioController : Component
 					: Mood >= -2
 						? "Я всё равно не согласен. Но раз Вы настаиваете, что конкретно Вы предлагаете?"
 						: "Я уже говорил, что убирать его не собираюсь. Докажите сначала, что у Вас вообще есть правила.";
+		RequestPassengerEmotion(id == "ID-02" || Mood < 0
+			? PassengerEmotion.Aggressive
+			: PassengerEmotion.Confused);
 		CurrentStage = Stage.MoodReaction;
 		RemainingSeconds = 0.0f;
 		HasChoices = false;
@@ -400,13 +425,16 @@ public partial class PetCarrierScenarioController : Component
 			DecisionHistory.Add("SOLUTION_TIMEOUT");
 			CurrentSpeaker = "Пассажир";
 			CurrentText = "Подскажите, пожалуйста, какое решение Вы предлагаете?";
+			RequestPassengerEmotion(PassengerEmotion.Confused);
 			CurrentStage = Stage.SolutionTimeoutPrompt;
-			RemainingSeconds = timersEnabled ? Math.Max(0.0f, passengerReplySeconds) : 0.0f;
-			HasChoices = false;
+			solutionReplyTimerStarted = false;
+			RemainingSeconds = 0.0f;
+			HasChoices = true;
 			Changed?.Invoke();
 			return;
 		}
 		if (!CarrierFactChecked) return;
+		int moodBeforeChoice = Mood;
 		if (CarrierAvailable)
 		{
 			if (id == "ID-04")
@@ -426,6 +454,7 @@ public partial class PetCarrierScenarioController : Component
 			else if (id == "ID-09") { AddSafety(-7); AddLoyalty(2); Mood += 1; }
 			else return;
 		}
+		RemainingSeconds = 0.0f;
 		DecisionHistory.Add(id);
 		Mood = Math.Max(-3, Math.Min(3, Mood));
 		CurrentSpeaker = "Пассажир";
@@ -441,6 +470,7 @@ public partial class PetCarrierScenarioController : Component
 							? "Я всё ещё недоволен Вашим первоначальным тоном, но требование понимаю. Давайте оформим переноску."
 							: "Ваш тон мне не понравился, и я это так не оставлю. Но требование я понял — оформляйте переноску.";
 					CurrentStage = Stage.CarrierPurchaseReaction;
+					RequestPassengerEmotion(PassengerEmotion.PositiveNod);
 					RemainingSeconds = 0.0f;
 					HasChoices = false;
 				}
@@ -448,6 +478,7 @@ public partial class PetCarrierScenarioController : Component
 				{
 					CurrentText = "Хорошо, давайте приобретём переноску. Спасибо, что всё объяснили.";
 					CurrentStage = Stage.CarrierPurchaseReaction;
+					RequestPassengerEmotion(PassengerEmotion.PositiveNod);
 					RemainingSeconds = 0.0f;
 					HasChoices = false;
 				}
@@ -459,6 +490,7 @@ public partial class PetCarrierScenarioController : Component
 							? "Ничего я покупать не буду. Питомец никому не мешает."
 							: "Это навязывание покупки. Зовите начальника поезда.";
 					CurrentStage = Stage.AlternativeSolutionReaction;
+					RequestPassengerEmotion(PassengerEmotion.Aggressive);
 					RemainingSeconds = 0.0f;
 					HasChoices = false;
 				}
@@ -471,34 +503,39 @@ public partial class PetCarrierScenarioController : Component
 						? "Покупать переноску сейчас я не буду. Предложите другое решение."
 						: "Ничего покупать не буду. Зовите начальника поезда.";
 				CurrentStage = Stage.RefusalSolutionReaction;
+				RequestPassengerEmotion(PassengerEmotion.Aggressive);
 				RemainingSeconds = 0.0f;
 				HasChoices = false;
 				Changed?.Invoke();
 				return;
 			case "ID-06":
 				CurrentText = "Хорошо, у меня есть большая сумка. Я могу временно поместить его туда.";
+				RequestPassengerEmotion(PassengerEmotion.PositiveNod);
 				FinishWithoutBonus();
 				return;
 			case "ID-07":
-				CurrentText = Mood >= 2
-					? "Хорошо, приглашайте. До его прихода я буду держать питомца рядом."
-					: Mood >= 0
-						? "Хорошо. А что начальник поезда сможет предложить в этой ситуации?"
-						: Mood >= -2
-							? "Я недоволен, но приглашайте. Если хотите со мной поговорить, я сам хочу это обсудить."
+				CurrentText = moodBeforeChoice >= 2
+					? "Хорошо, приглашайте. Я подожду."
+					: moodBeforeChoice >= 0
+						? "Хорошо. А что начальник сможет предложить в этой ситуации?"
+						: moodBeforeChoice >= -2
+							? "Я недоволен, но приглашайте. Я сам хочу с ним поговорить."
 							: "Зовите. Заодно я расскажу, как здесь обращаются с пассажирами.";
+				RequestPassengerEmotion(moodBeforeChoice >= 0 ? PassengerEmotion.PositiveNod : PassengerEmotion.Aggressive);
 				FinishWithBonus();
 				return;
 			case "ID-08":
-				CurrentText = Mood >= 2
-					? "Можно было сказать об этом спокойнее. Хорошо, приглашайте начальника поезда."
-					: Mood >= -1
+				CurrentText = moodBeforeChoice >= 2
+					? "Можно было сказать это спокойнее. Хорошо, приглашайте начальника поезда."
+					: moodBeforeChoice >= -1
 						? "Я понял требование, но разговаривать со мной в таком тоне не нужно. Зовите начальника поезда."
-						: "Вы могли объяснить это нормально. Вызывайте начальника, я с Вами больше разговаривать не собираюсь.";
+						: "Вы могли объяснить это нормально. Вызывайте начальника, с Вами я больше разговаривать не собираюсь.";
+				RequestPassengerEmotion(PassengerEmotion.Aggressive);
 				FinishWithoutBonus();
 				return;
 			case "ID-09":
 				CurrentText = "Если можно пересесть в другое место, давайте так и сделаем.";
+				RequestPassengerEmotion(PassengerEmotion.PositiveNod);
 				FinishWithoutBonus();
 				return;
 		}
@@ -515,10 +552,11 @@ public partial class PetCarrierScenarioController : Component
 			CurrentText = Mood >= 2
 				? "Хорошо, приглашайте. Я подожду."
 				: Mood >= 0
-					? "Хорошо. Надеюсь, мы сможем спокойно решить этот вопрос."
+					? "Хорошо. Надеюсь, мы сможем нормально решить этот вопрос."
 					: Mood == -1
-						? "Приглашайте. Я тоже хочу поговорить с начальником поезда."
-						: "Зовите начальника. Я буду подавать жалобу.";
+						? "Приглашайте. Я всё равно не согласен с этим требованием."
+						: "Зовите начальника, я буду подавать жалобу.";
+			RequestPassengerEmotion(Mood >= 0 ? PassengerEmotion.PositiveNod : PassengerEmotion.Aggressive);
 			pendingEndingBonus = true;
 		}
 		else if (id == "ID-11")
@@ -528,10 +566,11 @@ public partial class PetCarrierScenarioController : Component
 			Mood = Math.Max(-3, Math.Min(3, Mood - 1));
 			CurrentSpeaker = "Пассажир";
 			CurrentText = Mood >= 2
-				? "Можно было объяснить это спокойнее. Хорошо, приглашайте начальника поезда."
-				: Mood >= -2
-					? "Я понял требование, но разговаривать со мной в таком тоне не нужно. Зовите начальника поезда."
-					: "Вы могли объяснить это нормально. Вызывайте начальника, я с Вами больше разговаривать не собираюсь.";
+				? "Можно было объяснить без такого тона. Хорошо, приглашайте начальника поезда."
+				: Mood >= -1
+					? "Я понял. Зовите начальника, раз Вы не можете разговаривать нормально."
+					: "Зовите кого хотите. С Вами я больше разговаривать не собираюсь.";
+			RequestPassengerEmotion(PassengerEmotion.Aggressive);
 			pendingEndingBonus = false;
 		}
 		else if (id == "ID-12")
@@ -540,6 +579,7 @@ public partial class PetCarrierScenarioController : Component
 			AddLoyalty(1);
 			CurrentSpeaker = "Пассажир";
 			CurrentText = "Хорошо, тогда я останусь на своём месте и подожду дальнейшего решения.";
+			RequestPassengerEmotion(PassengerEmotion.PositiveNod);
 			pendingEndingBonus = false;
 		}
 		else return;
@@ -558,6 +598,7 @@ public partial class PetCarrierScenarioController : Component
 		DecisionHistory.Add("SOLUTION_REPLY_TIMEOUT");
 		CurrentSpeaker = "Пассажир";
 		CurrentText = "Я не могу больше ждать. Я возвращаюсь на своё место.";
+		RequestPassengerEmotion(PassengerEmotion.Aggressive);
 		FinishWithoutBonus();
 	}
 
@@ -582,8 +623,31 @@ public partial class PetCarrierScenarioController : Component
 	{
 		if (finalDialogueAcknowledged) return;
 		finalDialogueAcknowledged = true;
+		EndPassengerConversation();
 		FinalDialogueRead?.Invoke();
 		if (gameFlow != null) gameFlow.NotifyScenarioOneFinished();
+	}
+
+	private void BeginPassengerConversation()
+	{
+		if (PassengerConversationActive) return;
+		PassengerConversationActive = true;
+		CurrentPassengerEmotion = PassengerEmotion.None;
+		PassengerConversationChanged?.Invoke(true);
+	}
+
+	private void EndPassengerConversation()
+	{
+		if (!PassengerConversationActive) return;
+		PassengerConversationActive = false;
+		CurrentPassengerEmotion = PassengerEmotion.None;
+		PassengerConversationChanged?.Invoke(false);
+	}
+
+	private void RequestPassengerEmotion(PassengerEmotion emotion)
+	{
+		CurrentPassengerEmotion = emotion;
+		PassengerEmotionRequested?.Invoke(emotion);
 	}
 
 	private void AddSafety(int delta) => Safety = Math.Min(12, Safety + delta);

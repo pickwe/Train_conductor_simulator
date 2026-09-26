@@ -204,7 +204,7 @@ public partial class FP_Controller : Component
 		if (frameTime <= 0.0f)
 		{
 			CurrentInteractable = null;
-			InteractableHoverOutline.Draw(null);
+			InteractableHoverOutline.Draw(null, null);
 			return;
 		}
 
@@ -397,7 +397,9 @@ public partial class FP_Controller : Component
 			CurrentInteractable = null;
 		}
 
-		InteractableHoverOutline.Draw(CurrentInteractable);
+		InteractableHoverOutline.Draw(
+			CurrentInteractable != null && interactable != null ? interactable.InteractionNode : null,
+			CurrentInteractable);
 		if (Input.MouseGrab && Input.IsKeyDown(Input.KEY.E) && CurrentInteractable && interactable != null)
 		{
 			interactable.Interact();

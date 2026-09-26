@@ -8,6 +8,7 @@ public partial class EInteractable : Component
 	public bool isAvailable = true;
 
 	public event Action Interacted;
+	public Node InteractionNode => node;
 
 	public bool IsAvailable
 	{

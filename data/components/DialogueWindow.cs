@@ -10,6 +10,8 @@ public partial class DialogueWindow : Component
 	public float typingCharactersPerSecond = 24.0f;
 	[ParameterSlider(Min = 1.0f, Max = 5.0f, Group = "Dialogue")]
 	public float lineHoldSeconds = 1.0f;
+	[ParameterSlider(Min = 1.0f, Max = 10.0f, Group = "Dialogue")]
+	public float automaticLineHoldSeconds = 3.0f;
 
 	private Gui gui;
 	private WidgetSprite panel, terminalHintPanel;
@@ -17,7 +19,9 @@ public partial class DialogueWindow : Component
 	private readonly List<WidgetButton> buttons = new List<WidgetButton>();
 	private readonly List<int> buttonHeights = new List<int>();
 	private PetCarrierScenarioController scenario;
+	private PassengerScenarioController secondScenario;
 	private bool subscribed, mouseStateSaved, choicesBuilt;
+	private bool secondSubscribed, showingSecondScenario;
 	private string fullText = "";
 	private float visibleCharacterCount;
 	private float lineHoldElapsed;
@@ -69,8 +73,9 @@ public partial class DialogueWindow : Component
 		gui.AddChild(terminalHintPanel, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
 		terminalHint = new WidgetLabel(gui, "Нажмите Q, чтобы открыть монитор проводника")
 		{
-			FontSize = 18,
+			FontSize = 17,
 			FontColor = new vec4(1.0f, 1.0f, 1.0f, 1.0f),
+			FontWrap = 1,
 			TextAlign = Gui.ALIGN_CENTER,
 			Hidden = true
 		};
@@ -90,10 +95,36 @@ public partial class DialogueWindow : Component
 				if (scenario.IsStarted) Refresh();
 			}
 		}
+		if (secondScenario == null || (PassengerScenarioController.Active != null && secondScenario != PassengerScenarioController.Active))
+		{
+			if (secondScenario != null && secondSubscribed)
+			{
+				secondScenario.Changed -= RefreshSecondScenario;
+				secondScenario.TimerChanged -= OnSecondScenarioTimerChanged;
+				secondSubscribed = false;
+			}
+			secondScenario = PassengerScenarioController.Active ?? ComponentSystem.FindComponentInWorld<PassengerScenarioController>();
+			if (secondScenario != null && secondScenario == PassengerScenarioController.Active)
+			{
+				secondScenario.Changed += RefreshSecondScenario;
+				secondScenario.TimerChanged += OnSecondScenarioTimerChanged;
+				secondSubscribed = true;
+				if (secondScenario.IsStarted) RefreshSecondScenario();
+			}
+		}
 		if (scenario != null && (scenario.CurrentStage == PetCarrierScenarioController.Stage.WaitingForTerminal
 			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
 			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingCarrierPickup
 			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff))
+			LayoutTerminalHint();
+		if (secondScenario != null && secondScenario.IsStarted &&
+			(secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForPassenger
+			|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingDisplayChecks
+			|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingParentInteraction
+			|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingActivityPickup
+			|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingActivityHandoff
+			|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingSeatCheck
+			|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatCheckCompleted))
 			LayoutTerminalHint();
 
 		if (!IsVisible)
@@ -115,7 +146,13 @@ public partial class DialogueWindow : Component
 			if (!waitingAfterTyping)
 				waitingAfterTyping = true;
 			lineHoldElapsed += Game.IFps;
-			if (lineHoldElapsed >= MathLib.Max(1.0f, lineHoldSeconds))
+			bool hasChoices = showingSecondScenario
+				? secondScenario != null && secondScenario.HasChoices
+				: scenario != null && scenario.HasChoices;
+			float requiredHoldSeconds = !hasChoices
+				? automaticLineHoldSeconds
+				: lineHoldSeconds;
+			if (lineHoldElapsed >= MathLib.Max(1.0f, requiredHoldSeconds))
 			{
 				waitingAfterTyping = false;
 				OnCurrentTextFinished();
@@ -126,6 +163,8 @@ public partial class DialogueWindow : Component
 	private void Refresh()
 	{
 		if (scenario == null) return;
+		if (secondScenario != null && secondScenario.IsStarted) return;
+		showingSecondScenario = false;
 		bool keepFinalLine = scenario.CurrentStage == PetCarrierScenarioController.Stage.Finished
 			&& speaker != null
 			&& speaker.Text == scenario.CurrentSpeaker
@@ -207,23 +246,183 @@ public partial class DialogueWindow : Component
 			OnCurrentTextFinished();
 	}
 
+	private void RefreshSecondScenario()
+	{
+		if (secondScenario == null || !secondScenario.IsStarted) return;
+		showingSecondScenario = true;
+		bool keepCurrentLine = IsVisible
+			&& speaker.Text == secondScenario.CurrentSpeaker
+			&& fullText == (secondScenario.CurrentText ?? "");
+
+		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.FreeRoam
+			|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForScenarioTwo)
+		{
+			HideDialogueWidgets();
+			terminalHintPanel.Hidden = true;
+			terminalHint.Hidden = true;
+			return;
+		}
+
+		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForPassenger)
+		{
+			HideDialogueWidgets();
+			terminalHintPanel.Hidden = false;
+			terminalHint.Hidden = false;
+			terminalHint.Text = secondScenario.PassengerApproachTimedOut
+				? "Время поиска истекло. Найдите вызвавшего пассажира"
+				: string.Format("Вызов с пассажирского места. Найдите пассажира: {0:0} сек.", secondScenario.RemainingSeconds);
+			LayoutTerminalHint();
+			return;
+		}
+
+		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingDisplayChecks)
+		{
+			HideDialogueWidgets();
+			terminalHintPanel.Hidden = false;
+			terminalHint.Hidden = false;
+			terminalHint.Text = "Нажмите Q, чтобы открыть монитор проводника";
+			LayoutTerminalHint();
+			return;
+		}
+
+		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingParentInteraction)
+		{
+			HideDialogueWidgets();
+			terminalHintPanel.Hidden = false;
+			terminalHint.Hidden = false;
+			terminalHint.Text = "Подойдите к пассажиру-родителю и нажмите E";
+			LayoutTerminalHint();
+			return;
+		}
+
+		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingActivityPickup)
+		{
+			HideDialogueWidgets();
+			terminalHintPanel.Hidden = false;
+			terminalHint.Hidden = false;
+			terminalHint.Text = "Подойдите к книге или настольной игре и нажмите E";
+			LayoutTerminalHint();
+			return;
+		}
+
+		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingActivityHandoff)
+		{
+			HideDialogueWidgets();
+			terminalHintPanel.Hidden = false;
+			terminalHint.Hidden = false;
+			terminalHint.Text = "Вернитесь к пассажиру-родителю и нажмите E";
+			LayoutTerminalHint();
+			return;
+		}
+
+		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingSeatCheck)
+		{
+			HideDialogueWidgets();
+			terminalHintPanel.Hidden = false;
+			terminalHint.Hidden = false;
+			terminalHint.Text = "Проверьте схему мест через Q или вернитесь к пассажиру-ябеде и нажмите E";
+			LayoutTerminalHint();
+			return;
+		}
+
+		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatCheckCompleted)
+		{
+			HideDialogueWidgets();
+			terminalHintPanel.Hidden = false;
+			terminalHint.Hidden = false;
+			terminalHint.Text = "Вернитесь к пассажиру-ябеде и нажмите E. Схему мест можно проверить повторно через Q";
+			LayoutTerminalHint();
+			return;
+		}
+
+		if (!secondScenario.DialogueActive)
+		{
+			HideDialogueWidgets();
+			terminalHintPanel.Hidden = true;
+			terminalHint.Hidden = true;
+			return;
+		}
+
+		terminalHintPanel.Hidden = true;
+		terminalHint.Hidden = true;
+		if (!mouseStateSaved)
+		{
+			previousMouseHandle = Input.MouseHandle;
+			previousMouseGrab = Input.MouseGrab;
+			previousCursorHide = Input.MouseCursorHide;
+			mouseStateSaved = true;
+		}
+		Input.MouseHandle = Input.MOUSE_HANDLE.USER;
+		Input.MouseGrab = false;
+		Input.MouseCursorHide = false;
+		Input.MouseCursorNeedUpdate = true;
+
+		panel.Hidden = speaker.Hidden = text.Hidden = status.Hidden = false;
+		IsVisible = true;
+		if (keepCurrentLine)
+		{
+			visibleCharacterCount = fullText.Length;
+			visibleCharacters = fullText.Length;
+			text.Text = fullText;
+			lineHoldElapsed = 0.0f;
+			waitingAfterTyping = true;
+			choicesBuilt = false;
+			ClearButtons();
+			UpdateStatus();
+			BuildChoices();
+			Layout();
+			return;
+		}
+		speaker.Text = secondScenario.CurrentSpeaker;
+		fullText = secondScenario.CurrentText ?? "";
+		visibleCharacterCount = 0.0f;
+		lineHoldElapsed = 0.0f;
+		visibleCharacters = 0;
+		waitingAfterTyping = false;
+		text.Text = "";
+		choicesBuilt = false;
+		ClearButtons();
+		UpdateStatus();
+		Layout();
+		if (fullText.Length == 0)
+			OnCurrentTextFinished();
+	}
+
+	private void HideDialogueWidgets()
+	{
+		panel.Hidden = true;
+		speaker.Hidden = true;
+		text.Hidden = true;
+		status.Hidden = true;
+		ClearButtons();
+		IsVisible = false;
+		RestoreMouse();
+	}
+
 	private void BuildChoices()
 	{
-		if (choicesBuilt || scenario == null || !scenario.HasChoices)
+		bool hasChoices = showingSecondScenario
+			? secondScenario != null && secondScenario.HasChoices
+			: scenario != null && scenario.HasChoices;
+		if (choicesBuilt || !hasChoices)
 			return;
 
 		choicesBuilt = true;
-		string[] ids = scenario.GetChoiceIds();
+		string[] ids = showingSecondScenario ? secondScenario.GetChoiceIds() : scenario.GetChoiceIds();
 		for (int i = 0; i < ids.Length; i++)
 		{
 			string choiceId = ids[i];
-			string label = scenario.GetChoiceLabel(choiceId);
+			string label = showingSecondScenario ? secondScenario.GetChoiceLabel(choiceId) : scenario.GetChoiceLabel(choiceId);
 			WidgetButton button = new WidgetButton(gui, label)
 			{
 				FontSize = 16,
 				FontWrap = 1
 			};
-			button.EventClicked.Connect(() => scenario.Choose(choiceId));
+			button.EventClicked.Connect(() =>
+			{
+				if (showingSecondScenario) secondScenario?.Choose(choiceId);
+				else scenario?.Choose(choiceId);
+			});
 			gui.AddChild(button, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
 			buttons.Add(button);
 			buttonHeights.Add(MathLib.Max(76, MathLib.Min(142, 28 + ((label.Length + 45) / 46) * 19)));
@@ -233,9 +432,27 @@ public partial class DialogueWindow : Component
 
 	private void OnCurrentTextFinished()
 	{
-		if (scenario == null) return;
+		if (showingSecondScenario && secondScenario == null) return;
+		if (!showingSecondScenario && scenario == null) return;
 		BuildChoices();
-		scenario.NotifyTextFinished();
+		if (showingSecondScenario) secondScenario.NotifyTextFinished();
+		else scenario.NotifyTextFinished();
+	}
+
+	private void OnSecondScenarioTimerChanged(float seconds)
+	{
+		if (secondScenario == null || !secondScenario.IsStarted) return;
+		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForPassenger)
+		{
+			terminalHint.Text = string.Format("Вызов с пассажирского места. Найдите пассажира: {0:0} сек.", seconds);
+			LayoutTerminalHint();
+		}
+		else if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.ParentChoice
+			|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.ParentChoiceGrace
+			|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatDecisionChoice)
+		{
+			UpdateStatus();
+		}
 	}
 
 	private void OnTimerChanged(float seconds)
@@ -249,6 +466,17 @@ public partial class DialogueWindow : Component
 
 	private void UpdateStatus()
 	{
+		if (showingSecondScenario && secondScenario != null)
+		{
+			status.Text = string.Format("K1: {0}   K2: {1}   Безопасность: {2:+#;-#;0}   Лояльность: {3:+#;-#;0}",
+				secondScenario.MoodPassenger1, secondScenario.MoodPassenger2,
+				secondScenario.SafetyDelta, secondScenario.LoyaltyDelta);
+			if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.ParentChoice
+				|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.ParentChoiceGrace
+				|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatDecisionChoice)
+				status.Text += string.Format("   Время: {0:0} сек.", secondScenario.RemainingSeconds);
+			return;
+		}
 		if (scenario.CurrentStage == PetCarrierScenarioController.Stage.Finished)
 			status.Text = string.Format("Безопасность: {0}   Лояльность: {1}", scenario.Safety, scenario.Loyalty);
 		else if (scenario.RemainingSeconds > 0.0f)
@@ -304,14 +532,15 @@ public partial class DialogueWindow : Component
 	private void LayoutTerminalHint()
 	{
 		if (terminalHintPanel == null || gui == null) return;
-		int width = MathLib.Min(460, gui.Width - 48);
-		int height = 54;
+		int width = MathLib.Min(680, gui.Width - 48);
+		int height = 72;
 		int left = gui.Width - width - 24;
 		terminalHintPanel.SetPosition(left, 24);
 		terminalHintPanel.Width = width;
 		terminalHintPanel.Height = height;
-		terminalHint.SetPosition(left + 8, 38);
-		terminalHint.Width = width - 16;
+		terminalHint.SetPosition(left + 12, 34);
+		terminalHint.Width = width - 24;
+		terminalHint.Height = height - 20;
 	}
 
 	private void ClearButtons()
@@ -342,6 +571,11 @@ public partial class DialogueWindow : Component
 		{
 			scenario.Changed -= Refresh;
 			scenario.TimerChanged -= OnTimerChanged;
+		}
+		if (secondScenario != null && secondSubscribed)
+		{
+			secondScenario.Changed -= RefreshSecondScenario;
+			secondScenario.TimerChanged -= OnSecondScenarioTimerChanged;
 		}
 		ClearButtons();
 		if (mouseStateSaved) RestoreMouse();

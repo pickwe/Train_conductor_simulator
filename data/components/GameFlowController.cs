@@ -36,6 +36,12 @@ public partial class GameFlowController : Component
 	public void NotifyBriefingClosed()
 	{
 		if (CurrentPhase != Phase.WaitingForBriefing) return;
+		if (MenuManager.ScenarioOneCompletedForTesting)
+		{
+			SetPhase(Phase.ScenarioTwoIntroduction);
+			ScenarioTwoIntroductionRequested?.Invoke();
+			return;
+		}
 		SetPhase(Phase.ScenarioOneIntroduction);
 		ScenarioOneIntroductionRequested?.Invoke();
 	}

@@ -15,11 +15,31 @@ public partial class ScenarioResults : Component
 	private WidgetLabel heading, body;
 	private WidgetButton continueButton;
 	private PetCarrierScenarioController scenario;
+	private PassengerScenarioController secondScenario;
 	private GameFlowController gameFlow;
-	private bool subscribed, visible;
+	private bool subscribed, secondSubscribed, visible;
+	private bool showingSecondScenarioResult;
 	private Input.MOUSE_HANDLE previousMouseHandle;
 	private bool previousMouseGrab, previousCursorHide, mouseStateSaved;
 	private float fade;
+
+	private sealed class AchievementResult
+	{
+		public string Id;
+		public string Title;
+		public string Description;
+		public string EarnedText;
+		public bool Hidden;
+
+		public AchievementResult(string id, string title, string description, string earnedText, bool hidden = false)
+		{
+			Id = id;
+			Title = title;
+			Description = description;
+			EarnedText = earnedText;
+			Hidden = hidden;
+		}
+	}
 
 	private void Init()
 	{
@@ -61,6 +81,18 @@ public partial class ScenarioResults : Component
 		}
 		if (gameFlow == null)
 			gameFlow = ComponentSystem.FindComponentInWorld<GameFlowController>();
+		if (secondScenario == null || (PassengerScenarioController.Active != null && secondScenario != PassengerScenarioController.Active))
+		{
+			if (secondScenario != null && secondSubscribed)
+				secondScenario.SecondScenarioResultRequested -= ShowSecondScenarioResult;
+			secondScenario = PassengerScenarioController.Active ?? ComponentSystem.FindComponentInWorld<PassengerScenarioController>();
+			secondSubscribed = false;
+			if (secondScenario != null && secondScenario == PassengerScenarioController.Active)
+			{
+				secondScenario.SecondScenarioResultRequested += ShowSecondScenarioResult;
+				secondSubscribed = true;
+			}
+		}
 		if (!visible) return;
 
 		fade = MathLib.Min(1.0f, fade + Game.IFps / MathLib.Max(0.1f, fadeInSeconds));
@@ -79,6 +111,19 @@ public partial class ScenarioResults : Component
 	private void Show()
 	{
 		if (visible || scenario == null) return;
+		showingSecondScenarioResult = false;
+		ShowResults(BuildResultsText());
+	}
+
+	private void ShowSecondScenarioResult(string finalTitle, string feedback)
+	{
+		if (visible) return;
+		showingSecondScenarioResult = true;
+		ShowResults("Сценарий завершается. " + finalTitle + "\nОбратная связь:\n" + feedback);
+	}
+
+	private void ShowResults(string resultsText)
+	{
 		DialogueWindow dialogue = ComponentSystem.FindComponentInWorld<DialogueWindow>();
 		dialogue?.HideForResults();
 		previousMouseHandle = Input.MouseHandle;
@@ -92,7 +137,7 @@ public partial class ScenarioResults : Component
 		visible = true;
 		IsVisible = true;
 		fade = 0.0f;
-		body.Text = BuildResultsText();
+		body.Text = resultsText;
 		panel.Hidden = heading.Hidden = body.Hidden = continueButton.Hidden = false;
 		Layout();
 	}
@@ -112,14 +157,16 @@ public partial class ScenarioResults : Component
 		text.AppendLine();
 		text.AppendLine("Достижения:");
 
-		List<string> earned = GetEarnedAchievements();
+		List<AchievementResult> earned = GetEarnedAchievements();
 		if (earned.Count == 0)
 			text.Append("В этот раз достижения не получены.");
 		else
-			foreach (string achievement in earned)
+			foreach (AchievementResult achievement in earned)
 			{
-				text.AppendLine("★ " + achievement);
-				text.AppendLine("Достижение получено!");
+				text.AppendFormat("★ {0}{1} — «{2}»", achievement.Hidden ? "Скрытая ачивка: " : "", achievement.Id, achievement.Title);
+				text.AppendLine();
+				text.AppendLine("Описание: " + achievement.Description);
+				text.AppendLine((achievement.Hidden ? "Скрытая ачивка получена! " : "Ачивка получена! ") + achievement.EarnedText);
 			}
 		return text.ToString();
 	}
@@ -130,7 +177,7 @@ public partial class ScenarioResults : Component
 			return "Вы предложили безопасное решение, но пассажир отказался. Вы не стали спорить или предоставлять исключение, а передали ситуацию начальнику поезда. Это правильное действие после прямого отказа.";
 
 		if (HasDecision("ID-11"))
-			return "Вы не разрешили продолжить поездку с питомцем без переноски и своевременно вызвали начальника поезда. Решение по безопасности верное, но обвинительная формулировка усилила конфликт и снизила лояльность пассажира.";
+			return "Вы не разрешили продолжить поездку с питомцем без переноски, зафиксировали отказ пассажира и своевременно вызвали начальника поезда. С точки зрения безопасности решение правильное. Однако обвинительная и резкая формулировка усилила конфликт и снизила его лояльность. Требование следовало повторить нейтрально, не перекладывая разговор в форму личного упрёка.";
 
 		if (HasDecision("ID-12"))
 			return "Фиксация нарушения не устраняет текущий риск. Вы сообщили о ситуации, но фактически разрешили пассажиру продолжить поездку в прежнем виде.";
@@ -165,22 +212,93 @@ public partial class ScenarioResults : Component
 		return "Ситуация завершилась без подтверждённого безопасного размещения питомца. Передача вопроса начальнику поезда позволяет принять решение с учётом обстоятельств.";
 	}
 
-	private List<string> GetEarnedAchievements()
+	private List<AchievementResult> GetEarnedAchievements()
 	{
-		List<string> earned = new List<string>();
-		if (HasPath("ID-01", "ID-04", "CARRIER_DELIVERED") && scenario.EndingBonusGranted)
-			earned.Add("ACH_PET_01 — «Мягкие лапы — твёрдые правила»");
-		if (HasPath("ID-02", "ID-04", "ID-02-APOLOGY") && scenario.EndingBonusGranted)
-			earned.Add("ACH_PET_02 — «Ошибка признана»");
-		if (HasPath("ID-01", "ID-05", "ID-10") && scenario.EndingBonusGranted)
-			earned.Add("ACH_PET_03 — «Три шага до порядка»");
-		if (!scenario.CarrierAvailable && HasPath("ID-01", "ID-07") && scenario.EndingBonusGranted)
-			earned.Add("ACH_PET_04 — «Правила без витрины»");
-		if (scenario.InitialMood == -3 && HasPath("ID-01", "ID-05", "ID-10") && scenario.EndingBonusGranted)
-			earned.Add("ACH_PET_05 — «Холодная голова»");
-		if (HasPath("ID-02", "ID-05", "ID-11") && !scenario.EndingBonusGranted)
-			earned.Add("ACH_PET_06 — «Ледяной протокол»");
+		List<AchievementResult> earned = new List<AchievementResult>();
+		if (scenario.CarrierAvailable
+			&& HasChoicePath("ID-01", "ID-04")
+			&& HasDecision("CARRIER_DELIVERED")
+			&& scenario.Mood >= 2
+			&& scenario.EndingBonusGranted)
+		{
+			earned.Add(new AchievementResult(
+				"ACH_PET_01",
+				"Мягкие лапы — твёрдые правила",
+				"Спокойно объяснить требование и добиться безопасного размещения питомца без конфликта.",
+				"Вы сохранили лояльность пассажира и обеспечили безопасное размещение питомца."));
+		}
+		if (scenario.CarrierAvailable
+			&& HasChoicePath("ID-02", "ID-04")
+			&& HasDecision("ID-02-APOLOGY")
+			&& HasDecision("CARRIER_DELIVERED")
+			&& scenario.EndingBonusGranted)
+		{
+			earned.Add(new AchievementResult(
+				"ACH_PET_02",
+				"Ошибка признана",
+				"Исправить собственную грубость, признать неудачную формулировку и всё-таки убедить пассажира приобрести переноску.",
+				"Вы признали ошибку в общении, восстановили диалог и нашли безопасное решение."));
+		}
+		if (scenario.CarrierAvailable
+			&& HasChoicePath("ID-01", "ID-05", "ID-10")
+			&& scenario.EndingBonusGranted)
+		{
+			earned.Add(new AchievementResult(
+				"ACH_PET_03",
+				"Три шага до порядка",
+				"Пройти все три этапа: объяснить требование, предложить переноску и корректно вызвать начальника поезда после отказа.",
+				"Объяснение, решение, эскалация — Вы правильно прошли все три этапа ситуации."));
+		}
+		if (!scenario.CarrierAvailable
+			&& HasChoicePath("ID-01", "ID-07")
+			&& !HasDecision("SOLUTION_TIMEOUT")
+			&& scenario.EndingBonusGranted)
+		{
+			earned.Add(new AchievementResult(
+				"ACH_PET_04",
+				"Правила без витрины",
+				"Правильно действовать, когда переноски нет в продаже, и не обещать пассажиру недоступную услугу.",
+				"Вы честно сообщили об отсутствии переноски и выбрали правильный порядок действий."));
+		}
+		if (scenario.InitialMood == -3
+			&& scenario.CarrierAvailable
+			&& HasChoicePath("ID-01", "ID-05", "ID-10")
+			&& scenario.EndingBonusGranted)
+		{
+			earned.Add(new AchievementResult(
+				"ACH_PET_05",
+				"Холодная голова",
+				"Сохранить профессиональный тон при общении с изначально конфликтным пассажиром.",
+				"Пассажир был настроен на конфликт, но Вы сохранили спокойствие и действовали профессионально.",
+				true));
+		}
+		if (scenario.CarrierAvailable
+			&& HasChoicePath("ID-02", "ID-05", "ID-11")
+			&& !scenario.EndingBonusGranted)
+		{
+			earned.Add(new AchievementResult(
+				"ACH_PET_06",
+				"Ледяной протокол",
+				"Соблюсти требования безопасности, выбирая только правильные, но грубые ответы.",
+				"Требования безопасности соблюдены, но холодный тон стоил Вам лояльности пассажира.",
+				true));
+		}
 		return earned;
+	}
+
+	private bool HasChoicePath(params string[] expected)
+	{
+		int choiceIndex = 0;
+		for (int i = 0; i < scenario.DecisionHistory.Count; i++)
+		{
+			string entry = scenario.DecisionHistory[i];
+			if (entry == null || entry.Length != 5 || !entry.StartsWith("ID-"))
+				continue;
+			if (choiceIndex >= expected.Length || entry != expected[choiceIndex])
+				return false;
+			choiceIndex++;
+		}
+		return choiceIndex == expected.Length;
 	}
 
 	private bool HasPath(params string[] expected)
@@ -199,7 +317,7 @@ public partial class ScenarioResults : Component
 	private void Layout()
 	{
 		int width = MathLib.Min(900, gui.Width - 48);
-		int height = MathLib.Min(500, gui.Height - 48);
+		int height = MathLib.Min(700, gui.Height - 48);
 		int left = (gui.Width - width) / 2;
 		int top = (gui.Height - height) / 2;
 		panel.SetPosition(left, top);
@@ -220,7 +338,14 @@ public partial class ScenarioResults : Component
 		visible = false;
 		IsVisible = false;
 		RestoreMouse();
-		gameFlow.StartScenarioTwoIntroduction();
+		if (showingSecondScenarioResult)
+		{
+			showingSecondScenarioResult = false;
+			secondScenario?.NotifySecondScenarioResultsClosed();
+			gameFlow.ShowRunSummary();
+		}
+		else
+			gameFlow.StartScenarioTwoIntroduction();
 	}
 
 	private void RestoreMouse()
@@ -237,6 +362,8 @@ public partial class ScenarioResults : Component
 	{
 		IsVisible = false;
 		if (scenario != null && subscribed) scenario.FinalDialogueRead -= Show;
+		if (secondScenario != null && secondSubscribed)
+			secondScenario.SecondScenarioResultRequested -= ShowSecondScenarioResult;
 		RestoreMouse();
 		panel?.DeleteLater();
 		heading?.DeleteLater();
