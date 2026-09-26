@@ -6,7 +6,7 @@ using Unigine;
 public partial class PetCarrierScenarioController : Component
 {
 	public enum PassengerProfile { Calm, Anxious, Confrontational }
-	public enum Stage { Opening, Explanation, MoodReaction, TerminalPrompt, WaitingForTerminal, Solution, Refusal, RefusalReaction, Finished }
+	public enum Stage { Opening, Explanation, MoodReaction, TerminalPrompt, WaitingForTerminal, AwaitingPassengerInteraction, Solution, CarrierPurchaseReaction, AwaitingCarrierPickup, AwaitingPassengerHandoff, Refusal, RefusalReaction, Finished }
 
 	public float solutionSeconds = 12.0f;
 	public float passengerReplySeconds = 8.0f;
@@ -188,6 +188,14 @@ public partial class PetCarrierScenarioController : Component
 			NotifyFinalDialogueRead();
 			return;
 		}
+		else if (CurrentStage == Stage.CarrierPurchaseReaction)
+		{
+			CurrentStage = Stage.AwaitingCarrierPickup;
+			CurrentSpeaker = "";
+			CurrentText = "";
+			Changed?.Invoke();
+			return;
+		}
 		else return;
 
 		Changed?.Invoke();
@@ -208,13 +216,43 @@ public partial class PetCarrierScenarioController : Component
 		{
 			if (CarrierFactChecked)
 			{
-				CurrentStage = Stage.Solution;
+				CurrentStage = Stage.AwaitingPassengerInteraction;
 				CurrentSpeaker = "Проводник";
 				CurrentText = "";
-				RemainingSeconds = timersEnabled ? Math.Max(0.0f, solutionSeconds) : 0.0f;
-				HasChoices = true;
+				HasChoices = false;
 			}
 		}
+		Changed?.Invoke();
+	}
+
+	public void NotifyCarrierPickedUp()
+	{
+		if (CurrentStage != Stage.AwaitingCarrierPickup) return;
+		CurrentStage = Stage.AwaitingPassengerHandoff;
+		CurrentSpeaker = "";
+		CurrentText = "";
+		HasChoices = false;
+		Changed?.Invoke();
+	}
+
+	public void NotifyPassengerInteraction()
+	{
+		if (CurrentStage == Stage.AwaitingPassengerInteraction)
+		{
+			CurrentStage = Stage.Solution;
+			CurrentSpeaker = "Проводник";
+			CurrentText = "";
+			RemainingSeconds = timersEnabled ? Math.Max(0.0f, solutionSeconds) : 0.0f;
+			HasChoices = true;
+		}
+		else if (CurrentStage == Stage.AwaitingPassengerHandoff)
+		{
+			CurrentSpeaker = "Проводник";
+			CurrentText = "Спасибо большое! Теперь питомец будет в безопасности.";
+			DecisionHistory.Add("CARRIER_DELIVERED");
+			FinishWithBonus();
+		}
+		else return;
 		Changed?.Invoke();
 	}
 
@@ -271,21 +309,11 @@ public partial class PetCarrierScenarioController : Component
 		switch (id)
 		{
 			case "ID-04":
-				if (Mood >= 2)
-				{
-					CurrentText = "Хорошо, давайте приобретём переноску. Спасибо, что всё объяснили.";
-					FinishWithBonus();
-				}
-				else
-				{
-					CurrentText = Mood >= 0
-						? "Я понимаю, но покупать переноску не хочу. Она мне больше не понадобится."
-						: "Ничего я покупать не буду. Мой питомец никому не мешает.";
-					CurrentStage = Stage.Refusal;
-					RemainingSeconds = timersEnabled ? Math.Max(0.0f, passengerReplySeconds) : 0.0f;
-					HasChoices = true;
-					Changed?.Invoke();
-				}
+				CurrentText = "Хорошо, давайте приобретём переноску. Буду ждать Вас с ней. Спасибо!";
+				CurrentStage = Stage.CarrierPurchaseReaction;
+				RemainingSeconds = 0.0f;
+				HasChoices = false;
+				Changed?.Invoke();
 				return;
 			case "ID-05":
 				CurrentText = "Если переноска необязательна, я лучше буду держать питомца на руках. Покупать её не хочу.";

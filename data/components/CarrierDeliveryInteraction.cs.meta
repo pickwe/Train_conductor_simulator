@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>a46a821ee872f5fa95c41b6def65b6d6991e56c9</guid>
+	<type>component</type>
+	<hash>fbe2e61d973abadaa6536a6d9fc98d591afc96226a813142a0826fa473ce27ae</hash>
+	<runtimes>
+		<runtime id="a46a821ee872f5fa95c41b6def65b6d6991e56c9" name="CarrierDeliveryInteraction.cs" link="0"/>
+		<runtime id="e6ec667821102cf458234a95702f37e3932e7194" name="CarrierDeliveryInteraction.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

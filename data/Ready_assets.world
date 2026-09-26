@@ -972,7 +972,9 @@
 			<properties>
 				<property parent="80ea7431cabe8c4c7450c363d067b6986074871a" guid="adcee15812d1e75bcb3cfa7e1abb0708c196258b"/>
 				<property parent="d81b556650a9bd148e135e1c31a65c02d6631fa1" guid="24ba0b75ae2d99df6ec7cdc7aba5127d8e973d6e"/>
-				<property parent="68ca09c0826a41cb0b839fa68f0dfdd03c17ca53" guid="686f6e4a8f52f8bd1ee38fe0becb5e31bc54e5f5"/>
+				<property parent="68ca09c0826a41cb0b839fa68f0dfdd03c17ca53" guid="686f6e4a8f52f8bd1ee38fe0becb5e31bc54e5f5">
+					<parameter name="typingCharactersPerSecond">91.2638016</parameter>
+				</property>
 				<property parent="3452e7fae1db6b054e50732eb92558c97f901da4" guid="cc992cdce35944e2a462ec73ef78cebe699a0837"/>
 			</properties>
 			<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 7.68062385083 -21.3850506963 4.43343754798 1.0</transform>
@@ -2455,6 +2457,30 @@
 				<speed>30</speed>
 				<surface name="Манекен дерево" intersection="1" material="75c9544106a005f9744047f33caa43004f31036a"/>
 				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="887492750" name="подсвечник-2">
+			<properties>
+				<property parent="e6ec667821102cf458234a95702f37e3932e7194" guid="5d01f7b03efda41992bff2adbf4483a57a19ac4c">
+					<parameter name="passengerNode">1203949413</parameter>
+				</property>
+				<property parent="b3187d3eae04a5728e02526d12ddf6cc3253692e" guid="973a04b875171573b4105b3f1d7feab57dcefb3b"/>
+			</properties>
+			<transform>0.116152234375 3.38275685675e-13 -1.01550119425e-08 0.0 3.37388211986e-13 0.116152234375 7.72819112171e-06 0.0 1.01550119425e-08 -7.72819112171e-06 0.116152234375 0.0 5.68520645616 -21.9235519334 1.47115595301 1.0</transform>
+			<node type="ObjectMeshStatic" id="882138773" immovable="1" name="BézierCurve">
+				<mesh_name>guid://c163acacdf7ef2fcc5f15ea3ccb55211115c245f</mesh_name>
+				<surface name="Металл_подсвечник" intersection="1" material="03d7393aaf7cd5235f2f2fdf5e08b7c8c78199b6"/>
+				<transform>1 7.43932000553e-23 3.82137093191e-15 0.0 6.11583101855e-23 1 -4.37113882867e-08 0.0 -3.82137093191e-15 4.37113882867e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1110712048" immovable="1" name="Подсвечник">
+				<mesh_name>guid://f9a700f6e1eb960cf8b2378b8ded663f61e1a632</mesh_name>
+				<surface name="Металл_подсвечник" intersection="1" material="03d7393aaf7cd5235f2f2fdf5e08b7c8c78199b6"/>
+				<transform>0.931917513415 0.362670302328 -1.18828005168e-07 0.0 1.29865069553e-07 -6.05378360254e-09 1 0.0 0.362670302328 -0.931917513415 -5.27398309982e-08 0.0 -1.68352477816e-15 1.92572787567e-08 0.44055518508 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1658332559" immovable="1" name="Свеча">
+				<mesh_name>guid://b03041be3aca78a44a6ab68dc6a5d15b57fe4fe9</mesh_name>
+				<surface name="Воск_свеча" intersection="1" material="a6afb4fc64f537ae5291222952236e1188ec0a58"/>
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 -5.14478915052e-15 5.88495281455e-08 1.34632027149 1.0</transform>
 			</node>
 		</node>
 	</editor>

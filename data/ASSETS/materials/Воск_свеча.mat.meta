@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>a6afb4fc64f537ae5291222952236e1188ec0a58</guid>
+	<type>material</type>
+	<hash>96f997499715c0c66a694b4e881c41f48d47d1c7dd49a5bb7130be7e9d08e6d1</hash>
+	<runtimes>
+		<runtime id="a6afb4fc64f537ae5291222952236e1188ec0a58" name="Воск_свеча" link="0" type="5"/>
+	</runtimes>
+</asset>

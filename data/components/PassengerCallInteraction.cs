@@ -16,6 +16,7 @@ public partial class PassengerCallInteraction : Component
 	public float callSoundGain = 1.0f;
 
 	private PassengerScenarioController scenario;
+	private PetCarrierScenarioController petCarrierScenario;
 	private EInteractable interactable;
 	private EInteractable subscribedInteractable;
 	private SoundSource callSound;
@@ -36,8 +37,10 @@ public partial class PassengerCallInteraction : Component
 		if (interactable == null)
 			interactable = ComponentSystem.GetComponentInChildren<EInteractable>(node);
 		BindInteractable();
-		if (interactable != null && callStarted && scenario != null)
-			interactable.IsAvailable = scenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForPassenger;
+		if (petCarrierScenario == null)
+			petCarrierScenario = ComponentSystem.FindComponentInWorld<PetCarrierScenarioController>();
+		if (interactable != null)
+			interactable.IsAvailable = IsWaitingForPassengerInteraction();
 
 		if (scenario == null)
 		{
@@ -51,6 +54,13 @@ public partial class PassengerCallInteraction : Component
 					OnPassengerCallRequested();
 			}
 		}
+	}
+
+	private bool IsWaitingForPassengerInteraction()
+	{
+		return (scenario != null && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForPassenger)
+			|| (petCarrierScenario != null && (petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
+				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff));
 	}
 
 	private void OnPassengerCallRequested()
@@ -89,8 +99,8 @@ public partial class PassengerCallInteraction : Component
 
 	private void OnStepChanged(PassengerScenarioController.ScenarioStep step)
 	{
-		if (step != PassengerScenarioController.ScenarioStep.WaitingForPassenger && interactable != null)
-			interactable.IsAvailable = false;
+		if (interactable != null)
+			interactable.IsAvailable = IsWaitingForPassengerInteraction();
 	}
 
 	private void OnInteracted()

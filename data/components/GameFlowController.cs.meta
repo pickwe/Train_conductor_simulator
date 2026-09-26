@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>8c7410218f060b04c6c49ad3a4405cb269d256ca</guid>
 	<type>component</type>
-	<hash>f83df88817b866cc4e521c5759fbeff4f4e2c3d2b6ff9c90d2151718d56368b4</hash>
+	<hash>7d4ef93d2010a58f106218f26c235121adab3e1b23da10ab1ed444935ec687f9</hash>
 	<runtimes>
 		<runtime id="8c7410218f060b04c6c49ad3a4405cb269d256ca" name="GameFlowController.cs" link="0"/>
 		<runtime id="31946d66bf4638e36b03b61cbd1c2b1de46bd7a1" name="GameFlowController.prop" link="1" type="4"/>

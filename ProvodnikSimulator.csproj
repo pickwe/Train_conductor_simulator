@@ -77,6 +77,8 @@
 		<AdditionalFiles Include="data/components/ConductorTerminal.cs.meta" Visible="false"/>
 		<Compile Include="data/components/ScenarioResults.cs"/>
 		<AdditionalFiles Include="data/components/ScenarioResults.cs.meta" Visible="false"/>
+		<Compile Include="data/components/CarrierDeliveryInteraction.cs"/>
+		<AdditionalFiles Include="data/components/CarrierDeliveryInteraction.cs.meta" Visible="false"/>
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="source/AppSystemLogic.cs"/>

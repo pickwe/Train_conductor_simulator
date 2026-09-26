@@ -90,7 +90,10 @@ public partial class DialogueWindow : Component
 				if (scenario.IsStarted) Refresh();
 			}
 		}
-		if (scenario != null && scenario.CurrentStage == PetCarrierScenarioController.Stage.WaitingForTerminal)
+		if (scenario != null && (scenario.CurrentStage == PetCarrierScenarioController.Stage.WaitingForTerminal
+			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
+			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingCarrierPickup
+			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff))
 			LayoutTerminalHint();
 
 		if (!IsVisible)
@@ -128,7 +131,10 @@ public partial class DialogueWindow : Component
 			&& speaker.Text == scenario.CurrentSpeaker
 			&& fullText == (scenario.CurrentText ?? "");
 
-		if (scenario.CurrentStage == PetCarrierScenarioController.Stage.WaitingForTerminal)
+		if (scenario.CurrentStage == PetCarrierScenarioController.Stage.WaitingForTerminal
+			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
+			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingCarrierPickup
+			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff)
 		{
 			panel.Hidden = true;
 			speaker.Hidden = true;
@@ -136,6 +142,14 @@ public partial class DialogueWindow : Component
 			status.Hidden = true;
 			terminalHintPanel.Hidden = false;
 			terminalHint.Hidden = false;
+			if (scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction)
+				terminalHint.Text = "Подойдите к пассажиру и нажмите E";
+			else if (scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingCarrierPickup)
+				terminalHint.Text = "Подойдите к переноске и нажмите E";
+			else if (scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff)
+				terminalHint.Text = "Вернитесь к пассажиру и нажмите E";
+			else
+				terminalHint.Text = "Нажмите Q, чтобы открыть монитор проводника";
 			ClearButtons();
 			IsVisible = false;
 			RestoreMouse();
@@ -306,6 +320,19 @@ public partial class DialogueWindow : Component
 			button.DeleteLater();
 		buttons.Clear();
 		buttonHeights.Clear();
+	}
+
+	public void HideForResults()
+	{
+		if (panel != null) panel.Hidden = true;
+		if (speaker != null) speaker.Hidden = true;
+		if (text != null) text.Hidden = true;
+		if (status != null) status.Hidden = true;
+		if (terminalHintPanel != null) terminalHintPanel.Hidden = true;
+		if (terminalHint != null) terminalHint.Hidden = true;
+		ClearButtons();
+		IsVisible = false;
+		RestoreMouse();
 	}
 
 	private void Shutdown()

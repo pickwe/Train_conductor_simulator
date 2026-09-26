@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>03d7393aaf7cd5235f2f2fdf5e08b7c8c78199b6</guid>
+	<type>material</type>
+	<hash>bcc7f15dca5e91f7ff3b5faa69f5a4520aa63ae3fc61b2a44ca457eca221ef37</hash>
+	<runtimes>
+		<runtime id="03d7393aaf7cd5235f2f2fdf5e08b7c8c78199b6" name="Металл_подсвечник" link="0" type="5"/>
+	</runtimes>
+</asset>

@@ -5,6 +5,8 @@ using Unigine;
 /// <summary>Shows scenario one feedback and achievement results after the final line finishes typing.</summary>
 public partial class ScenarioResults : Component
 {
+	public static bool IsVisible { get; private set; }
+
 	[ParameterSlider(Min = 0.1f, Max = 3.0f, Group = "Results")]
 	public float fadeInSeconds = 0.65f;
 
@@ -15,6 +17,8 @@ public partial class ScenarioResults : Component
 	private PetCarrierScenarioController scenario;
 	private GameFlowController gameFlow;
 	private bool subscribed, visible;
+	private Input.MOUSE_HANDLE previousMouseHandle;
+	private bool previousMouseGrab, previousCursorHide, mouseStateSaved;
 	private float fade;
 
 	private void Init()
@@ -75,7 +79,18 @@ public partial class ScenarioResults : Component
 	private void Show()
 	{
 		if (visible || scenario == null) return;
+		DialogueWindow dialogue = ComponentSystem.FindComponentInWorld<DialogueWindow>();
+		dialogue?.HideForResults();
+		previousMouseHandle = Input.MouseHandle;
+		previousMouseGrab = Input.MouseGrab;
+		previousCursorHide = Input.MouseCursorHide;
+		mouseStateSaved = true;
+		Input.MouseHandle = Input.MOUSE_HANDLE.USER;
+		Input.MouseGrab = false;
+		Input.MouseCursorHide = false;
+		Input.MouseCursorNeedUpdate = true;
 		visible = true;
+		IsVisible = true;
 		fade = 0.0f;
 		body.Text = BuildResultsText();
 		panel.Hidden = heading.Hidden = body.Hidden = continueButton.Hidden = false;
@@ -173,12 +188,26 @@ public partial class ScenarioResults : Component
 		if (fade < 1.0f || gameFlow == null) return;
 		panel.Hidden = heading.Hidden = body.Hidden = continueButton.Hidden = true;
 		visible = false;
+		IsVisible = false;
+		RestoreMouse();
 		gameFlow.StartScenarioTwoIntroduction();
+	}
+
+	private void RestoreMouse()
+	{
+		if (!mouseStateSaved) return;
+		Input.MouseHandle = previousMouseHandle;
+		Input.MouseGrab = previousMouseGrab;
+		Input.MouseCursorHide = previousCursorHide;
+		Input.MouseCursorNeedUpdate = true;
+		mouseStateSaved = false;
 	}
 
 	private void Shutdown()
 	{
+		IsVisible = false;
 		if (scenario != null && subscribed) scenario.FinalDialogueRead -= Show;
+		RestoreMouse();
 		panel?.DeleteLater();
 		heading?.DeleteLater();
 		body?.DeleteLater();

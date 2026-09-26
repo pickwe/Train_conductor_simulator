@@ -104,7 +104,7 @@ public partial class MenuManager : Component
 		UpdateKeys();
 		if (state == Screen.Game && !BriefingWindow.IsIntroductionVisible && !ConductorTerminal.IsVisible &&
 			(Game.Scale == 0.0f || Physics.Scale == 0.0f)) ResumeScales();
-		if (state == Screen.Game && !BriefingWindow.IsVisible && !DialogueWindow.IsVisible && !ConductorTerminal.IsVisible) GrabMouse(); else ReleaseMouse();
+		if (state == Screen.Game && !BriefingWindow.IsVisible && !DialogueWindow.IsVisible && !ConductorTerminal.IsVisible && !ScenarioResults.IsVisible) GrabMouse(); else ReleaseMouse();
 	}
 
 	private void Shutdown()
