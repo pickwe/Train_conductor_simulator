@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>6de1508e9083296c473b671def3943962d920f79</guid>
+	<type>material</type>
+	<hash>8c074d21f54c6ff46693d5320f8af1d3ab21772b2ac3d14986e286d0a67fbdf5</hash>
+	<runtimes>
+		<runtime id="6de1508e9083296c473b671def3943962d920f79" name="Черный кот" link="0" type="5"/>
+	</runtimes>
+</asset>

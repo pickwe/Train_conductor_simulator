@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>32c68524e1fc5873fbcb84bb65f88e04d0791ef7</guid>
+	<type>material</type>
+	<hash>552810a893f10e0a02146a80b8b5158c370398923f4439e2885dd26146ef49d8</hash>
+	<runtimes>
+		<runtime id="32c68524e1fc5873fbcb84bb65f88e04d0791ef7" name="Отрицание" link="0" type="5"/>
+	</runtimes>
+</asset>

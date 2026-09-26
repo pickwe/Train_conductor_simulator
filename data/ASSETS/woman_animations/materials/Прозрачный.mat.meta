@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>12785ef6e5b3d111191d9a65a1fe074d656e5e41</guid>
+	<type>material</type>
+	<hash>e51e06c3d8d6d792f26e46d94ddb7c8d35095a338087b7d39eb66e6205f6e933</hash>
+	<runtimes>
+		<runtime id="12785ef6e5b3d111191d9a65a1fe074d656e5e41" name="Прозрачный" link="0" type="5"/>
+	</runtimes>
+</asset>

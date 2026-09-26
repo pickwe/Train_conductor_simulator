@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>28fac8103f04632540e70eb7fcf3929333d44133</guid>
+	<type>material_graph</type>
+	<hash>9fc458aa3c878fd1225af391fd3fe96e9692995899f83ed145223632deab0a5e</hash>
+	<runtimes>
+		<runtime id="28fac8103f04632540e70eb7fcf3929333d44133" name="Удовлетворение.mgraph" link="0"/>
+		<runtime id="c716c3c237010537ab317cc17225f8e19e0587dd" name="Удовлетворение" link="1" type="5"/>
+	</runtimes>
+</asset>

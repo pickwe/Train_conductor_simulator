@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>5220f33e600d5a49b9c43a0d63d464c486fc5b69</guid>
+	<type>material</type>
+	<hash>74d3f5fd790856dd82236b559e9a8758872c5d490d28f3db1eba9bba8bc6f8d3</hash>
+	<runtimes>
+		<runtime id="5220f33e600d5a49b9c43a0d63d464c486fc5b69" name="Клетчатая переноска" link="0" type="5"/>
+	</runtimes>
+</asset>

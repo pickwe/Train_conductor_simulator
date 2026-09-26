@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>99e8622cc353849cd2fb162362c5b192b58183df</guid>
+	<type>material</type>
+	<hash>307ddcc414590cc08efd0f3b27b4ac6a4eb1a1247341eb8684fbf6ef719601aa</hash>
+	<runtimes>
+		<runtime id="99e8622cc353849cd2fb162362c5b192b58183df" name="Черная переноска" link="0" type="5"/>
+	</runtimes>
+</asset>

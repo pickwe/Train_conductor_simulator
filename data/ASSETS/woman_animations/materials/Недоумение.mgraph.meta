@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>41c4f92a6d3d1270d3edab099e8fee80ebd36da5</guid>
+	<type>material_graph</type>
+	<hash>c27da9b2a7fcacfd144067a1e55ac7c169e7fd60dd63526464174f2828f12ee5</hash>
+	<runtimes>
+		<runtime id="41c4f92a6d3d1270d3edab099e8fee80ebd36da5" name="Недоумение.mgraph" link="0"/>
+		<runtime id="81d2066c52da75e897a72d63c44af3a9c062d71f" name="Недоумение" link="1" type="5"/>
+	</runtimes>
+</asset>

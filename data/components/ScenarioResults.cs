@@ -126,6 +126,27 @@ public partial class ScenarioResults : Component
 
 	private string GetFeedback()
 	{
+		if (HasDecision("ID-10"))
+			return "Вы предложили безопасное решение, но пассажир отказался. Вы не стали спорить или предоставлять исключение, а передали ситуацию начальнику поезда. Это правильное действие после прямого отказа.";
+
+		if (HasDecision("ID-11"))
+			return "Вы не разрешили продолжить поездку с питомцем без переноски и своевременно вызвали начальника поезда. Решение по безопасности верное, но обвинительная формулировка усилила конфликт и снизила лояльность пассажира.";
+
+		if (HasDecision("ID-12"))
+			return "Фиксация нарушения не устраняет текущий риск. Вы сообщили о ситуации, но фактически разрешили пассажиру продолжить поездку в прежнем виде.";
+
+		if (HasDecision("ID-07"))
+			return "Вы не стали грубить пассажиру и не предложили небезопасную замену переноске. Ситуация была своевременно передана начальнику поезда. Это правильное решение для обеспечения безопасности.";
+
+		if (HasDecision("ID-08"))
+			return "Вы правильно сообщили, что переноски на борту нет, и не разрешили оставить питомца свободно. Ситуация передана начальнику поезда. Однако обвинительная формулировка ухудшила настроение пассажира.";
+
+		if (HasDecision("ID-09"))
+			return "Пересадка может уменьшить неудобство для окружающих, но не обеспечивает безопасность питомца. Проблема была перемещена в другую часть вагона, а не решена.";
+
+		if (HasDecision("ID-02-APOLOGY") && scenario.EndingBonusGranted)
+			return "Вы признали, что первоначальная формулировка прозвучала резко, извинились и повторно предложили доступную переноску. Пассажир согласился, питомец размещён безопасно.";
+
 		if (scenario.EndingBonusGranted)
 			return "Вы спокойно объяснили требование и предложили пассажиру безопасное решение. Пассажир согласился, а питомец размещён в переноске.";
 
@@ -147,14 +168,18 @@ public partial class ScenarioResults : Component
 	private List<string> GetEarnedAchievements()
 	{
 		List<string> earned = new List<string>();
-		if (HasPath("ID-01", "ID-04") && scenario.Mood >= 2 && scenario.EndingBonusGranted)
-			earned.Add("Мягкие лапы — твёрдые правила");
-		if (HasPath("ID-01", "ID-04", "ID-10") && scenario.Mood <= 1)
-			earned.Add("Три шага до порядка");
-		if (scenario.InitialMood == -1 && HasPath("ID-01", "ID-04", "ID-10") && scenario.Mood == 1)
-			earned.Add("Холодная голова");
-		if (HasPath("ID-01", "ID-07"))
-			earned.Add("Без права на удобное исключение");
+		if (HasPath("ID-01", "ID-04", "CARRIER_DELIVERED") && scenario.EndingBonusGranted)
+			earned.Add("ACH_PET_01 — «Мягкие лапы — твёрдые правила»");
+		if (HasPath("ID-02", "ID-04", "ID-02-APOLOGY") && scenario.EndingBonusGranted)
+			earned.Add("ACH_PET_02 — «Ошибка признана»");
+		if (HasPath("ID-01", "ID-05", "ID-10") && scenario.EndingBonusGranted)
+			earned.Add("ACH_PET_03 — «Три шага до порядка»");
+		if (!scenario.CarrierAvailable && HasPath("ID-01", "ID-07") && scenario.EndingBonusGranted)
+			earned.Add("ACH_PET_04 — «Правила без витрины»");
+		if (scenario.InitialMood == -3 && HasPath("ID-01", "ID-05", "ID-10") && scenario.EndingBonusGranted)
+			earned.Add("ACH_PET_05 — «Холодная голова»");
+		if (HasPath("ID-02", "ID-05", "ID-11") && !scenario.EndingBonusGranted)
+			earned.Add("ACH_PET_06 — «Ледяной протокол»");
 		return earned;
 	}
 
@@ -164,6 +189,11 @@ public partial class ScenarioResults : Component
 		for (int i = 0; i < expected.Length; i++)
 			if (scenario.DecisionHistory[i] != expected[i]) return false;
 		return true;
+	}
+
+	private bool HasDecision(string id)
+	{
+		return scenario.DecisionHistory.Contains(id);
 	}
 
 	private void Layout()

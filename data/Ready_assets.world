@@ -2483,6 +2483,600 @@
 				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 -5.14478915052e-15 5.88495281455e-08 1.34632027149 1.0</transform>
 			</node>
 		</node>
+		<node type="NodeDummy" id="1660483837" name="Agressive1_1">
+			<transform>0.999999880791 1.67037320822e-22 -3.82136965978e-15 0.0 1.67037396552e-22 0.999999880791 8.74227623626e-08 0.0 3.82136965978e-15 -8.74227623626e-08 0.999999940395 0.0 9.51094436646 -6.78935050964 0.741522916289 1.0</transform>
+			<node type="ObjectMeshStatic" id="1191011896" immovable="1" name="Circle">
+				<mesh_name>guid://2b79d748919275cf47030aa543f029ee8950db64</mesh_name>
+				<transform>1 6.12714467421e-08 -8.34197206915e-08 0.0 6.12714466656e-08 0.299136344858 0.954210378892 0.0 8.34197207478e-08 -0.954210378892 0.299136344858 0.0 2.90539410368e-08 -0.332338349298 0.993713751061 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1233089591" immovable="1" name="Plane">
+				<mesh_name>guid://23414350c4b1ce6bba8710f70915e8f6d9b7ef73</mesh_name>
+				<transform>0.000737865675913 4.00930899038e-10 0.00769649531645 0.0 -0.00769649531645 -2.21555337103e-09 0.000737865675913 0.0 2.1367868823e-09 -0.00721299415454 1.70889542512e-10 0.0 -0.0257061630855 -0.549279142187 0.306727343966 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="429179946" name="metarig">
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="2000659841" name="metarig.001">
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1345634540" name="rig">
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="721864539" name="rig.001">
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 4.80788284871e-08 -0.549957692623 2.40394142435e-08 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="387470590" name="Бедро левое">
+				<mesh_name>guid://4b4731023bef04640118c9012529cf80d1f2901d</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://2f3c311645b08933dce7a02b274adf78b7b55852</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1733720133" name="Бедро левое.001">
+				<mesh_name>guid://be0f557ce264bdd0a26524a9cacbdaae9e00d2d8</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://b0f8f838739a234f69c6b355add7f53869b4ef54</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="779848928" name="Бедро правое">
+				<mesh_name>guid://32bbd2049d6400178cae0c1bff38ca932d93b857</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://b65a302a321b13ac3f38868f26a0d305fc2457a6</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="347495103" name="Бедро правое.001">
+				<mesh_name>guid://19b8070e8dd1b3dd7bef70030ba965fc68e0f9ca</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://80d2a56c8c6b2ea3a6f5f8591f8ee5cde11dadc8</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1317054738" name="Голень левая">
+				<mesh_name>guid://9eceb6d6f1f0ce600b66b0c554eff8c9981c1ea1</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://f190f87ee1897597721e0b3344b10e678a1bc23a</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="2132194633" name="Голень левое">
+				<mesh_name>guid://48cf4ef012e3e95e60ffd6ed376df95927c9a78c</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://a5fbbde0e478344ad01a859d575ef2142020397c</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1894923796" name="Голень правая">
+				<mesh_name>guid://63f0e3f867af1b93cdb1717f25f6d378f71a3d7b</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://a64a9e12bf4ad34ac4d59217957f36f9c85eac0e</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="225186403" name="Голень правая.001">
+				<mesh_name>guid://e9d175a2ff3efb11592fa3e78508f4563e46149e</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://a9847594990695135ca85f216f52697b78b4c670</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1172984934" name="Голова">
+				<mesh_name>guid://4089f1ea183aadc989de8cc949aedbf355a2f365</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://936a74e6daf863a092aabf3b858246e966776922</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1693180045" name="Голова.001">
+				<mesh_name>guid://385af7a416749a5c03dc257123b55101478c8d80</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://d4184088d8d56b4e1e4bc8e5feb2b8e0e35cc8a4</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1168541832" name="Голова.002">
+				<mesh_name>guid://32722d2cf0f47c93d2b365236e6a03f4b07322df</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://866110fabdca0601175b769f47ccbc33578b8d76</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1972507207" name="Живот">
+				<mesh_name>guid://417ba5761eaba9a6d47e4e0b077ee9de79f392b2</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://e131d2bc419f0cc123ed46e98623642bc516f418</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="823208698" name="Запястье левое">
+				<mesh_name>guid://aab9b63ed532e39226e7210d01572809cda25269</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://9980464edc038755c1bbdc4381883b84306fed0a</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1138212369" name="Запястье правое">
+				<mesh_name>guid://8ffec398a1528506958b5435c7e03ff066c3f8b4</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://7d8f2030bdfaffffc4f59d2d9c52b3a83a933ccc</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="868704316" name="Кисть левая">
+				<mesh_name>guid://1e84a1a00a1b2b42a1b04b070463d226d30e4c83</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://af8f28e2832f25e7689a54270dd86db57cfc9bde</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="868400747" name="Кисть правая">
+				<mesh_name>guid://97b02a8ac005e49cb306526f0cca4f6f1f700806</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://c4e55ce48566aeb8d8d1cfb18aa295b99ca6d6c0</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="228868302" name="Лапа задняя левая">
+				<mesh_name>guid://810417d2cff4987bc0cb7191c5d1f2b140e7bfad</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://809e0cb61b73db0f05e3824bf7430567e0a0edf2</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="867586517" name="Лапа задняя правая">
+				<mesh_name>guid://ede666cc9ae719ffe22ae739afb7947396779d28</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://32d4fcd8b1c85a9a5eb722752e0e6583320035f4</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="2132343088" name="Лапа передняя левая">
+				<mesh_name>guid://81d475543d7dc9937aa2c72b232763fbe207de67</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://cc1a85caba031369dc064aafa5e4c3c116377746</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="2041363151" name="Лапа передняя правая">
+				<mesh_name>guid://f6d9d8de275f82f769d8d513b748caf69181489a</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://bb1db40c5b07cf7419a719794295f864421b0e68</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="2061101538" name="Маска">
+				<mesh_name>guid://cc486aa6e89051fe8f7ec2552ea094be39f6ff31</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://8423681e4e6d54a62997d153f0cf5d2a231a0bda</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="599908313" name="Перепока передняя правая">
+				<mesh_name>guid://6a90d540d4f37d9727a8a27da6eb097e83706edc</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://fd127680c4a32716e4b378bd2a3c8e56fd74541c</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="682149732" name="Перепонка задняя левая">
+				<mesh_name>guid://47691c48124ff595aae7bd8f9adb2ed588cc3c8b</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://061cc7b2565177cacf377a37e0ce0bac5175bfae</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="87485299" name="Перепонка задняя правая">
+				<mesh_name>guid://c168c472c7899a217fd139f7a53572447880686e</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://c64d7834cbd81091c38244419a84114ceefe3b10</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1615051318" name="Перепонка передняя левая">
+				<mesh_name>guid://4bb342ba9a190b391ea0975958762eb7b74e14f5</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://b483f886afc789678bb2e95b7049d2ddc5dee6c2</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1263987741" name="Плечо левое">
+				<mesh_name>guid://878442f4bd4978ec42468a0156c68ad6b3aca1d0</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://58a42d2857ef40eef311c005bb33c531ead43744</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1086422744" name="Плечо левое.001">
+				<mesh_name>guid://3ad94a7c206e481dcee2523358178d0cf1fc0aef</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://86038e9a99b49419b26a02bf27004243c4251516</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="31749207" name="Плечо правое">
+				<mesh_name>guid://97a64146c3464a7945b9251bc617131503edbb82</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://275b495c415285dc7ebc700933caf9fdae2efcb8</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="937592266" name="Плечо првое">
+				<mesh_name>guid://af12740e81149138dfc0b49d8db3b58c77e944f9</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://5dc75deea932ed897ff2ea630c8d4e78f7671eaa</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1693989537" name="Предплечье левое">
+				<mesh_name>guid://a14223e8bfcb1ca3995ee1c535ef9fd70113aa04</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://ff9ac0d00042dece1d7d184d68bf131ba4987f6c</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="2115965836" name="Предплечье левое.001">
+				<mesh_name>guid://e2bef3f003a7cc3be5dfe9174c4c9f31ba902d93</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://41107a827bb1810670fe044743ea78045167177e</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1853405563" name="Предплечье правое">
+				<mesh_name>guid://f2c8e35a738d61dec8ac7a7f2603c2219b44d5d6</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://d021c784f6f0b5ad5b72bcd1debbe7f3865ff360</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="259678366" name="Предплечье правое.001">
+				<mesh_name>guid://ce6912a2b87c52f058e31e21b3bffb5e6e07133d</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://be0938561d9ec5183f79f46bfc036017551e5392</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="932368229" name="Стопа левая">
+				<mesh_name>guid://987b2c1c33da621c50682dc9f3f1e943856a3b78</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://843ad1781f7ef0cd53a4a195f5eb008ec44dcc94</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1315092864" name="Стопа правая">
+				<mesh_name>guid://1a6b4ca4b8dd9ba7dc3c263be88babdf253dc877</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://17d92b6af2bde11769f79ecf772d78a8e09166e6</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="719019743" name="Таз">
+				<mesh_name>guid://49487eae2931bed522bd5e233f1921e252108b6a</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://a5ef92ac627ffbc27e064a9927e3e389f497bf08</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="354852530" name="Тело">
+				<mesh_name>guid://32c37276e64457ac334417e542df1fbb9c2c43c1</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://0bf927be308d2d9b694e277310322da4c9e4257a</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="838987369" name="Торс">
+				<mesh_name>guid://a6834f90c25c72d08039320d969cda4d6b864a2c</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://bb7cff2039c6d6d755bb7bddfafdb819b514bebc</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1405543604" name="Ухо левое">
+				<mesh_name>guid://dedac898c8f07a096fc4ed9ff9954f23721a3f9b</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://44c7415272e3ec30f87ef257f1b099c4e3ada34e</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="305940611" name="Ухо правое">
+				<mesh_name>guid://d0722742c9bdce488dd83407127c0045b33ef03e</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://94074ad433a0bceddb9c3961acd313d3b6b0ffb0</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1127076870" name="Хвост">
+				<mesh_name>guid://844b278a835af87aae5c25e9ef59e266e067da85</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://cd5acc26130260db12d9a37b104f19d13c8c3462</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="483597229" name="Шея">
+				<mesh_name>guid://9105c24490b7cce37c8cf2911e6d1b4659c30a20</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://f78de9c80802707538f8c7251d6858c9e621f5e4</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="68372776" name="Шея.001">
+				<mesh_name>guid://02e91bcc2c95cc16925e6343552a786b7e7f36ff</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://1a985c3a3df2887a8c601edf26ab4683adf96cb6</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="231096587" name="PositiveNod с сумкой1_1">
+			<transform>0.999999880791 1.67037320822e-22 -3.82136965978e-15 0.0 1.67037396552e-22 0.999999880791 8.74227623626e-08 0.0 3.82136965978e-15 -8.74227623626e-08 0.999999940395 0.0 19.889493186 -16.3718494797 1.19542687417 1.0</transform>
+			<node type="NodeDummy" id="1199416046" name="metarig">
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1442385269" name="rig">
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="591166954" immovable="1" name="Переноска">
+				<mesh_name>guid://1172da404b177c28e73d7b7d3e5f08158fa783dc</mesh_name>
+				<transform>-0.158927440643 -7.57825087068e-08 -1.38938754295e-08 0.0 -1.38938763332e-08 1.89518356038e-09 0.158927440643 0.0 -7.57825085411e-08 0.158927440643 -1.8951901855e-09 0.0 0.00586128099019 -0.346666255894 0.45866186942 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="635322448" name="Бедро левое">
+				<mesh_name>guid://2d8051720dc750d6abefbaf7d361a1d7ec69456e</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://c275d0ccb5f68ce5834a94432458183e59d617ff</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="2116556655" name="Бедро правое">
+				<mesh_name>guid://440eefbaaa89d408deb7605945947e9ef72f4df5</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://3a0fce16f1843bd1af6e712b3ffbe7a571c4c552</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1738890754" name="Голень левая">
+				<mesh_name>guid://963c97f4d8c062e31636f301466bb2253fd286d0</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://39fcc2defd9e8af67e39a52d1a1e7953af0da489</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="293307769" name="Голень правая">
+				<mesh_name>guid://dd32bf7c15197b3550744333dba5794d8626abef</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://3fabdd380d70bc4ae0b7ec555bc31268a10fe454</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1605628036" name="Голова">
+				<mesh_name>guid://09dc9e4614caec95497db61b964ee4c13f3de882</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://7f733f409fae1370ccf42c273f24c1ae0b6b03a3</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1196081683" name="Голова.002">
+				<mesh_name>guid://418ef10ecae6cbc80c720d9d7f83c849d1e98df9</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://66ed9d2a2a7ef4fa5b4a678f785f987acf3c14a6</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="409559126" name="Живот">
+				<mesh_name>guid://4495c8e84c751088dc43dac524045550d12d5f04</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://a716ae729cd1155ae195f7b13005dfe9b6ec23cd</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1586568125" name="Кисть левая">
+				<mesh_name>guid://2985b8f08b5688ed236eea17ceb2d11436fc5e93</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://baa9da6cffadee73f748c159130fe3391bb572c8</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="273656312" name="Кисть правая">
+				<mesh_name>guid://4b6b105ab54ed8b57e581b7f5d3cb494d14952d6</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://7be9acf458ece5a03b7a7a4b63e0362125e97787</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1735091447" name="Маска">
+				<mesh_name>guid://97735fa24e17d6eb92b807216e2dd9c42b0f6c3d</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://a041357ee71b719ec64bfc339ee64b4bdb18cf3a</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1820759105" name="Плечо левое">
+				<mesh_name>guid://ff7f211c16ab03dc946ab6c9309b20ef234cc078</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://728f2b462db3992006bd6a75196d46dd7bec9551</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1487888556" name="Плечо првое">
+				<mesh_name>guid://0dd461a498b545d28779373bf13dc0d667bc8977</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://d09c42e03ecff91b18c7de9d4f0360635fd9ce7c</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="245851163" name="Предплечье левое">
+				<mesh_name>guid://93737bae263d95bb46a10f23f72ce9950c66586a</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://a75a8de86a747e19946c62af4e5d220d0cdfd7ab</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1937033918" name="Предплечье правое">
+				<mesh_name>guid://7b988f76d075ea09d15590e51f508c224735acc1</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://3744ab12aebbe9a8c6c09317f6401b84236e090e</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1857221381" name="Стопа левая">
+				<mesh_name>guid://879c94905bb65d89e8124b0d54f49d7a1bd69f2c</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://e09ccd5a868d311aa8d181796e19c966c2fefd15</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1674987680" name="Стопа правая">
+				<mesh_name>guid://606b2d98f2709951b3710e9f8678ee7fb50c909b</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://dae34a94d7da5aef7a3948212c4afb9273452b70</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1189110655" name="Таз">
+				<mesh_name>guid://4f12f442044fe10ebf54f507b84101248ed30d3e</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://a576961c35ce054e8b7f095310f781b1e430c80f</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1960811218" name="Торс">
+				<mesh_name>guid://6ff8148ad2e59d2b07532ee9a389a263df7b5385</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://93ab51e6201903349003d03b678b63c9cc161622</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="ObjectMeshSkinnedLegacy" id="1643871241" name="Шея">
+				<mesh_name>guid://fee9574486a46fd5a4859b917eb9fe4ce0f62f20</mesh_name>
+				<fps_visible_camera>-1</fps_visible_camera>
+				<fps_visible_shadow>30</fps_visible_shadow>
+				<fps_invisible>0</fps_invisible>
+				<anim_name>guid://e2b768ae74e82ea7dd0400bdd3658d738fb19f19</anim_name>
+				<speed>30</speed>
+				<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
 	</editor>
 	<console>
 		<bake_lighting_bounces>4</bake_lighting_bounces>

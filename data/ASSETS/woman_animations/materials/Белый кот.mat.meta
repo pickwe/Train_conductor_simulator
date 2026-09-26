@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>32ccb722ff8a4d5dc583f8a1a8fababbd7db45bd</guid>
+	<type>material</type>
+	<hash>a145b6590bbf7b38e97dc427196f3f7a6a9fb001c9050c1a133aa610efad24fa</hash>
+	<runtimes>
+		<runtime id="32ccb722ff8a4d5dc583f8a1a8fababbd7db45bd" name="Белый кот" link="0" type="5"/>
+	</runtimes>
+</asset>

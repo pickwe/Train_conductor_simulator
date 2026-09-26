@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>fc9fbcc8cef526c9c713640fb6bf1c13e0841b0b</guid>
+	<type>material</type>
+	<hash>b8919a4c953f20154a3c689e53224aeaf273115ad30448595f3c220c85b2c4df</hash>
+	<runtimes>
+		<runtime id="fc9fbcc8cef526c9c713640fb6bf1c13e0841b0b" name="Шлейка" link="0" type="5"/>
+	</runtimes>
+</asset>
