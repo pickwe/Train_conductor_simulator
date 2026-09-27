@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>0aec43bb79304ff2a8843133ba4d9175a526b4cf</guid>
+	<type>fbx</type>
+	<hash>07646e07a4f1072987d5f329cd3b46c6f1eddd57865eea831e56fb1cd77fa8ad</hash>
+	<runtimes>
+		<runtime id="0aec43bb79304ff2a8843133ba4d9175a526b4cf" name="PositiveNod с сумкой1 (2).fbx" link="0"/>
+		<runtime id="6f048ee82023fa304694431012441b6b846b4964" name="PositiveNod с сумкой1 (2).node" link="1" type="3">
+			<parameters>
+				<parameter type="string" name="id">08f7a4d6</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b50c431f50080741cb21b8176606b3f1dfe38573" name="cube.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">57fb44d8</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="600b465ada2b961724e6b6c241f717404a638c36" name="PositiveNod с сумкой1 (2).skeleton" link="2" type="8">
+			<parameters>
+				<parameter type="string" name="id">0fc13c4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="df89e769b868c4971bab85212cc5db855ea0961d" name="cylinder.001.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">ca202c49</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="33ce471c32defbc6888f4dc404c08f62af3b20d8" name="cylinder.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">8c7b52d9</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="834070c3b63873621b3ce53bdcc1a521e69dae57" name="cylinder.002.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">2fdf35fd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e62b11ae873164b1872b1896b5fe370fcc6677ca" name="cylinder.004.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">21503896</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f27b45ad02a8fee7bd04eee5af0223da241784a1" name="sphere.003.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">4d51ef19</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ab121a90f1a209c3a8549bb83afd99476431d58c" name="sphere.002.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">0395739a</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="c99f30a77cd5304a3a939c9ff115217e08b8937b" name="cylinder.021.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">5ad0739c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="da97ea421bbefc1a46b8efaa0e08c7fe9f94729e" name="cube.001.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">d949b8c4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1ac10031c08061d3b1bc6ce96f0c8839ae11b965" name="cube.002.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">0355c48</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="3f2b3d449ecca8c512f1e0ecc48b62c13e109b80" name="sphere.001.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">e76756dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="43dd26cbba154ebf5dfa024362ca2fd030bbd8df" name="cylinder.015.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">46c9356c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b8782416fdc26eb473ad0ffebc620a93bc28d0b2" name="cylinder.010.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">519057af</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="de985af568b279cc873ac32d248af1486f0a7869" name="cylinder.014.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">8cf37e32</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d8c0233866193a6259e811601123318ece31e6b4" name="cylinder.011.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">4f8c4cc1</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="82b1372f2310f719823e7a277e5c8b871e776283" name="cube.005.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">240e2c64</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="87af532a23cb3b69ed498d928adb1f7af88a2606" name="cube.003.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">dd24103</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e88ad9f9cc355c32aaecf5b1cf4bf3799d2f45ad" name="cylinder.005.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">1e4ba7bf</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1cf6806c818c5ca683df6114fec187fadb7d6b28" name="cylinder.012.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">0ab7c23a</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="677885d30e943c2d274da84b84d7b9a5d1675467" name="cylinder.016.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">8347a4dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9e324b7e7c9e0b5e79c9bc669c9398a6485e469a" name="cylinder.001_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="63b2413d720c6354120848750a23ca715e63e531" name="cylinder_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="26e748e038715e37009b44082a01bc81369c1cdc" name="cylinder.002_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="121a76b7b2c60552759670afca54051d0758128b" name="cylinder.004_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ce9b2112ea99b3c8b376307a1151309782de466e" name="sphere.003_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="943c94c12e8dffb1d58e3f79a5ecfa8f52865af5" name="sphere.002_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f052b09423e1e4a0f42e6e3c72b14378d76c2fd0" name="cylinder.021_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e52caddb07c23110f1adf75319d50992f34a40ef" name="cube.001_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="57fd27e69510f57d9ef8bdce8138cf25846a7982" name="cube.002_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f030188598ad032e86909ebd3b2a6acc3ff2eaf9" name="sphere.001_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="dd942b8816f804b9cd6ed3b0108bda6d37b51804" name="cylinder.015_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="84570f3f4fcc27df2233a037c87dc0299096c393" name="cylinder.010_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="2af8f3fa93bb7bf9fef07862a9d75995bf5e73d6" name="cylinder.014_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="3c6f508938535b233eb56a4127a9f8e3e648193d" name="cylinder.011_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="20d66dbc97faf41c5ba9a864200350531f1b8978" name="cube.005_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f0f7bee35024f5cfcbf50f5b371f98283652be77" name="cube.003_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="5810594eaddc5d09b8c5b4363757f03b9025096a" name="cylinder.005_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="71fd00cd79e01898b0fae605042a9f903b6aa9c1" name="cylinder.012_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e8876b30875a00ecd79760582448cb3e5455782c" name="cylinder.016_rigrigaction.001.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">d4557b7</parameter>
+			</parameters>
+		</runtime>
+	</runtimes>
+	<parameters>
+		<parameter type="float" name="angular_deflection">0.699999988</parameter>
+		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
+		<parameter type="string" name="base_material_mode">inherit_mesh_base</parameter>
+		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
+		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
+		<parameter type="float" name="fps">30</parameter>
+		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_bones_without_skin">1</parameter>
+		<parameter type="bool" name="import_cameras">1</parameter>
+		<parameter type="bool" name="import_lights">1</parameter>
+		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
+		<parameter type="bool" name="import_meshes">1</parameter>
+		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
+		<parameter type="bool" name="import_tangent_space">0</parameter>
+		<parameter type="bool" name="import_textures">1</parameter>
+		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
+		<parameter type="bool" name="joints_reorientation">0</parameter>
+		<parameter type="string" name="lightmaps">{&quot;guid://b50c431f50080741cb21b8176606b3f1dfe38573&quot;:{&quot;Черная переноска&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Клетчатая переноска&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="float" name="linear_deflection">0.200000003</parameter>
+		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
+		<parameter type="string" name="material_guids">Белая женщина,4c61d73a4b3773ccc35fa1d90e055a50dfa5f775,Клетчатая переноска,5220f33e600d5a49b9c43a0d63d464c486fc5b69,Прозрачный,12785ef6e5b3d111191d9a65a1fe074d656e5e41,Удовлетворение,c716c3c237010537ab317cc17225f8e19e0587dd,Черная женщина,4798f2fc110ad678385b60b3e0f57afa3566916f,Черная переноска,99e8622cc353849cd2fb162362c5b192b58183df</parameter>
+		<parameter type="bool" name="merge_similar_materials">0</parameter>
+		<parameter type="bool" name="merge_static_meshes">0</parameter>
+		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
+		<parameter type="float" name="morph_targets_normals_angle">180</parameter>
+		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
+		<parameter type="bool" name="need_repivot">0</parameter>
+		<parameter type="bool" name="need_split">0</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
+		<parameter type="int" name="num_lods">3</parameter>
+		<parameter type="string" name="prefix_materials"/>
+		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
+		<parameter type="bool" name="skip_empty_nodes">0</parameter>
+		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
+		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="bool" name="use_instances">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+		<parameter type="string" name="workflow">metalness</parameter>
+	</parameters>
+</asset>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>17237ed653af7c37ef0102be95b4bad53adff772</guid>
+	<type>mesh</type>
+	<hash>611595c51aee38eb1f866a42fd63d9a6920923fa488bc8c3203bc5df86353060</hash>
+	<runtimes>
+		<runtime id="17237ed653af7c37ef0102be95b4bad53adff772" name="cylinder.mesh" link="0" type="1"/>
+	</runtimes>
+	<parameters>
+		<parameter type="string" name="lightmaps"/>
+		<parameter type="int" name="resolution">3</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="bool" name="unchanged">1</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+	</parameters>
+</asset>

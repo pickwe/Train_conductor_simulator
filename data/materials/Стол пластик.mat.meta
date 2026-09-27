@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>c7bdcf462ead3b520d8354b19af2215778bdb2f4</guid>
+	<type>material</type>
+	<hash>858063118568f5e6edbae657e595a1e2d273506d2e2c0b0a9d1ef155d2e70f8f</hash>
+	<runtimes>
+		<runtime id="c7bdcf462ead3b520d8354b19af2215778bdb2f4" name="Стол пластик" link="0" type="5"/>
+	</runtimes>
+</asset>

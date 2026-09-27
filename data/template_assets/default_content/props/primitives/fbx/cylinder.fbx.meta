@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>38215ec8a36c738707279b3a89f4f15166ee7a7c</guid>
 	<type>fbx</type>
-	<hash>eadde71a05c18e22543b9c6510aa004ce399fc495e37ea754883204eb3dbd7e0</hash>
+	<hash>1fd46a2cc2369887966a249b3c461ee95c2630dd232305088963becb9785b802</hash>
 	<runtimes>
 		<runtime id="38215ec8a36c738707279b3a89f4f15166ee7a7c" name="cylinder.fbx" link="0"/>
 		<runtime id="a5fe62229ac57b19ccf329a4986368b3cead9676" name="cylinder.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">f921fdf4</parameter>
+				<parameter type="string" name="id">f0fdc379</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="96b89b5d9dcae518765c2597a1d6060a51af3de1" name="cylinder_mesh.mesh" link="2" type="1">

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>ef963b6598c49db0c436e239f826d6309aa7b927</guid>
+	<type>material_graph</type>
+	<hash>27d74198846bc5d606e3d36115b6a8daf997351c0abce5752bfa4ba7a3a7c048</hash>
+	<runtimes>
+		<runtime id="ef963b6598c49db0c436e239f826d6309aa7b927" name="Радость.mgraph" link="0"/>
+		<runtime id="58fe2d1f5dc5c3b9c865d813e656a6a9a81b67f1" name="Радость" link="1" type="5"/>
+	</runtimes>
+</asset>

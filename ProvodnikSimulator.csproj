@@ -55,9 +55,7 @@
 		<AdditionalFiles Include="data/components/FP_Controller.cs.meta" Visible="false"/>
 		<Compile Include="data/components/MenuManager.cs"/>
 		<AdditionalFiles Include="data/components/MenuManager.cs.meta" Visible="false"/>
-		<Compile Include="data/components/PassengerScenarioController.cs"/>
 		<Compile Include="data/components/StoryStateController.cs"/>
-		<AdditionalFiles Include="data/components/PassengerScenarioController.cs.meta" Visible="false"/>
 		<AdditionalFiles Include="data/components/StoryStateController.cs.meta" Visible="false"/>
 		<Compile Include="data/components/BriefingWindow.cs"/>
 		<AdditionalFiles Include="data/components/BriefingWindow.cs.meta" Visible="false"/>
@@ -79,6 +77,10 @@
 		<AdditionalFiles Include="data/components/ScenarioResults.cs.meta" Visible="false"/>
 		<Compile Include="data/components/CarrierDeliveryInteraction.cs"/>
 		<AdditionalFiles Include="data/components/CarrierDeliveryInteraction.cs.meta" Visible="false"/>
+		<Compile Include="data/components/PassengerEmotionAnimator.cs"/>
+		<AdditionalFiles Include="data/components/PassengerEmotionAnimator.cs.meta" Visible="false"/>
+		<Compile Include="data/components/PassengerScenarioController.cs"/>
+		<AdditionalFiles Include="data/components/PassengerScenarioController.cs.meta" Visible="false"/>
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="source/AppSystemLogic.cs"/>

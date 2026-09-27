@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>3db45056b2b50ccccbf1b90bae9c83e4386dd04b</guid>
 	<type>component</type>
-	<hash>11a975f867a771b54bfcdf8933da73d4c61d858e8e61c621ca97ce201ea63670</hash>
+	<hash>0938e494f8a44fffe2bd9fe75c40fb9c15d4feefe36c6240e88b63e8c139bb5a</hash>
 	<runtimes>
 		<runtime id="3db45056b2b50ccccbf1b90bae9c83e4386dd04b" name="PassengerCallInteraction.cs" link="0"/>
 		<runtime id="464950a007b53ae57a678b67bc26c5739e3d2090" name="PassengerCallInteraction.prop" link="1" type="4"/>

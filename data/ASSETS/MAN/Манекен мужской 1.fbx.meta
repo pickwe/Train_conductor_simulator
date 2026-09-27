@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>78d3a9c4366ca1d651441f8a6a5e9e5d7f7aae47</guid>
 	<type>fbx</type>
-	<hash>7f309931463f7e2a90cbc1f04f0280f0d46e3c51fae958e7e33b76719a72dfae</hash>
+	<hash>185a68d7b9d78c84dc9cbf14523d6aad32e6c663689637439580a2281f2bcc47</hash>
 	<runtimes>
 		<runtime id="78d3a9c4366ca1d651441f8a6a5e9e5d7f7aae47" name="Манекен мужской 1.fbx" link="0"/>
 		<runtime id="9c84402b1d0fe468de4751adec5986400a422c3c" name="Манекен мужской 1.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">d51e111e</parameter>
+				<parameter type="string" name="id">ce90a448</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="5126b7b8c93a6e3633831ddeb77e271d71471a6b" name="icosphere.009.mesh" link="2" type="1">

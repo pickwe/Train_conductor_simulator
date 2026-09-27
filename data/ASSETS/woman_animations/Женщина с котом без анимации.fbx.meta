@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>a880d5ee5343dfffb8bd24d6642763c56332200a</guid>
+	<type>fbx</type>
+	<hash>1fa328d47f10b4399bd6947bc30e0f44fb8eff441232b844db95948147333a13</hash>
+	<runtimes>
+		<runtime id="a880d5ee5343dfffb8bd24d6642763c56332200a" name="Женщина с котом без анимации.fbx" link="0"/>
+		<runtime id="518ee9e7fbc291977a926ddf080228b07c1400bb" name="Женщина с котом без анимации.node" link="1" type="3">
+			<parameters>
+				<parameter type="string" name="id">d7369b1b</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4e71728229b5db5eeb033fea79e2b3a794007ede" name="circle.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">e9f27f53</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8ee0db717207c17946d12029243532dd56afd8a5" name="plane.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">0a95b22a</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="0cfb7f842bce3affe6902b2c5df85c80dbcbb1c0" name="cylinder.001.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">e036dbda</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="34c5f40ba17495df6bb36783db5ad435ea597a1f" name="icosphere.007.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">858d3a8e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="0989b056c6f9497ec0abe43ebb53cc62b6a980f2" name="cylinder.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">22c43259</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="5bef6a35143329041d242a6d2ef951fda40ceba9" name="icosphere.006.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">5296af58</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="154009785ec6824073067fa05846fff0ba7d40f4" name="cylinder.002.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">11daff78</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="30fc586ff3faf17f9b33b3671163967af48077c3" name="icosphere.008.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b64d2af6</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e471236a4049257f303d25d208472cab88b7ba46" name="cylinder.004.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">346520e2</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="23245d3991e4ab20548e50f117eb534d92d14ced" name="icosphere.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">54bb9a9c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="16d84aac6e3de2435d3833543987d85098db4968" name="sphere.003.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f393b668</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="0ba33b13670ac675ce93f58baf971be989f91da7" name="cylinder.008.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">bf421957</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="dc209fbe5fdd2f85037658a6a1f5889a6534feda" name="sphere.002.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a8ae2fdd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="29cd787d1870398a39f8d7b5b3d8390a60f4c071" name="cylinder.021.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a8104c16</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e38137200818a1bd7c0cba48d3a129ba7892bf1c" name="icosphere.009.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f9d19dbd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e1f5fff77ffd0e0ea51711efd30814ef7dc3cfcb" name="icosphere.001.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">3cdc189a</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d27639525a16ef48086410baca95acaceefe62ae" name="cube.001.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">68c9806</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="098cc00195ff5dad515942b92efc7ef25da94a35" name="cube.002.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">1d1185ed</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4ddf02d48163e9ba84fac87cf0fe369fb0c5d610" name="icosphere.010.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">5a85d0b9</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="411e4b1b2888dfa9df662c93c01014c7f155322f" name="icosphere.002.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">3c7c3f7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8209442689c497ff2bb4220ee355f81a565839c2" name="icosphere.011.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">2af4b61f</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="fd1c77c5cff9b2105df555fd75e8973969df2e39" name="icosphere.003.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">7feeea35</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="597121c8c4584cfcc67c51f06cc62cad0cc00244" name="sphere.001.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a1064137</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="7898007fe7fa8141d974a9771c8769419bba28d3" name="plane.004.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">40742e31</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="073e543a069b10149049a0a2ad7681a54dc21816" name="plane.003.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">49cf55b9</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="715323c903ac431266e71581bca60d16df08f07d" name="plane.001.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">25843dec</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="81c647fc5f39200aa1c28aa444464e2d9be9f7b8" name="plane.002.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">4b956714</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4ad5442318f9d2dbdaa42c9b1fcc90cb90fbd7b7" name="cylinder.015.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">fae653b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d29b3d8e40c9a2d6f810e0763ce5ea8c020ad1aa" name="cylinder.006.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f77e365b</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9e67880d79bb566afbe0c54552b18253201f5501" name="cylinder.003.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">82be888f</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="0cf069701be6d3bb37a9e69864e42da1a6fdaa6c" name="cylinder.010.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">8f6a762f</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="60227a075adf1a63202899ff8989aeb66dc3a2db" name="cylinder.014.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">174debba</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="185b14220c0b6ea31213758a5c4b1b0ea9a47a7e" name="icosphere.012.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">6b709ad2</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="2d74a891d451154a3e30e949d408003658e55fc5" name="cylinder.011.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9765fe3a</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9d38ba24009cbb70fcee19cc638e52637e7a4e60" name="icosphere.004.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">6645e742</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1fca462b802fd086c5ac15a3718eade40b3f2e3f" name="cube.005.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">dec4ebc9</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="11422bf697a6d80281cc33dedf6aebd67f386692" name="cube.003.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">73a2216a</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="2e3dc95580c59bbe7206458d6b345d3a2f6c54c9" name="cylinder.005.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">1686981</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="7613ae180259b56b299e1840c9173e6a16585794" name="cylinder.007.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">cf23b5b7</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d3798c8f775eea24f03303875660ba511f445de3" name="cylinder.012.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a540669e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="a0b2190a62801f87b3bb2f7201a9755d3b7b29e6" name="cube.004.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">3166a3ea</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e1326e59c32026131bf3de11ed2aa4e86bd7b80d" name="cube.006.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">6660fe7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="2854f94c449f860437d015f48b30ae57a2fd7a08" name="icosphere.005.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b774a581</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="38e37133041b73e9df4007ab9989100f6cb555c7" name="cylinder.016.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a6cd2134</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="33fdaf5e9a4475a4d339bc463dfe12896240987a" name="cylinder.013.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">3dfcda4b</parameter>
+			</parameters>
+		</runtime>
+	</runtimes>
+	<parameters>
+		<parameter type="float" name="angular_deflection">0.699999988</parameter>
+		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
+		<parameter type="string" name="base_material_mode">inherit_mesh_base</parameter>
+		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
+		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
+		<parameter type="float" name="fps">30</parameter>
+		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_bones_without_skin">1</parameter>
+		<parameter type="bool" name="import_cameras">1</parameter>
+		<parameter type="bool" name="import_lights">1</parameter>
+		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
+		<parameter type="bool" name="import_meshes">1</parameter>
+		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
+		<parameter type="bool" name="import_tangent_space">0</parameter>
+		<parameter type="bool" name="import_textures">1</parameter>
+		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
+		<parameter type="bool" name="joints_reorientation">0</parameter>
+		<parameter type="string" name="lightmaps">{&quot;guid://4e71728229b5db5eeb033fea79e2b3a794007ede&quot;:{&quot;Шлейка&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://d27639525a16ef48086410baca95acaceefe62ae&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://098cc00195ff5dad515942b92efc7ef25da94a35&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://11422bf697a6d80281cc33dedf6aebd67f386692&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://a0b2190a62801f87b3bb2f7201a9755d3b7b29e6&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://1fca462b802fd086c5ac15a3718eade40b3f2e3f&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://e1326e59c32026131bf3de11ed2aa4e86bd7b80d&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://0cfb7f842bce3affe6902b2c5df85c80dbcbb1c0&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://154009785ec6824073067fa05846fff0ba7d40f4&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9e67880d79bb566afbe0c54552b18253201f5501&quot;:{&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://e471236a4049257f303d25d208472cab88b7ba46&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://2e3dc95580c59bbe7206458d6b345d3a2f6c54c9&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://d29b3d8e40c9a2d6f810e0763ce5ea8c020ad1aa&quot;:{&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://7613ae180259b56b299e1840c9173e6a16585794&quot;:{&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Шлейка&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Металл&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://0ba33b13670ac675ce93f58baf971be989f91da7&quot;:{&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://0cf069701be6d3bb37a9e69864e42da1a6fdaa6c&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://2d74a891d451154a3e30e949d408003658e55fc5&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://d3798c8f775eea24f03303875660ba511f445de3&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://33fdaf5e9a4475a4d339bc463dfe12896240987a&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://60227a075adf1a63202899ff8989aeb66dc3a2db&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4ad5442318f9d2dbdaa42c9b1fcc90cb90fbd7b7&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://38e37133041b73e9df4007ab9989100f6cb555c7&quot;:{&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://29cd787d1870398a39f8d7b5b3d8390a60f4c071&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://0989b056c6f9497ec0abe43ebb53cc62b6a980f2&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Черная женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://e1f5fff77ffd0e0ea51711efd30814ef7dc3cfcb&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://411e4b1b2888dfa9df662c93c01014c7f155322f&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://fd1c77c5cff9b2105df555fd75e8973969df2e39&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9d38ba24009cbb70fcee19cc638e52637e7a4e60&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://2854f94c449f860437d015f48b30ae57a2fd7a08&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://5bef6a35143329041d242a6d2ef951fda40ceba9&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://34c5f40ba17495df6bb36783db5ad435ea597a1f&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://30fc586ff3faf17f9b33b3671163967af48077c3&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://e38137200818a1bd7c0cba48d3a129ba7892bf1c&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4ddf02d48163e9ba84fac87cf0fe369fb0c5d610&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8209442689c497ff2bb4220ee355f81a565839c2&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://185b14220c0b6ea31213758a5c4b1b0ea9a47a7e&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://23245d3991e4ab20548e50f117eb534d92d14ced&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Серый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Белый кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://715323c903ac431266e71581bca60d16df08f07d&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://81c647fc5f39200aa1c28aa444464e2d9be9f7b8&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://073e543a069b10149049a0a2ad7681a54dc21816&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://7898007fe7fa8141d974a9771c8769419bba28d3&quot;:{&quot;Черный кот&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8ee0db717207c17946d12029243532dd56afd8a5&quot;:{&quot;Шлейка&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://597121c8c4584cfcc67c51f06cc62cad0cc00244&quot;:{&quot;Прозрачный&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://dc209fbe5fdd2f85037658a6a1f5889a6534feda&quot;:{&quot;Удовлетворение&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://16d84aac6e3de2435d3833543987d85098db4968&quot;:{&quot;Белая женщина&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="float" name="linear_deflection">0.200000003</parameter>
+		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
+		<parameter type="string" name="material_guids">Белая женщина,4c61d73a4b3773ccc35fa1d90e055a50dfa5f775,Белый кот,32ccb722ff8a4d5dc583f8a1a8fababbd7db45bd,Металл,ac18c0669d94114c16943f752c3719eb94dd3556,Прозрачный,12785ef6e5b3d111191d9a65a1fe074d656e5e41,Серый кот,038824706a2538b034acdf9743a07deb1bc3dc13,Удовлетворение,c716c3c237010537ab317cc17225f8e19e0587dd,Черная женщина,4798f2fc110ad678385b60b3e0f57afa3566916f,Черный кот,6de1508e9083296c473b671def3943962d920f79,Шлейка,fc9fbcc8cef526c9c713640fb6bf1c13e0841b0b</parameter>
+		<parameter type="bool" name="merge_similar_materials">0</parameter>
+		<parameter type="bool" name="merge_static_meshes">0</parameter>
+		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
+		<parameter type="float" name="morph_targets_normals_angle">180</parameter>
+		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
+		<parameter type="bool" name="need_repivot">0</parameter>
+		<parameter type="bool" name="need_split">0</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
+		<parameter type="int" name="num_lods">3</parameter>
+		<parameter type="string" name="prefix_materials"/>
+		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
+		<parameter type="bool" name="skip_empty_nodes">0</parameter>
+		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
+		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="bool" name="use_instances">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+		<parameter type="string" name="workflow">metalness</parameter>
+	</parameters>
+</asset>
