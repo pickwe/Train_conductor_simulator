@@ -59,7 +59,7 @@
 		<materials_preload>0</materials_preload>
 		<memory_dynamic_pool>256</memory_dynamic_pool>
 		<memory_statistics_enabled>1</memory_statistics_enabled>
-		<mesh_procedural_path>C:/Users/Bear/AppData/Local/Unigine/Editor/cache/UNIGINE_Editor_Procedural_Mesh</mesh_procedural_path>
+		<mesh_procedural_path>C:/Users/pickwme/AppData/Local/Unigine/Editor/cache/UNIGINE_Editor_Procedural_Mesh</mesh_procedural_path>
 		<mesh_procedural_read_only>0</mesh_procedural_read_only>
 		<num_cores_reserve>-1</num_cores_reserve>
 		<num_threads_async>0</num_threads_async>
