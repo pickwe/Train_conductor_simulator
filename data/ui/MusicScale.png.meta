@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>4b9a0452e25fca80db272906a670e323e3141fbc</guid>
 	<type>texture</type>
-	<hash>ed767e35b01b0f19d12324c5a6d276dcb9bd9c9c553216812af93a0049262e27</hash>
+	<hash>73681622a3e08b63ec5b133fdad8909700930f80cddf3d5aac13cfca53630a0e</hash>
 	<runtimes>
 		<runtime id="4b9a0452e25fca80db272906a670e323e3141fbc" name="MusicScale.png" link="0" type="6"/>
 		<runtime id="b78c88dcfafdb1a61fa4b130fd09b8833ad3f696" name="MusicScale.texture" link="1" type="6"/>

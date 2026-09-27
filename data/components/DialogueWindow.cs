@@ -16,8 +16,9 @@ public partial class DialogueWindow : Component
 	private Gui gui;
 	private WidgetSprite panel, terminalHintPanel;
 	private WidgetLabel speaker, text, status, terminalHint;
-	private readonly List<WidgetButton> buttons = new List<WidgetButton>();
-	private readonly List<int> buttonHeights = new List<int>();
+	private readonly List<WidgetSprite> choiceBackgrounds = new List<WidgetSprite>();
+	private readonly List<WidgetLabel> choiceLabels = new List<WidgetLabel>();
+	private readonly List<int> choiceHeights = new List<int>();
 	private PetCarrierScenarioController scenario;
 	private PassengerScenarioController secondScenario;
 	private bool subscribed, mouseStateSaved, choicesBuilt;
@@ -413,19 +414,32 @@ public partial class DialogueWindow : Component
 		{
 			string choiceId = ids[i];
 			string label = showingSecondScenario ? secondScenario.GetChoiceLabel(choiceId) : scenario.GetChoiceLabel(choiceId);
-			WidgetButton button = new WidgetButton(gui, label)
+			WidgetSprite choiceBackground = new WidgetSprite(gui, "")
 			{
-				FontSize = 16,
-				FontWrap = 1
+				Color = new vec4(0.015f, 0.018f, 0.025f, 0.78f)
 			};
-			button.EventClicked.Connect(() =>
+			choiceBackground.EventClicked.Connect(() =>
 			{
 				if (showingSecondScenario) secondScenario?.Choose(choiceId);
 				else scenario?.Choose(choiceId);
 			});
-			gui.AddChild(button, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
-			buttons.Add(button);
-			buttonHeights.Add(MathLib.Max(76, MathLib.Min(142, 28 + ((label.Length + 45) / 46) * 19)));
+			gui.AddChild(choiceBackground, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
+			choiceBackgrounds.Add(choiceBackground);
+
+			WidgetLabel choiceLabel = new WidgetLabel(gui, label);
+			{
+				FontSize = 16,
+				FontColor = new vec4(0.96f, 0.96f, 0.96f, 1.0f),
+				FontWrap = 1
+			};
+			choiceLabel.EventClicked.Connect(() =>
+			{
+				if (showingSecondScenario) secondScenario?.Choose(choiceId);
+				else scenario?.Choose(choiceId);
+			});
+			gui.AddChild(choiceLabel, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
+			choiceLabels.Add(choiceLabel);
+			choiceHeights.Add(MathLib.Max(76, MathLib.Min(142, 28 + ((label.Length + 45) / 46) * 19)));
 		}
 		Layout();
 	}
@@ -513,19 +527,22 @@ public partial class DialogueWindow : Component
 		int buttonGap = 9;
 		int right = width - horizontalMargin - buttonWidth;
 		int buttonsBottom = panelTop - 14;
-		int totalButtonsHeight = buttonGap * MathLib.Max(0, buttons.Count - 1);
-		foreach (int buttonHeight in buttonHeights)
-			totalButtonsHeight += buttonHeight;
-		int firstButtonY = MathLib.Max(18, buttonsBottom - totalButtonsHeight);
+		int totalChoicesHeight = buttonGap * MathLib.Max(0, choiceBackgrounds.Count - 1);
+		foreach (int choiceHeight in choiceHeights)
+			totalChoicesHeight += choiceHeight;
+		int firstChoiceY = MathLib.Max(18, buttonsBottom - totalChoicesHeight);
 
-		for (int i = 0; i < buttons.Count; i++)
+		for (int i = 0; i < choiceBackgrounds.Count; i++)
 		{
-			int buttonY = firstButtonY;
+			int choiceY = firstChoiceY;
 			for (int previous = 0; previous < i; previous++)
-				buttonY += buttonHeights[previous] + buttonGap;
-			buttons[i].SetPosition(right, buttonY);
-			buttons[i].Width = buttonWidth;
-			buttons[i].Height = buttonHeights[i];
+				choiceY += choiceHeights[previous] + buttonGap;
+			choiceBackgrounds[i].SetPosition(right, choiceY);
+			choiceBackgrounds[i].Width = buttonWidth;
+			choiceBackgrounds[i].Height = choiceHeights[i];
+			choiceLabels[i].SetPosition(right + 14, choiceY + 8);
+			choiceLabels[i].Width = buttonWidth - 28;
+			choiceLabels[i].Height = choiceHeights[i] - 16;
 		}
 	}
 
@@ -545,10 +562,13 @@ public partial class DialogueWindow : Component
 
 	private void ClearButtons()
 	{
-		foreach (WidgetButton button in buttons)
-			button.DeleteLater();
-		buttons.Clear();
-		buttonHeights.Clear();
+		foreach (WidgetSprite background in choiceBackgrounds)
+			background.DeleteLater();
+		foreach (WidgetLabel label in choiceLabels)
+			label.DeleteLater();
+		choiceBackgrounds.Clear();
+		choiceLabels.Clear();
+		choiceHeights.Clear();
 	}
 
 	public void HideForResults()

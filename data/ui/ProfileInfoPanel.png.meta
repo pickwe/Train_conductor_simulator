@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>47b2a5eb538c46374e23aa67b87f46b7e7c462c9</guid>
 	<type>texture</type>
-	<hash>18a1e382eeaa54fb769123517859b97ac5b52166e9ecc7b8f684cc49fd228b5e</hash>
+	<hash>6e377ced24e2706ccff2933cfcc80bf88cd291bd7fe0051ac921f3cd894f82e3</hash>
 	<runtimes>
 		<runtime id="47b2a5eb538c46374e23aa67b87f46b7e7c462c9" name="ProfileInfoPanel.png" link="0" type="6"/>
 		<runtime id="4c4c17dd6b3784cd2e3b28396358977ae65be26b" name="ProfileInfoPanel.texture" link="1" type="6"/>
