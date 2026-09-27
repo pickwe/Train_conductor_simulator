@@ -127,6 +127,16 @@ public partial class PetCarrierScenarioController : Component
 		Changed?.Invoke();
 	}
 
+	private void StartAtTerminalForTesting()
+	{
+		StartScenario();
+		CurrentStage = Stage.WaitingForTerminal;
+		CurrentSpeaker = "";
+		CurrentText = "";
+		HasChoices = false;
+		Changed?.Invoke();
+	}
+
 	private string GetPassengerOpeningLine()
 	{
 		return passengerOpeningLine;
