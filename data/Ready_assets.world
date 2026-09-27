@@ -970,6 +970,7 @@
 				<property parent="a2abf8a8a35a7614f88973cfbbc09b809f1a1153" guid="b3071e868fb99e8b57a18ffb85ec9be1c5e6482a"/>
 				<property parent="7717efe4f5e754215e8f935de96db99f51f181e9" guid="67706388ff25fbb84f1644c3fc51e72941ea0814">
 					<parameter name="scenarioOneMarker">1595435501</parameter>
+					<parameter name="scenarioTwoMarker">459188007</parameter>
 				</property>
 			</properties>
 			<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 8.45668570818 6.07732850207 4.15997624613 1.0</transform>
@@ -2326,7 +2327,7 @@
 				</property>
 				<property parent="b3187d3eae04a5728e02526d12ddf6cc3253692e" guid="ad936894be1459bb67c0d71f24af6a1996d5b6e0"/>
 			</properties>
-			<transform>-0.999999880791 1.81992561465e-06 0 0.0 -1.81992561465e-06 -0.999999880791 0 0.0 0 0 0.999999880791 0.0 -13.587919616 11.6425201585 0.464565109706 1.0</transform>
+			<transform>-0.999999880791 1.81992561465e-06 0 0.0 -1.81992561465e-06 -0.999999880791 0 0.0 0 0 0.999999880791 0.0 -13.748487513 -26.5262966642 0.464353989286 1.0</transform>
 			<node type="NodeDummy" id="1179024600" enabled="0" name="Agressive_woman">
 				<transform>1.00000011921 0 0 0.0 0 0.999999761581 0 0.0 0 0 0.999999582767 0.0 0 0 0 1.0</transform>
 				<node type="ObjectMeshStatic" id="349788759" immovable="1" name="Circle">
@@ -4312,8 +4313,14 @@
 				</node>
 			</node>
 		</node>
-		<node type="NodeDummy" id="1595435501" name="first_tp">
-			<transform>-0.188010275364 0.982166647911 0 0.0 -0.982166647911 -0.188010275364 0 0.0 0 0 0.999999821186 0.0 -11.501737819 11.9120921563 1.87808478484 1.0</transform>
+		<node type="NodeDummy" id="698743386" name="teleports">
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -11.8709671939 -5.32259739161 1.37338380779 1.0</transform>
+			<node type="NodeDummy" id="1595435501" name="first_tp">
+				<transform>-0.188009753823 0.982166588306 0 0.0 -0.982166647911 -0.188009768724 0 0.0 0 0 0.999999642372 0.0 0.478117310667 -20.9270912763 0.11954092618 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="459188007" name="second_tp">
+				<transform>0.999998688698 7.40866923366e-08 -0.00154487544205 0.0 7.40867349691e-08 0.999999880791 9.59127864917e-05 0.0 0.00154487555847 -9.59127937676e-05 0.999998748302 0.0 -0.369229374949 -17.2346895479 -0.504700977047 1.0</transform>
+			</node>
 		</node>
 		<node type="ObjectMeshStatic" id="1455087578" immovable="1" name="Переноска">
 			<mesh_name>guid://6579eb407f863de94f78a49b80cc173b3d78cb4c</mesh_name>

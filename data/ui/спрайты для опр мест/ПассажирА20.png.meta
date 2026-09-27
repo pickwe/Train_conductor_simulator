@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>d6e7ad7001513dcbc79e953f287d262223b66d58</guid>
+	<type>texture</type>
+	<hash>94f63a572db872b687c98de7acffb5f42e2de039018684da7dbf9118fdb87fee</hash>
+	<runtimes>
+		<runtime id="d6e7ad7001513dcbc79e953f287d262223b66d58" name="ПассажирА20.png" link="0" type="6"/>
+		<runtime id="4bfd0662e9815c32df5b8dff10de90f569db90d7" name="ПассажирА20.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

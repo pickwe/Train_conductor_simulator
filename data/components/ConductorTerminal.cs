@@ -4,8 +4,10 @@ using Unigine;
 /// <summary>In-game conductor terminal opened with Q; carrier stock is set by the scenario once.</summary>
 public partial class ConductorTerminal : Component
 {
-	[ParameterFile(Filter = ".png|.dds|.jpg|.jpeg|.tga"), Parameter(Group = "Scenario 3 Seat Map")]
-	public string seatMapSpritePath = "";
+	[ParameterFile(Filter = ".png"), Parameter(Title = "Seats Available Sprite", Group = "Scenario 3 Seat Map")]
+	public string seatsAvailableSpritePath = "";
+	[ParameterFile(Filter = ".png"), Parameter(Title = "No Seats Sprite", Group = "Scenario 3 Seat Map")]
+	public string noSeatsSpritePath = "";
 
 	public static bool IsVisible { get; private set; }
 
@@ -137,6 +139,7 @@ public partial class ConductorTerminal : Component
 
 	private void ShowSeats()
 	{
+		string texture = string.IsNullOrWhiteSpace(seatMapSprite) ? "data/ui/terminl map.png" : seatMapSprite;
 		if (openedForSecondScenario && secondScenario != null)
 		{
 			if (secondScenario.CurrentStep != PassengerScenarioController.ScenarioStep.AwaitingSeatCheck
@@ -145,15 +148,18 @@ public partial class ConductorTerminal : Component
 				ShowConnection();
 				return;
 			}
-			secondScenario.RevealRelocationSeatAvailability();
+			bool available = secondScenario.RevealRelocationSeatAvailability();
+			string selectedSpritePath = available ? seatsAvailableSpritePath : noSeatsSpritePath;
+			texture = string.IsNullOrWhiteSpace(selectedSpritePath) ? "" : selectedSpritePath;
 		}
 		page = Page.Seats;
 		heading.Text = "Схема мест";
 		body.Hidden = true;
 		ShowWidgets();
 		ClearPageWidgets();
-		string texture = string.IsNullOrWhiteSpace(seatMapSprite) ? "data/ui/terminl map.png" : seatMapSprite;
 		pageMap = new WidgetSprite(gui, texture);
+		if (openedForSecondScenario && string.IsNullOrWhiteSpace(texture))
+			pageMap.Color = new vec4(0.75f, 0.02f, 0.02f, 1.0f);
 		AddPageWidget(pageMap);
 		AddBackButton();
 		Layout();
