@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unigine;
 
 #if UNIGINE_DOUBLE
@@ -10,6 +11,14 @@ using Vec3 = Unigine.vec3;
 /// <summary>Controls scenario 2: passenger call, complaint, parent dialogue and outcome branches.</summary>
 public partial class PassengerScenarioController : Component
 {
+	public class PassengerSeatVariant
+	{
+		public Node passengerNode;
+		[ParameterFile(Filter = ".png")]
+		public string monitorSeatSpritePath = "";
+		public Player dialogueCamera;
+	}
+
 	public enum ScenarioStep
 	{
 		WaitingForBriefing,
@@ -57,11 +66,16 @@ public partial class PassengerScenarioController : Component
 	public float parentAnswerGraceSeconds = 10.0f;
 
 	[Parameter(Group = "Scenario 2 Nodes")]
-	public Node secondPassengerNode;
-	[Parameter(Group = "Scenario 2 Nodes")]
 	public Node normalMonitorSpriteNode;
-	[Parameter(Group = "Scenario 2 Nodes")]
-	public Node passengerSeatSpriteNode;
+	[Parameter(Title = "Passenger Seat Variants", Group = "Scenario 2 Random Passenger Seats")]
+	public List<PassengerSeatVariant> passengerSeatVariants = new List<PassengerSeatVariant>
+	{
+		new PassengerSeatVariant(),
+		new PassengerSeatVariant(),
+		new PassengerSeatVariant(),
+		new PassengerSeatVariant(),
+		new PassengerSeatVariant()
+	};
 	[Parameter(Group = "Scenario 2 Nodes")]
 	public Node parentPassengerNode;
 	[Parameter(Group = "Scenario 2 Nodes")]
@@ -89,24 +103,13 @@ public partial class PassengerScenarioController : Component
 	[Parameter(Group = "Scenario 3 Bad Situation")]
 	public string badSituationCameraName = "bad_situation";
 	[Parameter(Group = "Scenario 2 Dialogue Cameras")]
-	public Player complainantDialogueCamera;
-	[Parameter(Group = "Scenario 2 Dialogue Cameras")]
-	public string complainantDialogueCameraName = "dialogue_complainant";
-	[Parameter(Group = "Scenario 2 Dialogue Cameras")]
 	public Player parentDialogueCamera;
 	[Parameter(Group = "Scenario 2 Dialogue Cameras")]
-	public string parentDialogueCameraName = "dialogue_parent";
-	[Parameter(Group = "Scenario 2 Dialogue Cameras")]
 	public Player bothPassengersDialogueCamera;
-	[Parameter(Group = "Scenario 2 Dialogue Cameras")]
-	public string bothPassengersDialogueCameraName = "dialogue_both";
 	[ParameterSlider(Min = 0.2f, Max = 3.0f, Group = "Scenario 2 Dialogue Cameras")]
 	public float dialogueCameraTransitionSeconds = 0.8f;
 	[ParameterSlider(Min = 0.2f, Max = 2.0f, Group = "Scenario 2 Activity Item")]
 	public float activityPickupAnimationSeconds = 0.8f;
-	[Parameter(Group = "Scenario 2 Nodes")]
-	public string secondPassengerNodeName = "Пассажир ябеда";
-
 	public static PassengerScenarioController Active { get; private set; }
 	public static bool IsSeatMonitorViewVisible { get; private set; }
 	public ScenarioStep CurrentStep { get; private set; } = ScenarioStep.WaitingForBriefing;
@@ -121,6 +124,8 @@ public partial class PassengerScenarioController : Component
 		|| CurrentStep == ScenarioStep.SeatCheckCompleted);
 	public bool RelocationSeatAvailable { get; private set; }
 	public bool SeatAvailabilityFactChecked { get; private set; }
+	public int SelectedPassengerSeatIndex { get; private set; } = -1;
+	public Node SelectedPassengerNode { get; private set; }
 	public int InitialMood { get; private set; }
 	public int InitialParentMood { get; private set; }
 	public int MoodPassenger1 { get; private set; }
@@ -157,6 +162,7 @@ public partial class PassengerScenarioController : Component
 	private float activityPickupElapsed;
 	private Vec3 activityPickupStartPosition;
 	private Gui gui;
+	private WidgetSprite callMonitorSeatSprite;
 	private WidgetLabel seatMonitorExitHint;
 	private PlayerDummy seatMonitorTransitionCamera;
 	private Player playerBeforeSeatMonitor;
@@ -195,6 +201,8 @@ public partial class PassengerScenarioController : Component
 	private bool savedComplainantCameraControlled;
 	private bool savedParentCameraControlled;
 	private bool savedBothCameraControlled;
+	private Player selectedComplainantDialogueCamera;
+	private string selectedPassengerSeatSpritePath = "";
 
 	private void Init()
 	{
@@ -570,6 +578,7 @@ public partial class PassengerScenarioController : Component
 		terminalOpen = false;
 		SafetyDelta = LoyaltyDelta = 0;
 		ResolveNodes();
+		SelectRandomPassengerSeat();
 		SetPassengerVisible(true);
 		SetParentPassengerVisible(true);
 		SetActivityItemVisible(OnboardActivitiesAvailable);
@@ -984,14 +993,14 @@ public partial class PassengerScenarioController : Component
 			case ScenarioStep.ParentTimeoutReaction:
 			case ScenarioStep.SeatDecisionTimeoutComplainant:
 			case ScenarioStep.SeatDecisionTimeoutParent:
-				return bothPassengersDialogueCamera ?? complainantDialogueCamera;
+				return bothPassengersDialogueCamera ?? selectedComplainantDialogueCamera;
 
 			case ScenarioStep.SeatInvalidDiscovery:
 			case ScenarioStep.SeatInvalidReaction:
 				return null;
 
 			default:
-				return complainantDialogueCamera;
+				return selectedComplainantDialogueCamera;
 		}
 	}
 
@@ -1003,10 +1012,10 @@ public partial class PassengerScenarioController : Component
 		dialogueCameraActive = true;
 		playerBeforeDialogueCamera = Game.Player;
 		savedDialoguePhysicsScale = Physics.Scale > 0.0f ? Physics.Scale : 1.0f;
-		savedComplainantCameraControlled = complainantDialogueCamera != null && complainantDialogueCamera.Controlled;
+		savedComplainantCameraControlled = selectedComplainantDialogueCamera != null && selectedComplainantDialogueCamera.Controlled;
 		savedParentCameraControlled = parentDialogueCamera != null && parentDialogueCamera.Controlled;
 		savedBothCameraControlled = bothPassengersDialogueCamera != null && bothPassengersDialogueCamera.Controlled;
-		if (complainantDialogueCamera != null) complainantDialogueCamera.Controlled = false;
+		if (selectedComplainantDialogueCamera != null) selectedComplainantDialogueCamera.Controlled = false;
 		if (parentDialogueCamera != null) parentDialogueCamera.Controlled = false;
 		if (bothPassengersDialogueCamera != null) bothPassengersDialogueCamera.Controlled = false;
 		Physics.Scale = 0.0f;
@@ -1086,7 +1095,7 @@ public partial class PassengerScenarioController : Component
 
 	private void RestoreDialogueCameraState()
 	{
-		if (complainantDialogueCamera != null) complainantDialogueCamera.Controlled = savedComplainantCameraControlled;
+		if (selectedComplainantDialogueCamera != null) selectedComplainantDialogueCamera.Controlled = savedComplainantCameraControlled;
 		if (parentDialogueCamera != null) parentDialogueCamera.Controlled = savedParentCameraControlled;
 		if (bothPassengersDialogueCamera != null) bothPassengersDialogueCamera.Controlled = savedBothCameraControlled;
 		Physics.Scale = savedDialoguePhysicsScale > 0.0f ? savedDialoguePhysicsScale : 1.0f;
@@ -1112,7 +1121,7 @@ public partial class PassengerScenarioController : Component
 			: (Physics.Scale > 0.0f ? Physics.Scale : 1.0f);
 		if (dialogueCameraActive)
 		{
-			if (complainantDialogueCamera != null) complainantDialogueCamera.Controlled = savedComplainantCameraControlled;
+			if (selectedComplainantDialogueCamera != null) selectedComplainantDialogueCamera.Controlled = savedComplainantCameraControlled;
 			if (parentDialogueCamera != null) parentDialogueCamera.Controlled = savedParentCameraControlled;
 			if (bothPassengersDialogueCamera != null) bothPassengersDialogueCamera.Controlled = savedBothCameraControlled;
 			dialogueCameraActive = false;
@@ -1197,8 +1206,6 @@ public partial class PassengerScenarioController : Component
 
 	private void ResolveNodes()
 	{
-		if (secondPassengerNode == null && !string.IsNullOrWhiteSpace(secondPassengerNodeName))
-			secondPassengerNode = World.GetNodeByName(secondPassengerNodeName);
 		if (normalMonitorSpriteNode == null)
 			normalMonitorSpriteNode = World.GetNodeByName("Монитор табло1.001");
 		if (parentPassengerNode == null)
@@ -1211,12 +1218,6 @@ public partial class PassengerScenarioController : Component
 			callMonitorCamera = World.GetNodeByName(callMonitorCameraName) as Player;
 		if (badSituationCamera == null && !string.IsNullOrWhiteSpace(badSituationCameraName))
 			badSituationCamera = World.GetNodeByName(badSituationCameraName) as Player;
-		if (complainantDialogueCamera == null && !string.IsNullOrWhiteSpace(complainantDialogueCameraName))
-			complainantDialogueCamera = World.GetNodeByName(complainantDialogueCameraName) as Player;
-		if (parentDialogueCamera == null && !string.IsNullOrWhiteSpace(parentDialogueCameraName))
-			parentDialogueCamera = World.GetNodeByName(parentDialogueCameraName) as Player;
-		if (bothPassengersDialogueCamera == null && !string.IsNullOrWhiteSpace(bothPassengersDialogueCameraName))
-			bothPassengersDialogueCamera = World.GetNodeByName(bothPassengersDialogueCameraName) as Player;
 		if (parentInteractable == null && parentPassengerNode != null)
 			parentInteractable = ComponentSystem.GetComponentInChildren<EInteractable>(parentPassengerNode);
 		if (activityItemInteractable == null && activityItemNode != null)
@@ -1229,10 +1230,53 @@ public partial class PassengerScenarioController : Component
 		}
 	}
 
+	private void SelectRandomPassengerSeat()
+	{
+		SelectedPassengerSeatIndex = -1;
+		SelectedPassengerNode = null;
+		selectedComplainantDialogueCamera = null;
+		selectedPassengerSeatSpritePath = "";
+		List<int> configuredVariants = new List<int>();
+		if (passengerSeatVariants != null)
+		{
+			for (int i = 0; i < passengerSeatVariants.Count; i++)
+			{
+				PassengerSeatVariant variant = passengerSeatVariants[i];
+				if (variant != null && variant.passengerNode != null)
+					configuredVariants.Add(i);
+			}
+		}
+
+		if (configuredVariants.Count == 0)
+		{
+			Log.Warning("PassengerScenarioController: configure five Passenger Seat Variants in the editor.\n");
+			SetPassengerVisible(false);
+			SetCallMonitor(false);
+			return;
+		}
+		if (configuredVariants.Count != 5)
+			Log.Warning("PassengerScenarioController: expected 5 configured Passenger Seat Variants, found {0}.\n", configuredVariants.Count);
+
+		SelectedPassengerSeatIndex = configuredVariants[random.Next(0, configuredVariants.Count)];
+		PassengerSeatVariant selected = passengerSeatVariants[SelectedPassengerSeatIndex];
+		SelectedPassengerNode = selected.passengerNode;
+		selectedComplainantDialogueCamera = selected.dialogueCamera;
+		selectedPassengerSeatSpritePath = selected.monitorSeatSpritePath ?? "";
+		SetPassengerVisible(false);
+		SetCallMonitor(false);
+	}
+
+	public bool IsSelectedPassengerNode(Node passengerNode)
+	{
+		return passengerNode != null && passengerNode == SelectedPassengerNode;
+	}
+
 	private void SetPassengerVisible(bool visible)
 	{
-		if (secondPassengerNode != null)
-			secondPassengerNode.Enabled = visible;
+		// Seat randomization controls interaction, monitor sprite and dialogue camera only.
+		// Other passenger mannequins must retain the visibility configured in the scene.
+		if (visible && SelectedPassengerNode != null)
+			SelectedPassengerNode.Enabled = true;
 	}
 
 	private void SetParentPassengerVisible(bool visible)
@@ -1348,6 +1392,12 @@ public partial class PassengerScenarioController : Component
 	private void CreateSeatMonitorView()
 	{
 		gui = Gui.GetCurrent();
+		callMonitorSeatSprite = new WidgetSprite(gui, "")
+		{
+			Color = vec4.WHITE,
+			Hidden = true,
+			IntersectionEnabled = false
+		};
 		seatMonitorExitHint = new WidgetLabel(gui, "Чтобы выйти из режима просмотра нажмите Esc")
 		{
 			FontSize = 18,
@@ -1356,6 +1406,7 @@ public partial class PassengerScenarioController : Component
 			Hidden = true,
 			IntersectionEnabled = false
 		};
+		gui.AddChild(callMonitorSeatSprite, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
 		gui.AddChild(seatMonitorExitHint, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
 	}
 
@@ -1457,6 +1508,8 @@ public partial class PassengerScenarioController : Component
 		if (seatMonitorTransitionEntering)
 		{
 			seatMonitorTransitionEntering = false;
+			callMonitorSeatSprite.Texture = selectedPassengerSeatSpritePath;
+			callMonitorSeatSprite.Hidden = string.IsNullOrWhiteSpace(selectedPassengerSeatSpritePath);
 			seatMonitorExitHint.Hidden = false;
 		}
 		else
@@ -1468,6 +1521,7 @@ public partial class PassengerScenarioController : Component
 
 	private void BeginLeavingSeatMonitorView()
 	{
+		callMonitorSeatSprite.Hidden = true;
 		seatMonitorExitHint.Hidden = true;
 		StartSeatMonitorTransition(callMonitorCamera, false);
 	}
@@ -1495,6 +1549,7 @@ public partial class PassengerScenarioController : Component
 			playerBeforeSeatMonitor.MainPlayer = true;
 			Game.Player = playerBeforeSeatMonitor;
 		}
+		callMonitorSeatSprite.Hidden = true;
 		seatMonitorExitHint.Hidden = true;
 		FinishLeavingSeatMonitorView();
 	}
@@ -1502,6 +1557,9 @@ public partial class PassengerScenarioController : Component
 	private void LayoutSeatMonitorView()
 	{
 		if (gui == null) return;
+		callMonitorSeatSprite.SetPosition(0, 0);
+		callMonitorSeatSprite.Width = gui.Width;
+		callMonitorSeatSprite.Height = gui.Height;
 		seatMonitorExitHint.Width = MathLib.Min(470, gui.Width - 40);
 		seatMonitorExitHint.SetPosition(gui.Width - seatMonitorExitHint.Width - 24, 22);
 	}
@@ -1550,16 +1608,13 @@ public partial class PassengerScenarioController : Component
 
 	private void SetCallMonitor(bool callVisible)
 	{
-		if (passengerSeatSpriteNode == null)
+		if (callVisible && string.IsNullOrWhiteSpace(selectedPassengerSeatSpritePath) && !monitorWarningShown)
 		{
-			if (callVisible && !monitorWarningShown)
-			{
-				monitorWarningShown = true;
-				Log.Warning("PassengerScenarioController: assign passengerSeatSpriteNode to show the seat-number sprite on the conductor monitor.\n");
-			}
-			return;
+			monitorWarningShown = true;
+			Log.Warning("PassengerScenarioController: assign a .png monitor seat sprite to every Passenger Seat Variant.\n");
 		}
-		passengerSeatSpriteNode.Enabled = callVisible;
+		if (!callVisible && callMonitorSeatSprite != null)
+			callMonitorSeatSprite.Hidden = true;
 		if (normalMonitorSpriteNode != null)
 			normalMonitorSpriteNode.Enabled = !callVisible;
 	}
@@ -1601,6 +1656,7 @@ public partial class PassengerScenarioController : Component
 		SetActivityItemVisible(false);
 		seatMonitorTransitionCamera?.DeleteLater();
 		dialogueTransitionCamera?.DeleteLater();
+		callMonitorSeatSprite?.DeleteLater();
 		seatMonitorExitHint?.DeleteLater();
 		if (Active == this) Active = null;
 	}

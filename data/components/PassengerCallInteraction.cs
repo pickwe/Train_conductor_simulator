@@ -58,16 +58,17 @@ public partial class PassengerCallInteraction : Component
 
 	private bool IsWaitingForPassengerInteraction()
 	{
-		return (scenario != null && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForPassenger)
-			|| (scenario != null && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingSeatCheck)
-			|| (scenario != null && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatCheckCompleted)
+		bool isSelectedScenarioPassenger = scenario != null && scenario.IsSelectedPassengerNode(node);
+		return (isSelectedScenarioPassenger && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForPassenger)
+			|| (isSelectedScenarioPassenger && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingSeatCheck)
+			|| (isSelectedScenarioPassenger && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatCheckCompleted)
 			|| (petCarrierScenario != null && (petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
 				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff));
 	}
 
 	private void OnPassengerCallRequested()
 	{
-		if (callStarted)
+		if (callStarted || scenario == null || !scenario.IsSelectedPassengerNode(node))
 			return;
 
 		callStarted = true;
