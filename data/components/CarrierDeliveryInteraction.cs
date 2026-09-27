@@ -12,9 +12,6 @@ public partial class CarrierDeliveryInteraction : Component
 	[ShowInEditor, Parameter(Group = "Carrier Delivery")]
 	public Node passengerNode;
 
-	[ParameterFile(Filter = ".png|.dds|.jpg|.tga"), Parameter(Group = "Carrier Delivery")]
-	public string carrierIconPath = "";
-
 	[ParameterSlider(Min = 0.2f, Max = 2.0f, Group = "Carrier Delivery")]
 	public float pickupAnimationSeconds = 0.8f;
 
@@ -23,43 +20,9 @@ public partial class CarrierDeliveryInteraction : Component
 	private EInteractable passengerInteractable;
 	private EInteractable subscribedCarrier;
 	private EInteractable subscribedPassenger;
-	private Gui gui;
-	private WidgetSprite inventoryPanel, inventoryIcon, fallbackBagBody, fallbackBagHandle;
 	private bool pickupAnimating, carrierCollected, availabilityApplied;
 	private Vec3 pickupStartPosition;
 	private float pickupElapsed;
-
-	private void Init()
-	{
-		gui = Gui.GetCurrent();
-		inventoryPanel = new WidgetSprite(gui, "")
-		{
-			Color = new vec4(0.02f, 0.035f, 0.05f, 0.9f),
-			Hidden = true
-		};
-		gui.AddChild(inventoryPanel, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
-
-		if (!string.IsNullOrWhiteSpace(carrierIconPath))
-		{
-			inventoryIcon = new WidgetSprite(gui, carrierIconPath) { Hidden = true };
-			gui.AddChild(inventoryIcon, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
-		}
-		else
-		{
-			fallbackBagHandle = new WidgetSprite(gui, "")
-			{
-				Color = new vec4(0.85f, 0.62f, 0.32f, 1.0f),
-				Hidden = true
-			};
-			gui.AddChild(fallbackBagHandle, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
-			fallbackBagBody = new WidgetSprite(gui, "")
-			{
-				Color = new vec4(0.55f, 0.3f, 0.12f, 1.0f),
-				Hidden = true
-			};
-			gui.AddChild(fallbackBagBody, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
-		}
-	}
 
 	private void Update()
 	{
@@ -121,14 +84,6 @@ public partial class CarrierDeliveryInteraction : Component
 		carrierCollected = true;
 		node.Enabled = false;
 		if (carrierInteractable != null) carrierInteractable.IsAvailable = false;
-		inventoryPanel.Hidden = false;
-		if (inventoryIcon != null) inventoryIcon.Hidden = false;
-		if (fallbackBagBody != null)
-		{
-			fallbackBagBody.Hidden = false;
-			fallbackBagHandle.Hidden = false;
-		}
-		LayoutInventory();
 		scenario.NotifyCarrierPickedUp();
 		// The carrier node is disabled above, so its Update can no longer
 		// enable the passenger interaction for the handoff stage.
@@ -136,33 +91,6 @@ public partial class CarrierDeliveryInteraction : Component
 			passengerInteractable.IsAvailable = scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff;
 		else
 			Log.Warning("CarrierDeliveryInteraction: assign passengerNode so the passenger can be interacted with after pickup.\n");
-	}
-
-	private void LayoutInventory()
-	{
-		if (gui == null || inventoryPanel == null) return;
-		const int width = 76;
-		const int height = 76;
-		int left = gui.Width - width - 24;
-		int top = 24;
-		inventoryPanel.SetPosition(left, top);
-		inventoryPanel.Width = width;
-		inventoryPanel.Height = height;
-		if (inventoryIcon != null)
-		{
-			inventoryIcon.SetPosition(left + 8, top + 8);
-			inventoryIcon.Width = 60;
-			inventoryIcon.Height = 60;
-		}
-		else if (fallbackBagBody != null)
-		{
-			fallbackBagHandle.SetPosition(left + 28, top + 14);
-			fallbackBagHandle.Width = 20;
-			fallbackBagHandle.Height = 10;
-			fallbackBagBody.SetPosition(left + 17, top + 23);
-			fallbackBagBody.Width = 42;
-			fallbackBagBody.Height = 40;
-		}
 	}
 
 	private void BindInteractions()
@@ -205,9 +133,5 @@ public partial class CarrierDeliveryInteraction : Component
 	{
 		if (subscribedCarrier != null) subscribedCarrier.Interacted -= OnCarrierInteracted;
 		if (subscribedPassenger != null) subscribedPassenger.Interacted -= OnPassengerInteracted;
-		inventoryPanel?.DeleteLater();
-		inventoryIcon?.DeleteLater();
-		fallbackBagBody?.DeleteLater();
-		fallbackBagHandle?.DeleteLater();
 	}
 }

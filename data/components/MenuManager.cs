@@ -1,5 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 using Unigine;
 
 public partial class MenuManager : Component
@@ -10,6 +16,7 @@ public partial class MenuManager : Component
 	[ParameterFile(Filter = ".ogg|.wav|.mp3")] public string gameplayMusicPath = "";
 	public float musicGain = 0.7f;
 	public float environmentGain = 0.7f;
+	public string serverBaseUrl = "http://localhost:5416";
 	public string playerName = "Иванов Иван Иванович";
 	public string workExperience = "6 лет 4 месяца";
 	public string currentRoute = "17";
@@ -38,25 +45,47 @@ public partial class MenuManager : Component
 	private WidgetSprite[] progressBackgrounds, progressFills;
 	private WidgetVBox mainScreen, pauseScreen, loginScreen, settingsScreen, profileScreen;
 	private WidgetVBox profileSummaryPanel, profileMetricsPanel, achievementsPanel, rankingPanel;
-	private WidgetHBox achievementsRow, achievementItem1, achievementItem2, achievementItem3;
-	private WidgetHBox achievementItem4, achievementItem5, achievementItem6;
+	private WidgetHBox achievementsRow;
+	private WidgetHBox[] achievementItems, rankRows;
 	private WidgetScrollBox achievementsScroll;
 	private WidgetLabel mainStatus, loginStatus, volumeLabel, sfxVolumeLabel, profileName, profileExperience, profileXp, profileEmployeeId, achievementsEmpty;
 	private WidgetLabel settingsTitle, musicTitle, effectsTitle;
 	private WidgetLabel loyaltyLabel, safetyLabel, complianceLabel;
+	private WidgetLabel[] rankPlaces, rankNames, rankLogins, rankExperienceLabels;
 	private WidgetEditLine loginEdit, passwordEdit, confirmPasswordEdit;
 	private WidgetSlider volumeSlider, sfxVolumeSlider;
 	private readonly List<WidgetSprite> mainButtonSprites = new List<WidgetSprite>();
 	private readonly List<WidgetSprite> allButtonSprites = new List<WidgetSprite>();
 	private readonly List<Image> loadedImages = new List<Image>();
 	private readonly List<WidgetLayout> layouts = new List<WidgetLayout>();
+	private readonly HashSet<string> earnedAchievements = new HashSet<string>();
+	private readonly HashSet<string> completedScenarios = new HashSet<string>();
+	private readonly Queue<string> pendingAchievements = new Queue<string>();
+	private readonly Queue<ScenarioCompletionRequest> pendingScenarioCompletions = new Queue<ScenarioCompletionRequest>();
 	private int lastGuiWidth, lastGuiHeight;
 	private int lastMainTextureSignature;
+	private int leaderboardMinExperience, leaderboardMaxExperience;
 	private Screen state = Screen.Main, returnState = Screen.Main;
 	private LoginTarget loginTarget;
 	private AmbientSource menuMusic, gameplayMusic;
 	private GameFlowController subscribedGameFlow;
+	private StoryStateController subscribedStoryState;
 	private bool authenticated, changingVolume, pauseWasDown, profileWasDown, loadRequested, duplicate;
+	private bool statisticsLoaded;
+	private string authenticationToken = "", authenticatedLogin = "";
+	private Task<AuthResponse> authenticationTask;
+	private Task<AuthResponse> statisticsTask;
+	private Task<AuthResponse> outcomeTask;
+	private Task<AuthResponse> achievementTask;
+	private Task<AuthResponse> scenarioCompletionTask;
+	private Task<AuthResponse> leaderboardTask;
+	private OutcomeRequest activeOutcome;
+	private string activeAchievement = "";
+	private ScenarioCompletionRequest activeScenarioCompletion;
+	private readonly Queue<OutcomeRequest> pendingOutcomes = new Queue<OutcomeRequest>();
+	private LeaderboardEntry[] leaderboardEntries = Array.Empty<LeaderboardEntry>();
+	private string currentRunId = "";
+	private bool leaderboardRefreshRequested;
 	private float savedGameScale = 1.0f, savedPhysicsScale = 1.0f;
 	private Input.MOUSE_HANDLE savedMouseHandle;
 	private bool savedMouseGrab, savedCursorHide;
@@ -72,6 +101,71 @@ public partial class MenuManager : Component
 	private const int EnvironmentSoundMask = 1 << EnvironmentSoundChannel;
 	private const int MenuMusicChannel = 1;
 	private const int MenuMusicMask = 1 << MenuMusicChannel;
+	private static readonly HttpClient AuthHttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(10.0) };
+	public static string AuthenticationToken => instance?.authenticationToken ?? "";
+	private static readonly string[] AchievementIds = {
+		"ACH_PET_01", "ACH_PET_02", "ACH_PET_03", "ACH_PET_04", "ACH_PET_05", "ACH_PET_06",
+		"ACH_NOISE_01", "ACH_NOISE_02", "ACH_NOISE_03", "ACH_NOISE_04", "ACH_NOISE_05", "ACH_NOISE_06", "ACH_NOISE_07"
+	};
+
+	private sealed class RegisterRequest
+	{
+		[JsonPropertyName("login")] public string Login { get; set; }
+		[JsonPropertyName("password")] public string Password { get; set; }
+		[JsonPropertyName("name")] public string Name { get; set; }
+	}
+
+	private sealed class LoginRequest
+	{
+		[JsonPropertyName("login")] public string Login { get; set; }
+		[JsonPropertyName("password")] public string Password { get; set; }
+	}
+
+	private sealed class AuthResponse
+	{
+		public bool Success;
+		public HttpStatusCode StatusCode;
+		public string Body = "";
+		public string Error = "";
+	}
+
+	private sealed class StatsResponse
+	{
+		[JsonPropertyName("name")] public string Name { get; set; }
+		[JsonPropertyName("login")] public string Login { get; set; }
+		[JsonPropertyName("safety")] public int Safety { get; set; }
+		[JsonPropertyName("loyality")] public int Loyalty { get; set; }
+		[JsonPropertyName("experience")] public int Experience { get; set; }
+		[JsonPropertyName("achievements")] public string[] Achievements { get; set; }
+	}
+
+	private sealed class OutcomeRequest
+	{
+		[JsonPropertyName("reason")] public string Reason { get; set; }
+		[JsonPropertyName("safety")] public int Safety { get; set; }
+		[JsonPropertyName("loyality")] public int Loyalty { get; set; }
+	}
+
+	private sealed class AchievementRequest
+	{
+		[JsonPropertyName("id")] public string Id { get; set; }
+	}
+
+	private sealed class ScenarioCompletionRequest
+	{
+		[JsonPropertyName("runId")] public string RunId { get; set; }
+		[JsonPropertyName("scenarioId")] public string ScenarioId { get; set; }
+	}
+
+	private sealed class LeaderboardEntry
+	{
+		[JsonPropertyName("name")] public string Name { get; set; }
+		[JsonPropertyName("login")] public string Login { get; set; }
+		[JsonPropertyName("experience")] public int Experience { get; set; }
+		[JsonPropertyName("achievements")] public int Achievements { get; set; }
+		[JsonPropertyName("safety")] public int Safety { get; set; }
+		[JsonPropertyName("loyality")] public int Loyalty { get; set; }
+	}
 
 	private class WidgetLayout
 	{
@@ -99,7 +193,14 @@ public partial class MenuManager : Component
 	private void Update()
 	{
 		if (duplicate || ui == null) return;
+		ProcessAuthenticationResult();
+		ProcessStatisticsResult();
 		UpdateGameFlowSubscription();
+		UpdateStoryStateSubscription();
+		ProcessOutcomeQueue();
+		ProcessAchievementQueue();
+		ProcessScenarioCompletionQueue();
+		ProcessLeaderboardResult();
 		RefreshMainTextureLayout();
 		ResizeInterface();
 		PositionInputSprites();
@@ -131,8 +232,22 @@ public partial class MenuManager : Component
 	private void Shutdown()
 	{
 		if (duplicate) return;
+		authenticationTask = null;
+		statisticsTask = null;
+		outcomeTask = null;
+		achievementTask = null;
+		scenarioCompletionTask = null;
+		leaderboardTask = null;
+		pendingOutcomes.Clear();
+		pendingAchievements.Clear();
+		pendingScenarioCompletions.Clear();
 		if (subscribedGameFlow != null)
 			subscribedGameFlow.ReturnToMenuRequested -= ReturnToMainMenuAfterRun;
+		if (subscribedStoryState != null)
+		{
+			subscribedStoryState.MetricChanged -= OnStoryMetricChanged;
+			subscribedStoryState.OutcomeApplied -= OnStoryOutcomeApplied;
+		}
 		if (instance == this) instance = null;
 		Input.MouseHandle = savedMouseHandle;
 		Input.MouseGrab = savedMouseGrab;
@@ -182,10 +297,14 @@ public partial class MenuManager : Component
 		achievementsPanel = W<WidgetVBox>("achievements_panel");
 		rankingPanel = W<WidgetVBox>("ranking_panel"); achievementsRow = W<WidgetHBox>("achievements_row");
 		achievementsScroll = W<WidgetScrollBox>("achievements_scroll");
-		achievementItem1 = W<WidgetHBox>("achievement_item_1"); achievementItem2 = W<WidgetHBox>("achievement_item_2");
-		achievementItem3 = W<WidgetHBox>("achievement_item_3");
-		achievementItem4 = W<WidgetHBox>("achievement_item_4"); achievementItem5 = W<WidgetHBox>("achievement_item_5");
-		achievementItem6 = W<WidgetHBox>("achievement_item_6");
+		achievementItems = new WidgetHBox[AchievementIds.Length];
+		for (int i = 0; i < AchievementIds.Length; i++)
+			achievementItems[i] = W<WidgetHBox>("achievement_" + AchievementIds[i]);
+		rankRows = new WidgetHBox[] { W<WidgetHBox>("rank_row_1"), W<WidgetHBox>("rank_row_2"), W<WidgetHBox>("rank_row_3") };
+		rankPlaces = new WidgetLabel[] { W<WidgetLabel>("rank_place_1"), W<WidgetLabel>("rank_place_2"), W<WidgetLabel>("rank_place_3") };
+		rankNames = new WidgetLabel[] { W<WidgetLabel>("rank_name_1"), W<WidgetLabel>("rank_name_2"), W<WidgetLabel>("rank_name_3") };
+		rankLogins = new WidgetLabel[] { W<WidgetLabel>("rank_login_1"), W<WidgetLabel>("rank_login_2"), W<WidgetLabel>("rank_login_3") };
+		rankExperienceLabels = new WidgetLabel[] { W<WidgetLabel>("rank_xp_1"), W<WidgetLabel>("rank_xp_2"), W<WidgetLabel>("rank_xp_3") };
 		mainStatus = W<WidgetLabel>("main_status"); loginStatus = W<WidgetLabel>("login_status");
 		volumeLabel = W<WidgetLabel>("volume_label"); sfxVolumeLabel = W<WidgetLabel>("sfx_volume_label");
 		settingsTitle = W<WidgetLabel>("settings_title"); musicTitle = W<WidgetLabel>("music_title"); effectsTitle = W<WidgetLabel>("effects_title");
@@ -230,8 +349,8 @@ public partial class MenuManager : Component
 			musicVolumeBackground == null || musicVolumeFill == null || sfxVolumeBackground == null || sfxVolumeFill == null ||
 			mainScreen == null || pauseScreen == null || loginScreen == null || settingsScreen == null ||
 			profileScreen == null || profileSummaryPanel == null || profileMetricsPanel == null || achievementsPanel == null || rankingPanel == null ||
-			achievementsScroll == null || achievementsRow == null || achievementItem1 == null || achievementItem2 == null || achievementItem3 == null ||
-			achievementItem4 == null || achievementItem5 == null || achievementItem6 == null ||
+			achievementsScroll == null || achievementsRow == null || ContainsNull(achievementItems) || ContainsNull(rankRows) ||
+			ContainsNull(rankPlaces) || ContainsNull(rankNames) || ContainsNull(rankLogins) || ContainsNull(rankExperienceLabels) ||
 			mainStatus == null || loginStatus == null || volumeLabel == null || sfxVolumeLabel == null || settingsTitle == null ||
 			musicTitle == null || effectsTitle == null || profileName == null ||
 			profileExperience == null || profileXp == null || profileEmployeeId == null || achievementsEmpty == null || loyaltyLabel == null ||
@@ -326,6 +445,13 @@ public partial class MenuManager : Component
 	}
 
 	private T W<T>(string name) where T : Widget { return ui.GetWidgetByName(name) as T; }
+	private static bool ContainsNull<T>(T[] widgets) where T : Widget
+	{
+		if (widgets == null) return true;
+		foreach (T widget in widgets)
+			if (widget == null) return true;
+		return false;
+	}
 	private bool LoadSpriteImage(WidgetSprite sprite, string path)
 	{
 		if (sprite == null) return false;
@@ -517,13 +643,10 @@ public partial class MenuManager : Component
 	private void UpdateProfileProgressBars()
 	{
 		if (progressBackgrounds == null || progressFills == null || progressBackgrounds.Length != 7) return;
-		SetProgress(progressBackgrounds[0], progressFills[0], employeeExperience, 20000);
+		SetExperienceProgress(progressBackgrounds[0], progressFills[0], employeeExperience);
 		SetProgress(progressBackgrounds[1], progressFills[1], passengerLoyalty, 100);
 		SetProgress(progressBackgrounds[2], progressFills[2], safetyRating, 100);
 		SetProgress(progressBackgrounds[3], progressFills[3], regulationCompliance, 100);
-		SetProgress(progressBackgrounds[4], progressFills[4], 18920, 20000);
-		SetProgress(progressBackgrounds[5], progressFills[5], 15670, 20000);
-		SetProgress(progressBackgrounds[6], progressFills[6], 12480, 20000);
 	}
 	private void SetProgress(WidgetSprite backgroundSprite, WidgetSprite fillSprite, int value, int maximum)
 	{
@@ -533,6 +656,15 @@ public partial class MenuManager : Component
 		fillSprite.Width = Math.Max(1, (int)Math.Round(backgroundSprite.Width * progress));
 		fillSprite.Height = backgroundSprite.Height;
 		fillSprite.SetLayerTexCoord(0, new vec4(0.0f, 0.0f, progress, 1.0f));
+	}
+	private void SetExperienceProgress(WidgetSprite backgroundSprite, WidgetSprite fillSprite, int experience)
+	{
+		float progress;
+		if (leaderboardMaxExperience <= leaderboardMinExperience)
+			progress = leaderboardEntries.Length == 0 ? 0.0f : 1.0f;
+		else
+			progress = (experience - leaderboardMinExperience) / (float)(leaderboardMaxExperience - leaderboardMinExperience);
+		SetProgress(backgroundSprite, fillSprite, (int)Math.Round(Math.Max(0.0f, Math.Min(1.0f, progress)) * 1000.0f), 1000);
 	}
 	private void UpdateVolumeScroll()
 	{
@@ -568,7 +700,7 @@ public partial class MenuManager : Component
 
 	private void UpdateAchievementsRowWidth(float scale)
 	{
-		int achievementCount = Math.Max(0, Math.Min(6, unlockedAchievements));
+		int achievementCount = earnedAchievements.Count;
 		int itemWidth = Math.Max(1, (int)(320 * scale));
 		int spacing = Math.Max(0, (int)(8 * scale));
 		achievementsRow.Width = Math.Max(1, achievementCount * itemWidth + Math.Max(0, achievementCount - 1) * spacing);
@@ -595,19 +727,17 @@ public partial class MenuManager : Component
 		profileName.Text = playerName;
 		profileExperience.Text = "Стаж: " + workExperience;
 		profileXp.Text = "Опыт: " + employeeExperience.ToString("N0").Replace(',', ' ');
-		string employeeId = string.IsNullOrWhiteSpace(loginEdit.Text) ? "DEMO" : loginEdit.Text.Trim();
+		string employeeId = string.IsNullOrWhiteSpace(authenticatedLogin)
+			? (string.IsNullOrWhiteSpace(loginEdit.Text) ? "DEMO" : loginEdit.Text.Trim())
+			: authenticatedLogin;
 		profileEmployeeId.Text = "ID сотрудника: " + employeeId;
 		loyaltyLabel.Text = loyalty + "%";
 		safetyLabel.Text = safety + "%";
 		complianceLabel.Text = compliance + "%";
 		UpdateProfileProgressBars();
-		int achievementCount = Math.Max(0, Math.Min(6, unlockedAchievements));
-		achievementItem1.Hidden = achievementCount < 1;
-		achievementItem2.Hidden = achievementCount < 2;
-		achievementItem3.Hidden = achievementCount < 3;
-		achievementItem4.Hidden = achievementCount < 4;
-		achievementItem5.Hidden = achievementCount < 5;
-		achievementItem6.Hidden = achievementCount < 6;
+		int achievementCount = earnedAchievements.Count;
+		for (int i = 0; i < achievementItems.Length; i++)
+			achievementItems[i].Hidden = !earnedAchievements.Contains(AchievementIds[i]);
 		float scale = Math.Max(0.2f, Math.Min(1.5f, Math.Min(gui.Width / ReferenceWidth, gui.Height / ReferenceHeight)));
 		UpdateAchievementsRowWidth(scale);
 		achievementsRow.Hidden = achievementCount == 0;
@@ -626,6 +756,8 @@ public partial class MenuManager : Component
 			mainScreen.Hidden = false;
 			return;
 		}
+		currentRunId = Guid.NewGuid().ToString("N");
+		completedScenarios.Clear();
 		gameplayStarted = true; loadRequested = true; BriefingRequestedForCurrentRun = !skipOpeningDialogueForTesting; ShowGame();
 		if (BriefingRequestedForCurrentRun) PauseScales();
 		if (!World.LoadWorld(mainWorldPath))
@@ -648,14 +780,229 @@ public partial class MenuManager : Component
 	}
 	private void Login()
 	{
-		if (passwordEdit.Text != confirmPasswordEdit.Text) { loginStatus.Text = "PIN confirmation does not match"; return; }
-		if (loginEdit.Text != "DEMO" || passwordEdit.Text != "2026") { loginStatus.Text = "Неверный табельный номер или PIN-код"; return; }
-		authenticated = true; loginStatus.Text = "";
+		if (authenticationTask != null || statisticsTask != null) return;
+
+		string login = loginEdit.Text.Trim();
+		string password = passwordEdit.Text;
+		if (string.IsNullOrWhiteSpace(login)) { loginStatus.Text = "Введите табельный номер"; return; }
+		if (string.IsNullOrEmpty(password)) { loginStatus.Text = "Введите PIN-код"; return; }
+		if (password != confirmPasswordEdit.Text) { loginStatus.Text = "PIN-коды не совпадают"; return; }
+		if (string.IsNullOrWhiteSpace(serverBaseUrl)) { loginStatus.Text = "Не указан адрес сервера"; return; }
+
+		string name = string.IsNullOrWhiteSpace(playerName) ? login : playerName.Trim();
+		loginStatus.Text = "Подключение к серверу...";
+		authenticationTask = RegisterOrLoginAsync(login, password, name);
+	}
+
+	private async Task<AuthResponse> RegisterOrLoginAsync(string login, string password, string name)
+	{
+		AuthResponse registration = await PostJsonAsync("/register", new RegisterRequest
+		{
+			Login = login,
+			Password = password,
+			Name = name
+		});
+
+		if (registration.Success || registration.StatusCode != HttpStatusCode.Forbidden)
+			return registration;
+
+		return await PostJsonAsync("/login", new LoginRequest
+		{
+			Login = login,
+			Password = password
+		});
+	}
+
+	private async Task<AuthResponse> PostJsonAsync(string path, object payload)
+	{
+		try
+		{
+			string url = serverBaseUrl.TrimEnd('/') + path;
+			string json = JsonSerializer.Serialize(payload);
+			using StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+			using HttpResponseMessage response = await AuthHttpClient.PostAsync(url, content);
+			return new AuthResponse
+			{
+				Success = response.IsSuccessStatusCode,
+				StatusCode = response.StatusCode,
+				Body = await response.Content.ReadAsStringAsync()
+			};
+		}
+		catch (Exception exception)
+		{
+			return new AuthResponse { Error = exception.Message };
+		}
+	}
+
+	private async Task<AuthResponse> GetStatisticsAsync(string token)
+	{
+		try
+		{
+			using HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, serverBaseUrl.TrimEnd('/') + "/stats");
+			request.Headers.Add("token", token);
+			using HttpResponseMessage response = await AuthHttpClient.SendAsync(request);
+			return new AuthResponse
+			{
+				Success = response.IsSuccessStatusCode,
+				StatusCode = response.StatusCode,
+				Body = await response.Content.ReadAsStringAsync()
+			};
+		}
+		catch (Exception exception)
+		{
+			return new AuthResponse { Error = exception.Message };
+		}
+	}
+
+	private async Task<AuthResponse> PostOutcomeAsync(OutcomeRequest outcome)
+	{
+		try
+		{
+			string json = JsonSerializer.Serialize(outcome);
+			using HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, serverBaseUrl.TrimEnd('/') + "/actOutcome");
+			request.Headers.Add("token", authenticationToken);
+			request.Content = new StringContent(json, Encoding.UTF8, "application/json");
+			using HttpResponseMessage response = await AuthHttpClient.SendAsync(request);
+			return new AuthResponse
+			{
+				Success = response.IsSuccessStatusCode,
+				StatusCode = response.StatusCode,
+				Body = await response.Content.ReadAsStringAsync()
+			};
+		}
+		catch (Exception exception)
+		{
+			return new AuthResponse { Error = exception.Message };
+		}
+	}
+
+	private async Task<AuthResponse> PostAuthorizedJsonAsync(string path, object payload)
+	{
+		try
+		{
+			string json = JsonSerializer.Serialize(payload);
+			using HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, serverBaseUrl.TrimEnd('/') + path);
+			request.Headers.Add("token", authenticationToken);
+			request.Content = new StringContent(json, Encoding.UTF8, "application/json");
+			using HttpResponseMessage response = await AuthHttpClient.SendAsync(request);
+			return new AuthResponse
+			{
+				Success = response.IsSuccessStatusCode,
+				StatusCode = response.StatusCode,
+				Body = await response.Content.ReadAsStringAsync()
+			};
+		}
+		catch (Exception exception)
+		{
+			return new AuthResponse { Error = exception.Message };
+		}
+	}
+
+	private async Task<AuthResponse> GetLeaderboardAsync()
+	{
+		try
+		{
+			using HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, serverBaseUrl.TrimEnd('/') + "/leaderboard");
+			request.Headers.Add("token", authenticationToken);
+			using HttpResponseMessage response = await AuthHttpClient.SendAsync(request);
+			return new AuthResponse
+			{
+				Success = response.IsSuccessStatusCode,
+				StatusCode = response.StatusCode,
+				Body = await response.Content.ReadAsStringAsync()
+			};
+		}
+		catch (Exception exception)
+		{
+			return new AuthResponse { Error = exception.Message };
+		}
+	}
+
+	private void ProcessAuthenticationResult()
+	{
+		if (authenticationTask == null || !authenticationTask.IsCompleted) return;
+
+		AuthResponse response = authenticationTask.GetAwaiter().GetResult();
+		authenticationTask = null;
+		if (state != Screen.Login) return;
+
+		if (!response.Success)
+		{
+			if (!string.IsNullOrWhiteSpace(response.Error))
+			{
+				loginStatus.Text = "Сервер недоступен";
+				Log.Error("MenuManager: authentication request failed: {0}\n", response.Error);
+			}
+			else if (response.StatusCode == HttpStatusCode.Forbidden)
+				loginStatus.Text = "Пользователь уже существует, но PIN-код неверен";
+			else if (response.StatusCode == HttpStatusCode.BadRequest)
+				loginStatus.Text = "Сервер отклонил введённые данные";
+			else
+				loginStatus.Text = "Ошибка сервера: " + (int)response.StatusCode;
+			return;
+		}
+
+		authenticationToken = response.Body.Trim();
+		if (string.IsNullOrEmpty(authenticationToken))
+		{
+			loginStatus.Text = "Сервер не вернул токен доступа";
+			return;
+		}
+
+		loginStatus.Text = "Загрузка статистики...";
+		statisticsTask = GetStatisticsAsync(authenticationToken);
+	}
+
+	private void ProcessStatisticsResult()
+	{
+		if (statisticsTask == null || !statisticsTask.IsCompleted) return;
+
+		AuthResponse response = statisticsTask.GetAwaiter().GetResult();
+		statisticsTask = null;
+		if (state != Screen.Login) return;
+
+		if (!response.Success)
+		{
+			loginStatus.Text = string.IsNullOrWhiteSpace(response.Error)
+				? "Не удалось загрузить статистику: " + (int)response.StatusCode
+				: "Сервер статистики недоступен";
+			Log.Error("MenuManager: statistics request failed: {0}\n",
+				string.IsNullOrWhiteSpace(response.Error) ? response.Body : response.Error);
+			return;
+		}
+
+		try
+		{
+			StatsResponse stats = JsonSerializer.Deserialize<StatsResponse>(response.Body);
+			if (stats == null) throw new JsonException("Empty statistics response.");
+			playerName = string.IsNullOrWhiteSpace(stats.Name) ? playerName : stats.Name;
+			authenticatedLogin = stats.Login ?? "";
+			employeeExperience = Math.Max(0, stats.Experience);
+			safetyRating = Math.Max(0, Math.Min(100, stats.Safety));
+			passengerLoyalty = Math.Max(0, Math.Min(100, stats.Loyalty));
+			earnedAchievements.Clear();
+			if (stats.Achievements != null)
+				foreach (string id in stats.Achievements)
+					if (IsKnownAchievement(id)) earnedAchievements.Add(id);
+			statisticsLoaded = true;
+			subscribedStoryState?.LoadPersistedMetrics(safetyRating, passengerLoyalty);
+			UpdateProfileData();
+		}
+		catch (Exception exception)
+		{
+			loginStatus.Text = "Сервер вернул неверную статистику";
+			Log.Error("MenuManager: can't parse statistics: {0}\n", exception.Message);
+			return;
+		}
+
+		authenticated = true;
+		RequestLeaderboardRefresh();
+		loginStatus.Text = "";
 		if (loginTarget == LoginTarget.Start) StartGame();
 		else { Screen origin = returnState; ShowProfile(); returnState = origin; }
 	}
 	private void ShowSettings() { returnState = state; SetState(Screen.Settings); }
-	private void ShowProfile() { if (state == Screen.Profile) return; returnState = state; UpdateProfileData(); SetState(Screen.Profile); if (returnState == Screen.Game) PauseScales(); }
+	private void ShowProfile() { if (state == Screen.Profile) return; returnState = state; RequestLeaderboardRefresh(); UpdateProfileData(); SetState(Screen.Profile); if (returnState == Screen.Game) PauseScales(); }
 	private void BackFromLogin() { if (returnState == Screen.Pause) ShowPause(); else ShowMain(); }
 	private void BackFromSettings() { if (returnState == Screen.Pause) ShowPause(); else ShowMain(); }
 	private void BackFromProfile() { if (returnState == Screen.Game) ShowGame(); else if (returnState == Screen.Pause) ShowPause(); else ShowMain(); }
@@ -699,6 +1046,199 @@ public partial class MenuManager : Component
 			subscribedGameFlow.ReturnToMenuRequested += ReturnToMainMenuAfterRun;
 	}
 
+	private void UpdateStoryStateSubscription()
+	{
+		StoryStateController current = ComponentSystem.FindComponentInWorld<StoryStateController>();
+		if (current == subscribedStoryState) return;
+
+		if (subscribedStoryState != null)
+		{
+			subscribedStoryState.MetricChanged -= OnStoryMetricChanged;
+			subscribedStoryState.OutcomeApplied -= OnStoryOutcomeApplied;
+		}
+
+		subscribedStoryState = current;
+		if (subscribedStoryState == null) return;
+		subscribedStoryState.MetricChanged += OnStoryMetricChanged;
+		subscribedStoryState.OutcomeApplied += OnStoryOutcomeApplied;
+		if (statisticsLoaded)
+			subscribedStoryState.LoadPersistedMetrics(safetyRating, passengerLoyalty);
+	}
+
+	private void OnStoryMetricChanged(string metric, int oldValue, int newValue)
+	{
+		if (metric == "safety") safetyRating = newValue;
+		else if (metric == "loyalty") passengerLoyalty = newValue;
+		else return;
+		UpdateProfileData();
+		foreach (WidgetHBox row in rankRows) row.Hidden = true;
+	}
+
+	private void OnStoryOutcomeApplied(string reason, int safety, int loyalty)
+	{
+		if (!authenticated || string.IsNullOrEmpty(authenticationToken)) return;
+		pendingOutcomes.Enqueue(new OutcomeRequest
+		{
+			Reason = string.IsNullOrWhiteSpace(reason) ? "gameplay" : reason,
+			Safety = safety,
+			Loyalty = loyalty
+		});
+	}
+
+	public static bool UnlockAchievement(string id)
+	{
+		if (instance == null || !IsKnownAchievement(id) || !instance.earnedAchievements.Add(id)) return false;
+		instance.employeeExperience += IsHiddenAchievement(id) ? 1500 : 1000;
+		instance.UpdateProfileData();
+		if (instance.authenticated && !string.IsNullOrEmpty(instance.authenticationToken))
+			instance.pendingAchievements.Enqueue(id);
+		return true;
+	}
+
+	public static void CompleteScenario(string scenarioId)
+	{
+		if (instance == null || string.IsNullOrEmpty(instance.currentRunId) ||
+			(scenarioId != "pet" && scenarioId != "noise") || !instance.completedScenarios.Add(scenarioId)) return;
+		instance.employeeExperience += 500;
+		instance.UpdateProfileData();
+		if (instance.authenticated && !string.IsNullOrEmpty(instance.authenticationToken))
+			instance.pendingScenarioCompletions.Enqueue(new ScenarioCompletionRequest
+			{
+				RunId = instance.currentRunId,
+				ScenarioId = scenarioId
+			});
+	}
+
+	private static bool IsKnownAchievement(string id)
+	{
+		foreach (string knownId in AchievementIds)
+			if (knownId == id) return true;
+		return false;
+	}
+
+	private static bool IsHiddenAchievement(string id)
+	{
+		return id == "ACH_PET_05" || id == "ACH_PET_06" || id == "ACH_NOISE_05" || id == "ACH_NOISE_07";
+	}
+
+	private void ProcessOutcomeQueue()
+	{
+		if (outcomeTask != null && outcomeTask.IsCompleted)
+		{
+			AuthResponse response = outcomeTask.GetAwaiter().GetResult();
+			if (!response.Success)
+				Log.Error("MenuManager: failed to save outcome '{0}': {1}\n", activeOutcome?.Reason ?? "",
+					string.IsNullOrWhiteSpace(response.Error) ? ((int)response.StatusCode).ToString() : response.Error);
+			outcomeTask = null;
+			activeOutcome = null;
+		}
+
+		if (outcomeTask != null || pendingOutcomes.Count == 0 || string.IsNullOrEmpty(authenticationToken)) return;
+		activeOutcome = pendingOutcomes.Dequeue();
+		outcomeTask = PostOutcomeAsync(activeOutcome);
+	}
+
+	private void ProcessAchievementQueue()
+	{
+		if (achievementTask != null && achievementTask.IsCompleted)
+		{
+			AuthResponse response = achievementTask.GetAwaiter().GetResult();
+			if (!response.Success)
+				Log.Error("MenuManager: failed to save achievement '{0}': {1}\n", activeAchievement,
+					string.IsNullOrWhiteSpace(response.Error) ? ((int)response.StatusCode).ToString() : response.Error);
+			else leaderboardRefreshRequested = true;
+			achievementTask = null;
+			activeAchievement = "";
+		}
+
+		if (achievementTask != null || pendingAchievements.Count == 0 || string.IsNullOrEmpty(authenticationToken)) return;
+		activeAchievement = pendingAchievements.Dequeue();
+		achievementTask = PostAuthorizedJsonAsync("/achievement", new AchievementRequest { Id = activeAchievement });
+	}
+
+	private void ProcessScenarioCompletionQueue()
+	{
+		if (scenarioCompletionTask != null && scenarioCompletionTask.IsCompleted)
+		{
+			AuthResponse response = scenarioCompletionTask.GetAwaiter().GetResult();
+			if (!response.Success)
+				Log.Error("MenuManager: failed to save scenario completion '{0}': {1}\n", activeScenarioCompletion?.ScenarioId ?? "",
+					string.IsNullOrWhiteSpace(response.Error) ? ((int)response.StatusCode).ToString() : response.Error);
+			else leaderboardRefreshRequested = true;
+			scenarioCompletionTask = null;
+			activeScenarioCompletion = null;
+		}
+
+		if (scenarioCompletionTask != null || pendingScenarioCompletions.Count == 0 || string.IsNullOrEmpty(authenticationToken)) return;
+		activeScenarioCompletion = pendingScenarioCompletions.Dequeue();
+		scenarioCompletionTask = PostAuthorizedJsonAsync("/scenarioComplete", activeScenarioCompletion);
+	}
+
+	private void RequestLeaderboardRefresh()
+	{
+		if (!authenticated || string.IsNullOrEmpty(authenticationToken)) return;
+		if (leaderboardTask != null) { leaderboardRefreshRequested = true; return; }
+		leaderboardRefreshRequested = false;
+		leaderboardTask = GetLeaderboardAsync();
+	}
+
+	private void ProcessLeaderboardResult()
+	{
+		if (leaderboardTask != null && leaderboardTask.IsCompleted)
+		{
+			AuthResponse response = leaderboardTask.GetAwaiter().GetResult();
+			leaderboardTask = null;
+			if (!response.Success)
+				Log.Error("MenuManager: failed to load leaderboard: {0}\n",
+					string.IsNullOrWhiteSpace(response.Error) ? ((int)response.StatusCode).ToString() : response.Error);
+			else
+			{
+				try
+				{
+					leaderboardEntries = JsonSerializer.Deserialize<LeaderboardEntry[]>(response.Body) ?? Array.Empty<LeaderboardEntry>();
+					UpdateLeaderboardData();
+				}
+				catch (Exception exception)
+				{
+					Log.Error("MenuManager: can't parse leaderboard: {0}\n", exception.Message);
+				}
+			}
+		}
+
+		if (leaderboardRefreshRequested && leaderboardTask == null)
+			RequestLeaderboardRefresh();
+	}
+
+	private void UpdateLeaderboardData()
+	{
+		leaderboardMinExperience = 0;
+		leaderboardMaxExperience = 0;
+		if (leaderboardEntries.Length > 0)
+		{
+			leaderboardMinExperience = leaderboardEntries[0].Experience;
+			leaderboardMaxExperience = leaderboardEntries[0].Experience;
+			foreach (LeaderboardEntry entry in leaderboardEntries)
+			{
+				leaderboardMinExperience = Math.Min(leaderboardMinExperience, entry.Experience);
+				leaderboardMaxExperience = Math.Max(leaderboardMaxExperience, entry.Experience);
+			}
+		}
+
+		for (int i = 0; i < rankRows.Length; i++)
+		{
+			bool hasEntry = i < leaderboardEntries.Length;
+			rankRows[i].Hidden = !hasEntry;
+			if (!hasEntry) continue;
+			LeaderboardEntry entry = leaderboardEntries[i];
+			rankPlaces[i].Text = (i + 1).ToString();
+			rankNames[i].Text = entry.Name ?? "";
+			rankLogins[i].Text = entry.Login ?? "";
+			rankExperienceLabels[i].Text = entry.Experience.ToString("N0").Replace(',', ' ');
+			SetExperienceProgress(progressBackgrounds[4 + i], progressFills[4 + i], entry.Experience);
+		}
+		UpdateProfileProgressBars();
+	}
+
 	private void ReturnToMainMenuAfterRun()
 	{
 		gameplayStarted = false;
@@ -733,12 +1273,7 @@ public partial class MenuManager : Component
 			achievementsPanel.Hidden = true;
 			achievementsScroll.Hidden = true;
 			achievementsRow.Hidden = true;
-			achievementItem1.Hidden = true;
-			achievementItem2.Hidden = true;
-			achievementItem3.Hidden = true;
-			achievementItem4.Hidden = true;
-			achievementItem5.Hidden = true;
-			achievementItem6.Hidden = true;
+			foreach (WidgetHBox item in achievementItems) item.Hidden = true;
 			achievementsEmpty.Hidden = true;
 		}
 		else

@@ -103,6 +103,14 @@ public partial class ScenarioResults : Component
 		}
 		if (!visible) return;
 
+		bool showOverGameplay = MenuManager.IsGameplayScreen;
+		panel.Hidden = !showOverGameplay;
+		heading.Hidden = !showOverGameplay;
+		body.Hidden = !showOverGameplay;
+		resultsScroll.Hidden = !showOverGameplay;
+		continueButton.Hidden = !showOverGameplay;
+		if (!showOverGameplay) return;
+
 		fade = MathLib.Min(1.0f, fade + Game.IFps / MathLib.Max(0.1f, fadeInSeconds));
 		vec4 headingColor = heading.FontColor;
 		headingColor.w = fade;
@@ -122,7 +130,9 @@ public partial class ScenarioResults : Component
 		showingSecondScenarioResult = false;
 		heading.Text = "ИТОГИ СЦЕНАРИЯ 1";
 		continueButton.Text = "Продолжить";
-		ShowResults(BuildResultsText());
+		List<AchievementResult> newAchievements = PublishAchievements(GetEarnedAchievements());
+		MenuManager.CompleteScenario("pet");
+		ShowResults(BuildResultsText(newAchievements));
 	}
 
 	private void ShowSecondScenarioResult(string finalTitle, string feedback)
@@ -131,10 +141,28 @@ public partial class ScenarioResults : Component
 		showingSecondScenarioResult = true;
 		heading.Text = "ОБЩИЙ ИТОГ ДВУХ СЦЕНАРИЕВ";
 		continueButton.Text = "Завершить";
-		ShowResults(BuildCombinedResultsText(finalTitle, feedback));
+		List<AchievementResult> earned = GetEarnedAchievements();
+		earned.AddRange(GetSecondScenarioAchievements());
+		List<AchievementResult> newAchievements = PublishAchievements(earned);
+		MenuManager.CompleteScenario("noise");
+		ShowResults(BuildCombinedResultsText(finalTitle, feedback, newAchievements));
 	}
 
-	private string BuildCombinedResultsText(string secondFinalTitle, string secondFeedback)
+	private static List<AchievementResult> PublishAchievements(List<AchievementResult> achievements)
+	{
+		List<AchievementResult> newlyUnlocked = new List<AchievementResult>();
+		foreach (AchievementResult achievement in achievements)
+		{
+			if (MenuManager.UnlockAchievement(achievement.Id))
+				newlyUnlocked.Add(achievement);
+		}
+		return newlyUnlocked;
+	}
+
+	private string BuildCombinedResultsText(
+		string secondFinalTitle,
+		string secondFeedback,
+		List<AchievementResult> newAchievements)
 	{
 		StringBuilder text = new StringBuilder();
 		text.AppendLine("СЦЕНАРИЙ 1 — ПЕРЕВОЗКА ПИТОМЦА");
@@ -159,24 +187,21 @@ public partial class ScenarioResults : Component
 		if (state != null)
 			text.AppendFormat("Текущие показатели смены: безопасность {0}, лояльность {1}.", state.Safety, state.Loyalty);
 		text.AppendLine();
-		text.AppendLine();
-		text.AppendLine("ДОСТИЖЕНИЯ ЗА ОБА СЦЕНАРИЯ:");
-
-		List<AchievementResult> earned = GetEarnedAchievements();
-		earned.AddRange(GetSecondScenarioAchievements());
-		AppendAchievements(text, earned);
+		AppendNewAchievements(text, newAchievements);
 		return text.ToString();
 	}
 
-	private static void AppendAchievements(StringBuilder text, List<AchievementResult> earned)
+	private static void AppendNewAchievements(StringBuilder text, List<AchievementResult> achievements)
 	{
-		if (earned.Count == 0)
+		text.AppendLine();
+		text.AppendLine("НОВЫЕ ДОСТИЖЕНИЯ:");
+		if (achievements.Count == 0)
 		{
-			text.Append("В этот раз достижения не получены.");
+			text.Append("В этом сценарии новых достижений нет.");
 			return;
 		}
 
-		foreach (AchievementResult achievement in earned)
+		foreach (AchievementResult achievement in achievements)
 		{
 			text.AppendFormat("★ {0}{1} — «{2}»", achievement.Hidden ? "Скрытая ачивка: " : "", achievement.Id, achievement.Title);
 			text.AppendLine();
@@ -206,7 +231,7 @@ public partial class ScenarioResults : Component
 		Layout();
 	}
 
-	private string BuildResultsText()
+	private string BuildResultsText(List<AchievementResult> newAchievements)
 	{
 		StringBuilder text = new StringBuilder();
 		text.AppendLine(GetFeedback());
@@ -218,20 +243,7 @@ public partial class ScenarioResults : Component
 		}
 		text.AppendFormat("Итог сценария: безопасность {0}, лояльность {1}.", scenario.Safety, scenario.Loyalty);
 		text.AppendLine();
-		text.AppendLine();
-		text.AppendLine("Достижения:");
-
-		List<AchievementResult> earned = GetEarnedAchievements();
-		if (earned.Count == 0)
-			text.Append("В этот раз достижения не получены.");
-		else
-			foreach (AchievementResult achievement in earned)
-			{
-				text.AppendFormat("★ {0}{1} — «{2}»", achievement.Hidden ? "Скрытая ачивка: " : "", achievement.Id, achievement.Title);
-				text.AppendLine();
-				text.AppendLine("Описание: " + achievement.Description);
-				text.AppendLine((achievement.Hidden ? "Скрытая ачивка получена! " : "Ачивка получена! ") + achievement.EarnedText);
-			}
+		AppendNewAchievements(text, newAchievements);
 		return text.ToString();
 	}
 

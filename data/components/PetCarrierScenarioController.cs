@@ -323,8 +323,7 @@ public partial class PetCarrierScenarioController : Component
 		{
 			if (pendingEndingBonus)
 			{
-				AddSafety(5);
-				AddLoyalty(2);
+				ApplyOutcome("ending-bonus", 5, 2);
 				EndingBonusGranted = true;
 			}
 			FinishState();
@@ -422,9 +421,9 @@ public partial class PetCarrierScenarioController : Component
 
 	private void ChooseExplanation(string id)
 	{
-		if (id == "ID-01") { AddSafety(2); AddLoyalty(2); Mood += 1; }
-		else if (id == "ID-02") { AddSafety(2); AddLoyalty(-3); Mood -= 1; }
-		else if (id == "ID-03") { AddSafety(-8); AddLoyalty(3); Mood += 2; }
+		if (id == "ID-01") { ApplyOutcome("choice-" + id, 2, 2); Mood += 1; }
+		else if (id == "ID-02") { ApplyOutcome("choice-" + id, 2, -3); Mood -= 1; }
+		else if (id == "ID-03") { ApplyOutcome("choice-" + id, -8, 3); Mood += 2; }
 		else return;
 		ID02Selected = id == "ID-02";
 		DecisionHistory.Add(id);
@@ -471,8 +470,7 @@ public partial class PetCarrierScenarioController : Component
 	{
 		if (id == "timeout")
 		{
-			AddSafety(-3);
-			AddLoyalty(-2);
+			ApplyOutcome("solution-timeout", -3, -2);
 			Mood = Math.Max(-3, Math.Min(3, Mood - 1));
 			DecisionHistory.Add("SOLUTION_TIMEOUT");
 			CurrentSpeaker = "Пассажир";
@@ -491,19 +489,18 @@ public partial class PetCarrierScenarioController : Component
 		{
 			if (id == "ID-04")
 			{
-				AddSafety(5);
-				AddLoyalty(3);
+				ApplyOutcome("choice-" + id, 5, 3);
 				if (ID02Selected) Mood += 2;
 			}
-			else if (id == "ID-05") { AddSafety(5); AddLoyalty(-1); Mood -= 1; }
-			else if (id == "ID-06") { AddSafety(-6); AddLoyalty(1); }
+			else if (id == "ID-05") { ApplyOutcome("choice-" + id, 5, -1); Mood -= 1; }
+			else if (id == "ID-06") { ApplyOutcome("choice-" + id, -6, 1); }
 			else return;
 		}
 		else
 		{
-			if (id == "ID-07") { AddSafety(10); AddLoyalty(5); Mood += 1; }
-			else if (id == "ID-08") { AddSafety(-6); AddLoyalty(3); Mood += 1; }
-			else if (id == "ID-09") { AddSafety(-7); AddLoyalty(2); Mood += 1; }
+			if (id == "ID-07") { ApplyOutcome("choice-" + id, 10, 5); Mood += 1; }
+			else if (id == "ID-08") { ApplyOutcome("choice-" + id, -6, 3); Mood += 1; }
+			else if (id == "ID-09") { ApplyOutcome("choice-" + id, -7, 2); Mood += 1; }
 			else return;
 		}
 		RemainingSeconds = 0.0f;
@@ -597,8 +594,7 @@ public partial class PetCarrierScenarioController : Component
 	{
 		if (id == "ID-10")
 		{
-			AddSafety(5);
-			AddLoyalty(2);
+			ApplyOutcome("choice-" + id, 5, 2);
 			Mood = Math.Max(-3, Math.Min(3, Mood + 1));
 			CurrentSpeaker = "Пассажир";
 			CurrentText = Mood >= 2
@@ -613,8 +609,7 @@ public partial class PetCarrierScenarioController : Component
 		}
 		else if (id == "ID-11")
 		{
-			AddSafety(5);
-			AddLoyalty(-3);
+			ApplyOutcome("choice-" + id, 5, -3);
 			Mood = Math.Max(-3, Math.Min(3, Mood - 1));
 			CurrentSpeaker = "Пассажир";
 			CurrentText = Mood >= 2
@@ -627,8 +622,7 @@ public partial class PetCarrierScenarioController : Component
 		}
 		else if (id == "ID-12")
 		{
-			AddSafety(-8);
-			AddLoyalty(1);
+			ApplyOutcome("choice-" + id, -8, 1);
 			CurrentSpeaker = "Пассажир";
 			CurrentText = "Хорошо, тогда я останусь на своём месте и подожду дальнейшего решения.";
 			RequestPassengerEmotion(PassengerEmotion.PositiveNod);
@@ -645,8 +639,7 @@ public partial class PetCarrierScenarioController : Component
 
 	private void FinishSolutionTimeout()
 	{
-		AddSafety(-7);
-		AddLoyalty(-2);
+		ApplyOutcome("solution-reply-timeout", -7, -2);
 		DecisionHistory.Add("SOLUTION_REPLY_TIMEOUT");
 		CurrentSpeaker = "Пассажир";
 		CurrentText = "Я не могу больше ждать. Я возвращаюсь на своё место.";
@@ -656,7 +649,7 @@ public partial class PetCarrierScenarioController : Component
 
 	private void FinishWithBonus()
 	{
-		AddSafety(5); AddLoyalty(2);
+		ApplyOutcome("ending-bonus", 5, 2);
 		EndingBonusGranted = true;
 		FinishState();
 	}
@@ -826,8 +819,16 @@ public partial class PetCarrierScenarioController : Component
 		PassengerEmotionRequested?.Invoke(emotion);
 	}
 
-	private void AddSafety(int delta) => Safety = Math.Min(12, Safety + delta);
-	private void AddLoyalty(int delta) => Loyalty = Math.Min(7, Loyalty + delta);
+	private void ApplyOutcome(string reason, int safety, int loyalty)
+	{
+		int previousSafety = Safety;
+		int previousLoyalty = Loyalty;
+		Safety = Math.Min(12, Safety + safety);
+		Loyalty = Math.Min(7, Loyalty + loyalty);
+
+		StoryStateController state = ComponentSystem.FindComponentInWorld<StoryStateController>();
+		state?.ApplyOutcome(reason, Safety - previousSafety, Loyalty - previousLoyalty);
+	}
 
 	private void Shutdown()
 	{

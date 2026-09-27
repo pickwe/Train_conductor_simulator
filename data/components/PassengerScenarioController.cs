@@ -120,6 +120,8 @@ public partial class PassengerScenarioController : Component
 	[Parameter(Group = "Scenario 3 Bad Situation")]
 	public Node badSituationPassengerNodeTwo;
 	[Parameter(Group = "Scenario 3 Bad Situation")]
+	public Node badSituationPassengerNodeThree;
+	[Parameter(Group = "Scenario 3 Bad Situation")]
 	public Player badSituationCamera;
 	[Parameter(Group = "Scenario 3 Bad Situation")]
 	public string badSituationCameraName = "bad_situation";
@@ -131,6 +133,12 @@ public partial class PassengerScenarioController : Component
 	public float dialogueCameraTransitionSeconds = 0.8f;
 	[ParameterSlider(Min = 0.2f, Max = 2.0f, Group = "Scenario 2 Activity Item")]
 	public float activityPickupAnimationSeconds = 0.8f;
+	[Parameter(Title = "Override Activities Availability", Group = "Scenario 2 Testing",
+		Tooltip = "Use the test value instead of randomly choosing whether books and board games are available.")]
+	public bool overrideActivitiesAvailabilityForTesting = false;
+	[Parameter(Title = "Activities Available", Group = "Scenario 2 Testing",
+		Tooltip = "Test value used when Override Activities Availability is enabled.")]
+	public bool activitiesAvailableForTesting = true;
 	public static PassengerScenarioController Active { get; private set; }
 	public static bool IsSeatMonitorViewVisible { get; private set; }
 	public ScenarioStep CurrentStep { get; private set; } = ScenarioStep.WaitingForBriefing;
@@ -251,6 +259,7 @@ public partial class PassengerScenarioController : Component
 		SetParentPassengerVisible(false);
 		SetActivityItemVisible(false);
 		SetBadSituationPassengersVisible(false);
+		SetRelocationSeatPassengerVisible(true);
 		SetCallMonitor(false);
 	}
 
@@ -471,10 +480,7 @@ public partial class PassengerScenarioController : Component
 		MoodPassenger2 = Math.Max(-3, Math.Min(3, MoodPassenger2 + mood2));
 		StoryStateController state = ComponentSystem.FindComponentInWorld<StoryStateController>();
 		if (state == null) return;
-		state.ChangeMetric(StoryStateController.Metric.Safety, safety);
-		state.ChangeMetric(StoryStateController.Metric.Loyalty, loyalty);
-
-		string requestBody = String.Format("""{0}"reason": "{2}", "safety": {3}, "loyality": {4}{1}""", "{", "}", reason, safety, loyalty);
+		state.ApplyOutcome(reason, safety, loyalty);
 	}
 
 	private void ChooseParentAnswer(string choiceId)
@@ -669,7 +675,9 @@ public partial class PassengerScenarioController : Component
 		PassengerApproachTimedOut = false;
 		DecisionHistory.Clear();
 		DiplomatWithoutPropsEligible = false;
-		OnboardActivitiesAvailable = random.Next(0, 2) == 0;
+		OnboardActivitiesAvailable = overrideActivitiesAvailabilityForTesting
+			? activitiesAvailableForTesting
+			: random.Next(0, 2) == 0;
 		ActivitiesFactChecked = false;
 		RelocationSeatAvailable = random.Next(0, 2) == 0;
 		SeatAvailabilityFactChecked = false;
@@ -684,6 +692,7 @@ public partial class PassengerScenarioController : Component
 		SetParentPassengerVisible(true);
 		SetActivityItemVisible(OnboardActivitiesAvailable);
 		SetBadSituationPassengersVisible(false);
+		SetRelocationSeatPassengerVisible(true);
 		SetCallMonitor(false);
 		RemainingSeconds = Math.Max(0.0f, adaptationSeconds);
 		lastDisplayedSecond = -1;
@@ -1167,6 +1176,7 @@ public partial class PassengerScenarioController : Component
 		badSituationActive = true;
 		playerBeforeBadSituation = returnPlayer;
 		savedBadSituationPhysicsScale = returnPhysicsScale;
+		SetRelocationSeatPassengerVisible(false);
 		SetBadSituationPassengersVisible(true);
 		if (badSituationCamera == null || Game.Player == null)
 		{
@@ -1570,6 +1580,12 @@ public partial class PassengerScenarioController : Component
 			badSituationPassengerNodeTwo.Enabled = visible;
 	}
 
+	private void SetRelocationSeatPassengerVisible(bool visible)
+	{
+		if (badSituationPassengerNodeThree != null)
+			badSituationPassengerNodeThree.Enabled = visible;
+	}
+
 	public bool RevealOnboardActivitiesAvailability()
 	{
 		ActivitiesFactChecked = true;
@@ -1579,6 +1595,7 @@ public partial class PassengerScenarioController : Component
 	public bool RevealRelocationSeatAvailability()
 	{
 		SeatAvailabilityFactChecked = true;
+		SetRelocationSeatPassengerVisible(!RelocationSeatAvailable);
 		return RelocationSeatAvailable;
 	}
 

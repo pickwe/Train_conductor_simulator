@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>a46a821ee872f5fa95c41b6def65b6d6991e56c9</guid>
 	<type>component</type>
-	<hash>e6bc332d25986b690981b796c2f1fbd228be6c2a69b85b0cb464ff5598278be4</hash>
+	<hash>05a266a4bfa6ac7a51f1ff96953c0d45145c505c67875e59864615eb4ea62460</hash>
 	<runtimes>
 		<runtime id="a46a821ee872f5fa95c41b6def65b6d6991e56c9" name="CarrierDeliveryInteraction.cs" link="0"/>
 		<runtime id="e6ec667821102cf458234a95702f37e3932e7194" name="CarrierDeliveryInteraction.prop" link="1" type="4"/>

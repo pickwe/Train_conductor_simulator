@@ -16,6 +16,17 @@ type
     safety*: int
     loyality*: int
 
+  AchievementUnlock* = ref object
+    id*: int
+    userId*: int
+    achievementId*: string
+
+  ScenarioCompletion* = ref object
+    id*: int
+    userId*: int
+    runId*: string
+    scenarioId*: string
+
 const databaseFile = "db.sqlite"
 
 
@@ -26,4 +37,6 @@ proc openDatabase*(): Db =
 proc setupTables*(db: Db) =
   if not db.tableExists(Account): db.createTable(Account)
   if not db.tableExists(ActionOutcome): db.createTable(ActionOutcome)
+  if not db.tableExists(AchievementUnlock): db.createTable(AchievementUnlock)
+  if not db.tableExists(ScenarioCompletion): db.createTable(ScenarioCompletion)
 

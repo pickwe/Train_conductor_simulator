@@ -165,14 +165,27 @@ public partial class ConductorTerminal : Component
 	private void ShowGoods()
 	{
 		page = Page.Goods;
-		bool carrierAvailable = openedForSecondScenario
+		bool requestedItemAvailable = openedForSecondScenario
 			? secondScenario != null && secondScenario.RevealOnboardActivitiesAvailability()
 			: scenario != null && scenario.RevealCarrierAvailability();
 		heading.Text = "Товары и услуги";
 		body.Hidden = true;
 		ShowWidgets();
 		ClearPageWidgets();
-		AddGoodsRow("Переноска для животных", carrierAvailable ? "Для перевозки питомца" : "Для перевозки питомца • нет в наличии", "1 490 ₽");
+		if (openedForSecondScenario)
+		{
+			AddGoodsRow(
+				"Детская литература и настольные игры",
+				requestedItemAvailable ? "Доступно на борту" : "Нет в наличии",
+				requestedItemAvailable ? "Доступно" : "Недоступно");
+		}
+		else
+		{
+			AddGoodsRow(
+				"Переноска для животных",
+				requestedItemAvailable ? "Для перевозки питомца" : "Для перевозки питомца • нет в наличии",
+				"1 490 ₽");
+		}
 		AddGoodsRow("Чай / кофе", "Горячие напитки в пути", "150 ₽");
 		AddGoodsRow("Набор путешественника", "Маска для сна, беруши, салфетки", "390 ₽");
 		AddGoodsRow("Плед", "Дополнительный плед на время поездки", "300 ₽");

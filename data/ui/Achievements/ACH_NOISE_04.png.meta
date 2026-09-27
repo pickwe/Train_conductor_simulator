@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>326508bee500f6d98eb8c576f77cfa3b04e43369</guid>
+	<type>texture</type>
+	<hash>e45cc97a20e1cc5646c21ef27672ab7583d40d56132767b3e67f6336f0748090</hash>
+	<runtimes>
+		<runtime id="326508bee500f6d98eb8c576f77cfa3b04e43369" name="ACH_NOISE_04.png" link="0" type="6"/>
+		<runtime id="ad85c10d252f1dac711654b5313cf4596dc265b4" name="ACH_NOISE_04.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

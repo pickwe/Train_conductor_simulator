@@ -34,6 +34,7 @@ public partial class StoryStateController : Component
 	public int RemainingRouteSeconds { get; private set; } = 15 * 60;
 
 	public event Action<string, int, int> MetricChanged;
+	public event Action<string, int, int> OutcomeApplied;
 	public event Action<string, bool, bool> FlagChanged;
 	public event Action<int, int> RouteTimeChanged;
 
@@ -42,8 +43,47 @@ public partial class StoryStateController : Component
 	/// <summary>Applies a score delta and clamps the score to the 0..100 range.</summary>
 	public void ChangeMetric(Metric metric, int delta)
 	{
+		int appliedDelta = ChangeMetricInternal(metric, delta);
+		if (appliedDelta == 0)
+			return;
+
+		if (metric == Metric.Safety)
+			OutcomeApplied?.Invoke("metric-safety", appliedDelta, 0);
+		else if (metric == Metric.Loyalty)
+			OutcomeApplied?.Invoke("metric-loyalty", 0, appliedDelta);
+	}
+
+	/// <summary>Applies one gameplay outcome and emits a single persistence event.</summary>
+	public void ApplyOutcome(string reason, int safetyDelta, int loyaltyDelta)
+	{
+		int appliedSafety = ChangeMetricInternal(Metric.Safety, safetyDelta);
+		int appliedLoyalty = ChangeMetricInternal(Metric.Loyalty, loyaltyDelta);
+		if (appliedSafety != 0 || appliedLoyalty != 0)
+			OutcomeApplied?.Invoke(reason, appliedSafety, appliedLoyalty);
+	}
+
+	/// <summary>Initializes persistent values without reporting them as a new gameplay outcome.</summary>
+	public void LoadPersistedMetrics(int safety, int loyalty)
+	{
+		SetMetricValue(Metric.Safety, safety);
+		SetMetricValue(Metric.Loyalty, loyalty);
+	}
+
+	private int ChangeMetricInternal(Metric metric, int delta)
+	{
 		int oldValue = GetMetricValue(metric);
 		int newValue = Math.Max(0, Math.Min(100, oldValue + delta));
+		if (newValue == oldValue)
+			return 0;
+
+		SetMetricValue(metric, newValue);
+		return newValue - oldValue;
+	}
+
+	private void SetMetricValue(Metric metric, int value)
+	{
+		int oldValue = GetMetricValue(metric);
+		int newValue = Math.Max(0, Math.Min(100, value));
 		if (newValue == oldValue)
 			return;
 
