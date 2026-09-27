@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.22.0.0">
-	<guid>11b8babe1a983121764c10322688ef52f86a9008</guid>
+	<guid>3c5bd5358245bfecc58c1a742cc7e7e1c53a3ae9</guid>
 	<type>texture</type>
-	<hash>2d820425612317a72768142c93046a61d6e5196e9bca8f64f353ee051a64a615</hash>
+	<hash>6f92b39fc8d4dda69c8056422ed413a5155b144483548432d104bb5908c1ef2d</hash>
 	<runtimes>
-		<runtime id="11b8babe1a983121764c10322688ef52f86a9008" name="Settings.png" link="0" type="6"/>
-		<runtime id="d9a6dd989fe008708ad7f3acb7019b3006bdb2b2" name="Settings.texture" link="1" type="6"/>
+		<runtime id="3c5bd5358245bfecc58c1a742cc7e7e1c53a3ae9" name="background_login.png" link="0" type="6"/>
+		<runtime id="07abb3b39dcb07f9f62a4ea03a092ce6349dc734" name="background_login.texture" link="1" type="6"/>
 	</runtimes>
 	<parameters>
 		<parameter type="int" name="blur_radius">1</parameter>
 		<parameter type="string" name="height">auto</parameter>
-		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_format">DXT1</parameter>
 		<parameter type="string" name="image_type">2d</parameter>
 		<parameter type="bool" name="invert_g">0</parameter>
 		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>

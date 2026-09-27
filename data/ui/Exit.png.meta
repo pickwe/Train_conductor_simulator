@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.22.0.0">
-	<guid>c3e93019278fc56bd21a96b5403b9974600373c7</guid>
+	<guid>3d7bc59d6ca0d13d63d486522232032d57dd3c06</guid>
 	<type>texture</type>
-	<hash>1e2b269a13ea5069ee5d880c386d99878c5a08fd8403a437d2ef5513d8d33c21</hash>
+	<hash>253ef2de9c6895a4c04d60351051a8eefe2242b179182a0761236381c43bef45</hash>
 	<runtimes>
-		<runtime id="c3e93019278fc56bd21a96b5403b9974600373c7" name="Exit.png" link="0" type="6"/>
-		<runtime id="1907540619a92dda375b99fa53d4aa3059156890" name="Exit.texture" link="1" type="6"/>
+		<runtime id="faed3f2101c437a4c322c126fec1497ba547bc9a" name="Exit.png" link="0" type="6"/>
 	</runtimes>
 	<parameters>
 		<parameter type="int" name="blur_radius">1</parameter>
@@ -19,7 +18,7 @@
 		<parameter type="float" name="sharpness_intensity">0.25</parameter>
 		<parameter type="float" name="sharpness_radius">1</parameter>
 		<parameter type="bool" name="srgb_correction">1</parameter>
-		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="bool" name="unchanged">1</parameter>
 		<parameter type="string" name="width">auto</parameter>
 	</parameters>
 </asset>

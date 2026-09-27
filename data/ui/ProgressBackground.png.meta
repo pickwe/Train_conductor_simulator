@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>c5b1af158cb93ca053e11ff1f454f17a866d9be3</guid>
 	<type>texture</type>
-	<hash>b0936fd3e016e5b1147ebbf8e955590553069192f343a5b65e55481aaa69f8b6</hash>
+	<hash>26399969b54ff19f4f605cd3ed900acae64ebe16b32ade262eb041f75bca84af</hash>
 	<runtimes>
 		<runtime id="c5b1af158cb93ca053e11ff1f454f17a866d9be3" name="ProgressBackground.png" link="0" type="6"/>
 		<runtime id="c72a28f04c4b0f3bdb1648846fb41d5d54e719ca" name="ProgressBackground.texture" link="1" type="6"/>

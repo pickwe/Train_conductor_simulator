@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.22.0.0">
-	<guid>cc9c6bd7c678fb76bd5f7393605575de565cc755</guid>
+	<guid>a7a18aef9fb65740b9e03646211a0b9148f75083</guid>
 	<type>texture</type>
-	<hash>ca8abf5f8ed28d8f624925c6b0962e13450ab376e1653ef98e5e8e7461785487</hash>
+	<hash>eaf8a257916c2c27ca27df2e224da8ffddb221c12875b6f098d046a5e84fd6c4</hash>
 	<runtimes>
-		<runtime id="cc9c6bd7c678fb76bd5f7393605575de565cc755" name="Profile.png" link="0" type="6"/>
-		<runtime id="0f791eea47632b424d36a11eb9adeaf9f2e47214" name="Profile.texture" link="1" type="6"/>
+		<runtime id="781fd3b903c5e5dccd9320e830c58d10b52b63ad" name="Profile.png" link="0" type="6"/>
 	</runtimes>
 	<parameters>
 		<parameter type="int" name="blur_radius">1</parameter>
@@ -19,7 +18,7 @@
 		<parameter type="float" name="sharpness_intensity">0.25</parameter>
 		<parameter type="float" name="sharpness_radius">1</parameter>
 		<parameter type="bool" name="srgb_correction">1</parameter>
-		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="bool" name="unchanged">1</parameter>
 		<parameter type="string" name="width">auto</parameter>
 	</parameters>
 </asset>

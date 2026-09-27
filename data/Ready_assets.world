@@ -953,6 +953,9 @@
 			<properties>
 				<property parent="b4951843a1ff528078e57b3fb24e2d840b342461" guid="47f7e0fea7d11b27c00a7a725bb95d0501d03048">
 					<parameter name="mainWorldPath">guid://5713edad7e2e4220872d0ad9748facfa1096b79e</parameter>
+					<parameter name="skipLoginForTesting">0</parameter>
+					<parameter name="skipOpeningDialogueForTesting">0</parameter>
+					<parameter name="startLocationDirectlyForTesting">0</parameter>
 				</property>
 			</properties>
 			<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 0.786522545618 19.167503487 2.05415855779 1.0</transform>

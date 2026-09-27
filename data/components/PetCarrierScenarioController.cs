@@ -58,6 +58,8 @@ public partial class PetCarrierScenarioController : Component
 				gameFlow.ScenarioOneStarted += StartScenario;
 				subscribedToFlow = true;
 				if (gameFlow.CurrentPhase == GameFlowController.Phase.ScenarioOne) StartScenario();
+				else if (MenuManager.SkipOpeningDialogueForTesting && gameFlow.CurrentPhase == GameFlowController.Phase.WaitingForBriefing)
+					StartAtTerminalForTesting();
 			}
 		}
 		if (!started || !timersEnabled || terminalOpen || CurrentStage == Stage.Finished || RemainingSeconds <= 0.0f) return;
@@ -106,6 +108,16 @@ public partial class PetCarrierScenarioController : Component
 		CurrentSpeaker = "Проводник";
 		CurrentText = "Добрый день. Я вижу, что питомец находится вне переноски. Подскажите, пожалуйста, переноска у Вас есть?";
 		HasChoices = true;
+		Changed?.Invoke();
+	}
+
+	private void StartAtTerminalForTesting()
+	{
+		StartScenario();
+		CurrentStage = Stage.WaitingForTerminal;
+		CurrentSpeaker = "";
+		CurrentText = "";
+		HasChoices = false;
 		Changed?.Invoke();
 	}
 
@@ -299,6 +311,12 @@ public partial class PetCarrierScenarioController : Component
 	public void ShowTerminalClosed()
 	{
 		terminalOpen = false;
+		if (MenuManager.SkipOpeningDialogueForTesting)
+		{
+			CurrentStage = Stage.WaitingForTerminal;
+			Changed?.Invoke();
+			return;
+		}
 		if (CurrentStage == Stage.WaitingForTerminal)
 		{
 			if (CarrierFactChecked)
