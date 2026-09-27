@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>ed9bf4ec9e3933a51b47f25a0e68806b81407165</guid>
+	<type>material_graph</type>
+	<hash>181ae5c1d3681ca6b59bc05a5d1369519406718d95ea1cdaf32a337e7cf92a71</hash>
+	<runtimes>
+		<runtime id="ed9bf4ec9e3933a51b47f25a0e68806b81407165" name="Черный ноут.mgraph" link="0"/>
+		<runtime id="93fd43feadf149b8b242d31c77b08313a4b350df" name="Черный ноут" link="1" type="5"/>
+	</runtimes>
+</asset>

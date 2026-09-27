@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>32bade00b74241e2cd85c54e42bc1e49b0bc7989</guid>
+	<type>material_graph</type>
+	<hash>0d313683cfc8dcf5bc74d66b97408857faae196713833986aa534c100503ac45</hash>
+	<runtimes>
+		<runtime id="32bade00b74241e2cd85c54e42bc1e49b0bc7989" name="Радость и недоумение.mgraph" link="0"/>
+		<runtime id="a6cdeb327c1d131e7e62b730907eddfb9461a0a3" name="Радость и недоумение" link="1" type="5"/>
+	</runtimes>
+</asset>

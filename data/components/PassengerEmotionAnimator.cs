@@ -24,6 +24,7 @@ public partial class PassengerEmotionAnimator : Component
 	private GameFlowController gameFlow;
 	private bool subscribed;
 	private bool subscribedToFlow;
+	private bool scenarioOneStarted;
 	private bool passengerHiddenForScenarioTwo;
 	private Node activeModel;
 	private readonly Dictionary<Node, List<SurfaceMask>> modelSurfaceMasks = new Dictionary<Node, List<SurfaceMask>>();
@@ -39,7 +40,7 @@ public partial class PassengerEmotionAnimator : Component
 	{
 		ResolveModels();
 		PrepareModels();
-		ShowInitialPose();
+		HidePassenger();
 	}
 
 	private void Update()
@@ -69,15 +70,26 @@ public partial class PassengerEmotionAnimator : Component
 		gameFlow = ComponentSystem.FindComponentInWorld<GameFlowController>();
 		if (gameFlow == null) return;
 
+		gameFlow.ScenarioOneStarted += OnScenarioOneStarted;
 		gameFlow.ScenarioTwoIntroductionRequested += OnScenarioTwoStarted;
 		gameFlow.ScenarioTwoStarted += OnScenarioTwoStarted;
 		subscribedToFlow = true;
-		if (gameFlow.CurrentPhase == GameFlowController.Phase.ScenarioTwoIntroduction
+		if (gameFlow.CurrentPhase == GameFlowController.Phase.ScenarioOne
+			|| gameFlow.CurrentPhase == GameFlowController.Phase.ScenarioOneReview)
+			OnScenarioOneStarted();
+		else if (gameFlow.CurrentPhase == GameFlowController.Phase.ScenarioTwoIntroduction
 			|| gameFlow.CurrentPhase == GameFlowController.Phase.ScenarioTwo
 			|| gameFlow.CurrentPhase == GameFlowController.Phase.ScenarioTwoReview
 			|| gameFlow.CurrentPhase == GameFlowController.Phase.RunSummary
 			|| gameFlow.CurrentPhase == GameFlowController.Phase.Finished)
 			OnScenarioTwoStarted();
+	}
+
+	private void OnScenarioOneStarted()
+	{
+		scenarioOneStarted = true;
+		passengerHiddenForScenarioTwo = false;
+		OnConversationChanged(scenario != null && scenario.PassengerConversationActive);
 	}
 
 	private void OnScenarioTwoStarted()
@@ -141,7 +153,7 @@ public partial class PassengerEmotionAnimator : Component
 
 	private void OnConversationChanged(bool active)
 	{
-		if (passengerHiddenForScenarioTwo)
+		if (!scenarioOneStarted || passengerHiddenForScenarioTwo)
 		{
 			HidePassenger();
 			return;
@@ -247,6 +259,7 @@ public partial class PassengerEmotionAnimator : Component
 
 	private void ShowOnlyModel(Node model)
 	{
+		InteractableHoverOutline.Shutdown();
 		SetModelVisible(model, true);
 		HideModelUnlessActive(initialPoseModel, model);
 		HideModelUnlessActive(aggressiveModel, model);
@@ -258,6 +271,7 @@ public partial class PassengerEmotionAnimator : Component
 
 	private void HidePassenger()
 	{
+		InteractableHoverOutline.Shutdown();
 		HideModelUnlessActive(initialPoseModel, null);
 		HideModelUnlessActive(aggressiveModel, null);
 		HideModelUnlessActive(confusedModel, null);
@@ -351,6 +365,7 @@ public partial class PassengerEmotionAnimator : Component
 		}
 		if (gameFlow != null && subscribedToFlow)
 		{
+			gameFlow.ScenarioOneStarted -= OnScenarioOneStarted;
 			gameFlow.ScenarioTwoIntroductionRequested -= OnScenarioTwoStarted;
 			gameFlow.ScenarioTwoStarted -= OnScenarioTwoStarted;
 		}

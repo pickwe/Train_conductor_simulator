@@ -34,7 +34,7 @@ public static class InteractableHoverOutline
 			return;
 
 		Unigine.Object currentObject = current as Unigine.Object;
-		if (currentObject != null)
+		if (currentObject != null && !(currentObject is ObjectGui))
 		{
 			ObjectState state = new ObjectState
 			{

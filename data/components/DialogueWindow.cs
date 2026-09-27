@@ -28,6 +28,9 @@ public partial class DialogueWindow : Component
 	private float lineHoldElapsed;
 	private int visibleCharacters;
 	private bool waitingAfterTyping;
+	private bool hiddenByMenu;
+	private bool panelWasHiddenByState, speakerWasHiddenByState, textWasHiddenByState, statusWasHiddenByState;
+	private bool terminalHintPanelWasHiddenByState, terminalHintWasHiddenByState;
 	private Input.MOUSE_HANDLE previousMouseHandle;
 	private bool previousMouseGrab, previousCursorHide;
 
@@ -85,6 +88,10 @@ public partial class DialogueWindow : Component
 
 	private void Update()
 	{
+		SetHiddenByMenu(!MenuManager.IsGameplayScreen);
+		if (hiddenByMenu)
+			return;
+
 		if (scenario == null)
 		{
 			scenario = ComponentSystem.FindComponentInWorld<PetCarrierScenarioController>();
@@ -113,7 +120,8 @@ public partial class DialogueWindow : Component
 				if (secondScenario.IsStarted) RefreshSecondScenario();
 			}
 		}
-		if (scenario != null && (scenario.CurrentStage == PetCarrierScenarioController.Stage.WaitingForTerminal
+		if (scenario != null && (scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingInitialPassengerInteraction
+			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.WaitingForTerminal
 			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
 			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingCarrierPickup
 			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff))
@@ -171,7 +179,8 @@ public partial class DialogueWindow : Component
 			&& speaker.Text == scenario.CurrentSpeaker
 			&& fullText == (scenario.CurrentText ?? "");
 
-		if (scenario.CurrentStage == PetCarrierScenarioController.Stage.WaitingForTerminal
+		if (scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingInitialPassengerInteraction
+			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.WaitingForTerminal
 			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
 			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingCarrierPickup
 			|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff)
@@ -182,7 +191,8 @@ public partial class DialogueWindow : Component
 			status.Hidden = true;
 			terminalHintPanel.Hidden = false;
 			terminalHint.Hidden = false;
-			if (scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction)
+			if (scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingInitialPassengerInteraction
+				|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction)
 				terminalHint.Text = "Подойдите к пассажиру и нажмите E";
 			else if (scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingCarrierPickup)
 				terminalHint.Text = "Подойдите к переноске и нажмите E";
@@ -398,6 +408,46 @@ public partial class DialogueWindow : Component
 		ClearButtons();
 		IsVisible = false;
 		RestoreMouse();
+	}
+
+	private void SetHiddenByMenu(bool hidden)
+	{
+		if (hiddenByMenu == hidden)
+			return;
+
+		hiddenByMenu = hidden;
+		if (hidden)
+		{
+			panelWasHiddenByState = panel == null || panel.Hidden;
+			speakerWasHiddenByState = speaker == null || speaker.Hidden;
+			textWasHiddenByState = text == null || text.Hidden;
+			statusWasHiddenByState = status == null || status.Hidden;
+			terminalHintPanelWasHiddenByState = terminalHintPanel == null || terminalHintPanel.Hidden;
+			terminalHintWasHiddenByState = terminalHint == null || terminalHint.Hidden;
+
+			if (panel != null) panel.Hidden = true;
+			if (speaker != null) speaker.Hidden = true;
+			if (text != null) text.Hidden = true;
+			if (status != null) status.Hidden = true;
+			if (terminalHintPanel != null) terminalHintPanel.Hidden = true;
+			if (terminalHint != null) terminalHint.Hidden = true;
+			foreach (WidgetSprite background in choiceBackgrounds)
+				background.Hidden = true;
+			foreach (WidgetLabel label in choiceLabels)
+				label.Hidden = true;
+			return;
+		}
+
+		if (panel != null) panel.Hidden = panelWasHiddenByState;
+		if (speaker != null) speaker.Hidden = speakerWasHiddenByState;
+		if (text != null) text.Hidden = textWasHiddenByState;
+		if (status != null) status.Hidden = statusWasHiddenByState;
+		if (terminalHintPanel != null) terminalHintPanel.Hidden = terminalHintPanelWasHiddenByState;
+		if (terminalHint != null) terminalHint.Hidden = terminalHintWasHiddenByState;
+		foreach (WidgetSprite background in choiceBackgrounds)
+			background.Hidden = false;
+		foreach (WidgetLabel label in choiceLabels)
+			label.Hidden = false;
 	}
 
 	private void BuildChoices()

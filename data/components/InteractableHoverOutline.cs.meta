@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>354ddc927602471a01c7d537705ca5e5c1fbc077</guid>
 	<type>component</type>
-	<hash>2ccf5aeb8c8c9a799b77830e971437bc53d612228d59a96cceb4000896b92551</hash>
+	<hash>5b6f5c2cb671b0340c21fe986edd646abeb725f4d0829707f439209d41a8e425</hash>
 	<runtimes>
 		<runtime id="354ddc927602471a01c7d537705ca5e5c1fbc077" name="InteractableHoverOutline.cs" link="0"/>
 		<runtime id="d75144fa7b2c83e8af7dbcf9aae36ce23086236a" name="InteractableHoverOutline.prop" link="1"/>

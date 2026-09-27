@@ -1,20 +1,16 @@
+using System;
 using System.Collections.Generic;
 using Unigine;
 
 /// <summary>In-game conductor terminal opened with Q; carrier stock is set by the scenario once.</summary>
 public partial class ConductorTerminal : Component
 {
-	[ParameterFile(Filter = ".png"), Parameter(Title = "Seats Available Sprite", Group = "Scenario 3 Seat Map")]
+	[ParameterFile(Filter = ".png|.texture"), Parameter(Title = "Seats Available Sprite", Group = "Scenario 3 Seat Map")]
 	public string seatsAvailableSpritePath = "";
-	[ParameterFile(Filter = ".png"), Parameter(Title = "No Seats Sprite", Group = "Scenario 3 Seat Map")]
+	[ParameterFile(Filter = ".png|.texture"), Parameter(Title = "No Seats Sprite", Group = "Scenario 3 Seat Map")]
 	public string noSeatsSpritePath = "";
 
 	public static bool IsVisible { get; private set; }
-
-	[ParameterFile(Filter = ".png"), Parameter(Group = "Terminal Maps")]
-	public string routeMapSprite = "data/ui/terminl map.png";
-	[ParameterFile(Filter = ".png"), Parameter(Group = "Terminal Maps")]
-	public string seatMapSprite = "data/ui/terminl map.png";
 
 	private enum Page { Home, Route, Goods, Seats, Connection }
 	private class GoodsRow
@@ -79,6 +75,7 @@ public partial class ConductorTerminal : Component
 
 	private void Open(bool forSecondScenario)
 	{
+		InteractableHoverOutline.Shutdown();
 		openedForSecondScenario = forSecondScenario;
 		visible = true;
 		IsVisible = true;
@@ -130,7 +127,7 @@ public partial class ConductorTerminal : Component
 		body.Hidden = true;
 		ShowWidgets();
 		ClearPageWidgets();
-		string texture = string.IsNullOrWhiteSpace(routeMapSprite) ? "data/ui/terminl map.png" : routeMapSprite;
+		string texture = "data/ui/terminl map.png";
 		pageMap = new WidgetSprite(gui, texture);
 		AddPageWidget(pageMap);
 		AddBackButton();
@@ -139,7 +136,7 @@ public partial class ConductorTerminal : Component
 
 	private void ShowSeats()
 	{
-		string texture = string.IsNullOrWhiteSpace(seatMapSprite) ? "data/ui/terminl map.png" : seatMapSprite;
+		string texture = "data/ui/terminl map.png";
 		if (openedForSecondScenario && secondScenario != null)
 		{
 			if (secondScenario.CurrentStep != PassengerScenarioController.ScenarioStep.AwaitingSeatCheck
@@ -297,9 +294,27 @@ public partial class ConductorTerminal : Component
 		}
 		else if (page == Page.Route || page == Page.Seats)
 		{
-			int mapWidth = MathLib.Min(width - 56, (height - 160) * 1025 / 598);
-			int mapHeight = mapWidth * 598 / 1025;
-			pageMap.SetPosition(left + (width - mapWidth) / 2, top + 88);
+			int buttonWidth = MathLib.Min(190, width - 56);
+			int buttonHeight = buttonWidth * 100 / 379;
+			int mapTop = top + 82;
+			int mapBottom = top + height - buttonHeight - 24;
+			int availableWidth = Math.Max(1, width - 56);
+			int availableHeight = Math.Max(1, mapBottom - mapTop);
+			int textureWidth = pageMap.GetLayerWidth(0);
+			int textureHeight = pageMap.GetLayerHeight(0);
+			int mapWidth = availableWidth;
+			int mapHeight = availableHeight;
+			if (textureWidth > 0 && textureHeight > 0)
+			{
+				float scale = Math.Min(
+					(float)availableWidth / textureWidth,
+					(float)availableHeight / textureHeight);
+				mapWidth = Math.Max(1, (int)Math.Round(textureWidth * scale));
+				mapHeight = Math.Max(1, (int)Math.Round(textureHeight * scale));
+			}
+			pageMap.SetPosition(
+				left + 28 + (availableWidth - mapWidth) / 2,
+				mapTop + (availableHeight - mapHeight) / 2);
 			pageMap.Width = mapWidth; pageMap.Height = mapHeight;
 			LayoutBackButton(left, top, width, height);
 		}
@@ -332,6 +347,7 @@ public partial class ConductorTerminal : Component
 	private void Close()
 	{
 		if (!visible) return;
+		InteractableHoverOutline.Shutdown();
 		visible = false;
 		IsVisible = false;
 		panel.Hidden = heading.Hidden = body.Hidden = exitHint.Hidden = true;

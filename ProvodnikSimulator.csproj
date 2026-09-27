@@ -83,6 +83,8 @@
 		<AdditionalFiles Include="data/components/PassengerCallInteraction.cs.meta" Visible="false"/>
 		<Compile Include="data/components/PassengerScenarioPlacement.cs"/>
 		<AdditionalFiles Include="data/components/PassengerScenarioPlacement.cs.meta" Visible="false"/>
+		<Compile Include="data/components/SlidingDoorsInteraction.cs"/>
+		<AdditionalFiles Include="data/components/SlidingDoorsInteraction.cs.meta" Visible="false"/>
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="source/AppSystemLogic.cs"/>

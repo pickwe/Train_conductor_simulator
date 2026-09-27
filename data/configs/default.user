@@ -116,7 +116,7 @@
 	<visualizer_fix_flicker>1</visualizer_fix_flicker>
 	<world_handler_3d>0</world_handler_3d>
 	<world_handler_distance>500</world_handler_distance>
-	<world_show_handler>0 1 8 9 10 11 12 13 14 15 17 18 19 20 21 31 32 33 35 38 39 46 47 48 49 50 51 52 53 54 57 61 63 65 66 67 68 69 70 71 72 73 74 75 76</world_show_handler>
+	<world_show_handler>0 1 5 8 9 10 11 12 13 14 15 17 18 19 20 21 26 27 28 29 30 31 32 33 35 38 39 46 47 48 49 50 51 52 53 54 57 61 63 65 66 67 68 69 70 71 72 73 75 76 77 78 79</world_show_handler>
 	<world_show_spatial>0</world_show_spatial>
 	<world_show_visualizer/>
 	<console_bindings/>

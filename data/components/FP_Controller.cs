@@ -107,6 +107,7 @@ public partial class FP_Controller : Component
 	#region Public State
 
 	public bool IsGrounded { get; private set; }
+	public bool IsInitialized => initialized;
 	public Vec3 Velocity { get; private set; } = Vec3.ZERO;
 	public Unigine.Object CurrentInteractable { get; private set; }
 
@@ -221,6 +222,9 @@ public partial class FP_Controller : Component
 	{
 		if (!initialized)
 			return;
+
+		if (crosshair != null)
+			crosshair.Hidden = !MenuManager.IsGameplayScreen || BriefingWindow.IsVisible || DialogueWindow.IsVisible;
 
 		float frameTime = Game.IFps * Physics.Scale;
 		if (frameTime <= 0.0f)

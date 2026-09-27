@@ -14,9 +14,30 @@ public partial class PassengerScenarioController : Component
 	public class PassengerSeatVariant
 	{
 		public Node passengerNode;
-		[ParameterFile(Filter = ".png")]
+		[ParameterFile(Filter = ".png|.texture")]
 		public string monitorSeatSpritePath = "";
 		public Player dialogueCamera;
+	}
+
+	private enum PassengerAnimationState
+	{
+		TurnToPlayer,
+		Aggressive,
+		Confused,
+		Displeased,
+		PositiveNod,
+		ReturnToIdle
+	}
+
+	private sealed class PassengerAnimationSet
+	{
+		public Node TurnToPlayer;
+		public Node Aggressive;
+		public Node Confused;
+		public Node Displeased;
+		public Node PositiveNod;
+		public Node ReturnToIdle;
+		public Node Work;
 	}
 
 	public enum ScenarioStep
@@ -205,6 +226,10 @@ public partial class PassengerScenarioController : Component
 	private bool savedBothCameraControlled;
 	private Player selectedComplainantDialogueCamera;
 	private string selectedPassengerSeatSpritePath = "";
+	private readonly Dictionary<Node, PassengerAnimationSet> passengerAnimationSets = new Dictionary<Node, PassengerAnimationSet>();
+	private ObjectGui callMonitorSurfaceGui;
+	private WidgetSprite callMonitorSurfaceSprite;
+	private string appliedCallMonitorTexturePath = "";
 
 	private void Init()
 	{
@@ -218,6 +243,7 @@ public partial class PassengerScenarioController : Component
 		IsSeatMonitorViewVisible = false;
 		CreateSeatMonitorView();
 		ResolveNodes();
+		PreparePassengerAnimations();
 		BindParentInteraction();
 		BindActivityItemInteraction();
 		BindSeatMonitorInteraction();
@@ -304,6 +330,7 @@ public partial class PassengerScenarioController : Component
 		DialogueActive = true;
 		CurrentSpeaker = "Проводник";
 		CurrentText = "";
+		SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.TurnToPlayer);
 		RemainingSeconds = Math.Max(0.0f, seatDecisionSeconds);
 		lastDisplayedSecond = -1;
 		SetStep(ScenarioStep.SeatDecisionChoice);
@@ -494,6 +521,7 @@ public partial class PassengerScenarioController : Component
 				break;
 			case ScenarioStep.InternalPrompt:
 				DialogueActive = false;
+				SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.ReturnToIdle);
 				SetStep(ScenarioStep.AwaitingDisplayChecks);
 				Changed?.Invoke();
 				break;
@@ -521,6 +549,7 @@ public partial class PassengerScenarioController : Component
 				break;
 			case ScenarioStep.Stage3SeatCheckPrompt:
 				DialogueActive = false;
+				SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.ReturnToIdle);
 				SetStep(ScenarioStep.AwaitingSeatCheck);
 				Changed?.Invoke();
 				break;
@@ -584,6 +613,9 @@ public partial class PassengerScenarioController : Component
 		SafetyDelta = LoyaltyDelta = 0;
 		ResolveNodes();
 		SelectRandomPassengerSeat();
+		PreparePassengerAnimations();
+		SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.TurnToPlayer, false);
+		SetPassengerAnimation(parentPassengerNode, PassengerAnimationState.TurnToPlayer, false);
 		SetPassengerVisible(true);
 		SetParentPassengerVisible(true);
 		SetActivityItemVisible(OnboardActivitiesAvailable);
@@ -873,6 +905,7 @@ public partial class PassengerScenarioController : Component
 		{
 			case "ID-04":
 				DialogueActive = false;
+				SetPassengerAnimation(parentPassengerNode, PassengerAnimationState.ReturnToIdle);
 				SetStep(ScenarioStep.AwaitingActivityPickup);
 				if (activityItemInteractable != null)
 					activityItemInteractable.IsAvailable = true;
@@ -1190,6 +1223,8 @@ public partial class PassengerScenarioController : Component
 	private void FinishSecondScenario(string finalTitle, string feedback)
 	{
 		DialogueActive = false;
+		SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.ReturnToIdle);
+		SetPassengerAnimation(parentPassengerNode, PassengerAnimationState.ReturnToIdle);
 		SetStep(ScenarioStep.Finished);
 		Changed?.Invoke();
 		gameFlow?.NotifyScenarioTwoFinished();
@@ -1213,8 +1248,256 @@ public partial class PassengerScenarioController : Component
 		DialogueActive = true;
 		CurrentSpeaker = speaker;
 		CurrentText = text;
+		ApplyDialogueAnimation(step);
 		SetStep(step);
 		Changed?.Invoke();
+	}
+
+	private void ApplyDialogueAnimation(ScenarioStep step)
+	{
+		switch (step)
+		{
+			case ScenarioStep.Opening:
+				SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.TurnToPlayer);
+				break;
+			case ScenarioStep.Complaint:
+				SetPassengerAnimation(SelectedPassengerNode, GetComplaintAnimation());
+				break;
+			case ScenarioStep.PassengerReaction:
+				SetPassengerAnimation(SelectedPassengerNode, GetComplainantReactionAnimation());
+				break;
+			case ScenarioStep.InternalPrompt:
+				SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.ReturnToIdle);
+				break;
+			case ScenarioStep.ParentOpening:
+				SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.ReturnToIdle);
+				SetPassengerAnimation(parentPassengerNode, PassengerAnimationState.TurnToPlayer);
+				break;
+			case ScenarioStep.ParentResponse:
+				SetPassengerAnimation(parentPassengerNode, GetMoodAnimation(MoodPassenger2));
+				break;
+			case ScenarioStep.ParentReminder:
+				SetPassengerAnimation(parentPassengerNode, PassengerAnimationState.Displeased);
+				break;
+			case ScenarioStep.ParentBranchReaction:
+				SetPassengerAnimation(parentPassengerNode, GetParentBranchAnimation());
+				break;
+			case ScenarioStep.ComplainantBranchReaction:
+				SetPassengerAnimation(parentPassengerNode, PassengerAnimationState.ReturnToIdle);
+				SetPassengerAnimation(SelectedPassengerNode, GetComplainantBranchAnimation());
+				break;
+			case ScenarioStep.ParentTimeoutReaction:
+				SetPassengerAnimation(parentPassengerNode, PassengerAnimationState.Displeased);
+				SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.Aggressive);
+				break;
+			case ScenarioStep.Stage3ConductorAppeal:
+				SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.TurnToPlayer);
+				break;
+			case ScenarioStep.Stage3PassengerResponse:
+				SetPassengerAnimation(SelectedPassengerNode, GetMoodAnimation(MoodPassenger1));
+				break;
+			case ScenarioStep.SeatDecisionReaction:
+				SetPassengerAnimation(SelectedPassengerNode, GetSeatDecisionAnimation());
+				break;
+			case ScenarioStep.SeatInvalidDiscovery:
+				SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.Confused);
+				break;
+			case ScenarioStep.SeatInvalidReaction:
+			case ScenarioStep.SeatDecisionTimeoutComplainant:
+				SetPassengerAnimation(SelectedPassengerNode, PassengerAnimationState.Aggressive);
+				break;
+			case ScenarioStep.SeatDecisionTimeoutParent:
+				SetPassengerAnimation(parentPassengerNode, PassengerAnimationState.Aggressive);
+				break;
+		}
+	}
+
+	private PassengerAnimationState GetComplaintAnimation()
+	{
+		if (InitialMood >= 2) return PassengerAnimationState.Confused;
+		if (InitialMood <= -2) return PassengerAnimationState.Aggressive;
+		return PassengerAnimationState.Displeased;
+	}
+
+	private PassengerAnimationState GetComplainantReactionAnimation()
+	{
+		if (MoodPassenger1 >= 2) return PassengerAnimationState.PositiveNod;
+		if (MoodPassenger1 <= -2) return PassengerAnimationState.Aggressive;
+		if (DecisionHistory.Count > 0 && DecisionHistory[DecisionHistory.Count - 1] == "ID-02")
+			return PassengerAnimationState.Displeased;
+		return PassengerAnimationState.Confused;
+	}
+
+	private PassengerAnimationState GetParentBranchAnimation()
+	{
+		if (selectedParentChoiceId == "ID-04" || selectedParentChoiceId == "ID-07")
+			return MoodPassenger2 >= 0 ? PassengerAnimationState.PositiveNod : PassengerAnimationState.Confused;
+		if (selectedParentChoiceId == "ID-09" || MoodPassenger2 <= -2)
+			return PassengerAnimationState.Aggressive;
+		return PassengerAnimationState.Displeased;
+	}
+
+	private PassengerAnimationState GetComplainantBranchAnimation()
+	{
+		if (selectedParentChoiceId == "ID-04")
+			return PassengerAnimationState.PositiveNod;
+		if (selectedParentChoiceId == "ID-05" || selectedParentChoiceId == "ID-08" || selectedParentChoiceId == "ID-09")
+			return MoodPassenger1 <= -2 ? PassengerAnimationState.Aggressive : PassengerAnimationState.Displeased;
+		return GetMoodAnimation(MoodPassenger1);
+	}
+
+	private PassengerAnimationState GetSeatDecisionAnimation()
+	{
+		if (selectedSeatChoiceId == "ID-11" || selectedSeatChoiceId == "ID-14")
+			return MoodPassenger1 <= -2 ? PassengerAnimationState.Aggressive : PassengerAnimationState.Displeased;
+		return PassengerAnimationState.PositiveNod;
+	}
+
+	private static PassengerAnimationState GetMoodAnimation(int mood)
+	{
+		if (mood >= 2) return PassengerAnimationState.PositiveNod;
+		if (mood <= -2) return PassengerAnimationState.Aggressive;
+		return PassengerAnimationState.Confused;
+	}
+
+	private void PreparePassengerAnimations()
+	{
+		if (passengerSeatVariants != null)
+		{
+			for (int i = 0; i < passengerSeatVariants.Count; i++)
+			{
+				PassengerSeatVariant variant = passengerSeatVariants[i];
+				if (variant != null)
+					RegisterPassengerAnimationSet(variant.passengerNode);
+			}
+		}
+		RegisterPassengerAnimationSet(parentPassengerNode);
+	}
+
+	private void RegisterPassengerAnimationSet(Node passengerRoot)
+	{
+		if (passengerRoot == null || passengerAnimationSets.ContainsKey(passengerRoot))
+			return;
+
+		PassengerAnimationSet set = new PassengerAnimationSet
+		{
+			TurnToPlayer = FindAnimationNode(passengerRoot, "TurnToPlayer_1", "TurnToPlayer"),
+			Aggressive = passengerRoot.FindNode("Agressive_1", 1),
+			Confused = passengerRoot.FindNode("Confused_1", 1),
+			Displeased = passengerRoot.FindNode("Displeased_1", 1),
+			PositiveNod = FindAnimationNode(passengerRoot, "PositiveNod_1", "PositiveNod"),
+			ReturnToIdle = FindAnimationNode(passengerRoot, "ReturnToIdle_1", "ReturnToIdle"),
+			Work = passengerRoot.FindNode("Work", 1)
+		};
+		passengerAnimationSets.Add(passengerRoot, set);
+
+		bool hasStandardSet = set.TurnToPlayer != null && set.Aggressive != null && set.Confused != null
+			&& set.Displeased != null && set.PositiveNod != null && set.ReturnToIdle != null;
+		bool hasPassenger17Set = set.TurnToPlayer != null && set.PositiveNod != null
+			&& set.ReturnToIdle != null && set.Work != null;
+		if (!hasStandardSet && !hasPassenger17Set)
+		{
+			Log.Warning("PassengerScenarioController: unsupported passenger animation set. Expected the standard six models or TurnToPlayer, PositiveNod, ReturnToIdle and Work.\n");
+		}
+
+		SetPassengerAnimation(passengerRoot, PassengerAnimationState.TurnToPlayer, false);
+	}
+
+	private void SetPassengerAnimation(Node passengerRoot, PassengerAnimationState state, bool restart = true)
+	{
+		if (passengerRoot == null)
+			return;
+		if (!passengerAnimationSets.ContainsKey(passengerRoot))
+			RegisterPassengerAnimationSet(passengerRoot);
+
+		PassengerAnimationSet set;
+		if (!passengerAnimationSets.TryGetValue(passengerRoot, out set))
+			return;
+
+		Node target = GetAnimationModel(set, state);
+		if (target == null)
+			return;
+
+		Node[] models =
+		{
+			set.TurnToPlayer,
+			set.Aggressive,
+			set.Confused,
+			set.Displeased,
+			set.PositiveNod,
+			set.ReturnToIdle,
+			set.Work
+		};
+		for (int i = 0; i < models.Length; i++)
+		{
+			Node model = models[i];
+			if (model == null) continue;
+			StopAnimationHierarchy(model);
+			model.Enabled = model == target;
+		}
+
+		if (restart)
+			RestartAnimationHierarchy(target);
+		else
+			ResetAnimationHierarchy(target);
+	}
+
+	private static Node GetAnimationModel(PassengerAnimationSet set, PassengerAnimationState state)
+	{
+		switch (state)
+		{
+			case PassengerAnimationState.TurnToPlayer: return set.TurnToPlayer ?? set.Work;
+			case PassengerAnimationState.Aggressive: return set.Aggressive ?? set.Work;
+			case PassengerAnimationState.Confused: return set.Confused ?? set.Work;
+			case PassengerAnimationState.Displeased: return set.Displeased ?? set.Work;
+			case PassengerAnimationState.PositiveNod: return set.PositiveNod ?? set.Work;
+			case PassengerAnimationState.ReturnToIdle: return set.ReturnToIdle ?? set.Work;
+			default: return set.TurnToPlayer ?? set.Work;
+		}
+	}
+
+	private static Node FindAnimationNode(Node passengerRoot, string standardName, string alternateName)
+	{
+		Node result = passengerRoot.FindNode(standardName, 1);
+		return result ?? passengerRoot.FindNode(alternateName, 1);
+	}
+
+	private static void RestartAnimationHierarchy(Node current)
+	{
+		if (current == null) return;
+		ObjectMeshSkinnedLegacy skinned = current as ObjectMeshSkinnedLegacy;
+		if (skinned != null)
+		{
+			skinned.Loop = false;
+			skinned.Time = 0.0f;
+			skinned.Play();
+		}
+		for (int i = 0; i < current.NumChildren; i++)
+			RestartAnimationHierarchy(current.GetChild(i));
+	}
+
+	private static void ResetAnimationHierarchy(Node current)
+	{
+		if (current == null) return;
+		ObjectMeshSkinnedLegacy skinned = current as ObjectMeshSkinnedLegacy;
+		if (skinned != null)
+		{
+			skinned.Stop();
+			skinned.Loop = false;
+			skinned.Time = 0.0f;
+		}
+		for (int i = 0; i < current.NumChildren; i++)
+			ResetAnimationHierarchy(current.GetChild(i));
+	}
+
+	private static void StopAnimationHierarchy(Node current)
+	{
+		if (current == null) return;
+		ObjectMeshSkinnedLegacy skinned = current as ObjectMeshSkinnedLegacy;
+		if (skinned != null)
+			skinned.Stop();
+		for (int i = 0; i < current.NumChildren; i++)
+			StopAnimationHierarchy(current.GetChild(i));
 	}
 
 	private void ResolveNodes()
@@ -1405,7 +1688,7 @@ public partial class PassengerScenarioController : Component
 	private void CreateSeatMonitorView()
 	{
 		gui = Gui.GetCurrent();
-		callMonitorSeatSprite = new WidgetSprite(gui, "")
+		callMonitorSeatSprite = new WidgetSprite(gui)
 		{
 			Color = vec4.WHITE,
 			Hidden = true,
@@ -1570,9 +1853,24 @@ public partial class PassengerScenarioController : Component
 	private void LayoutSeatMonitorView()
 	{
 		if (gui == null) return;
-		callMonitorSeatSprite.SetPosition(0, 0);
-		callMonitorSeatSprite.Width = gui.Width;
-		callMonitorSeatSprite.Height = gui.Height;
+		const int screenMargin = 48;
+		int availableWidth = Math.Max(1, gui.Width - screenMargin * 2);
+		int availableHeight = Math.Max(1, gui.Height - screenMargin * 2);
+		int textureWidth = callMonitorSeatSprite.GetLayerWidth(0);
+		int textureHeight = callMonitorSeatSprite.GetLayerHeight(0);
+		if (textureWidth > 0 && textureHeight > 0)
+		{
+			float scale = Math.Min(
+				(float)availableWidth / textureWidth,
+				(float)availableHeight / textureHeight);
+			int imageWidth = Math.Max(1, (int)Math.Round(textureWidth * scale));
+			int imageHeight = Math.Max(1, (int)Math.Round(textureHeight * scale));
+			callMonitorSeatSprite.Width = imageWidth;
+			callMonitorSeatSprite.Height = imageHeight;
+			callMonitorSeatSprite.SetPosition(
+				(gui.Width - imageWidth) / 2,
+				(gui.Height - imageHeight) / 2);
+		}
 		seatMonitorExitHint.Width = MathLib.Min(470, gui.Width - 40);
 		seatMonitorExitHint.SetPosition(gui.Width - seatMonitorExitHint.Width - 24, 22);
 	}
@@ -1626,10 +1924,91 @@ public partial class PassengerScenarioController : Component
 			monitorWarningShown = true;
 			Log.Warning("PassengerScenarioController: assign a .png monitor seat sprite to every Passenger Seat Variant.\n");
 		}
+		if (callVisible && callMonitorInteractionNode != null)
+			callMonitorInteractionNode.Enabled = true;
+		if (callVisible && callMonitorSurfaceGui == null)
+			CreateCallMonitorSurface();
+		if (callVisible && !string.IsNullOrWhiteSpace(selectedPassengerSeatSpritePath))
+			UpdateCallMonitorSurfaceTexture();
+		if (callMonitorSurfaceGui != null)
+			callMonitorSurfaceGui.Enabled = callVisible;
 		if (!callVisible && callMonitorSeatSprite != null)
 			callMonitorSeatSprite.Hidden = true;
 		if (normalMonitorSpriteNode != null)
 			normalMonitorSpriteNode.Enabled = !callVisible;
+	}
+
+	private void CreateCallMonitorSurface()
+	{
+		if (callMonitorSurfaceGui != null || callMonitorInteractionNode == null)
+			return;
+
+		Unigine.Object monitorObject = callMonitorInteractionNode as Unigine.Object;
+		if (monitorObject == null)
+			return;
+
+		BoundBox bounds = monitorObject.BoundBox;
+		vec3 boundsSize = bounds.maximum - bounds.minimum;
+		vec3 boundsCenter = (bounds.minimum + bounds.maximum) * 0.5f;
+		float physicalWidth = Math.Max(0.1f, boundsSize.z * 0.92f);
+		float physicalHeight = Math.Max(0.1f, boundsSize.y * 0.92f);
+
+		callMonitorSurfaceGui = new ObjectGui(physicalWidth, physicalHeight)
+		{
+			Name = "Passenger Call Monitor Image",
+			Parent = callMonitorInteractionNode,
+			Background = true,
+			DepthTest = true,
+			PolygonOffset = 4.0f,
+			Enabled = false
+		};
+		callMonitorSurfaceGui.Transform = MathLib.Translate(new vec3(
+			bounds.maximum.x + 0.01f,
+			boundsCenter.y,
+			boundsCenter.z)) * MathLib.RotateY(90.0f);
+
+		const int guiWidth = 1920;
+		int guiHeight = Math.Max(1, (int)Math.Round(guiWidth * physicalHeight / physicalWidth));
+		callMonitorSurfaceGui.SetScreenSize(guiWidth, guiHeight);
+		Gui monitorGui = callMonitorSurfaceGui.GetGui();
+		callMonitorSurfaceSprite = new WidgetSprite(monitorGui)
+		{
+			Color = vec4.WHITE,
+			WrapRepeat = 0,
+			IntersectionEnabled = false
+		};
+		monitorGui.AddChild(callMonitorSurfaceSprite, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
+	}
+
+	private void UpdateCallMonitorSurfaceTexture()
+	{
+		if (callMonitorSurfaceGui == null || callMonitorSurfaceSprite == null)
+			return;
+		if (appliedCallMonitorTexturePath == selectedPassengerSeatSpritePath)
+			return;
+
+		callMonitorSurfaceSprite.Texture = selectedPassengerSeatSpritePath;
+		callMonitorSurfaceSprite.WrapRepeat = 0;
+		Gui monitorGui = callMonitorSurfaceGui.GetGui();
+		const int imageMargin = 48;
+		int availableWidth = Math.Max(1, monitorGui.Width - imageMargin * 2);
+		int availableHeight = Math.Max(1, monitorGui.Height - imageMargin * 2);
+		int textureWidth = callMonitorSurfaceSprite.GetLayerWidth(0);
+		int textureHeight = callMonitorSurfaceSprite.GetLayerHeight(0);
+		if (textureWidth > 0 && textureHeight > 0)
+		{
+			float scale = Math.Min(
+				(float)availableWidth / textureWidth,
+				(float)availableHeight / textureHeight);
+			int imageWidth = Math.Max(1, (int)Math.Round(textureWidth * scale));
+			int imageHeight = Math.Max(1, (int)Math.Round(textureHeight * scale));
+			callMonitorSurfaceSprite.Width = imageWidth;
+			callMonitorSurfaceSprite.Height = imageHeight;
+			callMonitorSurfaceSprite.SetPosition(
+				(monitorGui.Width - imageWidth) / 2,
+				(monitorGui.Height - imageHeight) / 2);
+		}
+		appliedCallMonitorTexturePath = selectedPassengerSeatSpritePath;
 	}
 
 	private void SetStep(ScenarioStep step)
@@ -1671,6 +2050,8 @@ public partial class PassengerScenarioController : Component
 		dialogueTransitionCamera?.DeleteLater();
 		callMonitorSeatSprite?.DeleteLater();
 		seatMonitorExitHint?.DeleteLater();
+		callMonitorSurfaceSprite?.DeleteLater();
+		callMonitorSurfaceGui?.DeleteLater();
 		if (Active == this) Active = null;
 	}
 }

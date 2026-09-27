@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>d1bb934adc4238c16aaa337b1ea239e4ba0dee67</guid>
 	<type>fbx</type>
-	<hash>e4b007d79e3604a377975b79d8d29e4b7316c78bc8920efac8dabdbbd7331629</hash>
+	<hash>b1900734677662e56ffd0d3e46357e3c6e70082f2d7c239990595c2dac9d884d</hash>
 	<runtimes>
 		<runtime id="d1bb934adc4238c16aaa337b1ea239e4ba0dee67" name="Вагон.fbx" link="0"/>
 		<runtime id="0fd7e8923815ef3250d66b639411a8117405afcf" name="Вагон.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">6f104a4f</parameter>
+				<parameter type="string" name="id">1d72410a</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="70fd7eb669f28eb991b5d8f93d3318678ffc5ae2" name="cylinder.001.mesh" link="2" type="1">

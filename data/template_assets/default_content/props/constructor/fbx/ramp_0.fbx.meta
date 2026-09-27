@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>4e16f088d4b75a47e8a5d2fab9544611114a483c</guid>
 	<type>fbx</type>
-	<hash>2071adcccdd49f0b2d94243bb4e99ebf212ea3e45dad146ab42bff899773e014</hash>
+	<hash>2d864c8483653e53945d02d642095b6d3333918ee4140620ca642b72845ca15d</hash>
 	<runtimes>
 		<runtime id="4e16f088d4b75a47e8a5d2fab9544611114a483c" name="ramp_0.fbx" link="0"/>
 		<runtime id="c3d8866b946f68ce65f759d5bd966130457b02cf" name="ramp_0.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">0afe663</parameter>
+				<parameter type="string" name="id">eb356387</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="13c13655873193b046fb934f769de862de9ccc59" name="ramp_0.mesh" link="2" type="1">

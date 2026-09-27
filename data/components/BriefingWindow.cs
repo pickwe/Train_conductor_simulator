@@ -30,6 +30,7 @@ public partial class BriefingWindow : Component
 	private bool introductionVisible, waitingForKeyRelease, suppressPauseUntilEscRelease;
 	private float introFade;
 	private float savedGameScale, savedPhysicsScale;
+	private bool worldFrozenByBriefing;
 	private readonly Stopwatch introductionClock = new Stopwatch();
 	private Array keyboardKeys, mouseButtons;
 	private bool subscribedToFlow;
@@ -125,6 +126,7 @@ public partial class BriefingWindow : Component
 
 	private void Show()
 	{
+		FreezeWorld();
 		previousMouseHandle = Input.MouseHandle;
 		previousMouseGrab = Input.MouseGrab;
 		previousCursorHide = Input.MouseCursorHide;
@@ -154,6 +156,8 @@ public partial class BriefingWindow : Component
 			gameFlow.NotifyBriefingClosed();
 		else
 			scenario?.NotifyBriefingClosed();
+		if (!introductionVisible)
+			RestoreWorld();
 		MenuManager.CompleteRunBriefingRequest();
 	}
 
@@ -175,10 +179,7 @@ public partial class BriefingWindow : Component
 		introFade = 0.0f;
 		introductionClock.Restart();
 		waitingForKeyRelease = true;
-		savedGameScale = Game.Scale > 0.0f ? Game.Scale : 1.0f;
-		savedPhysicsScale = Physics.Scale > 0.0f ? Physics.Scale : 1.0f;
-		Game.Scale = 0.0f;
-		Physics.Scale = 0.0f;
+		FreezeWorld();
 		previousMouseHandle = Input.MouseHandle;
 		previousMouseGrab = Input.MouseGrab;
 		previousCursorHide = Input.MouseCursorHide;
@@ -236,8 +237,7 @@ public partial class BriefingWindow : Component
 		introductionVisible = false;
 		IsIntroductionVisible = false;
 		IsVisible = visible;
-		Game.Scale = savedGameScale;
-		Physics.Scale = savedPhysicsScale;
+		RestoreWorld();
 		Input.MouseHandle = previousMouseHandle;
 		Input.MouseGrab = previousMouseGrab;
 		Input.MouseCursorHide = previousCursorHide;
@@ -300,6 +300,27 @@ public partial class BriefingWindow : Component
 		if (introPrompt != null) introPrompt.Hidden = hidden;
 	}
 
+	private void FreezeWorld()
+	{
+		if (!worldFrozenByBriefing)
+		{
+			savedGameScale = Game.Scale > 0.0f ? Game.Scale : 1.0f;
+			savedPhysicsScale = Physics.Scale > 0.0f ? Physics.Scale : 1.0f;
+			worldFrozenByBriefing = true;
+		}
+		Game.Scale = 0.0f;
+		Physics.Scale = 0.0f;
+	}
+
+	private void RestoreWorld()
+	{
+		if (!worldFrozenByBriefing)
+			return;
+		Game.Scale = savedGameScale > 0.0f ? savedGameScale : 1.0f;
+		Physics.Scale = savedPhysicsScale > 0.0f ? savedPhysicsScale : 1.0f;
+		worldFrozenByBriefing = false;
+	}
+
 	private void Shutdown()
 	{
 		if (visible)
@@ -312,11 +333,10 @@ public partial class BriefingWindow : Component
 		}
 		if (introductionVisible)
 		{
-			Game.Scale = savedGameScale;
-			Physics.Scale = savedPhysicsScale;
 			IsIntroductionVisible = false;
 			IsVisible = false;
 		}
+		RestoreWorld();
 		if (gameFlow != null && subscribedToFlow)
 		{
 			gameFlow.ScenarioOneIntroductionRequested -= ShowScenarioOneIntroduction;

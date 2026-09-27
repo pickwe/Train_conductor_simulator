@@ -2,10 +2,9 @@
 <asset version="2.22.0.0">
 	<guid>924bd5da50e7a4a05ea9ffe11668cb8b62642a02</guid>
 	<type>texture</type>
-	<hash>18ce7cc24b1227547b3c5912daa9141d77c154a77506c5c3a7fa2264ef959219</hash>
+	<hash>e511ff3b157a6957ca282cc40243b2a9a8415c2cefa32ff97609d0b8364c8acb</hash>
 	<runtimes>
-		<runtime id="924bd5da50e7a4a05ea9ffe11668cb8b62642a02" name="Спрайт_если_места_есть.png" link="0" type="6"/>
-		<runtime id="ab2f22dcd199c64a7db53ea14d6f1d3e3e73e179" name="Спрайт_если_места_есть.texture" link="1" type="6"/>
+		<runtime id="ab2f22dcd199c64a7db53ea14d6f1d3e3e73e179" name="Спрайт_если_места_есть.png" link="0" type="6"/>
 	</runtimes>
 	<parameters>
 		<parameter type="int" name="blur_radius">1</parameter>
@@ -19,7 +18,7 @@
 		<parameter type="float" name="sharpness_intensity">0.25</parameter>
 		<parameter type="float" name="sharpness_radius">1</parameter>
 		<parameter type="bool" name="srgb_correction">1</parameter>
-		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="bool" name="unchanged">1</parameter>
 		<parameter type="string" name="width">auto</parameter>
 	</parameters>
 </asset>

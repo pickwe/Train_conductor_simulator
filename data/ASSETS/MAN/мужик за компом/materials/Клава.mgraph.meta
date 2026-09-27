@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>e8573c64ea84aba6829c4d12c5d6eaa4df9bd13d</guid>
+	<type>material_graph</type>
+	<hash>4d03b38032963a4dbcc1013597aa789f97a9b0dc1da2cdf5c7ff0e895b967f85</hash>
+	<runtimes>
+		<runtime id="e8573c64ea84aba6829c4d12c5d6eaa4df9bd13d" name="Клава.mgraph" link="0"/>
+		<runtime id="bbc568364abb6fe1241fbc947bf6b11024b73677" name="Клава" link="1" type="5"/>
+	</runtimes>
+</asset>

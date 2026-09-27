@@ -63,6 +63,7 @@ public partial class MenuManager : Component
 	private static bool gameplayStarted;
 	public static bool BriefingRequestedForCurrentRun { get; private set; }
 	public static bool ScenarioOneCompletedForTesting => instance != null && instance.scenarioOneCompletedForTesting;
+	public static bool IsGameplayScreen => instance == null || instance.state == Screen.Game;
 	private static MenuManager instance;
 	public static bool SkipOpeningDialogueForTesting => instance != null && instance.skipOpeningDialogueForTesting;
 	private const float ReferenceWidth = 1600.0f;
@@ -114,12 +115,12 @@ public partial class MenuManager : Component
 			ApplyVolumeSettings();
 		}
 		UpdateKeys();
-		if (state == Screen.Game && !BriefingWindow.IsIntroductionVisible && !ConductorTerminal.IsVisible
+		if (state == Screen.Game && !BriefingRequestedForCurrentRun && !BriefingWindow.IsIntroductionVisible && !ConductorTerminal.IsVisible
 			&& !PassengerScenarioController.IsSeatMonitorViewVisible &&
 			(Game.Scale == 0.0f || Physics.Scale == 0.0f)) ResumeScales();
 		if (!PassengerScenarioController.IsSeatMonitorViewVisible)
 		{
-			if (state == Screen.Game && !BriefingWindow.IsVisible && !DialogueWindow.IsVisible
+			if (state == Screen.Game && !BriefingRequestedForCurrentRun && !BriefingWindow.IsVisible && !DialogueWindow.IsVisible
 				&& !ConductorTerminal.IsVisible && !ScenarioResults.IsVisible)
 				GrabMouse();
 			else
@@ -625,7 +626,8 @@ public partial class MenuManager : Component
 			mainScreen.Hidden = false;
 			return;
 		}
-		gameplayStarted = true; loadRequested = true; BriefingRequestedForCurrentRun = !skipOpeningDialogueForTesting; ResumeScales(); ShowGame();
+		gameplayStarted = true; loadRequested = true; BriefingRequestedForCurrentRun = !skipOpeningDialogueForTesting; ShowGame();
+		if (BriefingRequestedForCurrentRun) PauseScales();
 		if (!World.LoadWorld(mainWorldPath))
 		{
 			loadRequested = false; gameplayStarted = false; BriefingRequestedForCurrentRun = false;

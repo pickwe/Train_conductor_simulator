@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unigine;
 
 /// <summary>Enables a passenger after the free-roam timer and plays their local call.</summary>
@@ -17,16 +18,14 @@ public partial class PassengerCallInteraction : Component
 
 	private PassengerScenarioController scenario;
 	private PetCarrierScenarioController petCarrierScenario;
-	private EInteractable interactable;
-	private EInteractable subscribedInteractable;
+	private readonly List<EInteractable> interactables = new List<EInteractable>();
 	private SoundSource callSound;
 	private bool subscribed, callStarted;
 
 	private void Init()
 	{
-		interactable = ComponentSystem.GetComponentInChildren<EInteractable>(node);
-		if (interactable != null)
-			interactable.IsAvailable = false;
+		RefreshInteractables();
+		SetInteractionAvailable(false);
 	}
 
 	private void Update()
@@ -34,13 +33,10 @@ public partial class PassengerCallInteraction : Component
 		if (callSound != null && callSound.IsPlaying)
 			callSound.WorldPosition = node.WorldPosition;
 
-		if (interactable == null)
-			interactable = ComponentSystem.GetComponentInChildren<EInteractable>(node);
-		BindInteractable();
+		RefreshInteractables();
 		if (petCarrierScenario == null)
 			petCarrierScenario = ComponentSystem.FindComponentInWorld<PetCarrierScenarioController>();
-		if (interactable != null)
-			interactable.IsAvailable = IsWaitingForPassengerInteraction();
+		SetInteractionAvailable(IsWaitingForPassengerInteraction());
 
 		if (scenario == null)
 		{
@@ -62,7 +58,8 @@ public partial class PassengerCallInteraction : Component
 		return (isSelectedScenarioPassenger && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForPassenger)
 			|| (isSelectedScenarioPassenger && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingSeatCheck)
 			|| (isSelectedScenarioPassenger && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatCheckCompleted)
-			|| (petCarrierScenario != null && (petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
+			|| (petCarrierScenario != null && (petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingInitialPassengerInteraction
+				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
 				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff));
 	}
 
@@ -73,8 +70,7 @@ public partial class PassengerCallInteraction : Component
 
 		callStarted = true;
 		PlayLocalCall();
-		if (interactable != null)
-			interactable.IsAvailable = true;
+		SetInteractionAvailable(true);
 	}
 
 	private void PlayLocalCall()
@@ -102,20 +98,20 @@ public partial class PassengerCallInteraction : Component
 
 	private void OnStepChanged(PassengerScenarioController.ScenarioStep step)
 	{
-		if (interactable != null)
-			interactable.IsAvailable = IsWaitingForPassengerInteraction();
+		SetInteractionAvailable(IsWaitingForPassengerInteraction());
 	}
 
 	private void OnInteracted()
 	{
-		if (interactable == null || !interactable.IsAvailable)
+		if (!IsWaitingForPassengerInteraction())
 			return;
 
 		if (callSound != null)
 			callSound.Stop();
 
 		if (petCarrierScenario != null
-			&& (petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
+			&& (petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingInitialPassengerInteraction
+				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
 				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff))
 		{
 			petCarrierScenario.NotifyPassengerInteraction();
@@ -132,15 +128,26 @@ public partial class PassengerCallInteraction : Component
 			scenario.NotifyPassengerInteracted();
 	}
 
-	private void BindInteractable()
+	private void RefreshInteractables()
 	{
-		if (subscribedInteractable == interactable)
-			return;
-		if (subscribedInteractable != null)
-			subscribedInteractable.Interacted -= OnInteracted;
-		subscribedInteractable = interactable;
-		if (subscribedInteractable != null)
-			subscribedInteractable.Interacted += OnInteracted;
+		EInteractable[] found = ComponentSystem.GetComponentsInChildren<EInteractable>(node);
+		for (int i = 0; i < found.Length; i++)
+		{
+			EInteractable candidate = found[i];
+			if (candidate == null || interactables.Contains(candidate))
+				continue;
+			candidate.Interacted += OnInteracted;
+			interactables.Add(candidate);
+		}
+	}
+
+	private void SetInteractionAvailable(bool available)
+	{
+		for (int i = 0; i < interactables.Count; i++)
+		{
+			if (interactables[i] != null)
+				interactables[i].IsAvailable = available;
+		}
 	}
 
 	private void Shutdown()
@@ -150,11 +157,15 @@ public partial class PassengerCallInteraction : Component
 			scenario.PassengerCallRequested -= OnPassengerCallRequested;
 			scenario.StepChanged -= OnStepChanged;
 		}
-		if (subscribedInteractable != null)
+		for (int i = 0; i < interactables.Count; i++)
 		{
-			subscribedInteractable.Interacted -= OnInteracted;
-			subscribedInteractable.IsAvailable = true;
+			EInteractable interactable = interactables[i];
+			if (interactable == null)
+				continue;
+			interactable.Interacted -= OnInteracted;
+			interactable.IsAvailable = true;
 		}
+		interactables.Clear();
 		if (callSound != null)
 			callSound.DeleteLater();
 	}

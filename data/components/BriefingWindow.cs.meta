@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>208cf432ce024f1047f68ed1271640380766c9a2</guid>
 	<type>component</type>
-	<hash>65e1cecd24df90397a68b9bdc4dd1149b13bcdd74e382c210ba4707a218b73e9</hash>
+	<hash>b4a8f45bc37330af7dbd6843c19da26d4381ca2b12d84bc6b0be0cdee9b28085</hash>
 	<runtimes>
 		<runtime id="208cf432ce024f1047f68ed1271640380766c9a2" name="BriefingWindow.cs" link="0"/>
 		<runtime id="1a3d530cbf81749b966d3c19c30bc0cd41cfbc99" name="BriefingWindow.prop" link="1" type="4"/>

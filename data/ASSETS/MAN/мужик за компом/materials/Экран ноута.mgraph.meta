@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>6c2d18083a0941c0d5d1101602111f63c3a91d31</guid>
+	<type>material_graph</type>
+	<hash>de04772d57aa7dec17f2d4953b4347207c240cfdf96d606a0e41e4dce7980233</hash>
+	<runtimes>
+		<runtime id="6c2d18083a0941c0d5d1101602111f63c3a91d31" name="Экран ноута.mgraph" link="0"/>
+		<runtime id="9374247abf36234b7a2aef38d2727631022a0a8b" name="Экран ноута" link="1" type="5"/>
+	</runtimes>
+</asset>

@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>bcdf0082cc57a11437248d15cc1dc46e1108896e</guid>
 	<type>fbx</type>
-	<hash>70a77d2cf1650fd869e2b1c00f82e1171bab96a8c39c8b84a7713ddfe61e6f5d</hash>
+	<hash>99392c5b1d293bb3a751e437792781c8d76bbe4c49044163f40efa2c6bc3478d</hash>
 	<runtimes>
 		<runtime id="bcdf0082cc57a11437248d15cc1dc46e1108896e" name="woman without animation.fbx" link="0"/>
 		<runtime id="11ea86323ce75020bebc4d83dc90871f73813fef" name="woman without animation.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">a0676fc2</parameter>
+				<parameter type="string" name="id">bfede73c</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="ea341e562dfd6255694dee19035e2606d7cf6c82" name="circle.mesh" link="2" type="1">

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>0b41914afa235cb8da78cf88f05dbeb96561059b</guid>
+	<type>component</type>
+	<hash>b6b170e3f282919765ccd537ebb9ca2c2ccf0f9ef6fddca5885789279ecec211</hash>
+	<runtimes>
+		<runtime id="0b41914afa235cb8da78cf88f05dbeb96561059b" name="SlidingDoorsInteraction.cs" link="0"/>
+		<runtime id="77c07437fc3856610113c951111d8b9c96bafe3e" name="SlidingDoorsInteraction.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

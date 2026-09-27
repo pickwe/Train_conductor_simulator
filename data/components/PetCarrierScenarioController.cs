@@ -2,17 +2,29 @@ using System;
 using System.Collections.Generic;
 using Unigine;
 
+#if UNIGINE_DOUBLE
+using Vec3 = Unigine.dvec3;
+#else
+using Vec3 = Unigine.vec3;
+#endif
+
 /// <summary>Owns the randomized passenger and carrier facts and the first scenario's score.</summary>
 public partial class PetCarrierScenarioController : Component
 {
 	public enum PassengerProfile { Calm, Anxious, Confrontational }
 	public enum PassengerEmotion { None, Confused, Aggressive, PositiveNod, CarrierNod }
-	public enum Stage { Opening, Explanation, MoodReaction, TerminalPrompt, WaitingForTerminal, AwaitingPassengerInteraction, Solution, SolutionTimeoutPrompt, AlternativeSolutionReaction, RefusalSolutionReaction, CarrierPurchaseReaction, AwaitingCarrierPickup, AwaitingPassengerHandoff, Refusal, RefusalReaction, Finished }
+	public enum Stage { AwaitingInitialPassengerInteraction, Opening, Explanation, MoodReaction, TerminalPrompt, WaitingForTerminal, AwaitingPassengerInteraction, Solution, SolutionTimeoutPrompt, AlternativeSolutionReaction, RefusalSolutionReaction, CarrierPurchaseReaction, AwaitingCarrierPickup, AwaitingPassengerHandoff, Refusal, RefusalReaction, Finished }
 
 	public float solutionSeconds = 30.0f;
 	public float passengerReplySeconds = 15.0f;
 	[Parameter(Group = "Scenario")]
 	public bool timersEnabled = true;
+	[Parameter(Group = "Scenario 1 Dialogue Camera")]
+	public Player firstDialogueCamera;
+	[Parameter(Group = "Scenario 1 Dialogue Camera")]
+	public string firstDialogueCameraName = "first_camera";
+	[ParameterSlider(Min = 0.2f, Max = 3.0f, Group = "Scenario 1 Dialogue Camera")]
+	public float dialogueCameraTransitionSeconds = 0.8f;
 	public PassengerProfile Profile { get; private set; }
 	public bool CarrierAvailable { get; private set; }
 	public bool CarrierFactChecked { get; private set; }
@@ -48,12 +60,27 @@ public partial class PetCarrierScenarioController : Component
 	private string passengerOpeningLine = "";
 	private bool pendingEndingBonus;
 	private bool solutionReplyTimerStarted;
+	private PlayerDummy dialogueTransitionCamera;
+	private Player playerBeforeDialogueCamera;
+	private bool dialogueCameraActive;
+	private bool dialogueCameraTransitioning;
+	private bool dialogueCameraReturning;
+	private bool savedDialogueCameraControlled;
+	private float dialogueCameraTransitionElapsed;
+	private float dialogueCameraTransitionStartFov;
+	private float savedDialoguePhysicsScale = 1.0f;
+	private Vec3 dialogueCameraTransitionStartPosition;
+	private vec3 dialogueCameraTransitionStartDirection;
+	private vec3 dialogueCameraTransitionStartUp;
 	private readonly System.Random random = new System.Random();
 
 	private void Init() { }
 
 	private void Update()
 	{
+		ResolveDialogueCamera();
+		UpdateDialogueCameraView();
+
 		if (gameFlow == null)
 		{
 			gameFlow = ComponentSystem.FindComponentInWorld<GameFlowController>();
@@ -109,11 +136,10 @@ public partial class PetCarrierScenarioController : Component
 		CarrierAvailable = random.Next(0, 2) == 0;
 		Safety = 0;
 		Loyalty = 0;
-		CurrentStage = Stage.Opening;
-		CurrentSpeaker = "Проводник";
-		CurrentText = "Добрый день. Я вижу, что питомец находится вне переноски. Подскажите, пожалуйста, переноска у Вас есть?";
+		CurrentStage = Stage.AwaitingInitialPassengerInteraction;
+		CurrentSpeaker = "";
+		CurrentText = "";
 		HasChoices = false;
-		BeginPassengerConversation();
 		Changed?.Invoke();
 	}
 
@@ -361,7 +387,15 @@ public partial class PetCarrierScenarioController : Component
 
 	public void NotifyPassengerInteraction()
 	{
-		if (CurrentStage == Stage.AwaitingPassengerInteraction)
+		if (CurrentStage == Stage.AwaitingInitialPassengerInteraction)
+		{
+			BeginPassengerConversation();
+			CurrentStage = Stage.Opening;
+			CurrentSpeaker = "Проводник";
+			CurrentText = "Добрый день. Я вижу, что питомец находится вне переноски. Подскажите, пожалуйста, переноска у Вас есть?";
+			HasChoices = false;
+		}
+		else if (CurrentStage == Stage.AwaitingPassengerInteraction)
 		{
 			BeginPassengerConversation();
 			CurrentStage = Stage.Solution;
@@ -662,6 +696,130 @@ public partial class PetCarrierScenarioController : Component
 		PassengerConversationChanged?.Invoke(false);
 	}
 
+	private void ResolveDialogueCamera()
+	{
+		if (firstDialogueCamera == null && !string.IsNullOrWhiteSpace(firstDialogueCameraName))
+			firstDialogueCamera = World.GetNodeByName(firstDialogueCameraName) as Player;
+	}
+
+	private void UpdateDialogueCameraView()
+	{
+		if (PassengerConversationActive && firstDialogueCamera != null && Game.Player != null)
+		{
+			if (!dialogueCameraActive)
+				BeginDialogueCameraSequence();
+		}
+		else if (dialogueCameraActive && !dialogueCameraReturning)
+		{
+			if (playerBeforeDialogueCamera != null && Game.Player != null)
+				StartDialogueCameraTransition(Game.Player, playerBeforeDialogueCamera, true);
+			else
+				RestoreDialogueCameraImmediately();
+		}
+
+		if (!dialogueCameraActive)
+			return;
+
+		Physics.Scale = 0.0f;
+		if (dialogueCameraTransitioning)
+			AdvanceDialogueCameraTransition();
+	}
+
+	private void BeginDialogueCameraSequence()
+	{
+		dialogueCameraActive = true;
+		playerBeforeDialogueCamera = Game.Player;
+		savedDialoguePhysicsScale = Physics.Scale > 0.0f ? Physics.Scale : 1.0f;
+		savedDialogueCameraControlled = firstDialogueCamera.Controlled;
+		firstDialogueCamera.Controlled = false;
+		StartDialogueCameraTransition(playerBeforeDialogueCamera, firstDialogueCamera, false);
+	}
+
+	private void StartDialogueCameraTransition(Player source, Player target, bool returning)
+	{
+		if (source == null || target == null)
+		{
+			RestoreDialogueCameraImmediately();
+			return;
+		}
+		if (dialogueTransitionCamera == null)
+		{
+			dialogueTransitionCamera = new PlayerDummy();
+			dialogueTransitionCamera.Controlled = false;
+		}
+
+		dialogueCameraTransitionStartPosition = source.WorldPosition;
+		dialogueCameraTransitionStartDirection = source.GetWorldDirection(MathLib.AXIS.NZ);
+		dialogueCameraTransitionStartUp = source.GetWorldDirection(MathLib.AXIS.Y);
+		dialogueCameraTransitionStartFov = source.Fov;
+		dialogueTransitionCamera.WorldPosition = dialogueCameraTransitionStartPosition;
+		dialogueTransitionCamera.SetWorldDirection(dialogueCameraTransitionStartDirection, dialogueCameraTransitionStartUp);
+		dialogueTransitionCamera.Fov = dialogueCameraTransitionStartFov;
+		if (Game.Player != null)
+			Game.Player.MainPlayer = false;
+		dialogueTransitionCamera.MainPlayer = true;
+		Game.Player = dialogueTransitionCamera;
+		dialogueCameraTransitionElapsed = 0.0f;
+		dialogueCameraTransitioning = true;
+		dialogueCameraReturning = returning;
+	}
+
+	private void AdvanceDialogueCameraTransition()
+	{
+		Player target = dialogueCameraReturning ? playerBeforeDialogueCamera : firstDialogueCamera;
+		if (target == null || dialogueTransitionCamera == null)
+		{
+			RestoreDialogueCameraImmediately();
+			return;
+		}
+
+		dialogueCameraTransitionElapsed += Game.IFps;
+		float duration = MathLib.Max(0.2f, dialogueCameraTransitionSeconds);
+		float t = MathLib.Min(1.0f, dialogueCameraTransitionElapsed / duration);
+		float eased = t * t * (3.0f - 2.0f * t);
+		Vec3 targetPosition = target.WorldPosition;
+		vec3 targetDirection = target.GetWorldDirection(MathLib.AXIS.NZ);
+		vec3 targetUp = target.GetWorldDirection(MathLib.AXIS.Y);
+		dialogueTransitionCamera.WorldPosition = MathLib.Lerp(dialogueCameraTransitionStartPosition, targetPosition, eased);
+		dialogueTransitionCamera.SetWorldDirection(
+			MathLib.Lerp(dialogueCameraTransitionStartDirection, targetDirection, eased).Normalized,
+			MathLib.Lerp(dialogueCameraTransitionStartUp, targetUp, eased).Normalized);
+		dialogueTransitionCamera.Fov = MathLib.Lerp(dialogueCameraTransitionStartFov, target.Fov, eased);
+
+		if (t < 1.0f)
+			return;
+
+		dialogueTransitionCamera.MainPlayer = false;
+		target.MainPlayer = true;
+		Game.Player = target;
+		dialogueCameraTransitioning = false;
+		if (dialogueCameraReturning)
+			RestoreDialogueCameraState();
+	}
+
+	private void RestoreDialogueCameraImmediately()
+	{
+		if (playerBeforeDialogueCamera != null)
+		{
+			if (Game.Player != null)
+				Game.Player.MainPlayer = false;
+			playerBeforeDialogueCamera.MainPlayer = true;
+			Game.Player = playerBeforeDialogueCamera;
+		}
+		RestoreDialogueCameraState();
+	}
+
+	private void RestoreDialogueCameraState()
+	{
+		if (firstDialogueCamera != null)
+			firstDialogueCamera.Controlled = savedDialogueCameraControlled;
+		Physics.Scale = savedDialoguePhysicsScale > 0.0f ? savedDialoguePhysicsScale : 1.0f;
+		dialogueCameraActive = false;
+		dialogueCameraTransitioning = false;
+		dialogueCameraReturning = false;
+		playerBeforeDialogueCamera = null;
+	}
+
 	private void RequestPassengerEmotion(PassengerEmotion emotion)
 	{
 		CurrentPassengerEmotion = emotion;
@@ -673,6 +831,9 @@ public partial class PetCarrierScenarioController : Component
 
 	private void Shutdown()
 	{
+		if (dialogueCameraActive)
+			RestoreDialogueCameraImmediately();
+		dialogueTransitionCamera?.DeleteLater();
 		if (gameFlow != null && subscribedToFlow) gameFlow.ScenarioOneStarted -= StartScenario;
 	}
 

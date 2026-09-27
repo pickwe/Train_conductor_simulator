@@ -1,6 +1,6 @@
 using Unigine;
 
-/// <summary>Moves the player to an editor-placed marker when a scenario begins.</summary>
+/// <summary>Places the player at the initial spawn and moves them for later scenarios.</summary>
 public partial class PassengerScenarioPlacement : Component
 {
 	[Parameter(Group = "Scenario 1")]
@@ -11,9 +11,14 @@ public partial class PassengerScenarioPlacement : Component
 
 	private GameFlowController gameFlow;
 	private FP_Controller playerController;
-	private bool pendingScenarioOnePlacement;
 	private bool pendingScenarioTwoPlacement;
 	private bool scenarioOnePlaced;
+	private bool scenarioOneMarkerWarningShown;
+
+	private void Init()
+	{
+		TryPlaceScenarioOneImmediately();
+	}
 
 	private void Update()
 	{
@@ -27,13 +32,9 @@ public partial class PassengerScenarioPlacement : Component
 		if (playerController == null)
 			playerController = ComponentSystem.FindComponentInWorld<FP_Controller>();
 
-		// Apply after the phase-change callbacks have finished for this frame.
-		if (pendingScenarioOnePlacement)
-		{
-			pendingScenarioOnePlacement = false;
-			TeleportPlayer(scenarioOneMarker, "scenario 1");
-		}
+		TryPlaceScenarioOneImmediately();
 
+		// Scenario 2 still changes the player's location after its introduction.
 		if (pendingScenarioTwoPlacement)
 		{
 			pendingScenarioTwoPlacement = false;
@@ -43,13 +44,29 @@ public partial class PassengerScenarioPlacement : Component
 
 	private void OnPhaseChanged(GameFlowController.Phase phase)
 	{
-		// Put the player at the scenario start before its intro is shown.
-		if (phase == GameFlowController.Phase.ScenarioOneIntroduction && !scenarioOnePlaced)
-			pendingScenarioOnePlacement = true;
-		else if (phase == GameFlowController.Phase.ScenarioOne && !scenarioOnePlaced)
-			pendingScenarioOnePlacement = true;
-		else if (phase == GameFlowController.Phase.ScenarioTwo)
+		if (phase == GameFlowController.Phase.ScenarioTwo)
 			pendingScenarioTwoPlacement = true;
+	}
+
+	private void TryPlaceScenarioOneImmediately()
+	{
+		if (scenarioOnePlaced)
+			return;
+		if (scenarioOneMarker == null)
+		{
+			if (!scenarioOneMarkerWarningShown)
+			{
+				scenarioOneMarkerWarningShown = true;
+				Log.Warning("PassengerScenarioPlacement: assign the player marker for scenario 1 in the Editor.\n");
+			}
+			return;
+		}
+		if (playerController == null)
+			playerController = ComponentSystem.FindComponentInWorld<FP_Controller>();
+		if (playerController == null || !playerController.IsInitialized)
+			return;
+
+		TeleportPlayer(scenarioOneMarker, "scenario 1");
 	}
 
 	private void TeleportPlayer(Node marker, string scenarioLabel)
