@@ -132,6 +132,8 @@ public partial class PassengerScenarioController : Component
 	public int MoodPassenger2 { get; private set; }
 	public int SafetyDelta { get; private set; }
 	public int LoyaltyDelta { get; private set; }
+	public List<string> DecisionHistory { get; } = new List<string>();
+	public bool DiplomatWithoutPropsEligible { get; private set; }
 	public string CurrentSpeaker { get; private set; } = "";
 	public string CurrentText { get; private set; } = "";
 	public bool HasChoices => CurrentStep == ScenarioStep.ComplaintChoice
@@ -459,6 +461,7 @@ public partial class PassengerScenarioController : Component
 			case "ID-03": safety = -4; loyalty = 2; mood1 = 1; mood2 = -2; break;
 			default: return;
 		}
+		DecisionHistory.Add(choiceId);
 
 		SafetyDelta += safety;
 		LoyaltyDelta += loyalty;
@@ -571,6 +574,8 @@ public partial class PassengerScenarioController : Component
 		MoodPassenger1 = InitialMood;
 		MoodPassenger2 = InitialParentMood;
 		PassengerApproachTimedOut = false;
+		DecisionHistory.Clear();
+		DiplomatWithoutPropsEligible = false;
 		OnboardActivitiesAvailable = random.Next(0, 2) == 0;
 		ActivitiesFactChecked = false;
 		RelocationSeatAvailable = random.Next(0, 2) == 0;
@@ -679,6 +684,7 @@ public partial class PassengerScenarioController : Component
 
 		RemainingSeconds = 0.0f;
 		selectedParentChoiceId = choiceId;
+		DecisionHistory.Add(choiceId);
 		ApplyOutcome(safety, loyalty, mood1, mood2);
 		if (choiceId == "ID-06")
 		{
@@ -731,6 +737,7 @@ public partial class PassengerScenarioController : Component
 
 		RemainingSeconds = 0.0f;
 		selectedSeatChoiceId = choiceId;
+		DecisionHistory.Add(choiceId);
 		ApplyOutcome(safety, loyalty, mood1, 0);
 		string reaction = choiceId == "ID-12"
 			? "Хорошо, если место свободно, я пересяду."
@@ -928,6 +935,12 @@ public partial class PassengerScenarioController : Component
 
 	private void CompleteParentBranchToStage3()
 	{
+		if (DecisionHistory.Count >= 2
+			&& DecisionHistory[0] == "ID-01"
+			&& selectedParentChoiceId == "ID-07"
+			&& MoodPassenger1 >= 2
+			&& MoodPassenger2 >= 2)
+			DiplomatWithoutPropsEligible = true;
 		ShowLine(ScenarioStep.Stage3ConductorAppeal, "Проводник пассажиру ябеде", GetStage3ConductorAppeal());
 	}
 

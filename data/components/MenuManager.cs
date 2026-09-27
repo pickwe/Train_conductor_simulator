@@ -49,6 +49,7 @@ public partial class MenuManager : Component
 	private Screen state = Screen.Main, returnState = Screen.Main;
 	private LoginTarget loginTarget;
 	private AmbientSource menuMusic, gameplayMusic;
+	private GameFlowController subscribedGameFlow;
 	private bool authenticated, changingVolume, pauseWasDown, profileWasDown, loadRequested, duplicate;
 	private float savedGameScale = 1.0f, savedPhysicsScale = 1.0f;
 	private Input.MOUSE_HANDLE savedMouseHandle;
@@ -90,6 +91,7 @@ public partial class MenuManager : Component
 	private void Update()
 	{
 		if (duplicate || ui == null) return;
+		UpdateGameFlowSubscription();
 		RefreshMainTextureLayout();
 		ResizeInterface();
 		PositionInputSprites();
@@ -121,6 +123,8 @@ public partial class MenuManager : Component
 	private void Shutdown()
 	{
 		if (duplicate) return;
+		if (subscribedGameFlow != null)
+			subscribedGameFlow.ReturnToMenuRequested -= ReturnToMainMenuAfterRun;
 		if (instance == this) instance = null;
 		Input.MouseHandle = savedMouseHandle;
 		Input.MouseGrab = savedMouseGrab;
@@ -622,6 +626,37 @@ public partial class MenuManager : Component
 	private void ShowMain() { gameplayStarted = false; loadRequested = false; SetState(Screen.Main); PauseScales(); }
 	private void ShowGame() { SetState(Screen.Game); ResumeScales(); }
 	private void ShowPause() { SetState(Screen.Pause); PauseScales(); }
+
+	private void UpdateGameFlowSubscription()
+	{
+		GameFlowController current = ComponentSystem.FindComponentInWorld<GameFlowController>();
+		if (current == subscribedGameFlow) return;
+
+		if (subscribedGameFlow != null)
+			subscribedGameFlow.ReturnToMenuRequested -= ReturnToMainMenuAfterRun;
+
+		subscribedGameFlow = current;
+		if (subscribedGameFlow != null)
+			subscribedGameFlow.ReturnToMenuRequested += ReturnToMainMenuAfterRun;
+	}
+
+	private void ReturnToMainMenuAfterRun()
+	{
+		gameplayStarted = false;
+		BriefingRequestedForCurrentRun = false;
+		ShowMain();
+
+		// Reload the gameplay world so every scenario component and score is reset
+		// before the player starts a new run from the persistent main menu.
+		if (string.IsNullOrWhiteSpace(mainWorldPath) || !World.LoadWorld(mainWorldPath))
+		{
+			Log.Error("MenuManager: failed to reload the gameplay world after completing the run.\n");
+			return;
+		}
+
+		loadRequested = true;
+	}
+
 	private void SetState(Screen next)
 	{
 		Screen previous = state;

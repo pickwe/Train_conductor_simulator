@@ -12,6 +12,7 @@ public partial class ScenarioResults : Component
 
 	private Gui gui;
 	private WidgetSprite panel;
+	private WidgetScrollBox resultsScroll;
 	private WidgetLabel heading, body;
 	private WidgetButton continueButton;
 	private PetCarrierScenarioController scenario;
@@ -60,11 +61,18 @@ public partial class ScenarioResults : Component
 			FontOutline = 1,
 			Hidden = true
 		};
+		resultsScroll = new WidgetScrollBox(gui)
+		{
+			Hidden = true,
+			HScrollEnabled = false,
+			VScrollHidden = WidgetScrollBox.SCROLL_RENDER_MODE.AUTO_HIDE
+		};
 		continueButton = new WidgetButton(gui, "Продолжить") { FontSize = 18, Hidden = true };
 		continueButton.EventClicked.Connect(Continue);
 		gui.AddChild(panel, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
 		gui.AddChild(heading, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
-		gui.AddChild(body, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
+		resultsScroll.AddChild(body);
+		gui.AddChild(resultsScroll, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
 		gui.AddChild(continueButton, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
 	}
 
@@ -112,6 +120,8 @@ public partial class ScenarioResults : Component
 	{
 		if (visible || scenario == null) return;
 		showingSecondScenarioResult = false;
+		heading.Text = "ИТОГИ СЦЕНАРИЯ 1";
+		continueButton.Text = "Продолжить";
 		ShowResults(BuildResultsText());
 	}
 
@@ -119,7 +129,60 @@ public partial class ScenarioResults : Component
 	{
 		if (visible) return;
 		showingSecondScenarioResult = true;
-		ShowResults("Сценарий завершается. " + finalTitle + "\nОбратная связь:\n" + feedback);
+		heading.Text = "ОБЩИЙ ИТОГ ДВУХ СЦЕНАРИЕВ";
+		continueButton.Text = "Завершить";
+		ShowResults(BuildCombinedResultsText(finalTitle, feedback));
+	}
+
+	private string BuildCombinedResultsText(string secondFinalTitle, string secondFeedback)
+	{
+		StringBuilder text = new StringBuilder();
+		text.AppendLine("СЦЕНАРИЙ 1 — ПЕРЕВОЗКА ПИТОМЦА");
+		text.AppendLine(GetFeedback());
+		text.AppendFormat("Изменения: безопасность {0:+#;-#;0}, лояльность {1:+#;-#;0}.", scenario.Safety, scenario.Loyalty);
+		text.AppendLine();
+		text.AppendLine();
+		text.AppendLine("СЦЕНАРИЙ 2 — ЖАЛОБА НА ШУМ");
+		text.AppendLine(secondFinalTitle);
+		text.AppendLine(secondFeedback);
+		text.AppendFormat("Изменения: безопасность {0:+#;-#;0}, лояльность {1:+#;-#;0}.",
+			secondScenario.SafetyDelta, secondScenario.LoyaltyDelta);
+		text.AppendLine();
+		text.AppendLine();
+
+		StoryStateController state = ComponentSystem.FindComponentInWorld<StoryStateController>();
+		text.AppendLine("ОБЩИЙ РЕЗУЛЬТАТ");
+		text.AppendFormat("За два сценария: безопасность {0:+#;-#;0}, лояльность {1:+#;-#;0}.",
+			scenario.Safety + secondScenario.SafetyDelta,
+			scenario.Loyalty + secondScenario.LoyaltyDelta);
+		text.AppendLine();
+		if (state != null)
+			text.AppendFormat("Текущие показатели смены: безопасность {0}, лояльность {1}.", state.Safety, state.Loyalty);
+		text.AppendLine();
+		text.AppendLine();
+		text.AppendLine("ДОСТИЖЕНИЯ ЗА ОБА СЦЕНАРИЯ:");
+
+		List<AchievementResult> earned = GetEarnedAchievements();
+		earned.AddRange(GetSecondScenarioAchievements());
+		AppendAchievements(text, earned);
+		return text.ToString();
+	}
+
+	private static void AppendAchievements(StringBuilder text, List<AchievementResult> earned)
+	{
+		if (earned.Count == 0)
+		{
+			text.Append("В этот раз достижения не получены.");
+			return;
+		}
+
+		foreach (AchievementResult achievement in earned)
+		{
+			text.AppendFormat("★ {0}{1} — «{2}»", achievement.Hidden ? "Скрытая ачивка: " : "", achievement.Id, achievement.Title);
+			text.AppendLine();
+			text.AppendLine("Описание: " + achievement.Description);
+			text.AppendLine((achievement.Hidden ? "Скрытая ачивка получена! " : "Ачивка получена! ") + achievement.EarnedText);
+		}
 	}
 
 	private void ShowResults(string resultsText)
@@ -138,7 +201,8 @@ public partial class ScenarioResults : Component
 		IsVisible = true;
 		fade = 0.0f;
 		body.Text = resultsText;
-		panel.Hidden = heading.Hidden = body.Hidden = continueButton.Hidden = false;
+		panel.Hidden = heading.Hidden = body.Hidden = resultsScroll.Hidden = continueButton.Hidden = false;
+		resultsScroll.VScrollValue = 0;
 		Layout();
 	}
 
@@ -286,6 +350,128 @@ public partial class ScenarioResults : Component
 		return earned;
 	}
 
+	private List<AchievementResult> GetSecondScenarioAchievements()
+	{
+		List<AchievementResult> earned = new List<AchievementResult>();
+		if (secondScenario == null)
+			return earned;
+
+		bool politeMaterials = HasSecondPath("ID-01", "ID-04")
+			&& secondScenario.MoodPassenger1 >= 2
+			&& secondScenario.MoodPassenger2 >= 2;
+		if (politeMaterials)
+		{
+			earned.Add(new AchievementResult(
+				"ACH_NOISE_01",
+				"Тише без приказов",
+				"Снизить уровень шума с помощью детских материалов, не обвиняя родителей и детей.",
+				"Вы помогли детям найти спокойное занятие и сохранили комфорт обеих сторон."));
+		}
+
+		if (secondScenario.DiplomatWithoutPropsEligible)
+		{
+			earned.Add(new AchievementResult(
+				"ACH_NOISE_02",
+				"Дипломат без реквизита",
+				"Урегулировать ситуацию вежливым разговором, когда детских материалов на борту нет.",
+				"Даже без дополнительных материалов Вы нашли решение с помощью спокойного диалога."));
+		}
+
+		bool politeParentBranch = HasSecondPrefix("ID-01", "ID-04") || HasSecondPrefix("ID-01", "ID-07");
+		if (politeParentBranch && HasSecondLastDecision("ID-10"))
+		{
+			earned.Add(new AchievementResult(
+				"ACH_NOISE_03",
+				"Тихий переезд",
+				"Предложить пожаловавшемуся пассажиру проверенное место того же класса и не перекладывать проблему на семью.",
+				"Вы предложили корректную пересадку и решили проблему без обвинений и принуждения."));
+		}
+
+		if (politeParentBranch && HasSecondLastDecision("ID-13"))
+		{
+			earned.Add(new AchievementResult(
+				"ACH_NOISE_04",
+				"Мест нет — решение есть",
+				"Не давать ложных обещаний, когда свободных мест нет, и предложить правильный порядок дальнейших действий.",
+				"Вы честно сообщили об отсутствии мест и не оставили жалобу пассажира без внимания."));
+		}
+
+		bool safeFinal = HasSecondLastDecision("ID-10") || HasSecondLastDecision("ID-13");
+		if (secondScenario.InitialMood == -3
+			&& secondScenario.InitialParentMood == -3
+			&& politeParentBranch
+			&& safeFinal)
+		{
+			earned.Add(new AchievementResult(
+				"ACH_NOISE_05",
+				"На два фронта",
+				"Успешно завершить ситуацию, когда и пассажир с жалобой, и родители изначально настроены конфликтно.",
+				"Вы удержали под контролем конфликт сразу двух пассажиров и не допустили открытого столкновения.",
+				true));
+		}
+
+		if (HasAnySecondPath(
+			new[] { "ID-01", "ID-04", "ID-10" },
+			new[] { "ID-01", "ID-04", "ID-13" },
+			new[] { "ID-01", "ID-07", "ID-10" },
+			new[] { "ID-01", "ID-07", "ID-13" }))
+		{
+			earned.Add(new AchievementResult(
+				"ACH_NOISE_06",
+				"Без крайнего виноватого",
+				"Завершить сценарий, ни разу не обвинив детей, родителей или пассажира с жалобой.",
+				"Вы решили проблему, не назначая виноватых и сохранив уважение к обеим сторонам."));
+		}
+
+		if (HasAnySecondPath(
+			new[] { "ID-02", "ID-05", "ID-11" },
+			new[] { "ID-02", "ID-05", "ID-14" },
+			new[] { "ID-02", "ID-08", "ID-11" },
+			new[] { "ID-02", "ID-08", "ID-14" }))
+		{
+			earned.Add(new AchievementResult(
+				"ACH_NOISE_07",
+				"Всё правильно. Всё грубо.",
+				"Выбирать только безопасные, но грубые действия на всех трёх этапах.",
+				"Все решения соответствовали требованиям, но Ваш тон превратил помощь в конфликт.",
+				true));
+		}
+
+		return earned;
+	}
+
+	private bool HasSecondPath(params string[] expected)
+	{
+		if (secondScenario == null || secondScenario.DecisionHistory.Count != expected.Length)
+			return false;
+		for (int i = 0; i < expected.Length; i++)
+			if (secondScenario.DecisionHistory[i] != expected[i]) return false;
+		return true;
+	}
+
+	private bool HasSecondPrefix(params string[] expected)
+	{
+		if (secondScenario == null || secondScenario.DecisionHistory.Count < expected.Length)
+			return false;
+		for (int i = 0; i < expected.Length; i++)
+			if (secondScenario.DecisionHistory[i] != expected[i]) return false;
+		return true;
+	}
+
+	private bool HasSecondLastDecision(string id)
+	{
+		return secondScenario != null
+			&& secondScenario.DecisionHistory.Count > 0
+			&& secondScenario.DecisionHistory[secondScenario.DecisionHistory.Count - 1] == id;
+	}
+
+	private bool HasAnySecondPath(params string[][] paths)
+	{
+		for (int i = 0; i < paths.Length; i++)
+			if (HasSecondPath(paths[i])) return true;
+		return false;
+	}
+
 	private bool HasChoicePath(params string[] expected)
 	{
 		int choiceIndex = 0;
@@ -324,8 +510,11 @@ public partial class ScenarioResults : Component
 		panel.Width = width;
 		panel.Height = height;
 		heading.SetPosition(left + 30, top + 24);
-		body.SetPosition(left + 30, top + 72);
-		body.Width = width - 60;
+		resultsScroll.SetPosition(left + 30, top + 72);
+		resultsScroll.Width = width - 60;
+		resultsScroll.Height = height - 150;
+		body.SetPosition(0, 0);
+		body.Width = resultsScroll.Width - 24;
 		continueButton.SetPosition(left + width - 190, top + height - 60);
 		continueButton.Width = 160;
 		continueButton.Height = 38;
@@ -334,7 +523,7 @@ public partial class ScenarioResults : Component
 	private void Continue()
 	{
 		if (fade < 1.0f || gameFlow == null) return;
-		panel.Hidden = heading.Hidden = body.Hidden = continueButton.Hidden = true;
+		panel.Hidden = heading.Hidden = body.Hidden = resultsScroll.Hidden = continueButton.Hidden = true;
 		visible = false;
 		IsVisible = false;
 		RestoreMouse();
@@ -343,6 +532,7 @@ public partial class ScenarioResults : Component
 			showingSecondScenarioResult = false;
 			secondScenario?.NotifySecondScenarioResultsClosed();
 			gameFlow.ShowRunSummary();
+			gameFlow.FinishRun();
 		}
 		else
 			gameFlow.StartScenarioTwoIntroduction();
@@ -367,7 +557,7 @@ public partial class ScenarioResults : Component
 		RestoreMouse();
 		panel?.DeleteLater();
 		heading?.DeleteLater();
-		body?.DeleteLater();
+		resultsScroll?.DeleteLater();
 		continueButton?.DeleteLater();
 	}
 }
