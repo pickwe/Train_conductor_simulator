@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>128f2613e548c98fd04c70d5c94c6814f45149c4</guid>
 	<type>component</type>
-	<hash>99fa17047f8448042b31c505c86546e07fa0461af36ba772a71bc2069c6e0f4e</hash>
+	<hash>2b3f433fda4c7ad736c15bdd2982f8c28525c0387c19de6f283648d26efebae0</hash>
 	<runtimes>
 		<runtime id="128f2613e548c98fd04c70d5c94c6814f45149c4" name="DialogueWindow.cs" link="0"/>
 		<runtime id="68ca09c0826a41cb0b839fa68f0dfdd03c17ca53" name="DialogueWindow.prop" link="1" type="4"/>

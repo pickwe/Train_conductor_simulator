@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>3adc5eda38f85c9a0c4e3d0d23ede4cfde814746</guid>
+	<type>material</type>
+	<hash>0a10a3109f81f6929f86164a01a31dda8ae232a688ad93a0ffcdc82604c5023b</hash>
+	<runtimes>
+		<runtime id="3adc5eda38f85c9a0c4e3d0d23ede4cfde814746" name="Ткань" link="0" type="5"/>
+	</runtimes>
+</asset>

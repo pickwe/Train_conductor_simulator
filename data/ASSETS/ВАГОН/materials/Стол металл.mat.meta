@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>479ee992f2f0fc315465f3e5594b603b831ee77e</guid>
+	<type>material</type>
+	<hash>06523177d94127a931d40bf23649c3909dc0d18b3a76aab0b9c1f37ea63a5de5</hash>
+	<runtimes>
+		<runtime id="479ee992f2f0fc315465f3e5594b603b831ee77e" name="Стол металл" link="0" type="5"/>
+	</runtimes>
+</asset>

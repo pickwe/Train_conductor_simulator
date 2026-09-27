@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>3284fd60d0235a2f24c1b23bb8f54182e223cf6c</guid>
+	<type>material</type>
+	<hash>c631e512a5a614b331e8c51f6d478a25fe9a72b6555c6e8b6bb076a71c3d8d2f</hash>
+	<runtimes>
+		<runtime id="3284fd60d0235a2f24c1b23bb8f54182e223cf6c" name="Стол дерево" link="0" type="5"/>
+	</runtimes>
+</asset>

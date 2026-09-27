@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.22.0.0">
-	<guid>e3ddc274d71fae4ac352352bea9b58edcb40aee4</guid>
-	<type>material</type>
-	<hash>9315442d15a2fd6fca89bd0348ce41294ebd810c65a5343531448f599ccfdb15</hash>
-	<runtimes>
-		<runtime id="e3ddc274d71fae4ac352352bea9b58edcb40aee4" name="пластик" link="0" type="5"/>
-	</runtimes>
-</asset>

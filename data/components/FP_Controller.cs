@@ -113,6 +113,28 @@ public partial class FP_Controller : Component
 	/// <summary>Fired when E is pressed and an object is under the crosshair.</summary>
 	public Event<Unigine.Object> EventInteract { get { return eventInteract; } }
 
+	/// <summary>Moves the player root to a marker and sets the camera's view direction from its local +Y axis.</summary>
+	public void TeleportToMarker(Node marker)
+	{
+		if (marker == null)
+			return;
+
+		Vec3 position = marker.WorldPosition;
+		vec3 direction = marker.GetWorldDirection(MathLib.AXIS.Y);
+		direction.Normalize();
+
+		yaw = MathLib.Atan2(-direction.x, -direction.y) / MathLib.DEG2RAD;
+		verticalAngle = MathLib.Acos(MathLib.Clamp(direction.z, -1.0f, 1.0f)) / MathLib.DEG2RAD;
+		Velocity = Vec3.ZERO;
+		IsGrounded = false;
+		headBobOffset = Vec3.ZERO;
+		playerTransform.SetRotate(Vec3.UP, yaw);
+		playerTransform.SetColumn3(3, position);
+		body.Transform = playerTransform;
+		node.WorldTransform = playerTransform;
+		UpdateCamera();
+	}
+
 	#endregion
 
 	private const float fixedStep = 1.0f / 120.0f;

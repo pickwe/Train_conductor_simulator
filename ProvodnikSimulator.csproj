@@ -49,36 +49,40 @@
 		<UnigineSharpLibPath Include="bin\UnigineSharp_double_x64.dll"/>
 	</ItemGroup>
 	<ItemGroup>
-		<Compile Include="data/first_person_controller/components/FirstPersonController.cs"/>
-		<AdditionalFiles Include="data/first_person_controller/components/FirstPersonController.cs.meta" Visible="false"/>
-		<Compile Include="data/components/FP_Controller.cs"/>
-		<AdditionalFiles Include="data/components/FP_Controller.cs.meta" Visible="false"/>
-		<Compile Include="data/components/MenuManager.cs"/>
-		<AdditionalFiles Include="data/components/MenuManager.cs.meta" Visible="false"/>
-		<Compile Include="data/components/PassengerScenarioController.cs"/>
-		<Compile Include="data/components/StoryStateController.cs"/>
-		<AdditionalFiles Include="data/components/PassengerScenarioController.cs.meta" Visible="false"/>
-		<AdditionalFiles Include="data/components/StoryStateController.cs.meta" Visible="false"/>
-		<Compile Include="data/components/BriefingWindow.cs"/>
-		<AdditionalFiles Include="data/components/BriefingWindow.cs.meta" Visible="false"/>
-		<Compile Include="data/components/PassengerCallInteraction.cs"/>
-		<AdditionalFiles Include="data/components/PassengerCallInteraction.cs.meta" Visible="false"/>
 		<Compile Include="data/components/EInteractable.cs"/>
-		<AdditionalFiles Include="data/components/EInteractable.cs.meta" Visible="false"/>
-		<Compile Include="data/components/InteractableHoverOutline.cs"/>
-		<AdditionalFiles Include="data/components/InteractableHoverOutline.cs.meta" Visible="false"/>
-		<Compile Include="data/components/GameFlowController.cs"/>
-		<AdditionalFiles Include="data/components/GameFlowController.cs.meta" Visible="false"/>
-		<Compile Include="data/components/PetCarrierScenarioController.cs"/>
-		<AdditionalFiles Include="data/components/PetCarrierScenarioController.cs.meta" Visible="false"/>
 		<Compile Include="data/components/DialogueWindow.cs"/>
-		<AdditionalFiles Include="data/components/DialogueWindow.cs.meta" Visible="false"/>
-		<Compile Include="data/components/ConductorTerminal.cs"/>
-		<AdditionalFiles Include="data/components/ConductorTerminal.cs.meta" Visible="false"/>
-		<Compile Include="data/components/ScenarioResults.cs"/>
-		<AdditionalFiles Include="data/components/ScenarioResults.cs.meta" Visible="false"/>
 		<Compile Include="data/components/CarrierDeliveryInteraction.cs"/>
+		<Compile Include="data/components/BriefingWindow.cs"/>
+		<Compile Include="data/components/ConductorTerminal.cs"/>
+		<Compile Include="data/components/PetCarrierScenarioController.cs"/>
+		<Compile Include="data/components/MenuManager.cs"/>
+		<Compile Include="data/first_person_controller/components/FirstPersonController.cs"/>
+		<Compile Include="data/components/InteractableHoverOutline.cs"/>
+		<Compile Include="data/components/PassengerScenarioController.cs"/>
+		<Compile Include="data/components/ScenarioResults.cs"/>
+		<Compile Include="data/components/PassengerEmotionAnimator.cs"/>
+		<Compile Include="data/components/GameFlowController.cs"/>
+		<Compile Include="data/components/StoryStateController.cs"/>
+		<Compile Include="data/components/FP_Controller.cs"/>
+		<Compile Include="data/components/PassengerCallInteraction.cs"/>
+		<AdditionalFiles Include="data/components/EInteractable.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/DialogueWindow.cs.meta" Visible="false"/>
 		<AdditionalFiles Include="data/components/CarrierDeliveryInteraction.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/BriefingWindow.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/ConductorTerminal.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/PetCarrierScenarioController.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/MenuManager.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/first_person_controller/components/FirstPersonController.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/InteractableHoverOutline.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/PassengerScenarioController.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/ScenarioResults.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/PassengerEmotionAnimator.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/GameFlowController.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/StoryStateController.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/FP_Controller.cs.meta" Visible="false"/>
+		<AdditionalFiles Include="data/components/PassengerCallInteraction.cs.meta" Visible="false"/>
+		<Compile Include="data/components/PassengerScenarioPlacement.cs"/>
+		<AdditionalFiles Include="data/components/PassengerScenarioPlacement.cs.meta" Visible="false"/>
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="source/AppSystemLogic.cs"/>

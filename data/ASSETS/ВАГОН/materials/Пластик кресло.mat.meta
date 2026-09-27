@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>b13c84c637ba2c1c299d88c99082df89f085bdf2</guid>
+	<type>material</type>
+	<hash>812bf738cd145fa25b33adf52fe0e7e0424f64e1b60d32ff7a9ff351ef762de5</hash>
+	<runtimes>
+		<runtime id="b13c84c637ba2c1c299d88c99082df89f085bdf2" name="Пластик кресло" link="0" type="5"/>
+	</runtimes>
+</asset>

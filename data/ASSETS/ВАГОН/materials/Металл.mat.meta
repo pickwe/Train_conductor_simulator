@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.22.0.0">
-	<guid>ac18c0669d94114c16943f752c3719eb94dd3556</guid>
-	<type>material</type>
-	<hash>5cd4ddb629355e6adbc5e9da5635e809cf4e8d32e523b2b1ff5158c8e6f9865a</hash>
-	<runtimes>
-		<runtime id="ac18c0669d94114c16943f752c3719eb94dd3556" name="Металл" link="0" type="5"/>
-	</runtimes>
-</asset>

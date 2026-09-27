@@ -108,11 +108,23 @@ public partial class PassengerCallInteraction : Component
 
 	private void OnInteracted()
 	{
-		if (interactable == null || !interactable.IsAvailable || scenario == null)
+		if (interactable == null || !interactable.IsAvailable)
 			return;
 
 		if (callSound != null)
 			callSound.Stop();
+
+		if (petCarrierScenario != null
+			&& (petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
+				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff))
+		{
+			petCarrierScenario.NotifyPassengerInteraction();
+			return;
+		}
+
+		if (scenario == null)
+			return;
+
 		if (scenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingSeatCheck
 			|| scenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatCheckCompleted)
 			scenario.NotifySeatDecisionPassengerInteracted();

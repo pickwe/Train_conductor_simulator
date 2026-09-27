@@ -17,6 +17,8 @@ public partial class PassengerEmotionAnimator : Component
 	public Node positiveNodModel;
 	[Parameter(Group = "Passenger Models")]
 	public Node carrierNodModel;
+	[Parameter(Group = "Passenger Models", Tooltip = "Disables shadow rendering for these passenger models to reduce the cost of drawing animated meshes.")]
+	public bool disablePassengerShadows = true;
 
 	private PetCarrierScenarioController scenario;
 	private GameFlowController gameFlow;
@@ -82,7 +84,6 @@ public partial class PassengerEmotionAnimator : Component
 	{
 		passengerHiddenForScenarioTwo = true;
 		HidePassenger();
-		node.Enabled = false;
 	}
 
 	private void ResolveModels()
@@ -275,6 +276,10 @@ public partial class PassengerEmotionAnimator : Component
 	private void SetModelVisible(Node model, bool visible)
 	{
 		if (model == null) return;
+		// Hiding with viewport masks alone still leaves the model node active.
+		// Disable inactive variant hierarchies so they don't keep costing render/animation work.
+		model.Enabled = visible;
+
 		List<SurfaceMask> surfaces;
 		if (!modelSurfaceMasks.TryGetValue(model, out surfaces)) return;
 
@@ -284,7 +289,8 @@ public partial class PassengerEmotionAnimator : Component
 			for (int surface = 0; surface < surfaceMask.ViewportMasks.Length; surface++)
 			{
 				surfaceMask.Object.SetViewportMask(visible ? surfaceMask.ViewportMasks[surface] : 0, surface);
-				surfaceMask.Object.SetShadowMask(visible ? surfaceMask.ShadowMasks[surface] : 0, surface);
+				int shadowMask = visible && !disablePassengerShadows ? surfaceMask.ShadowMasks[surface] : 0;
+				surfaceMask.Object.SetShadowMask(shadowMask, surface);
 			}
 		}
 	}

@@ -130,6 +130,12 @@ public partial class CarrierDeliveryInteraction : Component
 		}
 		LayoutInventory();
 		scenario.NotifyCarrierPickedUp();
+		// The carrier node is disabled above, so its Update can no longer
+		// enable the passenger interaction for the handoff stage.
+		if (passengerInteractable != null)
+			passengerInteractable.IsAvailable = scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff;
+		else
+			Log.Warning("CarrierDeliveryInteraction: assign passengerNode so the passenger can be interacted with after pickup.\n");
 	}
 
 	private void LayoutInventory()

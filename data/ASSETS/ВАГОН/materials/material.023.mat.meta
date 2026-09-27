@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.22.0.0">
-	<guid>105926da3b687229a5586559ef99094f833bd14a</guid>
+	<guid>5513af10428f281d2f17d32b998885001feba41c</guid>
 	<type>material</type>
-	<hash>c9db80e398499b60bb8980b37d6c1d225a2ec0004849a1d1b5966ec6b7da9ff5</hash>
+	<hash>620a53b2dd2e6eeff3df85ba9c43c09643d53a5c5c1edbcd7d69030749a351dc</hash>
 	<runtimes>
-		<runtime id="105926da3b687229a5586559ef99094f833bd14a" name="material.023" link="0" type="5"/>
+		<runtime id="5513af10428f281d2f17d32b998885001feba41c" name="material.023" link="0" type="5"/>
 	</runtimes>
 </asset>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>ab2313682f9e4a93b7cc3123731f9b666acd85f4</guid>
+	<type>material</type>
+	<hash>eea229fe5345dd9a040633b89805090aa9c21c059be346d9a73a26aeef373ae1</hash>
+	<runtimes>
+		<runtime id="ab2313682f9e4a93b7cc3123731f9b666acd85f4" name="Подуха" link="0" type="5"/>
+	</runtimes>
+</asset>

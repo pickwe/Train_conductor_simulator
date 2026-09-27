@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>7145b36cda2e80f707895197187e07bb2d107b38</guid>
+	<type>component</type>
+	<hash>3b2bbb1ad2f993e54ce310ad46a0a78b035f5a58d74b6a50d0b506e048544f28</hash>
+	<runtimes>
+		<runtime id="7145b36cda2e80f707895197187e07bb2d107b38" name="PassengerEmotionAnimator.cs" link="0"/>
+		<runtime id="52d7c5c2ed59436d06a2e55586dfc06bee77b2ae" name="PassengerEmotionAnimator.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

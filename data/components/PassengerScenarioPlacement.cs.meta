@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>a049d306774930a446af6609e7daafcb13372032</guid>
+	<type>component</type>
+	<hash>641f7f89ffdc694514b62c91dc42c2c577f12d74c65e8f87d05d2a80409f2ef0</hash>
+	<runtimes>
+		<runtime id="a049d306774930a446af6609e7daafcb13372032" name="PassengerScenarioPlacement.cs" link="0"/>
+		<runtime id="7717efe4f5e754215e8f935de96db99f51f181e9" name="PassengerScenarioPlacement.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

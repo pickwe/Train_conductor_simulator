@@ -426,7 +426,7 @@ public partial class DialogueWindow : Component
 			gui.AddChild(choiceBackground, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
 			choiceBackgrounds.Add(choiceBackground);
 
-			WidgetLabel choiceLabel = new WidgetLabel(gui, label);
+			WidgetLabel choiceLabel = new WidgetLabel(gui, label)
 			{
 				FontSize = 16,
 				FontColor = new vec4(0.96f, 0.96f, 0.96f, 1.0f),

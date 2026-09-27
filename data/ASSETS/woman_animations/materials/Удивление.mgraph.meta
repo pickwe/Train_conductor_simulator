@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>0a9a7386af71611cef2d17e7716ae91df26d6913</guid>
+	<type>material_graph</type>
+	<hash>7cc409d3251cb2176fe57e5512c0e081a9a504d9c18d8134805b48f9365841b7</hash>
+	<runtimes>
+		<runtime id="0a9a7386af71611cef2d17e7716ae91df26d6913" name="Удивление.mgraph" link="0"/>
+		<runtime id="453290282b4039eceef54971c0fb646754755abd" name="Удивление" link="1" type="5"/>
+	</runtimes>
+</asset>
