@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>a4201ccca1f48108041f41772548db5ad2e55a98</guid>
 	<type>fbx</type>
-	<hash>fe93d5559ccb3e41f5f608a5ac2322c0e277839b6a1e2ca26e37bf401d421d81</hash>
+	<hash>55856223c0bde10cc60160f415d352c3526e76fd94f5bef442f433d77f3ccb5a</hash>
 	<runtimes>
 		<runtime id="a4201ccca1f48108041f41772548db5ad2e55a98" name="Positive woman with bag.fbx" link="0"/>
 		<runtime id="203277fcdda60dbf4729f055a95254f1442ca161" name="Positive woman with bag.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">a4dcb2cb</parameter>
+				<parameter type="string" name="id">e78ee61c</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="6579eb407f863de94f78a49b80cc173b3d78cb4c" name="cube.mesh" link="2" type="1">

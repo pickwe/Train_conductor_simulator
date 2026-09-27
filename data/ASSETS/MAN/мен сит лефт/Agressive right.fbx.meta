@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>772fb97df1f0e34b7b77d187dd4b42cea1565bec</guid>
 	<type>fbx</type>
-	<hash>c7cef6cded238a4f02622a8ab70e94023c99ca5dd53c930d9d3b4dda9fb44a70</hash>
+	<hash>06e37a241f7a03be1eeb160ea0d69902811e69160666d5cdb4c5452c4a2299d0</hash>
 	<runtimes>
 		<runtime id="772fb97df1f0e34b7b77d187dd4b42cea1565bec" name="Agressive right.fbx" link="0"/>
 		<runtime id="20c6d74caaed3237ad2b8dbac29ee5d6a2f3af45" name="Agressive right.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">4852aeae</parameter>
+				<parameter type="string" name="id">7d623e2e</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="b8a0b1015aec4c423e6615abe8a66c54b86157e0" name="Agressive right.skeleton" link="2" type="8">

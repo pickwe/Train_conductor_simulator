@@ -101,6 +101,7 @@ public partial class MenuManager : Component
 	private const int EnvironmentSoundMask = 1 << EnvironmentSoundChannel;
 	private const int MenuMusicChannel = 1;
 	private const int MenuMusicMask = 1 << MenuMusicChannel;
+	private const float MenuMusicVolumeScale = 0.3f;
 	private static readonly HttpClient AuthHttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(10.0) };
 	public static string AuthenticationToken => instance?.authenticationToken ?? "";
 	private static readonly string[] AchievementIds = {
@@ -371,7 +372,6 @@ public partial class MenuManager : Component
 		sfxVolumeSlider.EventChanged.Connect(ChangeEnvironmentVolume);
 		WidgetSprite[] buttons = { start, settings, profile, exit, resume, pauseSettings, pauseProfile, menu, login, loginBack, settingsBack, profileBack };
 		foreach (WidgetSprite button in buttons) BindButtonSprite(button);
-		loginBack.Width = 376; loginBack.Height = 79;
 		settingsBack.Width = 320;
 		settingsBack.Height = 67;
 		allButtonSprites.AddRange(buttons);
@@ -550,19 +550,77 @@ public partial class MenuManager : Component
 		}
 		UpdateAchievementsRowWidth(scale);
 		ResizeBackButtons(scale);
+		ResizeLoginButtons(scale);
+		ResizeProfileMetrics(scale);
 		ResizeMainButtons();
 		mainScreen.Arrange(); pauseScreen.Arrange(); loginScreen.Arrange(); settingsScreen.Arrange(); profileScreen.Arrange();
 		PositionScreens();
 	}
 
+	private void ResizeProfileMetrics(float scale)
+	{
+		Widget loyaltyRow = loyaltyLabel.Parent?.Parent;
+		Widget safetyRow = safetyLabel.Parent?.Parent;
+		Widget complianceRow = complianceLabel.Parent?.Parent;
+		if (loyaltyRow == null || safetyRow == null || complianceRow == null
+			|| profileMetricsPanel.NumChildren == 0) return;
+
+		complianceRow.Hidden = true;
+		Widget title = profileMetricsPanel.GetChild(0);
+		// Place the remaining rows explicitly inside the panel, below its title.
+		profileMetricsPanel.SetPadding(0, 0, 0, 0);
+		title.Flags = loyaltyRow.Flags = safetyRow.Flags = Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED;
+		int margin = Math.Max(1, (int)Math.Round(18 * scale));
+		int gap = Math.Max(1, (int)Math.Round(16 * scale));
+		title.SetPosition(Math.Max(0, (profileMetricsPanel.Width - title.Width) / 2), margin);
+		int contentTop = margin + title.Height + Math.Max(1, (int)Math.Round(12 * scale));
+		int rowsHeight = loyaltyRow.Height + gap + safetyRow.Height;
+		int firstRowY = contentTop + Math.Max(0,
+			(profileMetricsPanel.Height - margin - contentTop - rowsHeight) / 2);
+		loyaltyRow.SetPosition(Math.Max(0, (profileMetricsPanel.Width - loyaltyRow.Width) / 2), firstRowY);
+		safetyRow.SetPosition(Math.Max(0, (profileMetricsPanel.Width - safetyRow.Width) / 2),
+			firstRowY + loyaltyRow.Height + gap);
+	}
+
 	private void ResizeBackButtons(float scale)
 	{
-		WidgetSprite loginBack = W<WidgetSprite>("login_back_button");
 		WidgetSprite settingsBack = W<WidgetSprite>("settings_back_button");
 		WidgetSprite profileBack = W<WidgetSprite>("profile_back_button");
-		if (loginBack != null) { loginBack.Width = Math.Max(1, (int)(376 * scale)); loginBack.Height = Math.Max(1, (int)(79 * scale)); }
 		if (settingsBack != null) { settingsBack.Width = Math.Max(1, (int)(320 * scale)); settingsBack.Height = Math.Max(1, (int)(67 * scale)); }
 		if (profileBack != null) { profileBack.Width = Math.Max(1, (int)(260 * scale)); profileBack.Height = Math.Max(1, (int)(55 * scale)); }
+	}
+
+	private void ResizeLoginButtons(float scale)
+	{
+		WidgetSprite login = W<WidgetSprite>("login_button");
+		WidgetSprite back = W<WidgetSprite>("login_back_button");
+		if (login == null || back == null) return;
+		int textureWidth = login.GetLayerWidth(0);
+		int frameHeight = login.GetLayerHeight(0) / 2;
+		if (textureWidth <= 0 || frameHeight <= 0) return;
+
+		int buttonWidth = Math.Min(loginScreen.Width, Math.Max(1, (int)Math.Round(textureWidth * scale * 1.1f)));
+		int buttonHeight = Math.Max(1, (int)Math.Round((float)buttonWidth * frameHeight / textureWidth));
+		login.Width = back.Width = buttonWidth;
+		login.Height = back.Height = buttonHeight;
+		ResizeLoginButtonRow(login.Parent, login, buttonWidth, buttonHeight);
+		Widget backSlot = back.Parent;
+		if (backSlot != null)
+			ResizeLoginButtonRow(backSlot.Parent, backSlot, buttonWidth, buttonHeight);
+	}
+
+	private void ResizeLoginButtonRow(Widget row, Widget slot, int buttonWidth, int buttonHeight)
+	{
+		if (row == null || slot == null || row.NumChildren != 3) return;
+		int rowWidth = loginScreen.Width;
+		int sideWidth = Math.Max(0, (rowWidth - buttonWidth) / 2);
+		row.Width = rowWidth;
+		row.Height = buttonHeight;
+		slot.Width = buttonWidth;
+		slot.Height = buttonHeight;
+		row.GetChild(0).Width = sideWidth;
+		row.GetChild(2).Width = Math.Max(0, rowWidth - buttonWidth - sideWidth);
+		row.GetChild(0).Height = row.GetChild(2).Height = buttonHeight;
 	}
 
 	private void RefreshMainTextureLayout()
@@ -1012,7 +1070,7 @@ public partial class MenuManager : Component
 		if (volumeSlider == null || changingVolume) return;
 		changingVolume = true; int value = SnapVolume(volumeSlider.Value); volumeSlider.Value = value;
 		musicGain = value / 100.0f;
-		Sound.SetSourceVolume(MenuMusicChannel, musicGain);
+		Sound.SetSourceVolume(MenuMusicChannel, musicGain * MenuMusicVolumeScale);
 		if (menuMusic != null) menuMusic.Gain = 1.0f;
 		volumeLabel.Text = "<b>Мелодия меню: " + value + "</b>";
 		UpdateSettingsProgressBars(); changingVolume = false;
@@ -1312,7 +1370,7 @@ public partial class MenuManager : Component
 
 	private void ApplyVolumeSettings()
 	{
-		Sound.SetSourceVolume(MenuMusicChannel, musicGain);
+		Sound.SetSourceVolume(MenuMusicChannel, musicGain * MenuMusicVolumeScale);
 		Sound.SetSourceVolume(EnvironmentSoundChannel, environmentGain);
 	}
 

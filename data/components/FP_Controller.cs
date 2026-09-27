@@ -224,7 +224,8 @@ public partial class FP_Controller : Component
 			return;
 
 		if (crosshair != null)
-			crosshair.Hidden = !MenuManager.IsGameplayScreen || BriefingWindow.IsVisible || DialogueWindow.IsVisible;
+			crosshair.Hidden = !MenuManager.IsGameplayScreen || BriefingWindow.IsVisible
+				|| DialogueWindow.IsVisible || ConductorTerminal.IsVisible;
 
 		float frameTime = Game.IFps * Physics.Scale;
 		if (frameTime <= 0.0f)

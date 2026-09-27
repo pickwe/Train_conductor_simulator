@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>07f52e9eaae509b735296d1b1b7759aea8ab4cfe</guid>
+	<type>material</type>
+	<hash>dffae5a699ee7f062f03ed521f696654e0f2b44ad9052427d0f069f926a8b8fd</hash>
+	<runtimes>
+		<runtime id="07f52e9eaae509b735296d1b1b7759aea8ab4cfe" name="Матовый метал" link="0" type="5"/>
+	</runtimes>
+</asset>

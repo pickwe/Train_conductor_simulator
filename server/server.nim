@@ -185,16 +185,7 @@ when isMainModule:
   let app = newApplication(openDatabase())
   app.db.setupTables()
 
-  let staticFilesRoot =
-    if dirExists(getCurrentDir() / "server" / "public"): getCurrentDir() / "server" / "public"
-    elif dirExists(getCurrentDir() / "public"): getCurrentDir() / "public"
-    else: raise ValueError.newException("please make sure you ran server either near server/public/ or near public/")
-
-  app.add staticRoute("/", "", staticFilesRoot/"html/index.html", html_headers)
-  app.add staticRoute("/", "", staticFilesRoot/"html/", html_headers)
-  app.add staticRoute("/", ".html", staticFilesRoot/"html/", html_headers)
-  app.add staticRoute("/", ".js", staticFilesRoot/"js/", js_headers)
-  app.add staticRoute("/", ".css", staticFilesRoot/"css/", css_headers)
+ 
 
   app.add userApi()
 

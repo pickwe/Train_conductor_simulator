@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>98ac1c92803e066b1fa29949db1936c7f7235479</guid>
+	<type>sound</type>
+	<hash>d2e78443692c3c78d07f7a6dabf57d47a0bc9f157bb217a3de24cb1d39255a92</hash>
+	<runtimes>
+		<runtime id="98ac1c92803e066b1fa29949db1936c7f7235479" name="эмбиент_внутри_поезда_2_тише_сделайте_.wav" link="0" type="7"/>
+	</runtimes>
+</asset>

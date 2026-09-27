@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>e333aab00622e68ff292dc35285d3d603bbd2c90</guid>
+	<type>material</type>
+	<hash>1094e72ed95d925fdff488ce7aaed03e8301530a602ca0cdd6333a2e79b20999</hash>
+	<runtimes>
+		<runtime id="e333aab00622e68ff292dc35285d3d603bbd2c90" name="Вставка под кнопки микроволновки" link="0" type="5"/>
+	</runtimes>
+</asset>

@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>4e4b94bb49331a25cf4de437d8e9b78d816d3f19</guid>
 	<type>component</type>
-	<hash>432347847ff1cf7bb3c22727f8e82b16ed829f06d20bc9a855a34f7d9ba960e1</hash>
+	<hash>62a1b9f35079763fbe3ac0dbfde800edbb74b70889bd3a992cd85771de3cad01</hash>
 	<runtimes>
 		<runtime id="4e4b94bb49331a25cf4de437d8e9b78d816d3f19" name="PassengerScenarioController.cs" link="0"/>
 		<runtime id="3452e7fae1db6b054e50732eb92558c97f901da4" name="PassengerScenarioController.prop" link="1" type="4"/>

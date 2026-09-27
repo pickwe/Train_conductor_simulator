@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>1ba4a100a9cc2d289f3869c5ea6ffad8d9a144e0</guid>
+	<type>material</type>
+	<hash>b996862c47521089e59866dd529d0928ec6b5a68d601fa49a632bf6369fb4fed</hash>
+	<runtimes>
+		<runtime id="1ba4a100a9cc2d289f3869c5ea6ffad8d9a144e0" name="Материал мебели" link="0" type="5"/>
+	</runtimes>
+</asset>

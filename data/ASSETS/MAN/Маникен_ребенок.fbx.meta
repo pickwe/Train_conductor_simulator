@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>c0c0aef5d10a73caf4476d472dacdc0d382c4eee</guid>
 	<type>fbx</type>
-	<hash>d99767143fce146d4c0d313820f7cbd34bff43cb2d2ffb2750725cb34e0518b9</hash>
+	<hash>953e84e472e85c00b4d3a23106b5e96f1b2c5c9b10ebc8775faf747927d75274</hash>
 	<runtimes>
 		<runtime id="c0c0aef5d10a73caf4476d472dacdc0d382c4eee" name="Маникен_ребенок.fbx" link="0"/>
 		<runtime id="328ce60c843b0893a5993992d5fa1a75728a336f" name="Маникен_ребенок.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">87a1944a</parameter>
+				<parameter type="string" name="id">ce581d1f</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="f0e00df9a5bfa5433547ed6b622983bc23c8ca02" name="Маникен_ребенок.skeleton" link="2" type="8">

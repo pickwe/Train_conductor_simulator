@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>ec5f6f4d66403b29ee8c6fd72a271dcac9f6007c</guid>
 	<type>fbx</type>
-	<hash>a51047c0dc1daeec1c27a5a97e257ba299185b54d30a5ec296d45ee0c0bc721e</hash>
+	<hash>dddc46773a634162659948517da7825f5cb151755ae38bf868832905dbf6a8cc</hash>
 	<runtimes>
 		<runtime id="ec5f6f4d66403b29ee8c6fd72a271dcac9f6007c" name="Confused right.fbx" link="0"/>
 		<runtime id="fdced9dc4883204e2f4d0dcad306e7b0e15c1715" name="Confused right.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">f97a14e3</parameter>
+				<parameter type="string" name="id">5c95cd61</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="805c23d14f5cf9614fe3f8fb730ad6e9a05b7d70" name="Confused right.skeleton" link="2" type="8">

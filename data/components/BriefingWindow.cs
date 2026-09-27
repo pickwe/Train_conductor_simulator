@@ -29,6 +29,7 @@ public partial class BriefingWindow : Component
 	private bool visible;
 	private bool introductionVisible, waitingForKeyRelease, suppressPauseUntilEscRelease;
 	private float introFade;
+	private int introductionHeadingOffsetX;
 	private float savedGameScale, savedPhysicsScale;
 	private bool worldFrozenByBriefing;
 	private readonly Stopwatch introductionClock = new Stopwatch();
@@ -106,6 +107,7 @@ public partial class BriefingWindow : Component
 		gui.AddChild(closeButton, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
 		introHeading = new WidgetLabel(gui, "");
 		introHeading.FontSize = 38;
+		introHeading.FontRich = 1;
 		introHeading.FontColor = new vec4(1.0f, 1.0f, 1.0f, 1.0f);
 		introHeading.TextAlign = Gui.ALIGN_CENTER;
 		gui.AddChild(introHeading, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
@@ -113,6 +115,7 @@ public partial class BriefingWindow : Component
 		introBody.FontSize = 22;
 		introBody.FontColor = new vec4(0.91f, 0.92f, 0.94f, 1.0f);
 		introBody.FontWrap = 1;
+		introBody.FontRich = 1;
 		introBody.TextAlign = Gui.ALIGN_CENTER;
 		gui.AddChild(introBody, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
 		introPrompt = new WidgetLabel(gui, "Нажмите любую клавишу или кнопку мыши, чтобы продолжить");
@@ -163,19 +166,30 @@ public partial class BriefingWindow : Component
 
 	private void ShowScenarioOneIntroduction()
 	{
-		ShowIntroduction(scenarioOneTitle, scenarioOneText);
+		ShowIntroduction(scenarioOneTitle, scenarioOneText, -48);
 	}
 
 	private void ShowScenarioTwoIntroduction()
 	{
-		ShowIntroduction(scenarioTwoTitle, scenarioTwoText);
+		ShowIntroduction(scenarioTwoTitle, scenarioTwoText, -48);
 	}
 
-	private void ShowIntroduction(string introTitle, string introText)
+	private void ShowIntroduction(string introTitle, string introText, int headingOffsetX = 0)
 	{
 		if (introductionVisible) return;
-		introHeading.Text = introTitle;
-		introBody.Text = introText;
+		introductionHeadingOffsetX = headingOffsetX;
+		// Offset only the scenario number; keep the name centered in its original position.
+		string escapedTitle = System.Security.SecurityElement.Escape(introTitle ?? "").Replace("\r\n", "\n");
+		int titleLineBreak = escapedTitle.IndexOf('\n');
+		if (titleLineBreak >= 0)
+		{
+			introHeading.Text = "<center><xy dx=\"-12\"/>" + escapedTitle.Substring(0, titleLineBreak)
+				+ "<xy dx=\"12\"/><br/>" + escapedTitle.Substring(titleLineBreak + 1).Replace("\n", "<br/>") + "</center>";
+		}
+		else
+			introHeading.Text = "<center>" + escapedTitle + "</center>";
+		string escapedDescription = System.Security.SecurityElement.Escape(introText ?? "");
+		introBody.Text = "<center>" + escapedDescription.Replace("\r\n", "\n").Replace("\n", "<br/>") + "</center>";
 		introFade = 0.0f;
 		introductionClock.Restart();
 		waitingForKeyRelease = true;
@@ -275,7 +289,7 @@ public partial class BriefingWindow : Component
 		body.SetPosition(left + 36, top + 100);
 		body.Width = panelWidth - 72;
 		closeButton.SetPosition(left + panelWidth - 168, top + 24);
-		introHeading.SetPosition(left + 36, top + 70);
+		introHeading.SetPosition(left + 36 + introductionHeadingOffsetX, top + 70);
 		introHeading.Width = panelWidth - 72;
 		introBody.SetPosition(left + 72, top + 175);
 		introBody.Width = panelWidth - 144;

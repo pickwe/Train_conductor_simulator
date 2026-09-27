@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>ed268c92082ce47d05f5d65f74a6a72baabefb72</guid>
+	<type>material</type>
+	<hash>2a5174f42f715481406a181d53dfdfd51be986fb0d3b2fa42225709b93c4be4e</hash>
+	<runtimes>
+		<runtime id="ed268c92082ce47d05f5d65f74a6a72baabefb72" name="Пластик входная дверь" link="0" type="5"/>
+	</runtimes>
+</asset>

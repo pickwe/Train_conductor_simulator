@@ -36,7 +36,6 @@ public partial class PassengerCallInteraction : Component
 		RefreshInteractables();
 		if (petCarrierScenario == null)
 			petCarrierScenario = ComponentSystem.FindComponentInWorld<PetCarrierScenarioController>();
-		SetInteractionAvailable(IsWaitingForPassengerInteraction());
 
 		if (scenario == null)
 		{
@@ -50,17 +49,16 @@ public partial class PassengerCallInteraction : Component
 					OnPassengerCallRequested();
 			}
 		}
+		SetInteractionAvailable(IsWaitingForPassengerInteraction());
 	}
 
 	private bool IsWaitingForPassengerInteraction()
 	{
-		bool isSelectedScenarioPassenger = scenario != null && scenario.IsSelectedPassengerNode(node);
+		bool isSelectedScenarioPassenger = scenario != null && scenario.IsStarted && scenario.IsSelectedPassengerNode(node);
 		return (isSelectedScenarioPassenger && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForPassenger)
 			|| (isSelectedScenarioPassenger && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingSeatCheck)
 			|| (isSelectedScenarioPassenger && scenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatCheckCompleted)
-			|| (petCarrierScenario != null && (petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingInitialPassengerInteraction
-				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
-				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff));
+			|| (petCarrierScenario != null && petCarrierScenario.CanInteractWithPassenger);
 	}
 
 	private void OnPassengerCallRequested()
@@ -109,10 +107,7 @@ public partial class PassengerCallInteraction : Component
 		if (callSound != null)
 			callSound.Stop();
 
-		if (petCarrierScenario != null
-			&& (petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingInitialPassengerInteraction
-				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction
-				|| petCarrierScenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerHandoff))
+		if (petCarrierScenario != null && petCarrierScenario.CanInteractWithPassenger)
 		{
 			petCarrierScenario.NotifyPassengerInteraction();
 			return;

@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>6f0edb09ecf7bc638a7010f3b63d2509c81098c8</guid>
 	<type>fbx</type>
-	<hash>cde65e79a6145a8d48656ac581fb0fd8e67d0dfac940d82e521f4c81f7744ad5</hash>
+	<hash>1b858700fd8a61bd6ccd4f9d1cb8c6d2ea1afea4812041de6c61835c915daf4f</hash>
 	<runtimes>
 		<runtime id="6f0edb09ecf7bc638a7010f3b63d2509c81098c8" name="Работа за компом.fbx" link="0"/>
 		<runtime id="80e069a8f6944cb0f43088b66aac0bff3275b351" name="Работа за компом.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">2db3b9cc</parameter>
+				<parameter type="string" name="id">0b205c51</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="91afd34d271a9a74520c73d7bf6f3ad834c4547c" name="plane.001.mesh" link="2" type="1">

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>c414f336bc7565b573b8a91dc912580217b8b24d</guid>
+	<type>texture</type>
+	<hash>575d5c9f002608d1659dcdc2a6e3ac20cf456b0845bc47e835b5630982cc468c</hash>
+	<runtimes>
+		<runtime id="c414f336bc7565b573b8a91dc912580217b8b24d" name="Ткань градиент закат.png" link="0" type="6"/>
+		<runtime id="a3c9e1dae8f3367b78b66bc778c1131f5238bfba" name="Ткань градиент закат.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">Auto (DXT1 or DXT5)</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">albedo (rgba)</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

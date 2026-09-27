@@ -29,10 +29,14 @@ public partial class DialogueWindow : Component
 	private int visibleCharacters;
 	private bool waitingAfterTyping;
 	private bool hiddenByMenu;
+	private bool terminalHintRequested;
 	private bool panelWasHiddenByState, speakerWasHiddenByState, textWasHiddenByState, statusWasHiddenByState;
 	private bool terminalHintPanelWasHiddenByState, terminalHintWasHiddenByState;
 	private Input.MOUSE_HANDLE previousMouseHandle;
 	private bool previousMouseGrab, previousCursorHide;
+	private const float ReferenceWidth = 1600.0f;
+	private const float ReferenceHeight = 900.0f;
+	private int lastGuiWidth = -1, lastGuiHeight = -1;
 
 	private void Init()
 	{
@@ -91,6 +95,7 @@ public partial class DialogueWindow : Component
 		SetHiddenByMenu(!MenuManager.IsGameplayScreen);
 		if (hiddenByMenu)
 			return;
+		ResizeInterface();
 
 		if (scenario == null)
 		{
@@ -136,6 +141,7 @@ public partial class DialogueWindow : Component
 			|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatCheckCompleted))
 			LayoutTerminalHint();
 
+		ApplyTerminalHintVisibility();
 		if (!IsVisible)
 			return;
 
@@ -189,8 +195,7 @@ public partial class DialogueWindow : Component
 			speaker.Hidden = true;
 			text.Hidden = true;
 			status.Hidden = true;
-			terminalHintPanel.Hidden = false;
-			terminalHint.Hidden = false;
+			SetTerminalHintVisible(true);
 			if (scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingInitialPassengerInteraction
 				|| scenario.CurrentStage == PetCarrierScenarioController.Stage.AwaitingPassengerInteraction)
 				terminalHint.Text = "Подойдите к пассажиру и нажмите E";
@@ -207,8 +212,7 @@ public partial class DialogueWindow : Component
 			return;
 		}
 
-		terminalHintPanel.Hidden = true;
-		terminalHint.Hidden = true;
+		SetTerminalHintVisible(false);
 
 		if (!mouseStateSaved)
 		{
@@ -269,16 +273,14 @@ public partial class DialogueWindow : Component
 			|| secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForScenarioTwo)
 		{
 			HideDialogueWidgets();
-			terminalHintPanel.Hidden = true;
-			terminalHint.Hidden = true;
+			SetTerminalHintVisible(false);
 			return;
 		}
 
 		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.WaitingForPassenger)
 		{
 			HideDialogueWidgets();
-			terminalHintPanel.Hidden = false;
-			terminalHint.Hidden = false;
+			SetTerminalHintVisible(true);
 			terminalHint.Text = secondScenario.PassengerApproachTimedOut
 				? "Время поиска истекло. Найдите вызвавшего пассажира"
 				: string.Format("Вызов с пассажирского места. Найдите пассажира: {0:0} сек.", secondScenario.RemainingSeconds);
@@ -289,8 +291,7 @@ public partial class DialogueWindow : Component
 		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingDisplayChecks)
 		{
 			HideDialogueWidgets();
-			terminalHintPanel.Hidden = false;
-			terminalHint.Hidden = false;
+			SetTerminalHintVisible(true);
 			terminalHint.Text = "Нажмите Q, чтобы открыть монитор проводника";
 			LayoutTerminalHint();
 			return;
@@ -299,8 +300,7 @@ public partial class DialogueWindow : Component
 		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingParentInteraction)
 		{
 			HideDialogueWidgets();
-			terminalHintPanel.Hidden = false;
-			terminalHint.Hidden = false;
+			SetTerminalHintVisible(true);
 			terminalHint.Text = "Подойдите к пассажиру-родителю и нажмите E";
 			LayoutTerminalHint();
 			return;
@@ -309,8 +309,7 @@ public partial class DialogueWindow : Component
 		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingActivityPickup)
 		{
 			HideDialogueWidgets();
-			terminalHintPanel.Hidden = false;
-			terminalHint.Hidden = false;
+			SetTerminalHintVisible(true);
 			terminalHint.Text = "Подойдите к книге или настольной игре и нажмите E";
 			LayoutTerminalHint();
 			return;
@@ -319,8 +318,7 @@ public partial class DialogueWindow : Component
 		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingActivityHandoff)
 		{
 			HideDialogueWidgets();
-			terminalHintPanel.Hidden = false;
-			terminalHint.Hidden = false;
+			SetTerminalHintVisible(true);
 			terminalHint.Text = "Вернитесь к пассажиру-родителю и нажмите E";
 			LayoutTerminalHint();
 			return;
@@ -329,9 +327,8 @@ public partial class DialogueWindow : Component
 		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.AwaitingSeatCheck)
 		{
 			HideDialogueWidgets();
-			terminalHintPanel.Hidden = false;
-			terminalHint.Hidden = false;
-			terminalHint.Text = "Проверьте схему мест через Q или вернитесь к пассажиру-ябеде и нажмите E";
+			SetTerminalHintVisible(true);
+			terminalHint.Text = "Проверьте схему мест через Q или вернитесь к первому пассажиру и нажмите E";
 			LayoutTerminalHint();
 			return;
 		}
@@ -339,9 +336,8 @@ public partial class DialogueWindow : Component
 		if (secondScenario.CurrentStep == PassengerScenarioController.ScenarioStep.SeatCheckCompleted)
 		{
 			HideDialogueWidgets();
-			terminalHintPanel.Hidden = false;
-			terminalHint.Hidden = false;
-			terminalHint.Text = "Вернитесь к пассажиру-ябеде и нажмите E. Схему мест можно проверить повторно через Q";
+			SetTerminalHintVisible(true);
+			terminalHint.Text = "Вернитесь к первому пассажиру и нажмите E. Схему мест можно проверить повторно через Q";
 			LayoutTerminalHint();
 			return;
 		}
@@ -349,13 +345,11 @@ public partial class DialogueWindow : Component
 		if (!secondScenario.DialogueActive)
 		{
 			HideDialogueWidgets();
-			terminalHintPanel.Hidden = true;
-			terminalHint.Hidden = true;
+			SetTerminalHintVisible(false);
 			return;
 		}
 
-		terminalHintPanel.Hidden = true;
-		terminalHint.Hidden = true;
+		SetTerminalHintVisible(false);
 		if (!mouseStateSaved)
 		{
 			previousMouseHandle = Input.MouseHandle;
@@ -554,60 +548,117 @@ public partial class DialogueWindow : Component
 			status.Text += "   Q — терминал проводника";
 	}
 
+	private void ResizeInterface()
+	{
+		if (gui == null || gui.Width <= 0 || gui.Height <= 0)
+			return;
+		if (gui.Width == lastGuiWidth && gui.Height == lastGuiHeight)
+			return;
+
+		lastGuiWidth = gui.Width;
+		lastGuiHeight = gui.Height;
+		Layout();
+		LayoutTerminalHint();
+	}
+
+	private float GetInterfaceScale()
+	{
+		return System.Math.Min(System.Math.Max(1, gui.Width) / ReferenceWidth,
+			System.Math.Max(1, gui.Height) / ReferenceHeight);
+	}
+
+	private static int ScaleSize(int size, float scale)
+	{
+		return System.Math.Max(1, (int)System.Math.Round(size * scale));
+	}
+
 	private void Layout()
 	{
-		int width = gui.Width;
-		int height = gui.Height;
-		int horizontalMargin = MathLib.Max(18, width / 40);
-		int panelHeight = MathLib.Max(138, height / 5);
-		int panelTop = height - panelHeight - 18;
-		int panelWidth = width - horizontalMargin * 2;
+		int width = System.Math.Max(1, gui.Width);
+		int height = System.Math.Max(1, gui.Height);
+		float scale = GetInterfaceScale();
+		int horizontalMargin = ScaleSize(40, scale);
+		int panelHeight = ScaleSize(180, scale);
+		int panelTop = System.Math.Max(0, height - panelHeight - ScaleSize(18, scale));
+		int panelWidth = System.Math.Max(1, width - horizontalMargin * 2);
+		int textPadding = ScaleSize(28, scale);
+
+		speaker.FontSize = ScaleSize(19, scale);
+		text.FontSize = ScaleSize(21, scale);
+		status.FontSize = ScaleSize(15, scale);
 
 		panel.SetPosition(horizontalMargin, panelTop);
 		panel.Width = panelWidth;
 		panel.Height = panelHeight;
 
-		speaker.SetPosition(horizontalMargin + 28, panelTop + 15);
-		text.SetPosition(horizontalMargin + 28, panelTop + 48);
-		text.Width = panelWidth - 56;
-		status.SetPosition(horizontalMargin + 28, panelTop + panelHeight - 30);
-		status.Width = panelWidth - 56;
+		speaker.SetPosition(horizontalMargin + textPadding, panelTop + ScaleSize(15, scale));
+		text.SetPosition(horizontalMargin + textPadding, panelTop + ScaleSize(48, scale));
+		text.Width = System.Math.Max(1, panelWidth - textPadding * 2);
+		status.SetPosition(horizontalMargin + textPadding, panelTop + panelHeight - ScaleSize(30, scale));
+		status.Width = text.Width;
 
-		int buttonWidth = MathLib.Min(420, MathLib.Max(280, width / 3));
-		int buttonGap = 9;
+		int buttonWidth = System.Math.Min(ScaleSize(420, scale), panelWidth);
+		int buttonGap = ScaleSize(9, scale);
 		int right = width - horizontalMargin - buttonWidth;
-		int buttonsBottom = panelTop - 14;
-		int totalChoicesHeight = buttonGap * MathLib.Max(0, choiceBackgrounds.Count - 1);
+		int buttonsBottom = panelTop - ScaleSize(14, scale);
+		int totalChoicesHeight = buttonGap * System.Math.Max(0, choiceBackgrounds.Count - 1);
 		foreach (int choiceHeight in choiceHeights)
-			totalChoicesHeight += choiceHeight;
-		int firstChoiceY = MathLib.Max(18, buttonsBottom - totalChoicesHeight);
+			totalChoicesHeight += ScaleSize(choiceHeight, scale);
+		int choiceY = System.Math.Max(ScaleSize(18, scale), buttonsBottom - totalChoicesHeight);
+		int choicePaddingX = ScaleSize(14, scale);
+		int choicePaddingY = ScaleSize(8, scale);
 
 		for (int i = 0; i < choiceBackgrounds.Count; i++)
 		{
-			int choiceY = firstChoiceY;
-			for (int previous = 0; previous < i; previous++)
-				choiceY += choiceHeights[previous] + buttonGap;
+			int choiceHeight = ScaleSize(choiceHeights[i], scale);
+			choiceLabels[i].FontSize = ScaleSize(16, scale);
 			choiceBackgrounds[i].SetPosition(right, choiceY);
 			choiceBackgrounds[i].Width = buttonWidth;
-			choiceBackgrounds[i].Height = choiceHeights[i];
-			choiceLabels[i].SetPosition(right + 14, choiceY + 8);
-			choiceLabels[i].Width = buttonWidth - 28;
-			choiceLabels[i].Height = choiceHeights[i] - 16;
+			choiceBackgrounds[i].Height = choiceHeight;
+			choiceLabels[i].SetPosition(right + choicePaddingX, choiceY + choicePaddingY);
+			choiceLabels[i].Width = System.Math.Max(1, buttonWidth - choicePaddingX * 2);
+			choiceLabels[i].Height = System.Math.Max(1, choiceHeight - choicePaddingY * 2);
+			choiceY += choiceHeight + buttonGap;
 		}
+	}
+
+	private void SetTerminalHintVisible(bool visible)
+	{
+		terminalHintRequested = visible;
+		ApplyTerminalHintVisibility();
+	}
+
+	private void ApplyTerminalHintVisibility()
+	{
+		bool hidden = !terminalHintRequested || hiddenByMenu || ConductorTerminal.IsVisible;
+		if (terminalHintPanel != null) terminalHintPanel.Hidden = hidden;
+		if (terminalHint != null) terminalHint.Hidden = hidden;
 	}
 
 	private void LayoutTerminalHint()
 	{
 		if (terminalHintPanel == null || gui == null) return;
-		int width = MathLib.Min(680, gui.Width - 48);
-		int height = 72;
-		int left = gui.Width - width - 24;
-		terminalHintPanel.SetPosition(left, 24);
+		float scale = GetInterfaceScale();
+		int margin = ScaleSize(24, scale);
+		int paddingX = ScaleSize(12, scale);
+		int paddingY = ScaleSize(10, scale);
+		terminalHint.FontSize = ScaleSize(17, scale);
+		// Measure the unwrapped text, then let the label calculate any required wrapping.
+		terminalHint.FontWrap = 0;
+		ivec2 textSize = terminalHint.GetTextUnitSize(terminalHint.Text);
+		int maxTextWidth = System.Math.Max(1,
+			System.Math.Min(ScaleSize(680, scale), gui.Width - margin * 2) - paddingX * 2);
+		terminalHint.Width = System.Math.Max(1, System.Math.Min(textSize.x, maxTextWidth));
+		terminalHint.Height = 0;
+		terminalHint.FontWrap = 1;
+		terminalHint.Arrange();
+		int width = terminalHint.Width + paddingX * 2;
+		int height = System.Math.Max(textSize.y, terminalHint.Height) + paddingY * 2;
+		int left = System.Math.Max(0, gui.Width - width - margin);
+		terminalHintPanel.SetPosition(left, margin);
 		terminalHintPanel.Width = width;
 		terminalHintPanel.Height = height;
-		terminalHint.SetPosition(left + 12, 34);
-		terminalHint.Width = width - 24;
-		terminalHint.Height = height - 20;
+		terminalHint.SetPosition(left + paddingX, margin + paddingY);
 	}
 
 	private void ClearButtons()
@@ -627,8 +678,7 @@ public partial class DialogueWindow : Component
 		if (speaker != null) speaker.Hidden = true;
 		if (text != null) text.Hidden = true;
 		if (status != null) status.Hidden = true;
-		if (terminalHintPanel != null) terminalHintPanel.Hidden = true;
-		if (terminalHint != null) terminalHint.Hidden = true;
+		SetTerminalHintVisible(false);
 		ClearButtons();
 		IsVisible = false;
 		RestoreMouse();

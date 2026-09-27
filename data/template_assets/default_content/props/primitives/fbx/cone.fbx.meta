@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>1b58b2195b56f4a46956b7b3138299763fbbc25d</guid>
 	<type>fbx</type>
-	<hash>d6d851f37dd75131ca6433d3d0b0c56ef0ce5c6044826db8beabeb7a4a3a68be</hash>
+	<hash>a79390edd4b0b10d38590d604fcd5d92a52c62a971d2f99489a158540115bf05</hash>
 	<runtimes>
 		<runtime id="1b58b2195b56f4a46956b7b3138299763fbbc25d" name="cone.fbx" link="0"/>
 		<runtime id="bada353cdd958f6b159eddce4afe4ad5abf69e30" name="cone.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">c95b3eee</parameter>
+				<parameter type="string" name="id">4005d8a1</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="adac1bcf5877d6e27634e8d90f163c64c263dc73" name="cone_mesh.mesh" link="2" type="1">

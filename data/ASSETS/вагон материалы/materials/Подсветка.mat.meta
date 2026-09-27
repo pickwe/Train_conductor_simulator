@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>0f917efe8514505428c262fbf71591680582115e</guid>
+	<type>material</type>
+	<hash>c3f49bf118b7288313e7d0381f2d93d2d978b88629884f5af443499e75b583a9</hash>
+	<runtimes>
+		<runtime id="0f917efe8514505428c262fbf71591680582115e" name="Подсветка" link="0" type="5"/>
+	</runtimes>
+</asset>

@@ -45,9 +45,10 @@ public partial class ConductorTerminal : Component
 		gui.AddChild(body, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
 		exitHint = new WidgetLabel(gui, "Чтобы выйти из терминала, нажмите Q")
 		{
-			FontSize = 16,
-			FontColor = new vec4(0.78f, 0.86f, 0.96f, 1.0f),
-			TextAlign = Gui.ALIGN_RIGHT,
+			FontSize = 24,
+			FontColor = new vec4(0.0f, 0.0f, 0.0f, 1.0f),
+			TextAlign = Gui.ALIGN_LEFT,
+			FontWrap = 1,
 			Hidden = true
 		};
 		gui.AddChild(exitHint, Gui.ALIGN_OVERLAP | Gui.ALIGN_FIXED);
@@ -136,7 +137,7 @@ public partial class ConductorTerminal : Component
 
 	private void ShowSeats()
 	{
-		string texture = "data/ui/terminl map.png";
+		string texture = "data/ui/спрайты для опр мест/Спрайт_если_места_есть.png";
 		if (openedForSecondScenario && secondScenario != null)
 		{
 			if (secondScenario.CurrentStep != PassengerScenarioController.ScenarioStep.AwaitingSeatCheck
@@ -269,8 +270,13 @@ public partial class ConductorTerminal : Component
 		int top = (gui.Height - height) / 2;
 		panel.SetPosition(left, top); panel.Width = width; panel.Height = height;
 		heading.SetPosition(left + 28, top + 24); heading.Width = width - 56;
-		int hintWidth = MathLib.Min(380, gui.Width - 24);
-		exitHint.SetPosition(gui.Width - hintWidth - 12, 12); exitHint.Width = hintWidth; exitHint.Height = 28;
+		float hintScale = Math.Min(gui.Width / 1600.0f, gui.Height / 900.0f);
+		int hintMargin = Math.Max(1, (int)Math.Round(24 * hintScale));
+		exitHint.FontSize = Math.Max(1, (int)Math.Round(24 * hintScale));
+		// Align the exit instruction with the terminal instead of the screen edge.
+		exitHint.SetPosition(left + 28, hintMargin);
+		exitHint.Width = Math.Max(1, width - 56);
+		exitHint.Height = 0;
 
 		if (page == Page.Home)
 		{

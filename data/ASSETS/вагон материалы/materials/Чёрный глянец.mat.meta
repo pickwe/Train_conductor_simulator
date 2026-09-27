@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>b8084b66478c0e14508cb803da358bac90eb9cc6</guid>
+	<type>material</type>
+	<hash>6854619c83177f5dc6c89e0dda1b798bf63e03f9cecda7a5113d4e927a9d3069</hash>
+	<runtimes>
+		<runtime id="b8084b66478c0e14508cb803da358bac90eb9cc6" name="Чёрный глянец" link="0" type="5"/>
+	</runtimes>
+</asset>

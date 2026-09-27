@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>20991ccea70e2f6c2367a6d5701e018557301205</guid>
+	<type>fbx</type>
+	<hash>4e14b08e07f8d7b314249224ee6749ef46d166ee6fa46be91f61eed5ab025657</hash>
+	<runtimes>
+		<runtime id="20991ccea70e2f6c2367a6d5701e018557301205" name="Вагон_макет (6).fbx" link="0"/>
+		<runtime id="9373d10cc850a4d7b456bf3b85b4de2a77a79aab" name="Вагон_макет (6).node" link="1" type="3">
+			<parameters>
+				<parameter type="string" name="id">32060c28</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="84dc63ae769b491993743c6bcea02afe3244f00e" name="cylinder.001.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">7a3eb43</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="7b163d1e0e53a4ab53de58e5d9ae1d58b2f2b815" name="cylinder.053.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">2046166a</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="bcdfbc9088c32caf1d182995516b73f00227aa70" name="cube.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">044c539e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8100c380f8d7c99ca917169fbc784499cb4b3b0f" name="cube.074.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">044c539e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="833a5c42f5c1907ecf0666cfee549cdc4d3fed22" name="cube.294.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">66ecdf13</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d3034cb2f84dbc8546d876e9886578cbc97b8a19" name="cube.007.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="300eff44893d099f2da252996dbf518e2d2beca4" name="cube.265.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="02f6f5346a14d2e59d411c4339e540c823f74fb3" name="cube.276.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="3fddb616ec7d13d627b96f73250d3ec5623a5176" name="cube.277.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f3392d86bd3e11f6b1836d2d91fe39ce6a601a5d" name="cube.278.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="45dc053859c999b55d0803dd9d9fc8ca80e65818" name="cube.279.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="275bda282c2363c10f4334270a53b3782992fc97" name="cube.282.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ebca052a2909c39f4d0eba570791dd1b9448f10a" name="cube.283.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1a12739a01d72a951bec3fb18a965b145e272ce1" name="cube.285.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b18c826c16ddc168b4a14161dea510a40246e0cc" name="cube.286.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="90a4265c2822713fdaaa024b48c655768b85a5bb" name="cube.290.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="58141d7e462d18ae76d5eb7ba3b8a566c183dfde" name="cube.291.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8d6af2eeb56a105fffe832753553d3727801c5a5" name="cube.296.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="3e596ae0ba7cf75bee3e4f25f208be865662bac0" name="cube.297.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ce27cdd0ee6fa08bfd846aafe9c6599c329aef1f" name="cube.001.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="44761312054f885d7d90e6df1ad6ab0ce39a71f2" name="cube.002.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8033bf826f3d59ef0518c97951e32167754f28a9" name="cube.004.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="5822f29409a987a43b2bb129a5a407e5b42859f4" name="cube.008.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="53d6048467449840ec0791530c1c3b7a3f26bcc3" name="cube.013.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6f2339e68a363255b117d0837da178604fa73b46" name="cube.014.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="29472d56dc59a403f52fc8bd696340c4b360d9ed" name="cube.133.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b7648d88238de56173762b6dad2c596837537268" name="cube.134.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">12d29774</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="85293e78b1e532d7d672da37d8ae6019776932a7" name="cube.275.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">fad06de</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f9dc25fa64a0e2b8d17d0c675a43d0f529440fda" name="cube.170.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9f7cd06a8543f1136c733441289cd751ff7e9d71" name="cube.171.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e468efbc439e2f99b16ec1f1b874841708a0f81c" name="cube.172.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="875b2fac2d12c6f68533e95b7a3f9e270a32b4cb" name="cube.173.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f842ab4eeb8b9502ce313e8b36964d509cde03ae" name="cube.174.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4efd7cbef84aa4878a8150058995e48c052a7735" name="cube.175.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="85be0d30014036cf9d6eb8b5f28a274f0f431f10" name="cube.176.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ced8cc209faabf8faf4aa2bffd27664ac9c7e72f" name="cube.177.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="3b6ddde2eedf59ea2f674aef9cf801acb5496ac2" name="cube.178.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1bd746526fefcb882754a009cc2a1ab21ea4ab39" name="cube.179.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ade919e4954a47abeddb93b91770c9b11f955b44" name="cube.180.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9bf647d4ca0380d2eeed2a6329fa89624305add3" name="cube.181.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="aebe11b69224fe704db8559393428fb2e095d916" name="cube.182.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="85d181268256aecd5087e84db516d2de8bafbd7d" name="cube.183.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9c5a89d8a09c4820df6b16fddf458bd7db1060b8" name="cube.184.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="dae316c8e2618ac7b86be4472550536154c52cb7" name="cube.185.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d9f0dacaea23c935bc07c2773d3bd82e782222aa" name="cube.186.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6180c13a1b2d640812da2cd19ff5e8ba52947201" name="cube.187.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="a5a2110c2bcb8695a9a74681029ad1b6b57e236c" name="cube.188.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1addecfc8760169cf755746b9b5e54772b7fc7db" name="cube.266.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="5c750d1e81989e6487a7359be495a3f5dff05b7e" name="cube.271.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="fa9ada8e445f3c4ed3f2b195d5db934c4f65ccc5" name="cube.272.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="36e2a3801f65215033b266457e823b8dd36dd760" name="cube.280.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="90a8be70b2a82b2935dabecf5d7b19c6c533233f" name="cube.293.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="75febcb2e99c776732ba92ff61be94e11139d792" name="cube.298.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b38ae12238198c2dc064fa9967f4ecca358511c9" name="cube.299.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="28867534d1ae86a58d4afa499cb4e11eb5e7f094" name="cube.300.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="583cbf24080ea79c7272e7732773c0d3618522e3" name="cube.301.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f05b3d86d7424b3e8cdbfea3fd312f0ea4432ae6" name="cube.302.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="764528f6ba3ec31911f4cbdd071172b98765c50d" name="cube.303.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">28db84dd</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d432fa28a4500fc8f00fc68d49ced22ce7622308" name="cube.137.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="69be6318d7b2cb4607bf525746dba0098227eac7" name="cube.138.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="fe85239afd36cc04cdffdc878e2de1a7ad70297a" name="cube.139.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8a5b460a3dbd102e321a2961d76586c5c891aa91" name="cube.140.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="a1fce65c781aa7934d03cf11dd6941dd1df362bc" name="cube.141.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f5b15e4cc546c7274aafa37bcefbb8905f7ddeeb" name="cube.142.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e4f842ee2398174a9798d0abd7905bde0197e74e" name="cube.143.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="a4500c5e3c63b2a7fcc55725709d4f736decc655" name="cube.144.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="00dc2dd068184784aa5257d54d21982386c7e3b0" name="cube.145.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1c6ca4c0dd4f5394c2e5bedf3d08b570f57da34f" name="cube.146.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="7f45af827dec0e96bffbbf0f9df2c866b598b862" name="cube.147.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="422b8ff2b9046a8ea762d9297fcb3a9a50395c59" name="cube.148.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="fe600484d3da86edd552e4d9eb8790d42ed519e4" name="cube.149.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="34ce6a74b742b9f12159c883f35b6ef40cd61bf3" name="cube.158.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f6e7bd562e7944c30c03cbb3cc837e1aed2c30b6" name="cube.159.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="a94f24c617e07b0e101f736d5b378aa3a4dbf09d" name="cube.160.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f1a2de789149a5e32ccd3a1d7feffbbabccdb958" name="cube.161.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="163023683c63531f593e2467ba4f325fe4526cd7" name="cube.162.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="3f56006a9521999c3af65a974d8371a74cfb244a" name="cube.163.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">f27da03e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="19895eda70c618d7796c29f16ced7f31c0df4721" name="cube.136.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ed7e6fac50f43e32877d5ba1da790848f055b60c" name="cube.150.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="199a839c8127edcd7f23768b830b033e5e7df9fb" name="cube.151.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="2b594cbe74e2e7d208a70fbbeaf3008da3f1a71e" name="cube.152.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="096a122e1f318d3bf5c240b5d710d2192a3863e5" name="cube.153.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="edffac20425de4107ad78d652e7afaa39a764400" name="cube.154.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="c6397f102936a03c525ca2ef134d2713d788675f" name="cube.155.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="2f9fb652b4ddd00d09dbcf1f119d33649fd30d32" name="cube.156.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="7fd652c2312977b807a73bb963d4eef0bb4a8ae9" name="cube.157.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f51ac7d4d1d17d11860c53695bf9eaa20351d734" name="cube.164.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="5d1049c4d4a225d594a2cd93b95b2c6c07699903" name="cube.165.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="26909126db7a3ef286f0bcc3d94b22e0a10dea86" name="cube.166.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="dedc74966d346c3639f0defd62e7c61bdcab402d" name="cube.167.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8a9f36c81f0461e4e54c71ad4b5ab8ddf11823a8" name="cube.168.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b7ed57b8666d75c793f95a77bb0245869445b2e7" name="cube.169.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b4af7c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="a960713ab3e0f177b8bc3ca7c615f23f01d0131a" name="cube.009.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b8e8b6e3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b3c80baa2cba4a23b4492e81d081b07f192647b1" name="cube.005.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="536bacfc353ba575114cec317fc5b59dc43a1d5c" name="cube.015.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="2f9e5cece192d4118ad1ed9bcf2de2d33911190b" name="cube.016.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d2652a8e085ceb840bb2f2cbee40a942645a9aee" name="cube.017.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6075ebfe5e5e78b30ff26e45d73c16b29001a575" name="cube.018.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b3e21e7045c335ac2f0b06f55c92ca195cddf850" name="cube.019.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="7d644d6077cc44afba706afff714856ca4746f6f" name="cube.020.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="7ca9d1220ee09e1e4d4bc32faa1fd9a6dc95d602" name="cube.021.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b1e82992898f3440f0cb2249d5a38a9909819d79" name="cube.022.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b19bbf2404184640f3d045f9ce371221bd932884" name="cube.023.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="cba75d145fee410e638ef6a3747872b373f09a13" name="cube.024.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="54c2b8f626d7bd80e7a3d1d307b6468f08e55856" name="cube.025.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b81a18666c24194f26920e8de82a9497b1acb3bd" name="cube.026.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="885d03186ecd5850c1766d3d671843139f4661f8" name="cube.027.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="69eb00088cbb8ce60141f487962d5b93ef42bcf7" name="cube.028.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4ee1760ac7bb79ac8f6282b7a04ff99c6e3bf5ea" name="cube.029.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="73144c7a0c6880555a6a3711b55879f1bd4fac41" name="cube.030.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="a6499e4cdeebb0eefeeb80c1de0489716a7598ac" name="cube.031.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d801ea3c8b3771176a1c08aba05be12468083c1b" name="cube.032.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="5628dc5e97dab67c07dd79db7b7437ecab6fc2be" name="cube.033.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="294099ce5c4643578c9edfd586e7d9d27d418b05" name="cube.035.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="035884c048ca98a1f0f5c48584e380a049a400a0" name="cube.036.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1c820fb0709fd3f7bb92170ff9e5c02361a2bb7f" name="cube.038.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4940fff2169ce057e17c9b3f54106b3e57ce12d2" name="cube.040.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="7afe1462427578f9e6a78cd95d62cc88a3e79409" name="cube.041.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="0807ea74985eed779737bc896e80e466490e0dd4" name="cube.042.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9a78a464486f2dea339f43b384bc1301e55c1f23" name="cube.043.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="982b34c6f4b14193565e0ae3dc483ed7a0ef7a26" name="cube.044.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">09dce5b3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="877510366d9a30f0a56c021db3559e8cc0f94b4d" name="cylinder.019.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="77514368c5df7bdf51742ccdccbab24ab79d7448" name="cylinder.020.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="da5e1c5833b63acb5ca8f297acaea98fa6ca8b07" name="cylinder.021.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="17560eda4f7c0f8fa93a2cc79b1a3731fbcbccba" name="cylinder.022.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b6ab214afa06812f1fc843a1e504ba0b378474d1" name="cylinder.023.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="0fdd439c78a8ff2851121951ca7abddf3d1d27fc" name="cylinder.024.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="fa4a2b8cb7c73b212fa2c7bb3a07b3afdc74632b" name="cylinder.025.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="dbf1622eb0c55ed4aa87a4eb4f4ce5377d0e1e8e" name="cylinder.026.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="fcd71b9e51aa42f82d5095650f8286c032311495" name="cylinder.027.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d877df10cca254c31ae0c6154f489ebe59ad5cf0" name="cylinder.028.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b967c600b81e47711072a71f7099941df0b44b8f" name="cylinder.029.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="358242c2998b788f47df574ff2fb5b85aca8c3a2" name="cylinder.030.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="aaf5133299fdd84071557b69507e2cf359c56e99" name="cylinder.015.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4bc449c4cbb6445c9d1bb71908833dad42778724" name="cylinder.035.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="52a91fb4acad82b6c894b4c39e036fe76edd2833" name="cylinder.036.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="18b70496b8b8aa3d49a067f356ecbceae8a94ff6" name="cylinder.037.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="209a5c068dbca6044e27b9ad2dd635bf51ea06dd" name="cylinder.038.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d730f7b84c94a58c9daeb05d755dc87c4fa25a98" name="cylinder.039.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9abbaca8e68a32e1e3ff54a794122864d09e1d17" name="cylinder.040.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8f7b3baa3511306fa2d43ad73382f8cfab4c978a" name="cylinder.041.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f3098a1afc15a46e849c54313ceaf49b402da161" name="cylinder.042.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="612b9cecadc8ba3784b9b5e135a925906f85cb4c" name="cylinder.043.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="153c20dc6918f64114472acb74abb6e40fa68e3b" name="cylinder.044.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="024bbbfea63bb775f75273fba4421ac44852ae5e" name="cylinder.045.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="5d86716ed571533bc3d08ef5d22cbcbde1494225" name="cylinder.046.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ca952d600f8954e3c7550ba5291a1176531f0d40" name="cylinder.047.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f52a705027d56e187e031b2f1fd815351f8a1f9f" name="cylinder.048.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6eca9992f765968d3c24f75f0649e07df592e872" name="cylinder.031.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="0eea2602657474e0ad2dedf9eef4e47ef0a42d29" name="cylinder.032.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9f75dd14473e14d3769535a9ba54561247c49474" name="cylinder.034.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="3c9dcf045f57f8ed147049d38a89da8db3e4b543" name="cylinder.054.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">211288d4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="df93286669b834cb962be903ba5ea32732cfd9c6" name="cylinder.052.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">55136eea</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="a876fbd67ffa6f1610ae353db44609d2e617e66d" name="cube.264.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">840e98e3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6af120086116589eb6cef7ed74033c8ff21a14e8" name="cube.284.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">840e98e3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6fb8b0f84c3a1d0c67561ab7584fbba7f6be7327" name="cube.287.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">840e98e3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b94dfc7aaabe5766db01ace7d0a9789be4cb565a" name="cube.292.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">840e98e3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="81ec86ea7f8ee853655f68c19c9779454df431f1" name="cube.295.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">840e98e3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6279aa3c2df9eb8a231b5671cdc7b55b5e44829c" name="cube.003.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">840e98e3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8edcca2c5983653e872a31db14351592132fbd4b" name="cube.011.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">840e98e3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b104e9ce0db1a929581ee70b2298dc80b79a722e" name="cube.135.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">840e98e3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="86db9b3e4144d928c227cc850be0d51f3f4313b5" name="cube.039.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">5c49e99c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="5c456fb0ab683ca8611b953592aa3433195e1190" name="cube.203.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">57a02ff6</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4c1f0ea0b666f93ee374733f722a5e5fb84537af" name="cube.034.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">57a02ff6</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="7fb70462a7dee741c43e7b6f63a72ba09c398142" name="cube.204.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">57a02ff6</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="413a4cd2e6a28b82dac9e4892c52786ab44ccfb9" name="cube.205.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">57a02ff6</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4501a464e20fb04168fd3839a4e4ee47482a35c4" name="cube.234.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">57a02ff6</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="affbb254b356a919477302e3a54eb48af823c653" name="cube.235.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">57a02ff6</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="a72ca0366fe869f27f018e13c421e26475601796" name="cube.053.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">57a02ff6</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6537efa6402ff977c52874cdecedaa1cc95be9fd" name="cube.268.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">3195bcdc</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="88c6bc58d2c4579e45be037dca86cd74ef09a338" name="cube.270.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">3195bcdc</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="a14a2948154c690258fe44c7e62c1f45276c8d37" name="cube.289.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">3195bcdc</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="dc0b514a60496d3982d382f7782064ec4795092a" name="cube.274.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">3195bcdc</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="725117ba26704f408aca8151cdffa38e25c12681" name="torus.002.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">2af0ac12</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="234c6b8ccabec7e651affb01a23fd259df2e4dec" name="torus.003.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">2af0ac12</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="0471277c0d5201b73dacdceb3a635d7aa0e0f05b" name="cube.281.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">fad06de</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e929eb9e9d9f9715ad0dfe1b2ce3421f808269fe" name="cube.012.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">fad06de</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="3da3990e07c8791eca9f4e1533ef132313178945" name="cylinder.033.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">36e97653</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4b5da600f49891e6333d62c55e50d762fd0f69e0" name="cube.006.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">cc9f32b6</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="65daa0f0c0b69bbb4a37af4f14503927914693bf" name="cylinder.008.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">c1f5cd2c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="202483321f40dc90405ce37f84736d0e29898e12" name="cylinder.014.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">c1f5cd2c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="798287a2ce292bbbef025f190f8e04c306c85649" name="cylinder.049.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">c1f5cd2c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ed8c9fb42a4fe1831decbec9379f4552d41d6b14" name="cylinder.050.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">c1f5cd2c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="63a7c9a4f424986ae01ddff3c323376e2f8b5b63" name="cylinder.051.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">c1f5cd2c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ab306c064a5e84c1c56257230d25ffdb19970966" name="cylinder.002.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">c1f5cd2c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8e4a37766c8e9d2ebbff785d4a689dc5a1cf118d" name="cylinder.003.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">c1f5cd2c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6a26cca82ea25f4a1ba4d30d11a6a68cabb60588" name="cylinder.016.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">c1f5cd2c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4aa5159894f02696dd88d2d786b38d1b05296b47" name="cylinder.017.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">c1f5cd2c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="54303a1a339ba751ad9abd0703b553087a36affa" name="cylinder.018.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">c1f5cd2c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="58743c8acc42a36e39d69de1fbcc8d726abd7f11" name="cube.037.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">2c581afa</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4a68e0dc1332989a6230a391d8187d8891582d3c" name="cube.010.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">b7b15175</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9a7e38ccf976206943702bfbfde082002acb276b" name="cube.045.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9507c16eca34fb765c80b92b4c10c1c333e795ce" name="cube.046.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9feb6aded8fb6c0d3fc013a512e0668cc5ffa2d5" name="cube.047.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e0f2d0504196ee67f90374557eb5f4de0c181630" name="cube.048.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="653227406b91f096f5fdcf5f779bcd949d2f33cf" name="cube.049.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="05301602b2730ab47af12f8f1115721a15b00ee2" name="cube.050.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="5c9fd672ae47dda622f05da995eebd96f05fc0d9" name="cube.051.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="097bcf04c1ca86a2333cc9596b80104c6d533464" name="cube.052.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="bdc714f4d9ef9cfbbb31e103a0e102e70e4c7473" name="cube.054.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="788b8bd624a52074b8cf4433f80d24c0cbf1af36" name="cube.055.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1c5ad346f22c9ec74ddc3fede83f1b1fffca5d1d" name="cube.056.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="7bc650f898899c74c1ec669dc36cde53f2a43bd8" name="cube.057.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="aa3e75e88acf37f3dbc6c4e772df4b6ed6b60d57" name="cube.058.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6379b6eaa72a72c360e85b17b0550dccfa7d4aca" name="cube.059.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1dd2f55a317bfdb2c3bcbe712171cd772e523ba1" name="cube.060.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="65d40a2cf63826e862965021b29bb5eb2d17208c" name="cube.061.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4cc8fe1cc52626bb0a551f0b32938e08eb3f627b" name="cube.062.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="582b6b3ec632a9ba6318183be5244cbb0de6f59e" name="cube.063.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f50010aefaf3a10ed4531d354939e9fff3746065" name="cube.064.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4159eea0d3706f296df6c9e57226fb1e619d1680" name="cube.065.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="383aa190d1141e1a74b7d36fad37ab7afae017df" name="cube.066.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b136bcd215c1d832b8ac5f9f7e4df046981a03b2" name="cube.067.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ccaf394272a8311483ece03934806026af9c0f69" name="cube.068.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="18743254e441572bcb0657e93310ed27d6c091b4" name="cube.069.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="23be9444eeb5ddd523b00613fe10d28a18d81183" name="cube.070.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="bd6affa6222a3a1347095543dc09d8764c2d0906" name="cube.071.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9956c316202c8bec6ba7cb7decf9a749ede6ccad" name="cube.072.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="ad9a4948f495b1da0a3dbe2d71a7185043994628" name="cube.073.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">06471e5d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="71cb4a38256f72d30cc91af74721954597137367" name="cube.267.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">cda308fe</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="00e4c7bafc2a4873a48d5d270a9ef130ed75d99a" name="cube.269.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">cda308fe</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d12a422a26c0ac5715f5e3010907194d80285c31" name="cube.288.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">cda308fe</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="3ad2e77c301bce9fad1a00b14360aa31d40027dc" name="cube.273.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">cda308fe</parameter>
+			</parameters>
+		</runtime>
+	</runtimes>
+	<parameters>
+		<parameter type="float" name="angular_deflection">0.699999988</parameter>
+		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
+		<parameter type="string" name="base_material_mode">inherit_mesh_base</parameter>
+		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
+		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
+		<parameter type="float" name="fps">30</parameter>
+		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_bones_without_skin">1</parameter>
+		<parameter type="bool" name="import_cameras">1</parameter>
+		<parameter type="bool" name="import_lights">1</parameter>
+		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
+		<parameter type="bool" name="import_meshes">1</parameter>
+		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
+		<parameter type="bool" name="import_tangent_space">0</parameter>
+		<parameter type="bool" name="import_textures">1</parameter>
+		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
+		<parameter type="bool" name="joints_reorientation">0</parameter>
+		<parameter type="string" name="lightmaps">{&quot;guid://ce27cdd0ee6fa08bfd846aafe9c6599c329aef1f&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://44761312054f885d7d90e6df1ad6ab0ce39a71f2&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6279aa3c2df9eb8a231b5671cdc7b55b5e44829c&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8033bf826f3d59ef0518c97951e32167754f28a9&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b3c80baa2cba4a23b4492e81d081b07f192647b1&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4b5da600f49891e6333d62c55e50d762fd0f69e0&quot;:{&quot;Материал мебели&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Матовый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://d3034cb2f84dbc8546d876e9886578cbc97b8a19&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://5822f29409a987a43b2bb129a5a407e5b42859f4&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://a960713ab3e0f177b8bc3ca7c615f23f01d0131a&quot;:{&quot;Матовый чёрный пластик2&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Вставка под кнопки микроволновки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Вставка дверцы микроволновки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4a68e0dc1332989a6230a391d8187d8891582d3c&quot;:{&quot;Материал мебели&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Матовый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8edcca2c5983653e872a31db14351592132fbd4b&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://e929eb9e9d9f9715ad0dfe1b2ce3421f808269fe&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://53d6048467449840ec0791530c1c3b7a3f26bcc3&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6f2339e68a363255b117d0837da178604fa73b46&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://536bacfc353ba575114cec317fc5b59dc43a1d5c&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://2f9e5cece192d4118ad1ed9bcf2de2d33911190b&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://d2652a8e085ceb840bb2f2cbee40a942645a9aee&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6075ebfe5e5e78b30ff26e45d73c16b29001a575&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b3e21e7045c335ac2f0b06f55c92ca195cddf850&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://7d644d6077cc44afba706afff714856ca4746f6f&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://7ca9d1220ee09e1e4d4bc32faa1fd9a6dc95d602&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b1e82992898f3440f0cb2249d5a38a9909819d79&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b19bbf2404184640f3d045f9ce371221bd932884&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://cba75d145fee410e638ef6a3747872b373f09a13&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://54c2b8f626d7bd80e7a3d1d307b6468f08e55856&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b81a18666c24194f26920e8de82a9497b1acb3bd&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://885d03186ecd5850c1766d3d671843139f4661f8&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://69eb00088cbb8ce60141f487962d5b93ef42bcf7&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4ee1760ac7bb79ac8f6282b7a04ff99c6e3bf5ea&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://73144c7a0c6880555a6a3711b55879f1bd4fac41&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://a6499e4cdeebb0eefeeb80c1de0489716a7598ac&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://d801ea3c8b3771176a1c08aba05be12468083c1b&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://5628dc5e97dab67c07dd79db7b7437ecab6fc2be&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4c1f0ea0b666f93ee374733f722a5e5fb84537af&quot;:{&quot;Стол металл&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол дерево&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://294099ce5c4643578c9edfd586e7d9d27d418b05&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://035884c048ca98a1f0f5c48584e380a049a400a0&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://58743c8acc42a36e39d69de1fbcc8d726abd7f11&quot;:{&quot;Материал мебели&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Матовый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://1c820fb0709fd3f7bb92170ff9e5c02361a2bb7f&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://86db9b3e4144d928c227cc850be0d51f3f4313b5&quot;:{&quot;Стол&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4940fff2169ce057e17c9b3f54106b3e57ce12d2&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://7afe1462427578f9e6a78cd95d62cc88a3e79409&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://0807ea74985eed779737bc896e80e466490e0dd4&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9a78a464486f2dea339f43b384bc1301e55c1f23&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://982b34c6f4b14193565e0ae3dc483ed7a0ef7a26&quot;:{&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9a7e38ccf976206943702bfbfde082002acb276b&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9507c16eca34fb765c80b92b4c10c1c333e795ce&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9feb6aded8fb6c0d3fc013a512e0668cc5ffa2d5&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://e0f2d0504196ee67f90374557eb5f4de0c181630&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://653227406b91f096f5fdcf5f779bcd949d2f33cf&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://05301602b2730ab47af12f8f1115721a15b00ee2&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://5c9fd672ae47dda622f05da995eebd96f05fc0d9&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://097bcf04c1ca86a2333cc9596b80104c6d533464&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://a72ca0366fe869f27f018e13c421e26475601796&quot;:{&quot;Стол металл&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол дерево&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://bdc714f4d9ef9cfbbb31e103a0e102e70e4c7473&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://788b8bd624a52074b8cf4433f80d24c0cbf1af36&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://1c5ad346f22c9ec74ddc3fede83f1b1fffca5d1d&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://7bc650f898899c74c1ec669dc36cde53f2a43bd8&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://aa3e75e88acf37f3dbc6c4e772df4b6ed6b60d57&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6379b6eaa72a72c360e85b17b0550dccfa7d4aca&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://1dd2f55a317bfdb2c3bcbe712171cd772e523ba1&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://65d40a2cf63826e862965021b29bb5eb2d17208c&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4cc8fe1cc52626bb0a551f0b32938e08eb3f627b&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://582b6b3ec632a9ba6318183be5244cbb0de6f59e&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f50010aefaf3a10ed4531d354939e9fff3746065&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4159eea0d3706f296df6c9e57226fb1e619d1680&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://383aa190d1141e1a74b7d36fad37ab7afae017df&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b136bcd215c1d832b8ac5f9f7e4df046981a03b2&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://ccaf394272a8311483ece03934806026af9c0f69&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://18743254e441572bcb0657e93310ed27d6c091b4&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://23be9444eeb5ddd523b00613fe10d28a18d81183&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://bd6affa6222a3a1347095543dc09d8764c2d0906&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9956c316202c8bec6ba7cb7decf9a749ede6ccad&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://ad9a4948f495b1da0a3dbe2d71a7185043994628&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8100c380f8d7c99ca917169fbc784499cb4b3b0f&quot;:{&quot;Пластик.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Штанга&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://29472d56dc59a403f52fc8bd696340c4b360d9ed&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b7648d88238de56173762b6dad2c596837537268&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b104e9ce0db1a929581ee70b2298dc80b79a722e&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://19895eda70c618d7796c29f16ced7f31c0df4721&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://d432fa28a4500fc8f00fc68d49ced22ce7622308&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://69be6318d7b2cb4607bf525746dba0098227eac7&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://fe85239afd36cc04cdffdc878e2de1a7ad70297a&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8a5b460a3dbd102e321a2961d76586c5c891aa91&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://a1fce65c781aa7934d03cf11dd6941dd1df362bc&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f5b15e4cc546c7274aafa37bcefbb8905f7ddeeb&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://e4f842ee2398174a9798d0abd7905bde0197e74e&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://a4500c5e3c63b2a7fcc55725709d4f736decc655&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://00dc2dd068184784aa5257d54d21982386c7e3b0&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://1c6ca4c0dd4f5394c2e5bedf3d08b570f57da34f&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://7f45af827dec0e96bffbbf0f9df2c866b598b862&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://422b8ff2b9046a8ea762d9297fcb3a9a50395c59&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://fe600484d3da86edd552e4d9eb8790d42ed519e4&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://ed7e6fac50f43e32877d5ba1da790848f055b60c&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://199a839c8127edcd7f23768b830b033e5e7df9fb&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://2b594cbe74e2e7d208a70fbbeaf3008da3f1a71e&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://096a122e1f318d3bf5c240b5d710d2192a3863e5&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://edffac20425de4107ad78d652e7afaa39a764400&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://c6397f102936a03c525ca2ef134d2713d788675f&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://2f9fb652b4ddd00d09dbcf1f119d33649fd30d32&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://7fd652c2312977b807a73bb963d4eef0bb4a8ae9&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://34ce6a74b742b9f12159c883f35b6ef40cd61bf3&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f6e7bd562e7944c30c03cbb3cc837e1aed2c30b6&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://a94f24c617e07b0e101f736d5b378aa3a4dbf09d&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f1a2de789149a5e32ccd3a1d7feffbbabccdb958&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://163023683c63531f593e2467ba4f325fe4526cd7&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://3f56006a9521999c3af65a974d8371a74cfb244a&quot;:{&quot;Пластик кресло.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f51ac7d4d1d17d11860c53695bf9eaa20351d734&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://5d1049c4d4a225d594a2cd93b95b2c6c07699903&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://26909126db7a3ef286f0bcc3d94b22e0a10dea86&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://dedc74966d346c3639f0defd62e7c61bdcab402d&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8a9f36c81f0461e4e54c71ad4b5ab8ddf11823a8&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b7ed57b8666d75c793f95a77bb0245869445b2e7&quot;:{&quot;Пластик кресло&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f9dc25fa64a0e2b8d17d0c675a43d0f529440fda&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9f7cd06a8543f1136c733441289cd751ff7e9d71&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://e468efbc439e2f99b16ec1f1b874841708a0f81c&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://875b2fac2d12c6f68533e95b7a3f9e270a32b4cb&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f842ab4eeb8b9502ce313e8b36964d509cde03ae&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4efd7cbef84aa4878a8150058995e48c052a7735&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://85be0d30014036cf9d6eb8b5f28a274f0f431f10&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://ced8cc209faabf8faf4aa2bffd27664ac9c7e72f&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://3b6ddde2eedf59ea2f674aef9cf801acb5496ac2&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://1bd746526fefcb882754a009cc2a1ab21ea4ab39&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://ade919e4954a47abeddb93b91770c9b11f955b44&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9bf647d4ca0380d2eeed2a6329fa89624305add3&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://aebe11b69224fe704db8559393428fb2e095d916&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://85d181268256aecd5087e84db516d2de8bafbd7d&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9c5a89d8a09c4820df6b16fddf458bd7db1060b8&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://dae316c8e2618ac7b86be4472550536154c52cb7&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://d9f0dacaea23c935bc07c2773d3bd82e782222aa&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6180c13a1b2d640812da2cd19ff5e8ba52947201&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://a5a2110c2bcb8695a9a74681029ad1b6b57e236c&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://5c456fb0ab683ca8611b953592aa3433195e1190&quot;:{&quot;Стол металл&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол дерево&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://7fb70462a7dee741c43e7b6f63a72ba09c398142&quot;:{&quot;Стол металл&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол дерево&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://413a4cd2e6a28b82dac9e4892c52786ab44ccfb9&quot;:{&quot;Стол металл&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол дерево&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4501a464e20fb04168fd3839a4e4ee47482a35c4&quot;:{&quot;Стол металл&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол дерево&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://affbb254b356a919477302e3a54eb48af823c653&quot;:{&quot;Стол металл&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол дерево&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Стол пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://a876fbd67ffa6f1610ae353db44609d2e617e66d&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://300eff44893d099f2da252996dbf518e2d2beca4&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://1addecfc8760169cf755746b9b5e54772b7fc7db&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://71cb4a38256f72d30cc91af74721954597137367&quot;:{&quot;Чёрный глянцевый пластик 2&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6537efa6402ff977c52874cdecedaa1cc95be9fd&quot;:{&quot;Матовый чёрный пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://00e4c7bafc2a4873a48d5d270a9ef130ed75d99a&quot;:{&quot;Чёрный глянцевый пластик 2&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://88c6bc58d2c4579e45be037dca86cd74ef09a338&quot;:{&quot;Матовый чёрный пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://5c750d1e81989e6487a7359be495a3f5dff05b7e&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://fa9ada8e445f3c4ed3f2b195d5db934c4f65ccc5&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://3ad2e77c301bce9fad1a00b14360aa31d40027dc&quot;:{&quot;Чёрный глянцевый пластик 2&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://dc0b514a60496d3982d382f7782064ec4795092a&quot;:{&quot;Матовый чёрный пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://85293e78b1e532d7d672da37d8ae6019776932a7&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://02f6f5346a14d2e59d411c4339e540c823f74fb3&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://3fddb616ec7d13d627b96f73250d3ec5623a5176&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f3392d86bd3e11f6b1836d2d91fe39ce6a601a5d&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://45dc053859c999b55d0803dd9d9fc8ca80e65818&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://36e2a3801f65215033b266457e823b8dd36dd760&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://0471277c0d5201b73dacdceb3a635d7aa0e0f05b&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://275bda282c2363c10f4334270a53b3782992fc97&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://ebca052a2909c39f4d0eba570791dd1b9448f10a&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6af120086116589eb6cef7ed74033c8ff21a14e8&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://1a12739a01d72a951bec3fb18a965b145e272ce1&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b18c826c16ddc168b4a14161dea510a40246e0cc&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6fb8b0f84c3a1d0c67561ab7584fbba7f6be7327&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://d12a422a26c0ac5715f5e3010907194d80285c31&quot;:{&quot;Чёрный глянцевый пластик 2&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://a14a2948154c690258fe44c7e62c1f45276c8d37&quot;:{&quot;Матовый чёрный пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://90a4265c2822713fdaaa024b48c655768b85a5bb&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://58141d7e462d18ae76d5eb7ba3b8a566c183dfde&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b94dfc7aaabe5766db01ace7d0a9789be4cb565a&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://90a8be70b2a82b2935dabecf5d7b19c6c533233f&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://833a5c42f5c1907ecf0666cfee549cdc4d3fed22&quot;:{&quot;Пластик входная дверь&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Окно&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Чёрный глянец&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://81ec86ea7f8ee853655f68c19c9779454df431f1&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8d6af2eeb56a105fffe832753553d3727801c5a5&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://3e596ae0ba7cf75bee3e4f25f208be865662bac0&quot;:{&quot;Пластик тёмно-серый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Цветная вставка двери&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://75febcb2e99c776732ba92ff61be94e11139d792&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b38ae12238198c2dc064fa9967f4ecca358511c9&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://28867534d1ae86a58d4afa499cb4e11eb5e7f094&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://583cbf24080ea79c7272e7732773c0d3618522e3&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f05b3d86d7424b3e8cdbfea3fd312f0ea4432ae6&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://764528f6ba3ec31911f4cbdd071172b98765c50d&quot;:{&quot;Пластик кресло.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Ткань.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://bcdfbc9088c32caf1d182995516b73f00227aa70&quot;:{&quot;Пластик.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Штанга&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Метал.002&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://84dc63ae769b491993743c6bcea02afe3244f00e&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пол&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Подсветка&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://ab306c064a5e84c1c56257230d25ffdb19970966&quot;:{&quot;Глянцевый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пластик бежевый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8e4a37766c8e9d2ebbff785d4a689dc5a1cf118d&quot;:{&quot;Глянцевый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пластик бежевый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://65daa0f0c0b69bbb4a37af4f14503927914693bf&quot;:{&quot;Глянцевый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пластик бежевый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://202483321f40dc90405ce37f84736d0e29898e12&quot;:{&quot;Глянцевый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пластик бежевый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://aaf5133299fdd84071557b69507e2cf359c56e99&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6a26cca82ea25f4a1ba4d30d11a6a68cabb60588&quot;:{&quot;Глянцевый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пластик бежевый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4aa5159894f02696dd88d2d786b38d1b05296b47&quot;:{&quot;Глянцевый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пластик бежевый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://54303a1a339ba751ad9abd0703b553087a36affa&quot;:{&quot;Глянцевый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пластик бежевый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://877510366d9a30f0a56c021db3559e8cc0f94b4d&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://77514368c5df7bdf51742ccdccbab24ab79d7448&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://da5e1c5833b63acb5ca8f297acaea98fa6ca8b07&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://17560eda4f7c0f8fa93a2cc79b1a3731fbcbccba&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b6ab214afa06812f1fc843a1e504ba0b378474d1&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://0fdd439c78a8ff2851121951ca7abddf3d1d27fc&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://fa4a2b8cb7c73b212fa2c7bb3a07b3afdc74632b&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://dbf1622eb0c55ed4aa87a4eb4f4ce5377d0e1e8e&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://fcd71b9e51aa42f82d5095650f8286c032311495&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://d877df10cca254c31ae0c6154f489ebe59ad5cf0&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://b967c600b81e47711072a71f7099941df0b44b8f&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://358242c2998b788f47df574ff2fb5b85aca8c3a2&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6eca9992f765968d3c24f75f0649e07df592e872&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://0eea2602657474e0ad2dedf9eef4e47ef0a42d29&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://3da3990e07c8791eca9f4e1533ef132313178945&quot;:{&quot;Матовый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Материал мебели&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9f75dd14473e14d3769535a9ba54561247c49474&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4bc449c4cbb6445c9d1bb71908833dad42778724&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://52a91fb4acad82b6c894b4c39e036fe76edd2833&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://18b70496b8b8aa3d49a067f356ecbceae8a94ff6&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://209a5c068dbca6044e27b9ad2dd635bf51ea06dd&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://d730f7b84c94a58c9daeb05d755dc87c4fa25a98&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://9abbaca8e68a32e1e3ff54a794122864d09e1d17&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8f7b3baa3511306fa2d43ad73382f8cfab4c978a&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f3098a1afc15a46e849c54313ceaf49b402da161&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://612b9cecadc8ba3784b9b5e135a925906f85cb4c&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://153c20dc6918f64114472acb74abb6e40fa68e3b&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://024bbbfea63bb775f75273fba4421ac44852ae5e&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://5d86716ed571533bc3d08ef5d22cbcbde1494225&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://ca952d600f8954e3c7550ba5291a1176531f0d40&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f52a705027d56e187e031b2f1fd815351f8a1f9f&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://798287a2ce292bbbef025f190f8e04c306c85649&quot;:{&quot;Глянцевый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пластик бежевый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://ed8c9fb42a4fe1831decbec9379f4552d41d6b14&quot;:{&quot;Глянцевый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пластик бежевый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://63a7c9a4f424986ae01ddff3c323376e2f8b5b63&quot;:{&quot;Глянцевый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пластик бежевый&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://df93286669b834cb962be903ba5ea32732cfd9c6&quot;:{&quot;Матовый чёрный пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Кнопки рации&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://7b163d1e0e53a4ab53de58e5d9ae1d58b2f2b815&quot;:{&quot;Основной цвет вагон&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Пол&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Подсветка&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://3c9dcf045f57f8ed147049d38a89da8db3e4b543&quot;:{&quot;Пластик серо-синий.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Тёмно-серый край полки&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://725117ba26704f408aca8151cdffa38e25c12681&quot;:{&quot;Колёсики&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Матовый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Синий пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://234c6b8ccabec7e651affb01a23fd259df2e4dec&quot;:{&quot;Колёсики&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Матовый метал&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Синий пластик&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="float" name="linear_deflection">0.200000003</parameter>
+		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
+		<parameter type="string" name="material_guids">Вставка дверцы микроволновки,64756ccec5e59987feec960b125fc6e1342e952e,Вставка под кнопки микроволновки,e333aab00622e68ff292dc35285d3d603bbd2c90,Глянцевый метал,dd5df632fdab19d71491427f5756750f18872112,Кнопки рации,dae48336d33a830171381d135241a73b3f789a96,Колёсики,dbbb644a88168ff7c49501f7dff5c5d0c8ac3c2a,Материал мебели,1ba4a100a9cc2d289f3869c5ea6ffad8d9a144e0,Матовый метал,07f52e9eaae509b735296d1b1b7759aea8ab4cfe,Матовый чёрный пластик,509d8f6484391382369aef39e7b31ee0546580c4,Матовый чёрный пластик2,8185353c76de80eb2e832d7145f8c49577c26d9c,Метал.001,d67d19c4e78081cb3045e98f84008f8eedc28b10,Метал.002,f0daa860b48e4999ebb892a5cad49fdce6fb6840,Окно,815d0814719c416add632ca9037b462ce0b11f74,Основной цвет вагон,5d7dceaa6b295360ae2239d72f98e39426c24a8a,Пластик бежевый,368d4ab46eddd539b6ca35c9b080f91ae2577614,Пластик входная дверь,ed268c92082ce47d05f5d65f74a6a72baabefb72,Пластик кресло,b13c84c637ba2c1c299d88c99082df89f085bdf2,Пластик кресло.001,f02d4ff27f065526499f8cc5bc3a9a702b4c6bde,Пластик кресло.002,8e402c5ef83d6415c5cd85016b226a861efabd0a,Пластик серо-синий.001,1ae292c2ef7e2510471c1e55dc816f0c72f98fae,Пластик тёмно-серый,d673c60ae0105d36b800ed7d8383ae0c43215d76,Пластик.001,e0d5ee70b23b376e2b71010bfa039a4e4b6f897c,Подсветка,0f917efe8514505428c262fbf71591680582115e,Подуха,ab2313682f9e4a93b7cc3123731f9b666acd85f4,Пол,bbda67ec20975e9df509cce17622f81b648cf64c,Синий пластик,7464b68c30c3560bde9f9201fa8c1d1d95d2f8ec,Стол,ac8b5758e843ae0279092a7d24e837ced04c1e38,Стол дерево,3284fd60d0235a2f24c1b23bb8f54182e223cf6c,Стол металл,479ee992f2f0fc315465f3e5594b603b831ee77e,Стол пластик,85cb0bfeff2d0916fcf0da21e2bc2d890ed9eeaa,Ткань,3adc5eda38f85c9a0c4e3d0d23ede4cfde814746,Ткань.001,9f0f4f7aefc3110343116be721a52dea6a79c95a,Ткань.002,81a054c049fa30526832981b8d6fc90016f68ccc,Тёмно-серый край полки,4169b762eb39a4786dc91a6f2776f84f62b65442,Цветная вставка двери,2334fb089d2edac465ce5eed4dc80a33b481cfe8,Чёрный глянец,b8084b66478c0e14508cb803da358bac90eb9cc6,Чёрный глянцевый пластик 2,155b0f0681c3d521095ea6233284bfe9c1dc4c66,Штанга,5a22212204b8203bb8673f35b845dd4d607a7c0e</parameter>
+		<parameter type="bool" name="merge_similar_materials">0</parameter>
+		<parameter type="bool" name="merge_static_meshes">0</parameter>
+		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
+		<parameter type="float" name="morph_targets_normals_angle">180</parameter>
+		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
+		<parameter type="bool" name="need_repivot">0</parameter>
+		<parameter type="bool" name="need_split">0</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
+		<parameter type="int" name="num_lods">3</parameter>
+		<parameter type="string" name="prefix_materials"/>
+		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
+		<parameter type="bool" name="skip_empty_nodes">0</parameter>
+		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
+		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="bool" name="use_instances">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+		<parameter type="string" name="workflow">metalness</parameter>
+	</parameters>
+</asset>

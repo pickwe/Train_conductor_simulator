@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>155b0f0681c3d521095ea6233284bfe9c1dc4c66</guid>
+	<type>material</type>
+	<hash>cec46ebb68202770ca91c658893de004ac9207a61580a3ed9d89266abe8d55af</hash>
+	<runtimes>
+		<runtime id="155b0f0681c3d521095ea6233284bfe9c1dc4c66" name="Чёрный глянцевый пластик 2" link="0" type="5"/>
+	</runtimes>
+</asset>

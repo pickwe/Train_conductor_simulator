@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>7464b68c30c3560bde9f9201fa8c1d1d95d2f8ec</guid>
+	<type>material</type>
+	<hash>60f8410d371ae65c611e4e8ae0d462f2228a25c8845b711df6339fab16f021c0</hash>
+	<runtimes>
+		<runtime id="7464b68c30c3560bde9f9201fa8c1d1d95d2f8ec" name="Синий пластик" link="0" type="5"/>
+	</runtimes>
+</asset>

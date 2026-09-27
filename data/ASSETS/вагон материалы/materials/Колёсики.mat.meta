@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>dbbb644a88168ff7c49501f7dff5c5d0c8ac3c2a</guid>
+	<type>material</type>
+	<hash>f3674a24b7fe5830e46ce5341c718fce817bcb18da9901e501f2885270e34836</hash>
+	<runtimes>
+		<runtime id="dbbb644a88168ff7c49501f7dff5c5d0c8ac3c2a" name="Колёсики" link="0" type="5"/>
+	</runtimes>
+</asset>

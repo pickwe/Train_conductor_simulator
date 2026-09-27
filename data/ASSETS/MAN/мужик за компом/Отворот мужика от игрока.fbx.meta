@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>bf29b5a14d28c65efda0d34bc24fb9d9dc55c600</guid>
 	<type>fbx</type>
-	<hash>3062a3121a51217281efacccab35ad91d69b3ee17b8a71bc78ca56be7cff0c66</hash>
+	<hash>a96ad438d05913fb648ce470ce77a4e4f626338a7434c70e898b5dee0fd3628e</hash>
 	<runtimes>
 		<runtime id="bf29b5a14d28c65efda0d34bc24fb9d9dc55c600" name="Отворот мужика от игрока.fbx" link="0"/>
 		<runtime id="a3a027e0e431b48118037c2e089eee9ddf7534e9" name="Отворот мужика от игрока.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">aa16561e</parameter>
+				<parameter type="string" name="id">a6847cdb</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="d96527659a6c0b00e3b6abaf6a5f30c273387934" name="plane.001.mesh" link="2" type="1">

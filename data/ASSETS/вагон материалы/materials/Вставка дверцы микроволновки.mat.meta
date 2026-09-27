@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>64756ccec5e59987feec960b125fc6e1342e952e</guid>
+	<type>material</type>
+	<hash>2861d5aedfc162516677cfb7521303c8ba5d57ffec0c0e0943b31a6bf7d162d4</hash>
+	<runtimes>
+		<runtime id="64756ccec5e59987feec960b125fc6e1342e952e" name="Вставка дверцы микроволновки" link="0" type="5"/>
+	</runtimes>
+</asset>

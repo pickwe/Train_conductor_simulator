@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>cc2134c5c0aeba6b385bd00f12bbec9d12c76514</guid>
 	<type>fbx</type>
-	<hash>c16fae7763ff2700d0dff45cab5b1182cde6618cb7415b496e2891f9b5bf184a</hash>
+	<hash>62ac678f95d8a73f5bff2d27baade19ed1bbc15d5243e5d40d6c7f8010b58195</hash>
 	<runtimes>
 		<runtime id="cc2134c5c0aeba6b385bd00f12bbec9d12c76514" name="Displeased.fbx" link="0"/>
 		<runtime id="e066af74ca55f0d594f1c9a227e2bdae0881938d" name="Displeased.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">23090f8</parameter>
+				<parameter type="string" name="id">b556e4a4</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="8c3950c9ecbfc123e902ecb3a5b0ca88b4929f88" name="Displeased.skeleton" link="2" type="8">

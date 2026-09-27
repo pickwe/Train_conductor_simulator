@@ -2,7 +2,7 @@
 <asset version="2.22.0.0">
 	<guid>340b4ee1d6ada7f683d1f4fd5d354e90dfca4c4f</guid>
 	<type>component</type>
-	<hash>1ecb0af2c1e481c6c141f0549478be000a2cdc388bd7675a814a0522cafa0534</hash>
+	<hash>2b053dbb4cb12768d4bf5002fae2d817ee1cff8f20f3889c1e69f3810d9508e4</hash>
 	<runtimes>
 		<runtime id="340b4ee1d6ada7f683d1f4fd5d354e90dfca4c4f" name="MenuManager.cs" link="0"/>
 		<runtime id="b4951843a1ff528078e57b3fb24e2d840b342461" name="MenuManager.prop" link="1" type="4"/>

@@ -352,7 +352,7 @@ public partial class PassengerScenarioController : Component
 		{
 			if (parentInteractable != null)
 				parentInteractable.IsAvailable = false;
-			ShowLine(ScenarioStep.ComplainantBranchReaction, "Пассажир ябеда",
+			ShowLine(ScenarioStep.ComplainantBranchReaction, "Первый пассажир",
 				"Спасибо. Теперь стало значительно спокойнее.");
 			return;
 		}
@@ -546,7 +546,7 @@ public partial class PassengerScenarioController : Component
 			: choiceId == "ID-15"
 				? "Хорошо. Если там свободно, я перейду."
 				: GetSeatDecisionReaction(choiceId);
-		ShowLine(ScenarioStep.SeatDecisionReaction, "Пассажир ябеда", reaction);
+		ShowLine(ScenarioStep.SeatDecisionReaction, "Первый пассажир", reaction);
 	}
 
 	public void Choose(string choiceId)
@@ -611,10 +611,10 @@ public partial class PassengerScenarioController : Component
 				CompleteParentBranchAfterComplainantReaction();
 				break;
 			case ScenarioStep.Stage3ConductorAppeal:
-				ShowLine(ScenarioStep.Stage3PassengerResponse, "Пассажир ябеда", GetStage3PassengerResponse());
+				ShowLine(ScenarioStep.Stage3PassengerResponse, "Первый пассажир", GetStage3PassengerResponse());
 				break;
 			case ScenarioStep.Stage3PassengerResponse:
-				ShowLine(ScenarioStep.Stage3SeatCheckPrompt, "Проводник пассажиру ябеде",
+				ShowLine(ScenarioStep.Stage3SeatCheckPrompt, "Проводник первому пассажиру",
 					"Могу проверить наличие свободных мест в другой части вагона, где Вы сможете отдохнуть.");
 				break;
 			case ScenarioStep.Stage3SeatCheckPrompt:
@@ -627,7 +627,7 @@ public partial class PassengerScenarioController : Component
 				CompleteSeatDecisionAfterReaction();
 				break;
 			case ScenarioStep.SeatInvalidDiscovery:
-				ShowLine(ScenarioStep.SeatInvalidReaction, "Пассажир ябеда", GetInvalidSeatFinalReaction());
+				ShowLine(ScenarioStep.SeatInvalidReaction, "Первый пассажир", GetInvalidSeatFinalReaction());
 				break;
 			case ScenarioStep.SeatInvalidReaction:
 				CompleteInvalidSeatFinal();
@@ -866,7 +866,7 @@ public partial class PassengerScenarioController : Component
 	private void HandleSeatDecisionTimeout()
 	{
 		ApplyOutcome("seatSecisionTimeout", -10, -6, -2, -2);
-		ShowLine(ScenarioStep.SeatDecisionTimeoutComplainant, "Пассажир ябеда",
+		ShowLine(ScenarioStep.SeatDecisionTimeoutComplainant, "Первый пассажир",
 			"Если персонал не собирается ничего делать, я сам попрошу Вас вести себя тише.");
 	}
 
@@ -911,16 +911,16 @@ public partial class PassengerScenarioController : Component
 				break;
 			case "ID-05":
 			case "ID-08":
-				ShowLine(ScenarioStep.ComplainantBranchReaction, "Пассажир ябеда",
+				ShowLine(ScenarioStep.ComplainantBranchReaction, "Первый пассажир",
 					selectedParentChoiceId == "ID-05"
 						? "Теперь Вы только усилили конфликт. Отдохнуть всё равно невозможно."
 						: "Вы только спровоцировали спор. Шум никуда не исчез.");
 				break;
 			case "ID-07":
-				ShowLine(ScenarioStep.ComplainantBranchReaction, "Пассажир ябеда", GetId07ComplainantReaction());
+				ShowLine(ScenarioStep.ComplainantBranchReaction, "Первый пассажир", GetId07ComplainantReaction());
 				break;
 			case "ID-09":
-				ShowLine(ScenarioStep.ComplainantBranchReaction, "Пассажир ябеда",
+				ShowLine(ScenarioStep.ComplainantBranchReaction, "Первый пассажир",
 					"Теперь здесь ещё и конфликт. Спокойнее точно не стало.");
 				break;
 			default:
@@ -970,7 +970,7 @@ public partial class PassengerScenarioController : Component
 			&& MoodPassenger1 >= 2
 			&& MoodPassenger2 >= 2)
 			DiplomatWithoutPropsEligible = true;
-		ShowLine(ScenarioStep.Stage3ConductorAppeal, "Проводник пассажиру ябеде", GetStage3ConductorAppeal());
+		ShowLine(ScenarioStep.Stage3ConductorAppeal, "Проводник первому пассажиру", GetStage3ConductorAppeal());
 	}
 
 	private string GetStage3ConductorAppeal()

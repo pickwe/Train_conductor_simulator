@@ -30,6 +30,11 @@ public partial class PetCarrierScenarioController : Component
 	public bool CarrierFactChecked { get; private set; }
 	public bool ID02Selected { get; private set; }
 	public bool IsStarted => started;
+	public bool CanInteractWithPassenger => started
+		&& !(PassengerScenarioController.Active?.IsStarted ?? false)
+		&& (CurrentStage == Stage.AwaitingInitialPassengerInteraction
+			|| CurrentStage == Stage.AwaitingPassengerInteraction
+			|| CurrentStage == Stage.AwaitingPassengerHandoff);
 	public bool CanOpenTerminal => started && (CurrentStage == Stage.WaitingForTerminal || CurrentStage == Stage.Solution || CurrentStage == Stage.Refusal);
 	public Stage CurrentStage { get; private set; }
 	public int Mood { get; private set; }
@@ -386,6 +391,9 @@ public partial class PetCarrierScenarioController : Component
 
 	public void NotifyPassengerInteraction()
 	{
+		if (!CanInteractWithPassenger)
+			return;
+
 		if (CurrentStage == Stage.AwaitingInitialPassengerInteraction)
 		{
 			BeginPassengerConversation();

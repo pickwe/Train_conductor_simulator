@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>5d7dceaa6b295360ae2239d72f98e39426c24a8a</guid>
+	<type>material</type>
+	<hash>dc17d141096d7ee1de3efca42deb1099302cd39d5180ef16b6bb269ca1f98c9c</hash>
+	<runtimes>
+		<runtime id="5d7dceaa6b295360ae2239d72f98e39426c24a8a" name="Основной цвет вагон" link="0" type="5"/>
+	</runtimes>
+</asset>

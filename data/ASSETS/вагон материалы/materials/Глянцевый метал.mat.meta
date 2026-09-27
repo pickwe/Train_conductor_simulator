@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>dd5df632fdab19d71491427f5756750f18872112</guid>
+	<type>material</type>
+	<hash>84e1c88fe57646622689b60019c88d5eeefd64ea2dc9781c50eb37b93e05d16e</hash>
+	<runtimes>
+		<runtime id="dd5df632fdab19d71491427f5756750f18872112" name="Глянцевый метал" link="0" type="5"/>
+	</runtimes>
+</asset>

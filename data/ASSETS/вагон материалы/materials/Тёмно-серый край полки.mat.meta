@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>4169b762eb39a4786dc91a6f2776f84f62b65442</guid>
+	<type>material</type>
+	<hash>78330f5e93dd176e288856990a5764f742aa53e27635a9e486225f905c55211b</hash>
+	<runtimes>
+		<runtime id="4169b762eb39a4786dc91a6f2776f84f62b65442" name="Тёмно-серый край полки" link="0" type="5"/>
+	</runtimes>
+</asset>

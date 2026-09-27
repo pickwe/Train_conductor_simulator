@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>c5f534952be3aca43e50485fec75b71947929ba4</guid>
 	<type>fbx</type>
-	<hash>3ccd830afdfb966676290240b1280c874de34b68db26eb9eaa26facf8ff0bda9</hash>
+	<hash>7d9a98d8493638d67bb0f6a239b20252ef5438a7f9a378fe3dbd480df7f58fd3</hash>
 	<runtimes>
 		<runtime id="c5f534952be3aca43e50485fec75b71947929ba4" name="PositiveNod.fbx" link="0"/>
 		<runtime id="c9ba5404079e556665de1bb2f0b23295b1f9f55d" name="PositiveNod.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">abc8cf3</parameter>
+				<parameter type="string" name="id">92f4a4</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="05c9ad9923653e14f32a4a0331082b9bd3f87718" name="PositiveNod.skeleton" link="2" type="8">

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>815d0814719c416add632ca9037b462ce0b11f74</guid>
+	<type>material</type>
+	<hash>87219abc985f0574713f46733cafb7c150517f5f2ed67045863672405874dfe9</hash>
+	<runtimes>
+		<runtime id="815d0814719c416add632ca9037b462ce0b11f74" name="Окно" link="0" type="5"/>
+	</runtimes>
+</asset>

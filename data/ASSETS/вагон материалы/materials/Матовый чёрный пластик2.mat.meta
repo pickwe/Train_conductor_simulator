@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>8185353c76de80eb2e832d7145f8c49577c26d9c</guid>
+	<type>material</type>
+	<hash>bb1640f860975bbcb98a478004757b3adfc03c5c972417e38cc533b30fca28b7</hash>
+	<runtimes>
+		<runtime id="8185353c76de80eb2e832d7145f8c49577c26d9c" name="Матовый чёрный пластик2" link="0" type="5"/>
+	</runtimes>
+</asset>

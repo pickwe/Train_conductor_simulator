@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>c3b227ad6af3f3d09d8af737530653527058ab5c</guid>
 	<type>fbx</type>
-	<hash>8ffecfd6fd5041ba3294c25de1efeefb8ff129c5a31117bdb6525c37dd1758a4</hash>
+	<hash>102aabcda7394f300492d2535931b142a242c4e53dba63b6d16cc48e56bbcc82</hash>
 	<runtimes>
 		<runtime id="c3b227ad6af3f3d09d8af737530653527058ab5c" name="TurnToPlayer right.fbx" link="0"/>
 		<runtime id="8d6d68bc92e03b83942681aafeca5e806d564b75" name="TurnToPlayer right.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">3b3daf6b</parameter>
+				<parameter type="string" name="id">b21916c4</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="0c71a231a4705d62e004365bba0ef9798a4e6650" name="TurnToPlayer right.skeleton" link="2" type="8">

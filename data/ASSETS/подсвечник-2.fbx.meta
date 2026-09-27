@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>d6d1e1b28be889545e0b51f1f1070ef0db78da0d</guid>
 	<type>fbx</type>
-	<hash>0b5070e166977b635f1f4ee50e58b6269ab1e372c5fc0c25a24d4aff2f6c7e3f</hash>
+	<hash>7e6511c42d3d9e43365f0dc381ce1aa25d9cec405afae8173b43054d0f6d9d71</hash>
 	<runtimes>
 		<runtime id="d6d1e1b28be889545e0b51f1f1070ef0db78da0d" name="подсвечник-2.fbx" link="0"/>
 		<runtime id="ab48c724caafc681926f52f1446841d3435eb500" name="подсвечник-2.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">c24eb122</parameter>
+				<parameter type="string" name="id">1f08a463</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="c163acacdf7ef2fcc5f15ea3ccb55211115c245f" name="béziercurve.mesh" link="2" type="1">

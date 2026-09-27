@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>ac8403c58fde41998606f70f239f2f5709391814</guid>
 	<type>fbx</type>
-	<hash>577170dcfe27dbb2e7ec44cc348f4b917fa121dc9bf489d6dab8b8d6c63e210f</hash>
+	<hash>7444ef996310bf2dcd860daccd15731fa7e87d801d130ff2f390305cd066a523</hash>
 	<runtimes>
 		<runtime id="ac8403c58fde41998606f70f239f2f5709391814" name="Мужик радуется игроку.fbx" link="0"/>
 		<runtime id="8a5bb8dc3163f113e31ad4ca4041d1c7da6d4215" name="Мужик радуется игроку.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">ad6c5396</parameter>
+				<parameter type="string" name="id">38d84e21</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="04411ed1b9de9a98b2482bfb4e8fde61505cac70" name="plane.001.mesh" link="2" type="1">

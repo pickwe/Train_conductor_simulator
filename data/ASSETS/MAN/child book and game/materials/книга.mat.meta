@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>4f6531da3a489eda970e00f1c55ab3a86b045e21</guid>
+	<type>material</type>
+	<hash>0a95866fc3501e22012caccf4ed27f1f37f552e3c0a00d135672c19e4308d602</hash>
+	<runtimes>
+		<runtime id="4f6531da3a489eda970e00f1c55ab3a86b045e21" name="книга" link="0" type="5"/>
+	</runtimes>
+</asset>

@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>ca06491dfaaef141f455d227021c5b72cc38990c</guid>
 	<type>fbx</type>
-	<hash>26518413f12b8d5beb0ea3545f9a5bff52f9f7e54f833eb04be93d2054f56f04</hash>
+	<hash>48c3a5be63aadd7044d2de0838fb8d4326f33316d634b628762c6cc26c94135d</hash>
 	<runtimes>
 		<runtime id="ca06491dfaaef141f455d227021c5b72cc38990c" name="Displeased right.fbx" link="0"/>
 		<runtime id="d476706c4400b8ee7d1401daffe8600dbd2482e5" name="Displeased right.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">6636406e</parameter>
+				<parameter type="string" name="id">0aba5d0d</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="acb8faa1d4c2e76e90dae04bda1e5e0c2bcdd700" name="Displeased right.skeleton" link="2" type="8">

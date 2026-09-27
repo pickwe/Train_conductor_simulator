@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>8f342125892e02be1342ab6fe9ad1543aa3153f4</guid>
 	<type>fbx</type>
-	<hash>d8d8c744c83015b327263630ff5c6d03ee5108c26b15a83adfaad765fb93afac</hash>
+	<hash>41f992e11a170278896621b39b127eeecc179ad2462ae37b31d6560dc6851268</hash>
 	<runtimes>
 		<runtime id="8f342125892e02be1342ab6fe9ad1543aa3153f4" name="Agressive.fbx" link="0"/>
 		<runtime id="e67da254fa461ec224dd01821c8a4ccd8a5e5bed" name="Agressive.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">c3aee04</parameter>
+				<parameter type="string" name="id">3534b983</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="8eaa43299931fdc639e8be131cdb000ed5ff0c68" name="Agressive.skeleton" link="2" type="8">

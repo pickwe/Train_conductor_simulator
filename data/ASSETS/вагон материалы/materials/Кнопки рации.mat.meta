@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>dae48336d33a830171381d135241a73b3f789a96</guid>
+	<type>material</type>
+	<hash>39ff66f5e320ece7ef22a8a55f78e29c88819af51c883c26077a3e5ded15c026</hash>
+	<runtimes>
+		<runtime id="dae48336d33a830171381d135241a73b3f789a96" name="Кнопки рации" link="0" type="5"/>
+	</runtimes>
+</asset>

@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>5352111a67797a5a43336e4dae909ca944e1ad86</guid>
 	<type>fbx</type>
-	<hash>15cc034504e9465df2dd633d2a6ef327769eaf1b79ad73048f875c6180fd6ca1</hash>
+	<hash>59dca40795d3fa313cf8de1f44a4f08f96886fc337727c200730a4746ab24c84</hash>
 	<runtimes>
 		<runtime id="5352111a67797a5a43336e4dae909ca944e1ad86" name="Positive_woman.fbx" link="0"/>
 		<runtime id="c4ab02be9ecdc385a6552e7f28448c209ff2d22b" name="Positive_woman.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">1e42619</parameter>
+				<parameter type="string" name="id">0520957d</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="3a5caea23571a175606946b552396632a1b3c18e" name="circle.mesh" link="2" type="1">

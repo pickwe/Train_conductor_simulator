@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>ac8b5758e843ae0279092a7d24e837ced04c1e38</guid>
+	<type>material</type>
+	<hash>f9ba6613d303f5425ed3e049a623971ce75a6cba1133eb786bf1a05d47180fd0</hash>
+	<runtimes>
+		<runtime id="ac8b5758e843ae0279092a7d24e837ced04c1e38" name="Стол" link="0" type="5"/>
+	</runtimes>
+</asset>

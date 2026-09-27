@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>ff61b9dd12f6381f5578e0e7f036bc8bfa3beecc</guid>
 	<type>fbx</type>
-	<hash>3c97fee5409de6b32708068ec8ab1872b747b60cdebeb9d1b1eac1c6c40c20fd</hash>
+	<hash>f4f205a4434fdc42b597c9e264c1cef33046e5fd1cd4a621b7701016fafc4401</hash>
 	<runtimes>
 		<runtime id="ff61b9dd12f6381f5578e0e7f036bc8bfa3beecc" name="ReturnToIdle right.fbx" link="0"/>
 		<runtime id="e7118e2cf8fa2ef3a2f4e99ac824ca595a2eeba5" name="ReturnToIdle right.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">72c3b129</parameter>
+				<parameter type="string" name="id">f38af64c</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="caf9f761d2d9eb0f1aa15b0b255dbd0985d1a8c0" name="ReturnToIdle right.skeleton" link="2" type="8">

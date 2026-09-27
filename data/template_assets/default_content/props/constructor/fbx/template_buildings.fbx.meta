@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>683667985250c617f1b52c8a0bdb3261181c284c</guid>
 	<type>fbx</type>
-	<hash>7d932964e2a780d70aa3929b14ce6a5597f6cfc322765261391bacaa7ada8211</hash>
+	<hash>b5d7411118613984ec0c72b727ab6024f1ad3afbdea9649be888a2f2778c47db</hash>
 	<runtimes>
 		<runtime id="683667985250c617f1b52c8a0bdb3261181c284c" name="template_buildings.fbx" link="0"/>
 		<runtime id="c60e1d72cb03de29c8269174f8ac8e43826bdec6" name="template_buildings.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">16abcf91</parameter>
+				<parameter type="string" name="id">b9964d6e</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="9802276da9e561e8d1bf5c2721ad2b5a2d4a02f1" name="template_buildings.mesh" link="2" type="1">
