@@ -29,8 +29,8 @@ public partial class StoryStateController : Component
 
 	public int Safety { get; private set; } = 70;
 	public int Loyalty { get; private set; } = 70;
-	public int Regulation { get; private set; } = 70;
-	public int Observation { get; private set; }
+	public int Regulation { get; private set; } = 70; // todo: remove
+	public int Observation { get; private set; } // todo: remove
 	public int RemainingRouteSeconds { get; private set; } = 15 * 60;
 
 	public event Action<string, int, int> MetricChanged;

@@ -6,6 +6,14 @@ import ./[httputils, application, database]
 let salt = readFile("salt.txt")
 
 
+proc authorizeUser(db: Db, token: string): int =
+  let users = db.filter(Account, it.token == token)
+  if users.len != 0:
+    users[0].id
+  else:
+    raise UnauthorizedUserError.newException("unauthorized")
+
+
 proc userApi: seq[Route] =
   result.add: route HttpPost, ["login"]:
     type Body = object
@@ -41,6 +49,35 @@ proc userApi: seq[Route] =
     app.db.insert(user)
 
     await req.respond(Http200, user.token); return
+
+
+  result.add: route HttpPost, ["actOutcome"]:
+    type Body = object
+      reason: string
+      safety, loyality: int
+    let body = req.body.fromJson(Body)
+
+    let userId = app.db.authorizeUser(req.headers["token"])
+    app.db.insert ActionOutcome(
+      userId: userId,
+      reason: body.reason,
+      safety: body.safety,
+      loyality: body.loyality,
+    )
+    await req.respond(Http200, "ok")
+
+
+  result.add: route HttpGet, ["stats"]:
+    let userId = app.db.authorizeUser(req.headers["token"])
+    type Response = object
+      safety, loyality: int
+    
+    var res = Response(safety: 70, loyality: 70)
+    for x in app.db.filter(ActionOutcome, it.userId == userId):
+      res.safety += x.safety
+      res.loyality += x.loyality
+    
+    await req.respond(Http200, res.toJson, json_headers)
 
 
   # result.add: route HttpGet, ["leaderboard"]:

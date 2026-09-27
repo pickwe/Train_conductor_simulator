@@ -290,7 +290,7 @@ public partial class PassengerScenarioController : Component
 		else if (CurrentStep == ScenarioStep.WaitingForPassenger && !PassengerApproachTimedOut)
 		{
 			PassengerApproachTimedOut = true;
-			ApplyOutcome(0, -2, -1, 0);
+			ApplyOutcome("PassengerApproachTimedOut", 0, -2, -1, 0);
 			Changed?.Invoke();
 		}
 		else if (CurrentStep == ScenarioStep.ParentChoice)
@@ -463,45 +463,109 @@ public partial class PassengerScenarioController : Component
 		}
 	}
 
-	public void Choose(string choiceId)
+	private void ApplyOutcome(string reason, int safety, int loyalty, int mood1, int mood2)
 	{
-		if (!HasChoices) return;
-		if (CurrentStep == ScenarioStep.ParentChoice || CurrentStep == ScenarioStep.ParentChoiceGrace)
-		{
-			ChooseParentAnswer(choiceId);
-			return;
-		}
-		if (CurrentStep == ScenarioStep.SeatDecisionChoice)
-		{
-			ChooseSeatDecision(choiceId);
-			return;
-		}
-
-		int safety = 0;
-		int loyalty = 0;
-		int mood1 = 0;
-		int mood2 = 0;
-		switch (choiceId)
-		{
-			case "ID-01": safety = 2; loyalty = 2; mood1 = 1; break;
-			case "ID-02": safety = 2; loyalty = -3; mood1 = -1; break;
-			case "ID-03": safety = -4; loyalty = 2; mood1 = 1; mood2 = -2; break;
-			default: return;
-		}
-		DecisionHistory.Add(choiceId);
-
 		SafetyDelta += safety;
 		LoyaltyDelta += loyalty;
 		MoodPassenger1 = Math.Max(-3, Math.Min(3, MoodPassenger1 + mood1));
 		MoodPassenger2 = Math.Max(-3, Math.Min(3, MoodPassenger2 + mood2));
 		StoryStateController state = ComponentSystem.FindComponentInWorld<StoryStateController>();
-		if (state != null)
+		if (state == null) return;
+		state.ChangeMetric(StoryStateController.Metric.Safety, safety);
+		state.ChangeMetric(StoryStateController.Metric.Loyalty, loyalty);
+
+		string requestBody = String.Format("""{0}"reason": "{2}", "safety": {3}, "loyality": {4}{1}""", "{", "}", reason, safety, loyalty);
+	}
+
+	private void ChooseParentAnswer(string choiceId)
+	{
+		switch (choiceId)
 		{
-			state.ChangeMetric(StoryStateController.Metric.Safety, safety);
-			state.ChangeMetric(StoryStateController.Metric.Loyalty, loyalty);
+			case "ID-04":
+			case "ID-07":
+				ApplyOutcome("choice-" + choiceId, +5, +3, +1, +1);
+				break;
+			case "ID-05":
+			case "ID-08":
+				ApplyOutcome("choice-" + choiceId, +5, -3, -1, -2);
+				break;
+			case "ID-06":
+				ApplyOutcome("choice-" + choiceId, -3, +1, 0, 0);
+				break;
+			case "ID-09":
+				ApplyOutcome("choice-" + choiceId, -5, -2, -1, -2);
+				break;
+			default:
+				return;
 		}
 
-		ShowLine(ScenarioStep.PassengerReaction, "Пассажир", GetPassengerReaction());
+		RemainingSeconds = 0.0f;
+		selectedParentChoiceId = choiceId;
+		if (choiceId == "ID-06")
+		{
+			FinishSecondScenario(
+				"Негативный финал: обещана недоступная услуга",
+				"Вы пообещали бесплатную услугу, которая не гарантирована для комфорт-класса. " +
+				"Перед предложением необходимо проверить наличие и условия предоставления детского набора.");
+			return;
+		}
+
+		ShowLine(ScenarioStep.ParentBranchReaction, "Пассажир (родитель)", GetParentBranchReaction(choiceId));
+	}
+
+	private void ChooseSeatDecision(string choiceId)
+	{
+		switch (choiceId)
+		{
+			case "ID-10":
+			case "ID-13":
+				ApplyOutcome("choice-" + choiceId, +5, +2, +1, 0);
+				break;
+			case "ID-11":
+			case "ID-14":
+				ApplyOutcome("choice-" + choiceId, +5, -3, -1, 0);
+				break;
+			case "ID-12":
+			case "ID-15":
+				ApplyOutcome("choice-" + choiceId, -5, +2, +1, 0);
+				break;
+			default:
+				return;
+		}
+
+		RemainingSeconds = 0.0f;
+		selectedSeatChoiceId = choiceId;
+		string reaction = choiceId == "ID-12"
+			? "Хорошо, если место свободно, я пересяду."
+			: choiceId == "ID-15"
+				? "Хорошо. Если там свободно, я перейду."
+				: GetSeatDecisionReaction(choiceId);
+		ShowLine(ScenarioStep.SeatDecisionReaction, "Пассажир ябеда", reaction);
+	}
+
+	public void Choose(string choiceId)
+	{
+		if (!HasChoices) return;
+		DecisionHistory.Add(choiceId);
+		if (CurrentStep == ScenarioStep.ParentChoice || CurrentStep == ScenarioStep.ParentChoiceGrace)
+		{
+			ChooseParentAnswer(choiceId);
+		}
+		else if (CurrentStep == ScenarioStep.SeatDecisionChoice)
+		{
+			ChooseSeatDecision(choiceId);
+		}
+		else {
+			switch (choiceId)
+			{
+				case "ID-01": ApplyOutcome("choice-" + choiceId, +2, +2, +1, 0); break;
+				case "ID-02": ApplyOutcome("choice-" + choiceId, +2, -3, -1, 0); break;
+				case "ID-03": ApplyOutcome("choice-" + choiceId, -4, +2, +1, -2); break;
+				default: return;
+			}
+
+			ShowLine(ScenarioStep.PassengerReaction, "Пассажир", GetPassengerReaction());
+		}
 	}
 
 	public void NotifyTextFinished()
@@ -688,95 +752,18 @@ public partial class PassengerScenarioController : Component
 		Changed?.Invoke();
 	}
 
-	private void ChooseParentAnswer(string choiceId)
-	{
-		int safety;
-		int loyalty;
-		int mood1;
-		int mood2;
-		switch (choiceId)
-		{
-			case "ID-04":
-			case "ID-07":
-				safety = 5; loyalty = 3; mood1 = 1; mood2 = 1;
-				break;
-			case "ID-05":
-			case "ID-08":
-				safety = 5; loyalty = -3; mood1 = -1; mood2 = -2;
-				break;
-			case "ID-06":
-				safety = -3; loyalty = 1; mood1 = 0; mood2 = 0;
-				break;
-			case "ID-09":
-				safety = -5; loyalty = -2; mood1 = -1; mood2 = -2;
-				break;
-			default:
-				return;
-		}
-
-		RemainingSeconds = 0.0f;
-		selectedParentChoiceId = choiceId;
-		DecisionHistory.Add(choiceId);
-		ApplyOutcome(safety, loyalty, mood1, mood2);
-		if (choiceId == "ID-06")
-		{
-			FinishSecondScenario(
-				"Негативный финал: обещана недоступная услуга",
-				"Вы пообещали бесплатную услугу, которая не гарантирована для комфорт-класса. " +
-				"Перед предложением необходимо проверить наличие и условия предоставления детского набора.");
-			return;
-		}
-
-		ShowLine(ScenarioStep.ParentBranchReaction, "Пассажир (родитель)", GetParentBranchReaction(choiceId));
-	}
-
 	private void HandleFirstParentAnswerTimeout()
 	{
-		ApplyOutcome(-2, -2, -1, -1);
+		ApplyOutcome("parentAnswerTimeout1", -2, -2, -1, -1);
 		ShowLine(ScenarioStep.ParentReminder, "Пассажир (родитель)",
 			"Подскажите, пожалуйста, в чем проблема?");
 	}
 
 	private void HandleFinalParentAnswerTimeout()
 	{
-		ApplyOutcome(-8, -2, -1, -1);
+		ApplyOutcome("parentAnswerTimeout2", -8, -2, -1, -1);
 		ShowLine(ScenarioStep.ParentTimeoutReaction, "Пассажир 1",
 			"Понятно. Значит, решать ситуацию никто не будет.");
-	}
-
-	private void ChooseSeatDecision(string choiceId)
-	{
-		int safety;
-		int loyalty;
-		int mood1;
-		switch (choiceId)
-		{
-			case "ID-10":
-			case "ID-13":
-				safety = 5; loyalty = 2; mood1 = 1;
-				break;
-			case "ID-11":
-			case "ID-14":
-				safety = 5; loyalty = -3; mood1 = -1;
-				break;
-			case "ID-12":
-			case "ID-15":
-				safety = -5; loyalty = 2; mood1 = 1;
-				break;
-			default:
-				return;
-		}
-
-		RemainingSeconds = 0.0f;
-		selectedSeatChoiceId = choiceId;
-		DecisionHistory.Add(choiceId);
-		ApplyOutcome(safety, loyalty, mood1, 0);
-		string reaction = choiceId == "ID-12"
-			? "Хорошо, если место свободно, я пересяду."
-			: choiceId == "ID-15"
-				? "Хорошо. Если там свободно, я перейду."
-				: GetSeatDecisionReaction(choiceId);
-		ShowLine(ScenarioStep.SeatDecisionReaction, "Пассажир ябеда", reaction);
 	}
 
 	private string GetSeatDecisionReaction(string choiceId)
@@ -869,7 +856,7 @@ public partial class PassengerScenarioController : Component
 
 	private void HandleSeatDecisionTimeout()
 	{
-		ApplyOutcome(-10, -6, -2, -2);
+		ApplyOutcome("seatSecisionTimeout", -10, -6, -2, -2);
 		ShowLine(ScenarioStep.SeatDecisionTimeoutComplainant, "Пассажир ябеда",
 			"Если персонал не собирается ничего делать, я сам попрошу Вас вести себя тише.");
 	}
@@ -947,7 +934,7 @@ public partial class PassengerScenarioController : Component
 		switch (selectedParentChoiceId)
 		{
 			case "ID-04":
-				ApplyOutcome(5, 2, 0, 0);
+				ApplyOutcome("choice-" + selectedParentChoiceId, 5, 2, 0, 0);
 				FinishSecondScenario(
 					"Финал 1А",
 					"Вы корректно объяснили ситуацию и предложили реально доступное решение. " +
@@ -1229,18 +1216,6 @@ public partial class PassengerScenarioController : Component
 		Changed?.Invoke();
 		gameFlow?.NotifyScenarioTwoFinished();
 		SecondScenarioResultRequested?.Invoke(finalTitle, feedback);
-	}
-
-	private void ApplyOutcome(int safety, int loyalty, int mood1, int mood2)
-	{
-		SafetyDelta += safety;
-		LoyaltyDelta += loyalty;
-		MoodPassenger1 = Math.Max(-3, Math.Min(3, MoodPassenger1 + mood1));
-		MoodPassenger2 = Math.Max(-3, Math.Min(3, MoodPassenger2 + mood2));
-		StoryStateController state = ComponentSystem.FindComponentInWorld<StoryStateController>();
-		if (state == null) return;
-		state.ChangeMetric(StoryStateController.Metric.Safety, safety);
-		state.ChangeMetric(StoryStateController.Metric.Loyalty, loyalty);
 	}
 
 	private void ShowLine(ScenarioStep step, string speaker, string text)

@@ -3,6 +3,8 @@ import ./[httputils, database]
 
 
 type
+  UnauthorizedUserError* = object of CatchableError
+
   Route* = proc(app: Application, req: Request, path: seq[string]): Future[bool] {.async, gcsafe.}
 
   Application* = ref object
@@ -34,7 +36,7 @@ proc run*(app: Application) {.async.} =
     for route in app.routes:
       if route(app, req, pathSeq).await: return
     
-    await req.respond(Http404, "Not found", plain_headers)
+    await req.respond(Http404, "Not found")
   
   while true:
     if app.exit: break
@@ -64,7 +66,12 @@ template route*(meth: HttpMethod, reqQuery: untyped, body: untyped): Route =
       case path
       of reqQuery:
         result = true
-        body
+        try:
+          body
+        except UnauthorizedUserError:
+          await req.respond(Http403, "unauthorized")
+        except:
+          await req.respond(Http500, "error")
       else:
         return false
 
